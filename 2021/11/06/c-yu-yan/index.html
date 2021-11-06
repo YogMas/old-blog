@@ -397,14 +397,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.1k
+                    10.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    36 分
+                    37 分
                 </div>
                 
 
@@ -1054,6 +1054,14 @@ int a = imin(1,2)
 <h5 id="演示递归"><a class="markdownIt-Anchor" href="#演示递归">#</a> 演示递归</h5>
 <p><a target="_blank" rel="noopener" href="https://imgtu.com/i/IlPHk4"><img src="https://z3.ax1x.com/2021/11/06/IlPHk4.jpg" alt="IlPHk4.jpg"></a><br>
 <a target="_blank" rel="noopener" href="https://imgtu.com/i/IlPbtJ"><img src="https://z3.ax1x.com/2021/11/06/IlPbtJ.jpg" alt="IlPbtJ.jpg"></a></p>
+<h5 id="递归的基本原理"><a class="markdownIt-Anchor" href="#递归的基本原理">#</a> 递归的基本原理</h5>
+<p>1. 每级函数调用都有自己的变量 也就是说第一级的 n 和第二的 n 不一样 当程序最终返回第一级的时候 最初的 n 仍然是它的初值 1 (局部变量)<br>
+ 2. 每次幻术调用都会返回一次 当函数执行完毕后 控制权将被传回上一级递归。程序必须按照顺序逐级返回递归 不能跳级<br>
+ 3. 递归函数中位于递归调用之前的语句 均按被调函数的顺序执行<br>
+ 4. 递归函数中位于递归调用之后的语句 均按被调函数的<strong>相反</strong>顺序执行<br>
+ 5. 虽然每级递归都有自己的变量 但是并没有拷贝函数的代码，所以程序按顺序执行函数中的代码 而递归调用就相当于又从头开始执行函数的代码 除了为每次递归调用创建变量外 递归调用非常类似于一个循环语句<br>
+ 6. 递归函数必须包含能让递归调用停止的语句。通常递归函数都使用 if 或者其他等价的测试条件在函数形参等于某个特定值时终止递归。为此 每次递归调用的形参都要使用不同的值</p>
+<h5 id="尾递归"><a class="markdownIt-Anchor" href="#尾递归">#</a> 尾递归</h5>
 <h3 id="数组"><a class="markdownIt-Anchor" href="#数组">#</a> 数组</h3>
 <h4 id="一维数组"><a class="markdownIt-Anchor" href="#一维数组">#</a> 一维数组</h4>
 <p>数组：含有多个数据值的数据结构<br>
@@ -1603,7 +1611,7 @@ eg: int a[15] = {[2]=29,[3]=22};
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.6k</span>&nbsp;字
+                class="white-color">26.9k</span>&nbsp;字
             
             
             
