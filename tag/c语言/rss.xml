@@ -642,6 +642,8 @@ int a = imin(1,2)
 难点：结束递归 (如果递归代码中没有终止递归的条件测试部分，一个调用自己的函数就会无限递归)&lt;br&gt;
  注：可以使用循环的地方&lt;strong&gt;通常&lt;/strong&gt;都可以使用递归&lt;/p&gt;
 &lt;h5 id=&#34;演示递归&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#演示递归&#34;&gt;#&lt;/a&gt; 演示递归&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IlPHk4&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/06/IlPHk4.jpg&#34; alt=&#34;IlPHk4.jpg&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/IlPbtJ&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/06/IlPbtJ.jpg&#34; alt=&#34;IlPbtJ.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h3&gt;
 &lt;h4 id=&#34;一维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一维数组&#34;&gt;#&lt;/a&gt; 一维数组&lt;/h4&gt;
 &lt;p&gt;数组：含有多个数据值的数据结构&lt;br&gt;
