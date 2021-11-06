@@ -397,14 +397,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.4k
+                    10.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    37 分
+                    38 分
                 </div>
                 
 
@@ -423,6 +423,11 @@
         <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
         
 
         <div class="card-content article-card-content">
@@ -1062,6 +1067,15 @@ int a = imin(1,2)
  5. 虽然每级递归都有自己的变量 但是并没有拷贝函数的代码，所以程序按顺序执行函数中的代码 而递归调用就相当于又从头开始执行函数的代码 除了为每次递归调用创建变量外 递归调用非常类似于一个循环语句<br>
  6. 递归函数必须包含能让递归调用停止的语句。通常递归函数都使用 if 或者其他等价的测试条件在函数形参等于某个特定值时终止递归。为此 每次递归调用的形参都要使用不同的值</p>
 <h5 id="尾递归"><a class="markdownIt-Anchor" href="#尾递归">#</a> 尾递归</h5>
+<p>将递归放置在函数的末尾 即正好在 return 语句之前 这种形式的递归被称为尾递归 相当于循环</p>
+<h5 id="递归和倒序计算"><a class="markdownIt-Anchor" href="#递归和倒序计算">#</a> 递归和倒序计算</h5>
+<p>在处理这类倒序问题时  递归比循环简单</p>
+<h5 id="递归的优缺点"><a class="markdownIt-Anchor" href="#递归的优缺点">#</a> 递归的优缺点</h5>
+<p>优点：为某些编程问题提供了最简单的解决方案，缺点是一些递归算法会快速消耗计算机的内存资源 另外递归不方便阅读和维护<br>
+<strong>在程序中使用递归要格外注意 尤其是效率优先的程序</strong></p>
+<h4 id="编译多源代码文件的程序"><a class="markdownIt-Anchor" href="#编译多源代码文件的程序">#</a> 编译多源代码文件的程序</h4>
+<p>使用多个函数最简单的方法是把他们都放在同一个文件中 然后像编译只有一个函数的文件那样编译该文件即可。其他方法因操作系统而异，下面将举例说明.</p>
+<h5 id="unix"><a class="markdownIt-Anchor" href="#unix">#</a> UNIX</h5>
 <h3 id="数组"><a class="markdownIt-Anchor" href="#数组">#</a> 数组</h3>
 <h4 id="一维数组"><a class="markdownIt-Anchor" href="#一维数组">#</a> 一维数组</h4>
 <p>数组：含有多个数据值的数据结构<br>
@@ -1296,7 +1310,7 @@ eg: int a[15] = {[2]=29,[3]=22};
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
                         <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
@@ -1611,7 +1625,7 @@ eg: int a[15] = {[2]=29,[3]=22};
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">26.9k</span>&nbsp;字
+                class="white-color">27.1k</span>&nbsp;字
             
             
             

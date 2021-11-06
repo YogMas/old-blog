@@ -652,6 +652,15 @@ int a = imin(1,2)
  5. 虽然每级递归都有自己的变量 但是并没有拷贝函数的代码，所以程序按顺序执行函数中的代码 而递归调用就相当于又从头开始执行函数的代码 除了为每次递归调用创建变量外 递归调用非常类似于一个循环语句&lt;br&gt;
  6. 递归函数必须包含能让递归调用停止的语句。通常递归函数都使用 if 或者其他等价的测试条件在函数形参等于某个特定值时终止递归。为此 每次递归调用的形参都要使用不同的值&lt;/p&gt;
 &lt;h5 id=&#34;尾递归&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#尾递归&#34;&gt;#&lt;/a&gt; 尾递归&lt;/h5&gt;
+&lt;p&gt;将递归放置在函数的末尾 即正好在 return 语句之前 这种形式的递归被称为尾递归 相当于循环&lt;/p&gt;
+&lt;h5 id=&#34;递归和倒序计算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#递归和倒序计算&#34;&gt;#&lt;/a&gt; 递归和倒序计算&lt;/h5&gt;
+&lt;p&gt;在处理这类倒序问题时  递归比循环简单&lt;/p&gt;
+&lt;h5 id=&#34;递归的优缺点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#递归的优缺点&#34;&gt;#&lt;/a&gt; 递归的优缺点&lt;/h5&gt;
+&lt;p&gt;优点：为某些编程问题提供了最简单的解决方案，缺点是一些递归算法会快速消耗计算机的内存资源 另外递归不方便阅读和维护&lt;br&gt;
+&lt;strong&gt;在程序中使用递归要格外注意 尤其是效率优先的程序&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;编译多源代码文件的程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#编译多源代码文件的程序&#34;&gt;#&lt;/a&gt; 编译多源代码文件的程序&lt;/h4&gt;
+&lt;p&gt;使用多个函数最简单的方法是把他们都放在同一个文件中 然后像编译只有一个函数的文件那样编译该文件即可。其他方法因操作系统而异，下面将举例说明.&lt;/p&gt;
+&lt;h5 id=&#34;unix&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#unix&#34;&gt;#&lt;/a&gt; UNIX&lt;/h5&gt;
 &lt;h3 id=&#34;数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h3&gt;
 &lt;h4 id=&#34;一维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一维数组&#34;&gt;#&lt;/a&gt; 一维数组&lt;/h4&gt;
 &lt;p&gt;数组：含有多个数据值的数据结构&lt;br&gt;
