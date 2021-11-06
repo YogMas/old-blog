@@ -606,7 +606,15 @@ return min;
 int a = imin(1,2)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;关键字 return&lt;/p&gt;
+&lt;p&gt;关键字 return 后面的表达式的值就是函数的返回值 在该例中，函数的返回值就是变量 min 的值&lt;br&gt;
+变量 min 属于 imin () 函数私有 但是 return 语句把 min 的值传回了主调函数&lt;br&gt;
+ return; return 语句还可以这样使用 这样使用 retrun 语句将会终止函数并把控制返回给主调函数&lt;/p&gt;
+&lt;h5 id=&#34;函数类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数类型&#34;&gt;#&lt;/a&gt; 函数类型&lt;/h5&gt;
+&lt;p&gt;声明函数必须声明函数的类型 带返回值的函数类型应该与其返回值得类型相同 没有返回值的函数声明为 void 类型&lt;br&gt;
+&lt;strong&gt;值得注意的是 函数类型指的是函数返回值的类型 而不是参数的类型&lt;/strong&gt;&lt;br&gt;
+函数的前置声明可以放在主调函数外面也可以放在主调函数里面&lt;br&gt;
+ ANSIC 标准库中，函数被封城了多个系列，每一个系列都有各自的头文件，这些头文件中包含了本系列所有函数的声明。例如 stdio.h 头文件中包括了标准的 I/O 库函数 (如 printf he scanf 函数) 的声明&lt;/p&gt;
+&lt;h4 id=&#34;ansi-c-函数类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ansi-c-函数类型&#34;&gt;#&lt;/a&gt; ANSI C 函数类型&lt;/h4&gt;
 &lt;h3 id=&#34;数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h3&gt;
 &lt;h4 id=&#34;一维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一维数组&#34;&gt;#&lt;/a&gt; 一维数组&lt;/h4&gt;
 &lt;p&gt;数组：含有多个数据值的数据结构&lt;br&gt;
