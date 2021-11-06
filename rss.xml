@@ -18,7 +18,8 @@
             <category>C语言</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;c语言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言&#34;&gt;#&lt;/a&gt; C 语言&lt;/h1&gt;
-&lt;h2 id=&#34;the-article-made-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-made-by-yogmas&#34;&gt;#&lt;/a&gt; the article made by Yogmas&lt;/h2&gt;
+&lt;!-- The Article Made by YogMas --&gt;
+&lt;h2 id=&#34;the-article-made-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-made-by-yogmas&#34;&gt;#&lt;/a&gt; The Article Made by YogMas&lt;/h2&gt;
 &lt;h3 id=&#34;c语言的执行过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言的执行过程&#34;&gt;#&lt;/a&gt; C 语言的执行过程&lt;/h3&gt;
 &lt;p&gt;1. 预处理：可以给程序添加内容也可以修改程序 (例如: #include&amp;lt;stdio.h&amp;gt; 就会在预处理中运用 stdio.h 中的内容对源代码进行处理)&lt;br&gt;
  2. 编译：将预处理过的语言转变为机器指令.&lt;br&gt;
@@ -620,6 +621,27 @@ int a = imin(1,2)
 函数的前置声明可以放在主调函数外面也可以放在主调函数里面&lt;br&gt;
  ANSIC 标准库中，函数被封城了多个系列，每一个系列都有各自的头文件，这些头文件中包含了本系列所有函数的声明。例如 stdio.h 头文件中包括了标准的 I/O 库函数 (如 printf he scanf 函数) 的声明&lt;/p&gt;
 &lt;h4 id=&#34;ansi-c-函数类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ansi-c-函数类型&#34;&gt;#&lt;/a&gt; ANSI C 函数类型&lt;/h4&gt;
+&lt;p&gt;旨在说明老式声明函数的问题所在和解决方案 这里不做过多描述 可自行搜索&lt;/p&gt;
+&lt;p&gt;ANSI C 使用了逗号分割的类型列表 eg imax (int a , int b) 如此 编译器可以检查函数调用是否和函数原型匹配 参数的数量是否匹配 参数的类型是否匹配&lt;/p&gt;
+&lt;h5 id=&#34;无参数和未指定参数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#无参数和未指定参数&#34;&gt;#&lt;/a&gt; 无参数和未指定参数&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;void print_name()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接受 ANSI C 的编译器截石位 print_name () 不接受任何参数，然后在调用该函数时，编译器会检查来确保没有使用参数&lt;/p&gt;
+&lt;h5 id=&#34;函数原型的优点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数原型的优点&#34;&gt;#&lt;/a&gt; 函数原型的优点&lt;/h5&gt;
+&lt;p&gt;使用函数原型会让编译器捕获在使用函数时可能出现的许多错误或疏漏，如果编译器没有发现这些问题，就很难觉察出来.&lt;br&gt;
+ 有一种方法可以省略函数原型却保留函数原型的优点&lt;br&gt;
+把整个函数定义放在第一次调用该函数之前，也有相同的效果 此时函数定义也相当于函数原型。对于代码量较少的函数 这种用法很普遍&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;int imax(int a , int b ) {return a&amp;gt;b?a:b}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;递归&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#递归&#34;&gt;#&lt;/a&gt; 递归&lt;/h4&gt;
+&lt;p&gt;C 允许函数调用他自己 这种调用过程称为&lt;strong&gt;递归&lt;/strong&gt;&lt;br&gt;
+难点：结束递归 (如果递归代码中没有终止递归的条件测试部分，一个调用自己的函数就会无限递归)&lt;br&gt;
+ 注：可以使用循环的地方&lt;strong&gt;通常&lt;/strong&gt;都可以使用递归&lt;/p&gt;
+&lt;h5 id=&#34;演示递归&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#演示递归&#34;&gt;#&lt;/a&gt; 演示递归&lt;/h5&gt;
 &lt;h3 id=&#34;数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h3&gt;
 &lt;h4 id=&#34;一维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一维数组&#34;&gt;#&lt;/a&gt; 一维数组&lt;/h4&gt;
 &lt;p&gt;数组：含有多个数据值的数据结构&lt;br&gt;
