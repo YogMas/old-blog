@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
+    <meta name="keywords" content="YogMas学习站">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,8 +16,8 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>YogMas学习站</title>
+    <link rel="icon" type="image/png" href="/medias/yogmaslogo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -53,9 +53,9 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/yogmaslogo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Hexo</span>
+                    <span class="logo-span">YogMas学习站</span>
                 </a>
             </div>
             
@@ -141,9 +141,9 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/yogmaslogo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Hexo</div>
+        <div class="logo-name">YogMas学习站</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -279,6 +279,13 @@
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
+        <div id="prev-cover" class="left waves-effect carousel-control">
+            <i class="icon fa fa-angle-left"></i>
+        </div>
+        <div id="next-cover" class="right waves-effect carousel-control">
+            <i class="icon fa fa-angle-right"></i>
+        </div>
+    
 
     <div class="carousel-item red white-text bg-cover about-cover">
         <div class="container">
@@ -287,7 +294,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                YogMas学习站
                 
             </div>
 
@@ -367,6 +374,56 @@
     </div>
 
     
+        
+
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/medias/featureimages/14.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">C语言</div>
+                            <div class="description center-align">
+                                
+                                    C语言是一门面向过程的、抽象化的通用程序设计语言，广泛应用于底层开发。C语言能以简易的方式编译、处理低级存储器。C语言是仅产生少量的机器语言以及不需要任何运行环境支持便能运行的高效率程序设计语言。尽管C语言提供了许多低级处理的功能，但仍然保持着跨平台的特性，以一个标准规格写出的C语言程序可在包括类似嵌入式处理器以及超级计算机等作业平台的许多计算机平台上进行编译
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2021/11/06/c-yu-yan/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/medias/featureimages/6.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">Javascript基础(未完待续)</div>
+                            <div class="description center-align">
+                                
+                                    JavaScript（简称“JS”）是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2021/11/06/javascript-ji-chu-ban/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    
 </div>
 
 <script>
@@ -405,7 +462,7 @@
         let autoCarousel = function () {
             carouselIntervalId = setInterval(function () {
                 coverSlider.carousel('next');
-            }, 5000);
+            }, 7000);
         };
         autoCarousel();
         
@@ -482,7 +539,7 @@
                 <div class="post-categories">
                     
                         
-                            <a href="/categories/markdown/" class="category">markdown</a>
+                            <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="category">程序设计</a>
                         
                     
                 </div>
@@ -510,7 +567,7 @@
                 <div class="post-categories">
                     
                         
-                            <a href="/categories/markdown/" class="category">markdown</a>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category">前端</a>
                         
                     
                 </div>
@@ -573,8 +630,8 @@
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/markdown/" class="post-category">
-                                    markdown
+                                <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-category">
+                                    程序设计
                                 </a>
                                 
                                 
@@ -585,8 +642,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                            <span class="chip bg-color">程序设计</span>
+                        <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                            <span class="chip bg-color">C语言</span>
                         </a>
                         
                     </div>
@@ -620,8 +677,8 @@
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/markdown/" class="post-category">
-                                    markdown
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -632,8 +689,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">前端</span>
+                        <a href="/tags/Html/">
+                            <span class="chip bg-color">Html</span>
                         </a>
                         
                     </div>
@@ -667,8 +724,8 @@
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/markdown/" class="post-category">
-                                    markdown
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -679,8 +736,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">前端</span>
+                        <a href="/tags/Html/">
+                            <span class="chip bg-color">Html</span>
                         </a>
                         
                     </div>
@@ -714,8 +771,8 @@
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/markdown/" class="post-category">
-                                    markdown
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -726,8 +783,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">前端</span>
+                        <a href="/tags/Css/">
+                            <span class="chip bg-color">Css</span>
                         </a>
                         
                     </div>
@@ -761,8 +818,8 @@
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/markdown/" class="post-category">
-                                    markdown
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -773,8 +830,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">前端</span>
+                        <a href="/tags/Css/">
+                            <span class="chip bg-color">Css</span>
                         </a>
                         
                     </div>
@@ -808,8 +865,8 @@
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/markdown/" class="post-category">
-                                    markdown
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -820,8 +877,8 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                            <span class="chip bg-color">前端</span>
+                        <a href="/tags/Javascript/">
+                            <span class="chip bg-color">Javascript</span>
                         </a>
                         
                     </div>

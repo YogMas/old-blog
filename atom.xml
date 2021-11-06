@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://example.com</id>
-    <title>Hexo</title>
+    <title>YogMas学习站</title>
     <link href="http://example.com" />
     <updated>2021-11-05T16:00:00.000Z</updated>
-    <category term="前端" />
-    <category term="程序设计" />
+    <category term="Css" />
+    <category term="C语言" />
+    <category term="Html" />
+    <category term="Javascript" />
     <entry>
         <id>http://example.com/2021/11/06/c-yu-yan/</id>
         <title>C语言</title>
@@ -645,7 +647,7 @@ eg: int a[15] = {[2]=29,[3]=22};
  eg 如果数组 a 包含 10 4 字节存储的整数 那个 sizeof (a) = 40&lt;br&gt;
  进阶：用数组的大小除以数组元素的大小 可以得到数组的长度 sizeof (a)/sizeof (a [0])&lt;/p&gt;
 </content>
-        <category term="程序设计" />
+        <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -742,7 +744,7 @@ X 包括_self (覆盖当前页面)&lt;br&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;特殊内容可以用 ctrl+l 快速注释&lt;/p&gt;
 </content>
-        <category term="前端" />
+        <category term="Html" />
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -931,7 +933,7 @@ radio: 单选按钮&lt;/p&gt;
  autocomplete: 自动储存你输入过的信息 (容易暴露信息，所以一般都会关闭)&lt;br&gt;
  multiple: 可以选取多个文件&lt;/p&gt;
 </content>
-        <category term="前端" />
+        <category term="Html" />
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -1178,7 +1180,7 @@ link: 未访问链接：把没有点击过的链接选择出来&lt;br&gt;
 &lt;p&gt;background: rgba(X,X,X,X);&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
-        <category term="前端" />
+        <category term="Css" />
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -1550,7 +1552,7 @@ content:’’;&lt;br&gt;
 &lt;img src=&#34;images/51.png&#34; alt=&#34;photo0&#34;&gt;&lt;br&gt;
  在这里 0s 开始一般可以不写而省略，变化曲线也一遍使用 ease 这是最常用的变化曲线&lt;/p&gt;
 </content>
-        <category term="前端" />
+        <category term="Css" />
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -2710,7 +2712,7 @@ BOM 的构成&lt;br&gt;
 &lt;h5 id=&#34;offset和style的区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#offset和style的区别&#34;&gt;#&lt;/a&gt; offset 和 style 的区别&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;js_img/offset%E5%92%8Cstyle%E7%9A%84%E5%8C%BA%E5%88%AB.png&#34; alt=&#34;photo&#34;&gt;&lt;/p&gt;
 </content>
-        <category term="前端" />
+        <category term="Javascript" />
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
 </feed>

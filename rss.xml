@@ -1,19 +1,21 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>Hexo</title>
+        <title>YogMas学习站</title>
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
         <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0800</lastBuildDate>
-        <category>前端</category>
-        <category>程序设计</category>
+        <category>Css</category>
+        <category>C语言</category>
+        <category>Html</category>
+        <category>Javascript</category>
         <item>
             <guid isPermalink="true">http://example.com/2021/11/06/c-yu-yan/</guid>
             <title>C语言</title>
             <link>http://example.com/2021/11/06/c-yu-yan/</link>
-            <category>程序设计</category>
+            <category>C语言</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;c语言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言&#34;&gt;#&lt;/a&gt; C 语言&lt;/h1&gt;
 &lt;h2 id=&#34;the-article-made-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-made-by-yogmas&#34;&gt;#&lt;/a&gt; the article made by Yogmas&lt;/h2&gt;
@@ -655,7 +657,7 @@ eg: int a[15] = {[2]=29,[3]=22};
             <guid isPermalink="true">http://example.com/2021/11/06/html-shang/</guid>
             <title>Html-first</title>
             <link>http://example.com/2021/11/06/html-shang/</link>
-            <category>前端</category>
+            <category>Html</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;html上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html上&#34;&gt;#&lt;/a&gt; Html (上)&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
@@ -752,7 +754,7 @@ X 包括_self (覆盖当前页面)&lt;br&gt;
             <guid isPermalink="true">http://example.com/2021/11/06/html-xia/</guid>
             <title>Html-second</title>
             <link>http://example.com/2021/11/06/html-xia/</link>
-            <category>前端</category>
+            <category>Html</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;。&lt;/p&gt;
 &lt;h1 id=&#34;html下&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html下&#34;&gt;#&lt;/a&gt; Html (下)&lt;/h1&gt;
@@ -941,7 +943,7 @@ radio: 单选按钮&lt;/p&gt;
             <guid isPermalink="true">http://example.com/2021/11/06/css1/</guid>
             <title>Css-first</title>
             <link>http://example.com/2021/11/06/css1/</link>
-            <category>前端</category>
+            <category>Css</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;css1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css1&#34;&gt;#&lt;/a&gt; css1&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
@@ -1188,7 +1190,7 @@ link: 未访问链接：把没有点击过的链接选择出来&lt;br&gt;
             <guid isPermalink="true">http://example.com/2021/11/06/css2/</guid>
             <title>Css-second</title>
             <link>http://example.com/2021/11/06/css2/</link>
-            <category>前端</category>
+            <category>Css</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;css2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css2&#34;&gt;#&lt;/a&gt; css2&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
@@ -1560,7 +1562,7 @@ content:’’;&lt;br&gt;
             <guid isPermalink="true">http://example.com/2021/11/06/javascript-ji-chu-ban/</guid>
             <title>Javascript基础(未完待续)</title>
             <link>http://example.com/2021/11/06/javascript-ji-chu-ban/</link>
-            <category>前端</category>
+            <category>Javascript</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;javascript&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javascript&#34;&gt;#&lt;/a&gt; javascript&lt;/h1&gt;
 &lt;h2 id=&#34;article-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#article-by-yogmas&#34;&gt;#&lt;/a&gt; Article By Yogmas&lt;/h2&gt;

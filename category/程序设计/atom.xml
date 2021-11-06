@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://example.com</id>
-    <title>Hexo • Posts by &#34;程序设计&#34; tag</title>
+    <title>YogMas学习站 • Posts by &#34;程序设计&#34; category</title>
     <link href="http://example.com" />
     <updated>2021-11-05T16:00:00.000Z</updated>
-    <category term="前端" />
-    <category term="程序设计" />
+    <category term="Css" />
+    <category term="C语言" />
+    <category term="Html" />
+    <category term="Javascript" />
     <entry>
         <id>http://example.com/2021/11/06/c-yu-yan/</id>
         <title>C语言</title>
@@ -645,7 +647,7 @@ eg: int a[15] = {[2]=29,[3]=22};
  eg 如果数组 a 包含 10 4 字节存储的整数 那个 sizeof (a) = 40&lt;br&gt;
  进阶：用数组的大小除以数组元素的大小 可以得到数组的长度 sizeof (a)/sizeof (a [0])&lt;/p&gt;
 </content>
-        <category term="程序设计" />
+        <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
 </feed>
