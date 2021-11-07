@@ -20,6 +20,7 @@
             <description><![CDATA[ &lt;h1 id=&#34;c语言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言&#34;&gt;#&lt;/a&gt; C 语言&lt;/h1&gt;
 &lt;!-- The Article Made by YogMas --&gt;
 &lt;h2 id=&#34;the-article-made-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-made-by-yogmas&#34;&gt;#&lt;/a&gt; The Article Made by YogMas&lt;/h2&gt;
+&lt;p&gt;推荐用书: C Primer Plus (本文章绝大部分内容来自于关于此书的学习过程中记录 还有部分来自于 C 语言程序设计第二版)&lt;/p&gt;
 &lt;h3 id=&#34;c语言的执行过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言的执行过程&#34;&gt;#&lt;/a&gt; C 语言的执行过程&lt;/h3&gt;
 &lt;p&gt;1. 预处理：可以给程序添加内容也可以修改程序 (例如: #include&amp;lt;stdio.h&amp;gt; 就会在预处理中运用 stdio.h 中的内容对源代码进行处理)&lt;br&gt;
  2. 编译：将预处理过的语言转变为机器指令.&lt;br&gt;
@@ -515,7 +516,7 @@ ch = ch+1    此时ch是B
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;第八章-字符输入输出和输入验证&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第八章-字符输入输出和输入验证&#34;&gt;#&lt;/a&gt; 第八章 字符输入 / 输出和输入验证&lt;/h3&gt;
-&lt;h4 id=&#34;单字符io-getchar和putchar&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单字符io-getchar和putchar&#34;&gt;#&lt;/a&gt; 单字符 I/O getchar () 和 putchar ();&lt;/h4&gt;
+&lt;h4 id=&#34;单字符io-getchar和putchar&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单字符io-getchar和putchar&#34;&gt;#&lt;/a&gt; 单字符 I/O getchar () 和 putchar ()&lt;/h4&gt;
 &lt;h4 id=&#34;缓冲区&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#缓冲区&#34;&gt;#&lt;/a&gt; 缓冲区&lt;/h4&gt;
 &lt;p&gt;用户输入的字符被收集并存储在一个被称为缓冲区的临时存储区 按下 enter 键后 程序才可以使用用户输入的字符&lt;br&gt;
 某些交互式系统无缓冲区 比如游戏中按下一个键需要立即执行按下的操作&lt;br&gt;
@@ -661,45 +662,87 @@ int a = imin(1,2)
 &lt;h4 id=&#34;编译多源代码文件的程序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#编译多源代码文件的程序&#34;&gt;#&lt;/a&gt; 编译多源代码文件的程序&lt;/h4&gt;
 &lt;p&gt;使用多个函数最简单的方法是把他们都放在同一个文件中 然后像编译只有一个函数的文件那样编译该文件即可。其他方法因操作系统而异，下面将举例说明.&lt;/p&gt;
 &lt;h5 id=&#34;unix&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#unix&#34;&gt;#&lt;/a&gt; UNIX&lt;/h5&gt;
-&lt;h3 id=&#34;数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h3&gt;
-&lt;h4 id=&#34;一维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一维数组&#34;&gt;#&lt;/a&gt; 一维数组&lt;/h4&gt;
-&lt;p&gt;数组：含有多个数据值的数据结构&lt;br&gt;
-每个数据值具有相同的数据类型&lt;br&gt;
-这些数据值被称为元素&lt;br&gt;
-属猪内可以根据元素所处的位置对其进行单独访问&lt;/p&gt;
-&lt;p&gt;声明一个数组&lt;/p&gt;
+&lt;p&gt;假设 filel.c 和 file2.c 是两个内涵 C 函数的文件 下面的命令将编译两个文件并生成一个名为 a.out 的可执行文件:&lt;br&gt;
+cc filel.c file2.c&lt;br&gt;
+ 另外还生成两个名为 file1.o 和 file2.o 的目标文件。如果后来改动了 filel.c 而 file2.c 不变 可以使用以下命令编译第一个文件 并与第二个文件的目标代码合并&lt;br&gt;
+ cc filel.c file2.o&lt;/p&gt;
+&lt;h5 id=&#34;linux&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux&#34;&gt;#&lt;/a&gt; Linux&lt;/h5&gt;
+&lt;p&gt;假定 linux 系统安装了 GNU C 编译器 GCC 假设 filel.c 和 file2.c 是两个内含 C 函数的文件 下面的命令将编译两个文件并生成名为 a.out 的可执行文件&lt;br&gt;
+ gcc filel.c file2.c&lt;br&gt;
+ 另外还生成两个名为 file1.o 和 file2.o 的目标文件。如果后来改动了 filel.c 而 file2.c 不变 可以使用以下命令编译第一个文件 并与第二个文件的目标代码合并&lt;br&gt;
+ gcc filel.c file2.o&lt;/p&gt;
+&lt;h5 id=&#34;dos命令行编译器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dos命令行编译器&#34;&gt;#&lt;/a&gt; DOS 命令行编译器&lt;/h5&gt;
+&lt;p&gt;绝大多数 DIS 命令行编译器的工作员刘和 UNIX 的 CC 命令类似 只不过使用不同的名称而已 其中一个区别是 对象文件的扩展名是.obj 而不是.o 一些编译器生成的不是目标代码文件 而是汇编语言或其他特殊代码的中间文件&lt;/p&gt;
+&lt;h5 id=&#34;windows和苹果的ide编译器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows和苹果的ide编译器&#34;&gt;#&lt;/a&gt; windows 和苹果的 IDE 编译器&lt;/h5&gt;
+&lt;p&gt;windows 和 Macintosh 系统使用的集成开发环境中的编译器是面向项目的&lt;br&gt;
+项目 描述的是特定程序使用的资源 (资源包括源代码文件)&lt;br&gt;
+ 这种 IDE 中的编译器要创建项目来运行单文件程序 对于多文件程序 要使用相应的菜单命令 把源代码文件加入到一个项目中 要确保所有的源代码文件都在项目列表中列出 许多 IDE 都不用在项目列表中列出头文件 (扩展名为.h 的文件) 因为项目只管理使用的源代码文件源代码文件中的 #include 指令管理该文件中使用的头文件 但是 Xcode 要在项目中添加头文件&lt;/p&gt;
+&lt;h5 id=&#34;使用头文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用头文件&#34;&gt;#&lt;/a&gt; 使用头文件&lt;/h5&gt;
+&lt;p&gt;如果把 main () 放在第一个文件中 把函数定义放在第二个文件中 那么第一个文件仍然要使用函数原型&lt;br&gt;
+把函数原型放在头文件中 就不用再每次使用函数文件时都要写出函数的原型&lt;/p&gt;
+&lt;h4 id=&#34;查找地址-运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查找地址-运算符&#34;&gt;#&lt;/a&gt; 查找地址: &amp;amp; 运算符&lt;/h4&gt;
+&lt;p&gt;指针是 C 语言中最重要的概念之一 用于存储变量的地址。前面使用的 scanf () 函数中就是用地址最为参数&lt;br&gt;
+一元运算符 &amp;amp; 给出变量的存储地址，如果 posh 是变量名那么 &amp;amp; posh 就是变量的地址 可以把地址看做是变量在内存中的位置&lt;br&gt;
+不同的变量所处的位置是不同的&lt;/p&gt;
+&lt;h4 id=&#34;更改主调函数中的变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更改主调函数中的变量&#34;&gt;#&lt;/a&gt; 更改主调函数中的变量&lt;/h4&gt;
+&lt;p&gt;例如要更改两个数 x,y 的位置 简单地 x = y, y = x 并没有作用&lt;br&gt;
+下面实现简单地交换值得功能&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;类型定衣服 数组名 [常量表达式]; eg: int score[10] 1个含有10个整型数据类型的score数组
+&lt;pre&gt;&lt;code&gt;void interchange(int u ,int v ) {
+int temp;
+temp = u
+u = v
+v = temp
+}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;数组的元素可以使任何类型&lt;br&gt;
-数组名使用标识符表示&lt;br&gt;
-用方括号将常量表达式括起&lt;br&gt;
-数组的长度可以用任何整型常量表达式说明&lt;br&gt;
-常量表达式定义了数组元素的个数&lt;br&gt;
-&lt;strong&gt;数组下标从 0 开始&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果一个数组所包含的元素类型为 T 则数组的每个元素都可以被当做一个类型为 T 的变量来对待&lt;br&gt;
-当下标超出范围时 程序可坑执行不可预知的行为&lt;/p&gt;
-&lt;h4 id=&#34;数组的初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组的初始化&#34;&gt;#&lt;/a&gt; 数组的初始化&lt;/h4&gt;
+&lt;p&gt;虽然这个函数表面上实现了交换的功能 但事实上 调用函数输出结果的时候 并不会交换这两个数值&lt;br&gt;
+因为在 interchange () 传回的变量并不是 main () 中的变量 (局部变量问题：在函数中的变量虽然表面上和 main 中的变量一样 但是实际上这两个变量是完全不同的 存储地址也不一样的两个变量). 因此交换 u 和 v 的值 对 x 和 y 的值没有影响&lt;br&gt;
+可以使用 return 语句把值传回 main () 比如 在函数末尾加上 return (u), 然后修改 main 中而定调用 x = interchange (x,y) 但是这只能改变 x 的值 return 语句只能把被调函数中的一个值传回主调函数 但是现在要传回两个值 这就需要指针了 下面开始概述指针&lt;/p&gt;
+&lt;h4 id=&#34;指针简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指针简介&#34;&gt;#&lt;/a&gt; 指针简介&lt;/h4&gt;
+&lt;p&gt;指针：一个值为内存地址的变量 (或数据对象)&lt;br&gt;
+&lt;strong&gt; 例如:int 类型变量的值为整数 char 类型变量的值为字符 而指针变量的值为地址&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;eg int a[10] = {1,2,3,4,5,6,7,8,9,10}
+&lt;pre&gt;&lt;code&gt;ptr = &amp;amp;pooh
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;列表用大括号括起来 并且内部数组用逗号进行分隔&lt;br&gt;
-如果初始化式比数组端 那么数组中剩余的元素赋值为 0&lt;br&gt;
- 利用这一特性 可以很容易地将全部数组元素初始为 0&lt;/p&gt;
-&lt;p&gt;初始化完全为空是非法的，所以要在大括号内放上一个单独的 0&lt;br&gt;
- 初始化式比目标数组长也是非法的&lt;/p&gt;
-&lt;p&gt;如果声明数组的同时对其进行初始化，则在生命是忽略掉数组的长度&lt;/p&gt;
+&lt;p&gt;其中 表示 ptr&#34;指向&#34;pooh ptr 和 &amp;amp; pooh 的区别是 ptr 是变量 而 &amp;amp;pooh 是常量&lt;br&gt;
+这样 ptr 的值 就是 pooh 的地址&lt;br&gt;
+创建指针变量 要先声明指针变量的类型&lt;/p&gt;
+&lt;h5 id=&#34;间接运算符解引用运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#间接运算符解引用运算符&#34;&gt;#&lt;/a&gt; 间接运算符 (解引用运算符) *&lt;/h5&gt;
+&lt;p&gt;间接运算符可以找出存储在内存地址下的值&lt;br&gt;
+注意分清楚 间接运算符 和 二元乘号运算符 虽然他们长得一样&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;如果数组中只有较少的元素需要初始化 其他元素进行默认赋值
-eg: int a[15] = {[2]=29,[3]=22};
+&lt;pre&gt;&lt;code&gt;val = *ptr
+ptr = &amp;amp;bhb
+上面这串代码就相当于是 val = bhb
+&amp;amp;后跟一个变量名 表示该变量名的地址
+*后跟一个地址 或者指针名 表示存储在指针指向地址上的值
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;h5 id=&#34;对数组使用sizeof运算符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对数组使用sizeof运算符&#34;&gt;#&lt;/a&gt; 对数组使用 sizeof 运算符&lt;/h5&gt;
-&lt;p&gt;运算符 sizeof 可以确定数组的大小 (字节数)&lt;br&gt;
- eg 如果数组 a 包含 10 4 字节存储的整数 那个 sizeof (a) = 40&lt;br&gt;
- 进阶：用数组的大小除以数组元素的大小 可以得到数组的长度 sizeof (a)/sizeof (a [0])&lt;/p&gt;
+&lt;h5 id=&#34;声明指针&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#声明指针&#34;&gt;#&lt;/a&gt; 声明指针&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;int * pi         pi是指向int类型变量的指针
+char * p         p是指向char类型变量的指针
+float * pf,*pg   pf,pg是指向float类型变量的指针
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其中 * 表明声明的变量是一个指针 前面表示指针指向的类型&lt;br&gt;
+ pi 指向的值是 int 类型 pi 本身叫做 指向 int 类型的指针 pi 的值是一个地址&lt;/p&gt;
+&lt;h5 id=&#34;使用指针在函数间通信&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用指针在函数间通信&#34;&gt;#&lt;/a&gt; 使用指针在函数间通信&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;void interchange(int * u, int * v)
+{
+int temp;
+temp = *u;
+*u = *v;
+*v = temp;
+}
+interchange(&amp;amp;x,&amp;amp;y)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;该函数传递的就不是 x 和 y 的值 而是存储 x 和 y 的值的地址&lt;br&gt;
+函数中的第二个语句表示 把 u 地址中的值给 temp 第三个语句表示把 V 地址中存储的值赋值给 U 这样 U 地址存储的值变成了 V 地址存储的值第四个语句同样&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
