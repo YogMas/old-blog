@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>http://yogmas-wang.top</id>
     <title>YogMas学习站 • Posts by &#34;html&#34; tag</title>
-    <link href="http://example.com" />
+    <link href="http://yogmas-wang.top" />
     <updated>2021-11-05T16:00:00.000Z</updated>
     <category term="Css" />
     <category term="C语言" />
     <category term="Html" />
     <category term="Javascript" />
     <entry>
-        <id>http://example.com/2021/11/06/html-shang/</id>
+        <id>http://yogmas-wang.top/2021/11/06/html-shang/</id>
         <title>Html-first</title>
-        <link rel="alternate" href="http://example.com/2021/11/06/html-shang/"/>
+        <link rel="alternate" href="http://yogmas-wang.top/2021/11/06/html-shang/"/>
         <content type="html">&lt;h1 id=&#34;html上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html上&#34;&gt;#&lt;/a&gt; Html (上)&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
 &lt;h4 id=&#34;1基本架构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1基本架构&#34;&gt;#&lt;/a&gt; 1. 基本架构&lt;/h4&gt;
@@ -106,9 +106,9 @@ X 包括_self (覆盖当前页面)&lt;br&gt;
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/06/html-xia/</id>
+        <id>http://yogmas-wang.top/2021/11/06/html-xia/</id>
         <title>Html-second</title>
-        <link rel="alternate" href="http://example.com/2021/11/06/html-xia/"/>
+        <link rel="alternate" href="http://yogmas-wang.top/2021/11/06/html-xia/"/>
         <content type="html">&lt;p&gt;。&lt;/p&gt;
 &lt;h1 id=&#34;html下&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html下&#34;&gt;#&lt;/a&gt; Html (下)&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;

@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>http://yogmas-wang.top</id>
     <title>YogMas学习站</title>
-    <link href="http://example.com" />
+    <link href="http://yogmas-wang.top" />
     <updated>2021-11-05T16:00:00.000Z</updated>
     <category term="Css" />
     <category term="C语言" />
     <category term="Html" />
     <category term="Javascript" />
     <entry>
-        <id>http://example.com/2021/11/06/c-yu-yan/</id>
+        <id>http://yogmas-wang.top/2021/11/06/c-yu-yan/</id>
         <title>C语言</title>
-        <link rel="alternate" href="http://example.com/2021/11/06/c-yu-yan/"/>
+        <link rel="alternate" href="http://yogmas-wang.top/2021/11/06/c-yu-yan/"/>
         <content type="html">&lt;h1 id=&#34;c语言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言&#34;&gt;#&lt;/a&gt; C 语言&lt;/h1&gt;
 &lt;!-- The Article Made by YogMas --&gt;
 &lt;h2 id=&#34;the-article-made-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-made-by-yogmas&#34;&gt;#&lt;/a&gt; The Article Made by YogMas&lt;/h2&gt;
@@ -756,9 +756,9 @@ interchange(&amp;amp;x,&amp;amp;y)
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/06/html-shang/</id>
+        <id>http://yogmas-wang.top/2021/11/06/html-shang/</id>
         <title>Html-first</title>
-        <link rel="alternate" href="http://example.com/2021/11/06/html-shang/"/>
+        <link rel="alternate" href="http://yogmas-wang.top/2021/11/06/html-shang/"/>
         <content type="html">&lt;h1 id=&#34;html上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html上&#34;&gt;#&lt;/a&gt; Html (上)&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
 &lt;h4 id=&#34;1基本架构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1基本架构&#34;&gt;#&lt;/a&gt; 1. 基本架构&lt;/h4&gt;
@@ -853,9 +853,9 @@ X 包括_self (覆盖当前页面)&lt;br&gt;
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/06/html-xia/</id>
+        <id>http://yogmas-wang.top/2021/11/06/html-xia/</id>
         <title>Html-second</title>
-        <link rel="alternate" href="http://example.com/2021/11/06/html-xia/"/>
+        <link rel="alternate" href="http://yogmas-wang.top/2021/11/06/html-xia/"/>
         <content type="html">&lt;p&gt;。&lt;/p&gt;
 &lt;h1 id=&#34;html下&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html下&#34;&gt;#&lt;/a&gt; Html (下)&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
@@ -1042,9 +1042,9 @@ radio: 单选按钮&lt;/p&gt;
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/06/css1/</id>
+        <id>http://yogmas-wang.top/2021/11/06/css1/</id>
         <title>Css-first</title>
-        <link rel="alternate" href="http://example.com/2021/11/06/css1/"/>
+        <link rel="alternate" href="http://yogmas-wang.top/2021/11/06/css1/"/>
         <content type="html">&lt;h1 id=&#34;css1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css1&#34;&gt;#&lt;/a&gt; css1&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
 &lt;h4 id=&#34;1css基本架构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1css基本架构&#34;&gt;#&lt;/a&gt; 1.css 基本架构&lt;/h4&gt;
@@ -1289,9 +1289,9 @@ link: 未访问链接：把没有点击过的链接选择出来&lt;br&gt;
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/06/css2/</id>
+        <id>http://yogmas-wang.top/2021/11/06/css2/</id>
         <title>Css-second</title>
-        <link rel="alternate" href="http://example.com/2021/11/06/css2/"/>
+        <link rel="alternate" href="http://yogmas-wang.top/2021/11/06/css2/"/>
         <content type="html">&lt;h1 id=&#34;css2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css2&#34;&gt;#&lt;/a&gt; css2&lt;/h1&gt;
 &lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
 &lt;h4 id=&#34;1css选择器的性质&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1css选择器的性质&#34;&gt;#&lt;/a&gt; 1.css 选择器的性质&lt;/h4&gt;
@@ -1661,9 +1661,9 @@ content:’’;&lt;br&gt;
         <updated>2021-11-05T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2021/11/06/javascript-ji-chu-ban/</id>
+        <id>http://yogmas-wang.top/2021/11/06/javascript-ji-chu-ban/</id>
         <title>Javascript基础(未完待续)</title>
-        <link rel="alternate" href="http://example.com/2021/11/06/javascript-ji-chu-ban/"/>
+        <link rel="alternate" href="http://yogmas-wang.top/2021/11/06/javascript-ji-chu-ban/"/>
         <content type="html">&lt;h1 id=&#34;javascript&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javascript&#34;&gt;#&lt;/a&gt; javascript&lt;/h1&gt;
 &lt;h2 id=&#34;article-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#article-by-yogmas&#34;&gt;#&lt;/a&gt; Article By Yogmas&lt;/h2&gt;
 &lt;h3 id=&#34;js的组成&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#js的组成&#34;&gt;#&lt;/a&gt; js 的组成&lt;/h3&gt;

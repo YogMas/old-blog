@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>YogMas学习站 • Posts by &#34;前端&#34; category</title>
-        <link>http://example.com</link>
+        <link>http://yogmas-wang.top</link>
         <description></description>
         <language>zh-CN</language>
         <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
@@ -12,9 +12,9 @@
         <category>Html</category>
         <category>Javascript</category>
         <item>
-            <guid isPermalink="true">http://example.com/2021/11/06/html-shang/</guid>
+            <guid isPermalink="true">http://yogmas-wang.top/2021/11/06/html-shang/</guid>
             <title>Html-first</title>
-            <link>http://example.com/2021/11/06/html-shang/</link>
+            <link>http://yogmas-wang.top/2021/11/06/html-shang/</link>
             <category>Html</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;html上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html上&#34;&gt;#&lt;/a&gt; Html (上)&lt;/h1&gt;
@@ -109,9 +109,9 @@ X 包括_self (覆盖当前页面)&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/11/06/html-xia/</guid>
+            <guid isPermalink="true">http://yogmas-wang.top/2021/11/06/html-xia/</guid>
             <title>Html-second</title>
-            <link>http://example.com/2021/11/06/html-xia/</link>
+            <link>http://yogmas-wang.top/2021/11/06/html-xia/</link>
             <category>Html</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;。&lt;/p&gt;
@@ -298,9 +298,9 @@ radio: 单选按钮&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/11/06/css1/</guid>
+            <guid isPermalink="true">http://yogmas-wang.top/2021/11/06/css1/</guid>
             <title>Css-first</title>
-            <link>http://example.com/2021/11/06/css1/</link>
+            <link>http://yogmas-wang.top/2021/11/06/css1/</link>
             <category>Css</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;css1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css1&#34;&gt;#&lt;/a&gt; css1&lt;/h1&gt;
@@ -545,9 +545,9 @@ link: 未访问链接：把没有点击过的链接选择出来&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/11/06/css2/</guid>
+            <guid isPermalink="true">http://yogmas-wang.top/2021/11/06/css2/</guid>
             <title>Css-second</title>
-            <link>http://example.com/2021/11/06/css2/</link>
+            <link>http://yogmas-wang.top/2021/11/06/css2/</link>
             <category>Css</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;css2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#css2&#34;&gt;#&lt;/a&gt; css2&lt;/h1&gt;
@@ -917,9 +917,9 @@ content:’’;&lt;br&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2021/11/06/javascript-ji-chu-ban/</guid>
+            <guid isPermalink="true">http://yogmas-wang.top/2021/11/06/javascript-ji-chu-ban/</guid>
             <title>Javascript基础(未完待续)</title>
-            <link>http://example.com/2021/11/06/javascript-ji-chu-ban/</link>
+            <link>http://yogmas-wang.top/2021/11/06/javascript-ji-chu-ban/</link>
             <category>Javascript</category>
             <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;javascript&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javascript&#34;&gt;#&lt;/a&gt; javascript&lt;/h1&gt;
