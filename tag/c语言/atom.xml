@@ -738,6 +738,19 @@ interchange(&amp;amp;x,&amp;amp;y)
 &lt;/blockquote&gt;
 &lt;p&gt;该函数传递的就不是 x 和 y 的值 而是存储 x 和 y 的值的地址&lt;br&gt;
 函数中的第二个语句表示 把 u 地址中的值给 temp 第三个语句表示把 V 地址中存储的值赋值给 U 这样 U 地址存储的值变成了 V 地址存储的值第四个语句同样&lt;/p&gt;
+&lt;h5 id=&#34;小结来自c-primer-plus&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#小结来自c-primer-plus&#34;&gt;#&lt;/a&gt; 小结 (来自 C primer Plus)&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IlXp9K&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/07/IlXp9K.jpg&#34; alt=&#34;IlXp9K.jpg&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/IlOxtx&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/07/IlOxtx.jpg&#34; alt=&#34;IlOxtx.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关键概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关键概念&#34;&gt;#&lt;/a&gt; 关键概念&lt;/h4&gt;
+&lt;p&gt;想用 C 编出高效灵活的程序，必须理解函数.&lt;br&gt;
+ 函数是如何把信息从一个函数传递到另一函数 理解函数参数和返回值之间的工作原理&lt;br&gt;
+明白函数形参和其他局部变量属于函数私有因此 声明在不同函数中的同名变量是完全不同的变量&lt;br&gt;
+函数无法直接访问在其他函数中的变量 这样限制访问保护了数据的完整性&lt;br&gt;
+但是 当确实需要在函数中访问另一个函数的数据时 可以把指针作为函数的参数&lt;/p&gt;
+&lt;h4 id=&#34;本章小结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#本章小结&#34;&gt;#&lt;/a&gt; 本章小结&lt;/h4&gt;
+&lt;p&gt;函数使用参数把值传给函数 使用关键字 return 把值返回函数 必须在函数定义和函数原型中指定函数的原型，如果需要在被调函数中修改主调函数的变量，使用地址或指针作为参数&lt;br&gt;
+ ANSI C 提供了函数原型 允许编译器验证函数调用中使用的参数个数和类型是否正确&lt;br&gt;
+ C 函数可以调用本身 即递归 一些编程问题要用递归来解决 但是递归消耗内存多 效率不高 而且费时&lt;/p&gt;
 </content>
         <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>
