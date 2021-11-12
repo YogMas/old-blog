@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-07
+                    2021-11-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12k
+                    13.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    43 分
+                    51 分
                 </div>
                 
 
@@ -1171,6 +1171,165 @@ interchange(&amp;x,&amp;y)
 <p>函数使用参数把值传给函数 使用关键字 return 把值返回函数 必须在函数定义和函数原型中指定函数的原型，如果需要在被调函数中修改主调函数的变量，使用地址或指针作为参数<br>
  ANSI C 提供了函数原型 允许编译器验证函数调用中使用的参数个数和类型是否正确<br>
  C 函数可以调用本身 即递归 一些编程问题要用递归来解决 但是递归消耗内存多 效率不高 而且费时</p>
+<h3 id="数组和指针"><a class="markdownIt-Anchor" href="#数组和指针">#</a> 数组和指针</h3>
+<h4 id="数组"><a class="markdownIt-Anchor" href="#数组">#</a> 数组</h4>
+<p>数组：数据类型相同的一系列元素组成 通过声明告诉编译器数组中含有多少元素和这些元素的类型</p>
+<blockquote>
+<pre><code>float candy[365];
+char code[12];
+int states[50];
+</code></pre>
+</blockquote>
+<p>方括号中的数组是数组中的元素个数.<br>
+ 访问数组中的元素通过数组索引表示数组中的各元素。数组元素的标号从 0 开始 'candy [0]' 表示 candy 数组的第一个元素</p>
+<h5 id="初始化数组"><a class="markdownIt-Anchor" href="#初始化数组">#</a> 初始化数组</h5>
+<p>标量变量：只存储单个值的变量</p>
+<blockquote>
+<pre><code>int fix = 1 ;
+</code></pre>
+</blockquote>
+<p>C 语言用新的语法来初始化数组</p>
+<blockquote>
+<pre><code>int power[8] = {1,2,4,6,8,6,4,2}
+</code></pre>
+</blockquote>
+<p>用以逗号分隔的值列表 (用花括号括起来) 来初始化数组，各值之间用逗号分割.<br>
+ 使用 const 声明数组:<br>
+ 有时需要把数组设置为只读，如此 程序只能从数组中检索值，不能把新值写入数组，此时就应该用 const 声明和初始化数组</p>
+<blockquote>
+<pre><code>const int days[12] = {31,28,31,30,31,30,31,31,30,31,30,31}
+</code></pre>
+</blockquote>
+<p><strong>使用数组之前必须初始化</strong><br>
+当初始化列表中的值少于数组元素个数时，编译器会把剩余的元素都初始化为 0, 但是如果不初始化数组，数组中存储的将会是不确定的垃圾值.<br>
+ 但是如果初始化列表中的值多于数组元素个数时候编译器会进行报错<br>
+如果省略方括号中的数组编译器会根据初始化列表中的项数来确定数组的大小<br>
+通常使用 sizeof 运算符给出他的运算对象的大小 (单位为字节)</p>
+<blockquote>
+<pre><code>int days[] = {1,2,3};
+sizeof days[0] 表示数组中第一个元素的字节大小 //这里是4字节 因为一个int类型占据4字节
+sizeof days 表示数组中所有元素所占的字节大小
+我们通常使用数组中所有元素所占的字节大小来除以每一个元素的字节大小 得到数组中的元素数目
+sizeof days / sizeof days[0]
+</code></pre>
+</blockquote>
+<h5 id="指定初始化器c99"><a class="markdownIt-Anchor" href="#指定初始化器c99">#</a> 指定初始化器 (C99)</h5>
+<p>C99 增加的新特性：指定初始化器 利用该特性可以初始化指定的数组元素</p>
+<blockquote>
+<pre><code>int arr[6] = {[5]=212}; 把arr[5]初始化为212
+</code></pre>
+</blockquote>
+<p>在初始化一个元素后 未初始化的元素都会被设置为 0<br>
+ 如果初始化器后面有更多的值</p>
+<blockquote>
+<pre><code>[4] = 31,32,33   在days[4]被转化成31后 后面的数组会根据顺序转化 也就是说days[5]=32 以此类推
+</code></pre>
+</blockquote>
+<p>如果再次初始化元素 最后的初始化将会取代前面的初始化<br>
+数组中除了指定的初始化元素，其他的将会按照顺序排序</p>
+<blockquote>
+<p>int days [12] = {31,28,[4]=31} 此时 days [0] 就是 31 days [1] 就是 28<br>
+ 如果没有指定元素大小 例如  int days [] = {[1]=2}<br>
+ 此时园一期会把数组的大小设置为足够装得下初始化的值</p>
+</blockquote>
+<h5 id="给数组元素赋值"><a class="markdownIt-Anchor" href="#给数组元素赋值">#</a> 给数组元素赋值</h5>
+<p>声明数组后，可以借助数组下标 (或索引) 给数组元素赋值<br>
+ C 语言中只能使用循环给数组的元素依次赋值 不允许把数组作为一个单元赋给另一个数组<br>
+只有初始化允许使用花括号列表的形式赋值</p>
+<blockquote>
+<pre><code>int yaks[5];
+yaks[5] = {1,2,3,4,5};
+这样赋值是不起作用的
+</code></pre>
+</blockquote>
+<h5 id="数组边界"><a class="markdownIt-Anchor" href="#数组边界">#</a> 数组边界</h5>
+<p>使用数组时，必须确保下标是有效的值 不能超出边界<br>
+编译器不会检查数组下标是否使用得当，结果是未定义的</p>
+<h5 id="指定数组的大小"><a class="markdownIt-Anchor" href="#指定数组的大小">#</a> 指定数组的大小</h5>
+<p>声明数组只能在在方括号中使用整型常量表达式 另外表达式的值必须大于 0<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/IBGPoQ"><img src="https://z3.ax1x.com/2021/11/12/IBGPoQ.jpg" alt="IBGPoQ.jpg"></a></p>
+<h4 id="多维数组"><a class="markdownIt-Anchor" href="#多维数组">#</a> 多维数组</h4>
+<p>声明:flaot rain [5][12]; //rain 是一个内涵 5 个元素的数组 每个元素的类型都是 float [12]<br>
+ rain 的每个元素本身都是一个内涵 12 个 float 类型值的数组<br>
+例如:rain [0][0] 表示 rain 中的首个元素数组的首个元素</p>
+<blockquote>
+<pre><code>#include &lt;stdio.h&gt;
+#define MONTHS 12    // number of months in a year
+#define YEARS   5    // number of years of data
+int main(void)
+{
+    // initializing rainfall data for 2010 - 2014
+    const float rain[YEARS][MONTHS] =
+    {
+        {4.3,4.3,4.3,3.0,2.0,1.2,0.2,0.2,0.4,2.4,3.5,6.6},
+        {8.5,8.2,1.2,1.6,2.4,0.0,5.2,0.9,0.3,0.9,1.4,7.3},
+        {9.1,8.5,6.7,4.3,2.1,0.8,0.2,0.2,1.1,2.3,6.1,8.4},
+        {7.2,9.9,8.4,3.3,1.2,0.8,0.4,0.0,0.6,1.7,4.3,6.2},
+        {7.6,5.6,3.8,2.8,3.8,0.2,0.0,0.0,0.0,1.3,2.6,5.2}
+    };
+    int year, month;
+    float subtot, total;
+    
+    printf(" YEAR    RAINFALL  (inches)\n");
+    for (year = 0, total = 0; year &lt; YEARS; year++)
+    {             // for each year, sum rainfall for each month
+        for (month = 0, subtot = 0; month &lt; MONTHS; month++)
+            subtot += rain[year][month];
+        printf("%5d %15.1f\n", 2010 + year, subtot);
+        total += subtot; // total for all years
+    }
+    printf("\nThe yearly average is %.1f inches.\n\n",
+           total/YEARS);
+    printf("MONTHLY AVERAGES:\n\n");
+    printf(" Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct ");
+    printf(" Nov  Dec\n");
+    
+    for (month = 0; month &lt; MONTHS; month++)
+    {             // for each month, sum rainfall over years
+        for (year = 0, subtot =0; year &lt; YEARS; year++)
+            subtot += rain[year][month];
+        printf("%4.1f ", subtot/YEARS);
+    }
+    printf("\n");
+    
+    return 0;
+}
+</code></pre>
+</blockquote>
+<p>重点学习数组初始化和计算方案</p>
+<h5 id="初始化二维数组"><a class="markdownIt-Anchor" href="#初始化二维数组">#</a> 初始化二维数组</h5>
+<blockquote>
+<pre><code>sometype arl[5] = {val1,val2,val3,val4,val5}
+</code></pre>
+</blockquote>
+<p>val1 等是 sometype 类型的值</p>
+<blockquote>
+<pre><code>    const float rain[YEARS][MONTHS] =
+    {
+        {4.3,4.3,4.3,3.0,2.0,1.2,0.2,0.2,0.4,2.4,3.5,6.6},
+        {8.5,8.2,1.2,1.6,2.4,0.0,5.2,0.9,0.3,0.9,1.4,7.3},
+        {9.1,8.5,6.7,4.3,2.1,0.8,0.2,0.2,1.1,2.3,6.1,8.4},
+        {7.2,9.9,8.4,3.3,1.2,0.8,0.4,0.0,0.6,1.7,4.3,6.2},
+        {7.6,5.6,3.8,2.8,3.8,0.2,0.0,0.0,0.0,1.3,2.6,5.2}
+    };
+</code></pre>
+</blockquote>
+<p>初始化时候可以省略内部的花括号只需要保存最外部的花括号就行了，前提是每个元素都必须写上 并且数目不足，像这样内外花括号 可以使 元素书小于定义数时 编译器自动以 0 填充<br>
+如果省略内部花括号 编译器会按照先后顺序逐行初始化 直到用完所有的值，后面没有初始化元素被统一初始化为 0</p>
+<h5 id="其他多维数组"><a class="markdownIt-Anchor" href="#其他多维数组">#</a> 其他多维数组</h5>
+<p>三维数组: int box [10][20][30];<br>
+ 一维数组是一行数据 二维数组是数据表 三维数组是一叠数据表<br>
+处理几维数组就需要使用到几维嵌套循环</p>
+<h4 id="指针和数组"><a class="markdownIt-Anchor" href="#指针和数组">#</a> 指针和数组</h4>
+<p>系统中 地址按字节编扯，short 类型占用 2 字节等；在 C 中 指针加 1 指的是增加一个存储单元。对数组而言 这意味着 + 1 后的地址是下一个元素的地址；而不是下一个字节的地址 这卆为什么必须声明指针所指对象类型的原因之一 自算计要知道存储对象需要多少字节</p>
+<blockquote>
+<pre><code>dates+2 == &amp;dates[2];
+*(dates+2) ==dates[2];
+</code></pre>
+</blockquote>
+<p>** 注意间接运算符 * 的优先级要大于 +** 所以这里必须打括号</p>
+<p>例如数组名是 days   那么 days 也表示数组首元素的地址</p>
+<h4 id="函数数组和指针"><a class="markdownIt-Anchor" href="#函数数组和指针">#</a> 函数，数组和指针</h4>
 
                 
             </div>
@@ -1681,7 +1840,7 @@ interchange(&amp;x,&amp;y)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">28.5k</span>&nbsp;字
+                class="white-color">30.3k</span>&nbsp;字
             
             
             
