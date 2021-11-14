@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-12
+                    2021-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    13.9k
+                    14.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    51 分
+                    52 分
                 </div>
                 
 
@@ -1330,6 +1330,25 @@ int main(void)
 <p>** 注意间接运算符 * 的优先级要大于 +** 所以这里必须打括号</p>
 <p>例如数组名是 days   那么 days 也表示数组首元素的地址</p>
 <h4 id="函数数组和指针"><a class="markdownIt-Anchor" href="#函数数组和指针">#</a> 函数，数组和指针</h4>
+<blockquote>
+<pre><code>int sum(int * ar,int n)
+{
+int i;
+int total 0;
+for(i=0;i&lt;n;i++)
+total +=ar[i] 或者 *( ar + i );
+return total;
+}
+</code></pre>
+</blockquote>
+<p>第一个形参告诉该函数数组的地址和数据类型 第二个形参告诉函数该数组中的元素个数<br>
+关于函数的形参 还有一点要注意 只有在函数原型或函数定义头中才可以用 int ar [] 来代替 int * ar;<br>
+int * ar 和 int ar [] 都表示 ar 是一个指向 int 的指针 但是 int ar [] 只能用于声明形式函数但是他可以提醒读者 ar 指向的不仅仅是一个 int 类型值还是一个 int 类型数组的元素<br>
+函数原型可以省略参数名<br>
+但是在函数定义中不能省略参数名<br>
+我们的系统中用 8 字节存储地址 所以指针变量的大小是 8 字节 (其他系统中地址的大小可能不是 8 字节)</p>
+<h5 id="使用指针形参"><a class="markdownIt-Anchor" href="#使用指针形参">#</a> 使用指针形参</h5>
+<p>函数要处理数组必须知道何时开始，何时结束</p>
 
                 
             </div>
@@ -1840,7 +1859,7 @@ int main(void)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.3k</span>&nbsp;字
+                class="white-color">30.6k</span>&nbsp;字
             
             
             
