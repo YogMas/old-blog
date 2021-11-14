@@ -818,7 +818,8 @@ sizeof days / sizeof days[0]
  此时园一期会把数组的大小设置为足够装得下初始化的值&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h5 id=&#34;给数组元素赋值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#给数组元素赋值&#34;&gt;#&lt;/a&gt; 给数组元素赋值&lt;/h5&gt;
-&lt;p&gt;声明数组后，可以借助数组下标 (或索引) 给数组元素赋值&lt;br&gt;
+&lt;p&gt;AA&lt;br&gt;
+ 声明数组后，可以借助数组下标 (或索引) 给数组元素赋值&lt;br&gt;
  C 语言中只能使用循环给数组的元素依次赋值 不允许把数组作为一个单元赋给另一个数组&lt;br&gt;
 只有初始化允许使用花括号列表的形式赋值&lt;/p&gt;
 &lt;blockquote&gt;
@@ -933,7 +934,125 @@ int * ar 和 int ar [] 都表示 ar 是一个指向 int 的指针 但是 int ar 
 但是在函数定义中不能省略参数名&lt;br&gt;
 我们的系统中用 8 字节存储地址 所以指针变量的大小是 8 字节 (其他系统中地址的大小可能不是 8 字节)&lt;/p&gt;
 &lt;h5 id=&#34;使用指针形参&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用指针形参&#34;&gt;#&lt;/a&gt; 使用指针形参&lt;/h5&gt;
-&lt;p&gt;函数要处理数组必须知道何时开始，何时结束&lt;/p&gt;
+&lt;p&gt;函数要处理数组必须知道何时开始，何时结束&lt;br&gt;
+上面 sum 函数用一个整数形参表示待处理元素的元素个数和数据类型 但是这并不是给函数传递必备信息的唯一方法&lt;br&gt;
+还有一种方法是传递两个指针 第 1 个指针指明数组的开始处 (与前面用法相同), 第 2 个指针指明数组的结束处.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#define SIZE 10
+int sump(int * start, int * end);
+int main(void)
+{
+    int marbles[SIZE] = {20,10,5,39,4,16,19,26,31,20};
+    long answer;
+    
+    answer = sump(marbles, marbles + SIZE);
+    printf(&#34;The total number of marbles is %ld.\n&#34;, answer);
+    
+    return 0;
+}
+
+/* use pointer arithmetic   */
+int sump(int * start, int * end)
+{
+    int total = 0;
+    
+    while (start &amp;lt; end)
+    {
+        total += *start; // add value to total
+        start++;         // advance pointer to next element
+    }
+    
+    return total;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;指针 start 指向 marbles 数组的首元素 所以赋值表达式 total += &lt;em&gt;start 把首元素 (20) 加给 total 然后表达式 start&lt;ins&gt; 递增指针变量 start 使其指向数组的下一个元素 因为 start 是指向 int 的指针 start 递增 1 相当于其值递增 int 类型的大小&lt;br&gt;
+注意这里 sump () 函数用另一种方法结束加法循环 sump () 函数使用第二个指针 start &amp;lt; end 来结束循环&lt;br&gt;
+ whild 循环的测试条件是一个不相等的关系 所以循环最后处理的一个元素是 end 所指向位置的前一个元素 这意味着 end 指向的位置实际上在数组最后一个元素后面 C 保证在给数组分配空间时 之下宁数组后面第一个位置的指针仍然是有效的指针 这使得 while 循环的测试条件是有效的，因为 start 在循环最后的值是 end&lt;br&gt;
+answer = sump(marbles, marbles + SIZE);&lt;br&gt;
+ 下标从 0 开始 marbles+SIZE 指向数组末尾的下一个位置 如果 end 指向数组的最后一个元素而不是数组末尾的下个位置 则必须 - 1&lt;br&gt;
+ 这种写法不简洁也不好记 很容易导致标称错误&lt;br&gt;
+ **C 语言虽然保证了 marbles+SIZE 有效 但是对 marbles [SIZE](即存储在该位置上的值) 未作任何保证 所以程序不能访问该位置&lt;br&gt;
+循环体可以压缩成一行代码 total += *start&lt;/ins&gt;;&lt;br&gt;
+* 和 ++ 的优先级相同 结合律是从右往左 所以 start&lt;ins&gt; 先求值 然后才是 * start 也就是说 start 先递增后指向 使用后缀形式 start&lt;/ins&gt; 而不是 ++start 意味着先把指针指向位置上的值加到 total 上然后再递增指针切记 (*start)&lt;ins&gt; 是完全错误的这表示先使用 start 指向的指 然后再递增该值 而不是递增指针 这样指针将一直指向同一个位置 但是在该位置上的值发生了变化 虽然 * start&lt;/ins&gt; 的写法比较常用 但是&lt;/em&gt; (start++) 这样写更清楚&lt;/p&gt;
+&lt;h5 id=&#34;指针表示法和数组表示法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指针表示法和数组表示法&#34;&gt;#&lt;/a&gt; 指针表示法和数组表示法&lt;/h5&gt;
+&lt;p&gt;对于 C 语言而言 ar [i\ 和 *(ar + i) 这两个表达式都是等价的无论 ar 是数组名还是指针变量 这两个表达式都没问题 但是只要有当 ar 是指针变量的时候才能使用 arr++ 这样的表达式&lt;br&gt;
+指针表示法更接近机器语言 因此一些编译器在编译时能生成效率更高的代码&lt;/p&gt;
+&lt;h4 id=&#34;指针操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指针操作&#34;&gt;#&lt;/a&gt; 指针操作.&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;赋值&lt;/strong&gt;：可以把地址赋给指针 注意地址应该和指针类型兼容 也就是说不能把 double 类型的地址赋给指向 int 的指针至少要避免不明智的类型转换 C99/C11 已经不云讯这样做&lt;br&gt;
+&lt;strong&gt;解引用&lt;/strong&gt;:* 运算符给出指针指向地址上存储的值&lt;br&gt;
+&lt;strong&gt;取址&lt;/strong&gt;：和所有变量一样指针变量也有自己的地址和值 同样使用 &amp;amp; 给出指针本身的地址&lt;br&gt;
+&lt;strong&gt;指针和整数相加&lt;/strong&gt;：可以使用 + 运算符把指针和整数相加 或整数和指针相加 无论哪种情况 整数都会和指针指向类型的大小 (以字节为单位) 相乘然后把结果和初始位置相加 如果相加的结果超出了初始指针指向的数组范围 计算结果则是未定义的 除非正好超过数组末尾第一个位置&lt;br&gt;
+&lt;strong&gt;递增指针&lt;/strong&gt;：递增指向数组元素的指针可以让该指针移动至数组的下一个元素，但是指针自己的地址是不会发生变化的毕竟变量不会因为值发生变化就移动位置&lt;br&gt;
+&lt;strong&gt;指针减去一个整数&lt;/strong&gt;：大概和加法相同 但是这里和加法不同 &lt;strong&gt;指针必须是第 1 个运算对象 整数是第 2 个运算对象&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;递减指针&lt;/strong&gt;：类比递增指针&lt;br&gt;
+&lt;strong&gt;指针求差&lt;/strong&gt;：通常求差的两个指针分别指向同一个数组的不同元素，通过计算求出两元素之间的距离 差值的单位和数组类型的单位相同 只要两个指针都指向相同的数组 (或者其中一个指针指向数组后面的第 1 个地址) C 都能保证相减运算有效&lt;br&gt;
+&lt;strong&gt;比较&lt;/strong&gt;使用关系运算符可以比较两个指针的值 前提是两个指针都指向相同类型的对象&lt;br&gt;
+&lt;strong&gt; FBI WARNING 注意注意注意注意注意注意注意注意注意注意 FBI WARNING&lt;/strong&gt;&lt;br&gt;
+ 这里的减法有两种 一个指针减去另一个指针得到一个整数 或者用一个指针减去一个整数得到另一个指针&lt;br&gt;
+递增递减指针时还要注意一些问题 编译器不会检查指针是否指向数组元素 C 只能保证指向数组任意元素的指针和指向数组后面第一个位置的指针有效。但是如果递增或者递减一个指针后超出了这个范围则是未定义的 另外 可以解引用指向数组任意元素的指针但是即使指针指向数组后面一个位置是有效的也不能保证可以解引用这样的越界指针&lt;br&gt;
+创建一个指针时 系统只分配了存储指针本身的内存 并未分配存储数据的内存在使用指针之前必须先用已分配的地址初始化它&lt;/p&gt;
+&lt;h4 id=&#34;处理数组中的数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#处理数组中的数据&#34;&gt;#&lt;/a&gt; 处理数组中的数据&lt;/h4&gt;
+&lt;p&gt;C 通常都按值传递数据 因为这样做可以保证数据的完整性 如果函数使用的是原始数据的副本 就不会意外修改原始数据 但是处理数组的函数通常都需要使用原始数据因此这样的函数可以修改原数组 有时这正是我们需要的&lt;br&gt;
+然而其他函数并不需要修改数据 这样变成错误就可能会破坏原始数据&lt;/p&gt;
+&lt;h5 id=&#34;对形式参数使用const&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#对形式参数使用const&#34;&gt;#&lt;/a&gt; 对形式参数使用 const&lt;/h5&gt;
+&lt;p&gt;ANSI C 提供了一种预防手段 如果函数的意图不是修改数组中的数据内容 那么在函数原型和函数定义中声明形式参数时使用关键字 const&lt;br&gt;
+ 这样如果在函数中不小心使用了错误的表达式使原数组发生了改变，编译器会捕获这个错误并且生成一条错误信息.&lt;br&gt;
+ 使用 const 并不是要求原数组是常量而是该函数在处理数组时将其视为常量不可更改&lt;br&gt;
+一般而言如果编写的函数不用修改数组 那么在声明数组形参时最好使用 const&lt;/p&gt;
+&lt;h5 id=&#34;const的其他内容&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#const的其他内容&#34;&gt;#&lt;/a&gt; const 的其他内容&lt;/h5&gt;
+&lt;p&gt;虽然用 #define 指令可以创建类似功能的符号常量 但是 const 的用法更加灵活 可以创建 const 数组 const 指针和指向 const 的指针&lt;br&gt;
+指向 const 的指针通常用语函数形参中 表明该函数不会使用指针改变数据&lt;br&gt;
+把 const 数据或非 const 数据的地址初始化为指向 const 的指针或为其赋值是合法的&lt;br&gt;
+然后只能把非 const 数据的地址赋给普通指针&lt;br&gt;
+因此对函数的形参使用 const 不仅能保护数据 还能让函数处理 const 数组&lt;br&gt;
+ C 标准规定使用非 const 标识符改修 const 数据导致的结果是未定义的&lt;br&gt;
+ const 还可以声明并初始化一个&lt;strong&gt;不能指向别处&lt;/strong&gt;的指针&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;double rates[5] = {};
+double * const pc = rates;
+pc = &amp;amp;rates[2]; 不逊于 因为该指针不能指向别处
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以用这种指针修改它所指向的值 但是它只能指向初始化时设置的地址&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const double * const pc = rates;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在创建指针时使用两次 const 该指针既不能更改他所指向的地址 也不能更改它所指向地址上的值&lt;/p&gt;
+&lt;h4 id=&#34;指针和多维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指针和多维数组&#34;&gt;#&lt;/a&gt; 指针和多维数组&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;int zippo[4][2];  /内涵int数组的数组/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1. 数组名 zippo 是该数组首元素的地址 zippo 的首元素一个内含 2 个 int 值得数组 所以 zippo 是这个内涵两个 int 值的数组的地址&lt;br&gt;
+ 2.zippo 是数组首元素的地址 zippo [0] 那么就是数组首元素数组的首元素的值 zippo [0] 是一个占用一个 int 大小对象的地址 而 zippo 是一个占用两个 int 大小对象的地址 由于这个整数和内涵两个整数的数组都开始与同一个地址所以 zippo 和 zippo [0] 的值相同&lt;br&gt;
+ 3. 给指针或地址加 1 其值会增加对应类型的大小 &lt;strong&gt;在这方面 zippo 和 zippo [0] 不同&lt;/strong&gt; 因为 zippo 指向的对象占用了两个 int 大小 而 zippo [0] 指向的的对象只占用一个 int 大小&lt;br&gt;
+ 4. 在解引用一个指针或在数组名后使用带下标的 [] 运算符，得到解引用对象代表的值 *zippo 代表的是 zippo 首元素的值 而 zippo 首元素的值是一个数组那么这个数组的值就是 zippo 首元素数组的首元素的地址 这样来说 **zippo 和 *&amp;amp;zippo [0][0] 等价简而言之 zippo 是地址的地址，必须解引用两次才能获得原始值 地址的地址 或者指针的指针就是双重间接&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+     int zippo[4][2] = { { 2, 4 }, { 6, 8 }, { 1, 3 }, { 5, 7 } };
+
+     printf(&#34;   zippo = %p,    zippo + 1 = %p\n&#34;,zippo, zippo + 1);
+     printf(&#34;zippo[0] = %p, zippo[0] + 1 = %p\n&#34;,zippo[0], zippo[0] + 1);
+     printf(&#34;  *zippo = %p,   *zippo + 1 = %p\n&#34;,*zippo, *zippo + 1);
+     printf(&#34;zippo[0][0] = %d\n&#34;, zippo[0][0]);
+     printf(&#34;  *zippo[0] = %d\n&#34;, *zippo[0]);
+     printf(&#34;    **zippo = %d\n&#34;, **zippo);
+     printf(&#34;      zippo[2][1] = %d\n&#34;, zippo[2][1]);
+     printf(&#34;*(*(zippo+2) + 1) = %d\n&#34;, *(*(zippo + 2) + 1));
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;完整理解整个程序的输出结果&lt;/strong&gt;&lt;br&gt;
+特别注意与 zippo [2][1] 等价的指针表示法是 *(*(zippo+2)+1)&lt;br&gt;
+ 这张视图演示了数组地址 数组内容和指针之间的关系&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/Ic4B0s&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/14/Ic4B0s.png&#34; alt=&#34;Ic4B0s.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
