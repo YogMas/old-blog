@@ -1048,6 +1048,13 @@ int main(void)
 特别注意与 zippo [2][1] 等价的指针表示法是 *(*(zippo+2)+1)&lt;br&gt;
  这张视图演示了数组地址 数组内容和指针之间的关系&lt;br&gt;
 &lt;a href=&#34;https://imgtu.com/i/Ic4B0s&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/14/Ic4B0s.png&#34; alt=&#34;Ic4B0s.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;指向多维数组的指针&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指向多维数组的指针&#34;&gt;#&lt;/a&gt; 指向多维数组的指针&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;int (*pz) [2]  //表示pz指向一个内含两个int类型值得数组
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以上代码把 pz 声明为指向一个数组的指针 该数组含有两个 int 类型值&lt;br&gt;
+&lt;strong&gt;括号的原因是 [] 的优先级高于 *&lt;/strong&gt;&lt;/p&gt;
 </content>
         <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>
