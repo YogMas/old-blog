@@ -397,14 +397,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    16.9k
+                    18.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    62 分
+                    69 分
                 </div>
                 
 
@@ -1475,6 +1475,195 @@ int main(void)
 </blockquote>
 <p>以上代码把 pz 声明为指向一个数组的指针 该数组含有两个 int 类型值<br>
 <strong>括号的原因是 [] 的优先级高于 *</strong></p>
+<blockquote>
+<pre><code>int * pax[2]   此时pax是一个内涵两个指针元素的数组 每个元素都指向int的指针
+</code></pre>
+</blockquote>
+<hr>
+<blockquote>
+<pre><code>#include &lt;stdio.h&gt;
+int main(void)
+{
+     int zippo[4][2] = { { 2, 4 }, { 6, 8 }, { 1,   &gt;     3 }, { 5, 7 } };
+     int(*pz)[2];
+     pz = zippo;
+
+     printf("   pz = %p,    pz + 1 = %p\n",    pz,   &gt;     pz + 1);
+     printf("pz[0] = %p, pz[0] + 1 = %p\n",    pz  &gt;     [0], pz[0] + 1);
+     printf("  *pz = %p,   *pz + 1 = %p\n",      &gt;     *pz, *pz + 1);
+     printf("pz[0][0] = %d\n", pz[0][0]);
+     printf("  *pz[0] = %d\n", *pz[0]);
+     printf("    **pz = %d\n", **pz);
+     printf("      pz[2][1] = %d\n", pz[2][1]);
+     printf("*(*(pz+2) + 1) = %d\n", *(*(pz + 2) +   &gt;     1));
+
+     return 0;
+}
+</code></pre>
+</blockquote>
+<p>虽然 pz 是一个指针 不是数组名但是也可以用 pz [2][1] 这样的写法 可以用数组表示法或指针表示法来表示一个数组元素 既可以用数组名 也可以用指针名</p>
+<h5 id="指针的兼容性"><a class="markdownIt-Anchor" href="#指针的兼容性">#</a> 指针的兼容性</h5>
+<p>指针之间的赋值比数值类型之间的赋值要严格<br>
+不用类型转换就可以吧 int 类型的值赋给 double 类型的变量但是两个类型的指针不能这样做</p>
+<blockquote>
+<pre><code>int x = 20;
+const int y = 23;
+int * p1 = &amp;x;
+const int * p2 = &amp;y;
+const int ** pp2;
+p1 = p2;        // 不安全 -- 把const指针赋给非const指针
+p2 = p1;        // 有效 -- 把非const指针赋给const指针
+pp2 = &amp;p1;      // 不安全 –- 嵌套指针类型赋值
+</code></pre>
+</blockquote>
+<hr>
+<blockquote>
+<pre><code>int * pt;
+int (*pa)[3];
+int ar1[2][3];
+int ar2[3][2];
+int **p2;    // 一个指向指针的指针
+</code></pre>
+</blockquote>
+<hr>
+<blockquote>
+<pre><code>pt = &amp;ar1[0][0];     // 都是指向int的指针
+pt = ar1[0];         // 都是指向int的指针
+pt = ar1;            // 无效
+pa = ar1;            // 都是指向内含3个int类型元素数组的指针
+pa = ar2;            // 无效
+p2 = &amp;pt;            // 都是指向int *的指针
+*p2 = ar2[0];        // 都是指向int的指针
+p2 = ar2;            // 无效
+</code></pre>
+</blockquote>
+<p><strong>理解以上的代码</strong></p>
+<h5 id="函数和多维数组"><a class="markdownIt-Anchor" href="#函数和多维数组">#</a> 函数和多维数组</h5>
+<p>编写一个处理二维数组的函数 一种方法是 利用 for 循环把处理一维数组的函数应用到二维数组的每一行</p>
+<blockquote>
+<pre><code>int junk[3][4] = {{2,4,5,8},{3,5,6,9},{12,10,8,6}};
+int i ,j;
+int total = 0;
+for(i=0;i&lt;3;i++) 
+total +=sum(junk[i],4);
+</code></pre>
+</blockquote>
+<p>junk 是二维数组 那么 junk [i] 就是一堆数组 可将其视为二维数组的一行 sum () 函数计算二维数组的每行的综合 然后 for 循环再把每行的总和加起来<br>
+这种方法无法记录行和列的信息 用这种方法计算总和  行和列的信息并不重要 但如果每行代表一年 每列代表一个月 就还需要一个函数计算某列的综合 可以通过声明正确的形参变量来完成 以便函数能正确地传递数组</p>
+<blockquote>
+<pre><code>void somefunction(int (*pt)[4]);
+void somefunction(int pt[][4]);  //当且仅当pt是一个函数的形式参数时可以这样声明
+</code></pre>
+</blockquote>
+<p>第一个方括号是空的  表示 pt 是一个指针</p>
+<blockquote>
+<pre><code>// array2d.c -- 处理二维数组的函数
+#include &lt;stdio.h&gt;
+#define ROWS 3
+#define COLS 4
+void sum_rows(int ar[][COLS], int rows);
+void sum_cols(int [][COLS], int);        // 省略形参名，没问题
+int sum2d(int(*ar)[COLS], int rows);     // 另一种语法
+int main(void)
+{
+     int junk[ROWS][COLS] = {
+               { 2, 4, 6, 8 },
+               { 3, 5, 7, 9 },
+               { 12, 10, 8, 6 }
+     };
+
+     sum_rows(junk, ROWS);
+     sum_cols(junk, ROWS);
+     printf("Sum of all elements = %d\n", sum2d(junk, ROWS));
+
+     return 0;
+}
+
+void sum_rows(int ar[][COLS], int rows)
+{
+     int r;
+     int c;
+     int tot;
+
+     for (r = 0; r &lt; rows; r++)
+     {
+          tot = 0;
+          for (c = 0; c &lt; COLS; c++)
+               tot += ar[r][c];
+          printf("row %d: sum = %d\n", r, tot);
+     }
+}
+
+void sum_cols(int ar[][COLS], int rows)
+{
+     int r;
+     int c;
+     int tot;
+
+     for (c = 0; c &lt; COLS; c++)
+     {
+          tot = 0;
+          for (r = 0; r &lt; rows; r++)
+               tot += ar[r][c];
+          printf("col %d: sum = %d\n", c, tot);
+     }
+}
+
+int sum2d(int ar[][COLS], int rows)
+{
+     int r;
+     int c;
+     int tot = 0;
+
+     for (r = 0; r &lt; rows; r++)
+          for (c = 0; c &lt; COLS; c++)
+               tot += ar[r][c];
+
+     return tot;
+}
+</code></pre>
+</blockquote>
+<hr>
+<p>输出结果</p>
+<blockquote>
+<pre><code>row 0: sum = 20
+row 1: sum = 24
+row 2: sum = 36
+col 0: sum = 17
+col 1: sum = 19
+col 2: sum = 21
+col 3: sum = 23
+Sum of all elements = 80
+</code></pre>
+</blockquote>
+<p>一般而言 声明一个指向 N 维数组的指针时只能省略最左边方括号中的值<br>
+第一个方括号只用于表示这是一个指针 而其他方括号则用于描述指针所指向数据对象的类型</p>
+<h4 id="变长数组vla"><a class="markdownIt-Anchor" href="#变长数组vla">#</a> 变长数组 (VLA)</h4>
+<p>是否发现上面在处理二维数组的函数中 只把数组的行数作为函数的形参 而列数却内置在函数体内<br>
+因为 C 规定 数组的位数必须是常量 不能用变量来代替常量<br>
+ C99 新增了变长数组 允许使用变量表示数组的维度</p>
+<blockquote>
+<pre><code>int a = 4;
+int b = 5;
+double sales[a][b];  //一个变长数组
+</code></pre>
+</blockquote>
+<p>变长数组有一些限制 变长数组必须是自动存储类别 这意味着无论在函数中声明还是作为函数形参声明 都不能使用 static 和 extern 存储类别说明符 并且不能在声明中初始化他们<br>
+变长数组中的变 不是指可以修改已经创建数组的大小 而是 在创建数组时，可以使用变量指定数组的维度<br>
+声明一个带二维变长数组参数的函数</p>
+<blockquote>
+<pre><code>int sum2d(int row,int cols, int ar [rows][cols])   //有效
+int sum2d(int ar [rows][cols],int cols, int row)   //无效
+</code></pre>
+</blockquote>
+<p>因为 row 和 cols 用做第三个形参二维数组 ar 的两个维度 ar 的声明要使用 rows 和 cols 所以在形参列表中必须在声明 ar 之前先声明这两个形参<br>
+ C99/C11 标准规定 可以省略原型中的形参名 但是在这种情况下必须用型号来代替省略的维度</p>
+<blockquote>
+<pre><code>int sum2d(int,int,int ar[*][*]);
+</code></pre>
+</blockquote>
+<p>函数定义的形参列表中表明的变长数组并未实际创建数组<br>
+变长数组实际上是一个指针 这说明变长数组形参的函数实际上实在原始数组中处理数组 因此可以修改传入的数组</p>
 
                 
             </div>
@@ -1985,7 +2174,7 @@ int main(void)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.4k</span>&nbsp;字
+                class="white-color">34.9k</span>&nbsp;字
             
             
             
