@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>YogMas学习站 • Posts by &#34;c语言&#34; category</title>
+        <link>http://yogmas-wang.top</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
+        <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0800</lastBuildDate>
+        <category>Css</category>
+        <category>C语言</category>
+        <category>Html</category>
+        <category>Javascript</category>
+        <category>icoding答案</category>
+        <item>
+            <guid isPermalink="true">http://yogmas-wang.top/2021/11/06/dian-ke-icoding/</guid>
+            <title>电科icoding答案</title>
+            <link>http://yogmas-wang.top/2021/11/06/dian-ke-icoding/</link>
+            <category>icoding答案</category>
+            <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;c语言-icoding答案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言-icoding答案&#34;&gt;#&lt;/a&gt; C 语言 - icoding 答案&lt;/h1&gt;
+&lt;h2 id=&#34;the-article-made-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-made-by-yogmas&#34;&gt;#&lt;/a&gt; The article made by YogMas&lt;/h2&gt;
+&lt;h3 id=&#34;实验一&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实验一&#34;&gt;#&lt;/a&gt; 实验一&lt;/h3&gt;
+&lt;h4 id=&#34;2-4计算税金&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-4计算税金&#34;&gt;#&lt;/a&gt; 2-4：计算税金&lt;/h4&gt;
+&lt;p&gt;编写⼀个程序，要求⽤户输⼊⼀个美元数量，然后显示出增加 5% 税率后的相应⾦额。&lt;/p&gt;
+&lt;p&gt;Enter an amount: 100.00&lt;br&gt;
+with tax added: $105.00&lt;/p&gt;
+&lt;p&gt;输⼊的⾦额为⼤于 0 的两位数浮点数&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    float amount,final;
+    printf(&#34;Enter an amount:&#34;);
+    scanf(&#34;%f&#34;,&amp;amp;amount);
+    // 获取用户的输入的的输入输入输入
+    final = amount * 1.05;
+    printf(&#34;get the final money:$%.2f&#34;,final);
+    return 0;
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;2-7计算账单&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-7计算账单&#34;&gt;#&lt;/a&gt; 2-7：计算账单&lt;/h4&gt;
+&lt;p&gt;编写⼀个程序，要求⽤户输出⼀个美元数量，然后显示出如何⽤最少 20 美元、10 美元、5 美元和 1 美元来付款。&lt;/p&gt;
+&lt;p&gt;Enter a dollar amount: 93&lt;br&gt;
+$20 bills: 4&lt;br&gt;
+$10 bills: 1&lt;br&gt;
+$5 bills: 0&lt;br&gt;
+$1 bills: 3&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int one,two,three,four,five;
+    printf(&#34;enter an amount:  \n&#34;);
+    
+    scanf(&#34;%d&#34;,&amp;amp;one);
+    two = one / 20;
+    three = (one - two*20)/10;
+    four = (one-two*20-three*10)/5;
+    five = (one-two*20-three*10-four*5);
+    printf(&#34;this is $20 bills:%d,$10 bills:%d,$5bills %d,$1 bills %d&#34;,two,three,four,five);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;2-8还贷计算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-8还贷计算&#34;&gt;#&lt;/a&gt; 2-8：还贷计算&lt;/h4&gt;
+&lt;p&gt;编程计算第⼀、第⼆、第三个⽉还贷后剩余的贷款⾦额。&lt;/p&gt;
+&lt;p&gt;Enter amout of loan: 20000.00&lt;br&gt;
+Enter interest rate: 6.0&lt;br&gt;
+Enter monthly payment: 386.66&lt;/p&gt;
+&lt;p&gt;Balance remaining after first payment: $19713.34&lt;br&gt;
+Balance remaining after second payment: $19425.25&lt;br&gt;
+Balance remaining after third payment: $19135.71&lt;/p&gt;
+&lt;p&gt;提示：每个月的贷款余额减去还款金额后，还需要加上贷款余额与月利率的乘积。月利率的计算方法是把用户输入的利率转换成百分数再除以 12。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    float loan,rate1,rate2,payment,one,two,three;
+    printf(&#34;please enter ur loan: \n&#34;);
+    scanf(&#34;%f&#34;,&amp;amp;loan);
+    printf(&#34;please enter ur rate: \n&#34;);
+    scanf(&#34;%f&#34;,&amp;amp;rate1);
+    printf(&#34;please enter ur monthly payment: \n&#34;);
+    scanf(&#34;%f&#34;,&amp;amp;payment);
+    rate2=rate1*0.01/12;
+    one=(loan-payment)+loan*rate2;
+    two=(one-payment)+one*rate2;
+    three=(two-payment)+two*rate2;
+    printf(&#34;this is ur Balance remaining after first payment:%.2f,second:%.2f,third:%.2f&#34;,one,two,three);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;3-1日期格式转化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-1日期格式转化&#34;&gt;#&lt;/a&gt; 3-1：⽇期格式转化&lt;/h4&gt;
+&lt;p&gt;编写⼀个程序，以⽉ / ⽇ / 年（即 mm/dd/yy）的格式接受⽤户录⼊的⽇期信息，并以年⽉⽇（即 yyyymmdd）的格式将其显示出来。&lt;/p&gt;
+&lt;p&gt;Enter a date (mm/dd/yyyy): 2/17/2011&lt;br&gt;
+You entered the date 20110217&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include&amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int year,month,day;    
+    printf(&#34;please enter the date: .\n&#34;);
+    scanf(&#34;%d/%d/%d&#34;,&amp;amp;month,&amp;amp;day,&amp;amp;year);
+    printf(&#34;this is the date:%04d%02d%02d&#34;,year,month,day);
+    return 0;
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;3-6分数加法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-6分数加法&#34;&gt;#&lt;/a&gt; 3-6：分数加法&lt;/h4&gt;
+&lt;p&gt;修改如下程序（ 3.2 节的 addfrac.c ），使⽤户可以同时输⼊两个分数，中间⽤加号隔开：&lt;/p&gt;
+&lt;p&gt;Enter two fractions separated by a plus sign: 5/6+3/4&lt;br&gt;
+The sum is 38/24&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int fenzi1,fenzi2,fenmu1,fenmu2,sum1,sum2;
+    printf(&#34;please enter the  fractions: \n&#34;);
+    scanf(&#34;%d/%d+%d/%d&#34;,&amp;amp;fenzi1,&amp;amp;fenmu1,&amp;amp;fenzi2,&amp;amp;fenmu2);
+    sum1=fenzi1*fenmu2+fenzi2*fenmu1;
+    sum2=fenmu1*fenmu2;
+    printf(&#34;this is the sum:%d/%d&#34;,sum1,sum2);
+    return 0;
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;实验二&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实验二&#34;&gt;#&lt;/a&gt; 实验二&lt;/h3&gt;
+&lt;h4 id=&#34;5-2-24小时制-12小时制转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-2-24小时制-12小时制转换&#34;&gt;#&lt;/a&gt; 5-2： 24 ⼩时制 - 12 ⼩时制转换&lt;/h4&gt;
+&lt;p&gt;编写⼀个程序，要求⽤户输⼊ 24 ⼩时制的时间，将其转换为 12 ⼩时制的格式。&lt;/p&gt;
+&lt;p&gt;Enter a 24-hour time: 21:11&lt;br&gt;
+Equivalent 12-hour time: 9:11 PM&lt;/p&gt;
+&lt;p&gt;Enter a 24-hour time: 0:01&lt;br&gt;
+Equivalent 12-hour time: 12:01 AM&lt;/p&gt;
+&lt;p&gt;注意，不要把 12:00 显示为 0:00。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int enter1,enter2,b,c;
+    printf(&#34;please enter the time  \n&#34;);
+    scanf(&#34;%d:%d&#34;,&amp;amp;enter1,&amp;amp;enter2);
+    b=enter1-12;
+    c=enter1+12;
+    if(12&amp;lt;enter1&amp;amp;&amp;amp;enter1&amp;lt;24) printf(&#34;this is ur time:%d:%d PM\n&#34;,b,enter2);
+    if(0&amp;lt;enter1&amp;amp;&amp;amp;enter1&amp;lt;12) printf(&#34;this is ur time: %d:%d AM\n&#34;,enter1,enter2);
+    if(enter1==0) printf (&#34;this is ur time: %d:%d AM\n&#34;,c,enter2);
+    if(enter1==12) printf (&#34;this is ur timer :  %d:%d PM\n&#34;,enter1,enter2);
+    return 0 ;
+        
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;5-4-速等级与描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-4-速等级与描述&#34;&gt;#&lt;/a&gt; 5-4： ⻛速等级与描述&lt;/h4&gt;
+&lt;p&gt;下⾯是⽤于测量⻛⼒的蒲福⻛⼒等级的简化版，编写⼀个程序，要求⽤户输⼊⻛速（海⾥ / ⼩时），然后显示相应的描述。&lt;/p&gt;
+&lt;p&gt;速率（海⾥ / ⼩时）	描述&lt;br&gt;
+⼩于 1	Calm（⽆⻛）&lt;br&gt;
+1~3	Light air（轻⻛）&lt;br&gt;
+4~27	Breeze（微⻛）&lt;br&gt;
+28~47	Gale（⼤⻛）&lt;br&gt;
+48~63	Storm（暴⻛）&lt;br&gt;
+⼤于 63	Hurricane（飓⻛）&lt;br&gt;
+输出范例：Enter a wind speed: 1&lt;/p&gt;
+&lt;p&gt;Light air&lt;/p&gt;
+&lt;p&gt;Enter a wind speed: 27&lt;/p&gt;
+&lt;p&gt;Breeze&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int speed;
+    printf(&#34;please enter ur wind speed \n&#34;);
+    scanf(&#34;%d&#34;,&amp;amp;speed);
+    if(speed&amp;lt;1) printf(&#34;Calm&#34;);
+    if(speed&amp;gt;=1&amp;amp;&amp;amp;speed&amp;lt;=3) printf(&#34;Light air&#34;);
+    if(speed&amp;gt;=4&amp;amp;&amp;amp;speed&amp;lt;=27) printf(&#34;Breeze&#34;);
+    if(speed&amp;gt;=28&amp;amp;&amp;amp;speed&amp;lt;=47) printf(&#34;Gale&#34;);
+    if(speed&amp;gt;=48&amp;amp;&amp;amp;speed&amp;lt;=63) printf(&#34;Storm&#34;);
+    if(speed&amp;gt;63) printf(&#34;Hurricane&#34;);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;5-6通用产品代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-6通用产品代码&#34;&gt;#&lt;/a&gt; 5-6：通⽤产品代码&lt;/h4&gt;
+&lt;p&gt;修改如下（4.1 节的 upc.c）程序，使其可以检测 UPC 的有效性。在⽤户输⼊ UPC 后，程序将输出 VALID 或 NOT VALID 。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;/p&gt;
+&lt;p&gt;Enter the first (single) digit: 0&lt;br&gt;
+Enter first group of five digits: 13800&lt;br&gt;
+Enter second group of five digits: 15173&lt;br&gt;
+Enter the last (single) digit: 5&lt;br&gt;
+VALID&lt;/p&gt;
+&lt;p&gt;Enter the first (single) digit: 0&lt;br&gt;
+Enter first group of five digits: 51500&lt;br&gt;
+Enter second group of five digits: 24128&lt;br&gt;
+Enter the last (single) digit: 7&lt;br&gt;
+NOT VALID&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int d, i1, i2, i3, i4, i5, j1, j2, j3, j4, j5, first_sum, second_sum, total, total2, g;
+
+    printf(&#34;Enter the first (single) digit: \n&#34;);
+    scanf(&#34;%1d&#34;, &amp;amp;d);
+
+    printf(&#34;Enter the first group of five digits: \n&#34;);
+    scanf(&#34;%1d%1d%1d%1d%1d&#34;, &amp;amp;i1, &amp;amp;i2, &amp;amp;i3, &amp;amp;i4, &amp;amp;i5);
+
+    printf(&#34;Enter the second group of five digits: \n&#34;);
+    scanf(&#34;%1d%1d%1d%1d%1d&#34;, &amp;amp;j1, &amp;amp;j2, &amp;amp;j3, &amp;amp;j4, &amp;amp;j5);
+
+    printf(&#34;please Enter the last (single) digit:   \n &#34;);
+    scanf(&#34;%d&#34;, &amp;amp;g);
+
+    first_sum = d + i2 + i4 + j1 + j3 + j5;
+    second_sum = i1 + i3 + i5 + j2 + j4;
+    total = 3 * first_sum + second_sum;
+    total2 = 9 - ((total - 1) % 10);
+
+    if (g == total2)
+        printf(&#34;VALID \n&#34;);
+    else
+        printf(&#34;NOT VALID  \n&#34;);
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;5-10将百分制转换为等级制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-10将百分制转换为等级制&#34;&gt;#&lt;/a&gt; 5-10：将百分制转换为等级制&lt;/h4&gt;
+&lt;p&gt;利⽤ switch 语句编写⼀个程序，把⽤数字表示的成绩转化为字⺟表示的等级。&lt;/p&gt;
+&lt;p&gt;使⽤下⾯的等级评定规则：A 为 90&lt;sub&gt;100，B 为 80&lt;/sub&gt;89，C 为 70&lt;sub&gt;79，D 为 60&lt;/sub&gt;69，F 为 0~59。如果成绩⾼于 100 或低于 0 显示出错信息。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;br&gt;
+Enter numerical grade: 84&lt;br&gt;
+Letter grade: B&lt;/p&gt;
+&lt;p&gt;Enter numerical grade: -1&lt;br&gt;
+Error, grade must be between 0 and 100.&lt;/p&gt;
+&lt;p&gt;提示：把成绩拆分成 2 个数字，然后使⽤ switch 语句判定⼗位上的数字。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int grade1, grade2;
+    printf(&#34;please enter ur numerical grade   \n&#34;);
+    scanf(&#34;%d&#34;, &amp;amp;grade1);
+    grade2 = grade1 / 10;
+    if (-10 &amp;lt; grade1 &amp;amp;&amp;amp; grade1 &amp;lt; 0)
+        printf(&#34;Error, grade must be between 0 and 100.\n&#34;);
+    else
+
+        if (100 &amp;lt; grade1 &amp;amp;&amp;amp; grade1 &amp;lt; 110)
+        printf(&#34;Error, grade must be between 0 and 100.\n&#34;);
+    else
+        switch (grade2)
+        {
+        case 10:
+        case 9:
+            printf(&#34;Letter grade: A \n&#34;);
+            break;
+        case 8:
+            printf(&#34;Letter grade: B \n&#34;);
+            break;
+        case 7:
+            printf(&#34;Letter grade: C \n&#34;);
+            break;
+        case 6:
+            printf(&#34;Letter grade: D \n&#34;);
+            break;
+        case 5:
+        case 4:
+        case 3:
+        case 2:
+        case 1:
+        case 0:
+            printf(&#34;Letter grade: F \n&#34;);
+            break;
+        default:
+            printf(&#34;Error, grade must be between 0 and 100.\n&#34;);
+        }
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;6-2最大公约数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-2最大公约数&#34;&gt;#&lt;/a&gt; 6-2：最⼤公约数&lt;/h4&gt;
+&lt;p&gt;编写程序，要求⽤户输⼊两个整数，然后计算这两个整数的最⼤公约数（GCD, Greatest Common Divisor）。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;/p&gt;
+&lt;p&gt;Enter two integers: 12 28&lt;br&gt;
+Greatest common divisor: 4&lt;/p&gt;
+&lt;p&gt;Enter two integers：1 9&lt;br&gt;
+Greatest common divisor：1&lt;/p&gt;
+&lt;p&gt;提示：求最⼤公约数的经典算法 Euclid 算法如下：&lt;br&gt;
+分别让变量 m 和 n 存储两个整数。如果 n 为 0，那么停⽌操作，m 中的值是 GCD ；否则计算 m 除以 n 的余数，把 n 保存到 m 中，并把余数保存到 n 中；重复上述操作，每次都先判断 n 是否为 0 。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int m, n, s, l;
+    printf(&#34;please Enter two integers:     \n&#34;);
+    scanf(&#34;%d %d&#34;, &amp;amp;m, &amp;amp;n);
+    while (n != 0)
+    {
+        if (m &amp;gt;= n)
+        {
+            s = m % n;
+            m = n;
+            n = s;
+        }
+        else
+        {
+            l = m;
+            m = n;
+            n = l;
+        }
+    }
+    printf(&#34;GCD=%d&#34;, m);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;6-4股经纪人的佣金&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-4股经纪人的佣金&#34;&gt;#&lt;/a&gt; 6-4：股经纪⼈的佣⾦&lt;/h4&gt;
+&lt;p&gt;在下列程序（ 5.2 节的 broker.c ）中添加循环，以便⽤户可以输⼊多笔交易并且程序可以计算每次的佣⾦。程序在⽤户输⼊的交易额为 0 时终⽌。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;/p&gt;
+&lt;p&gt;Enter value of trade: 30000&lt;br&gt;
+Commission：$166.00&lt;/p&gt;
+&lt;p&gt;Enter value of trade: 20000&lt;br&gt;
+Commission：$144.00&lt;br&gt;
+Enter value of trade: 0&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+
+int main(void)
+{
+    float commission, value;
+
+    printf(&#34;Enter value of trade: &#34;);
+    scanf(&#34;%f&#34;, &amp;amp;value);
+
+    while (value != 0)
+    {
+        if (value &amp;lt; 2500.00f)
+            commission = 30.00f + .017f * value;
+        else if (value &amp;lt; 6250.00f)
+            commission = 56.00f + .0066f * value;
+        else if (value &amp;lt; 20000.00f)
+            commission = 76.00f + .0034f * value;
+        else if (value &amp;lt; 50000.00f)
+            commission = 100.00f + .0022f * value;
+        else if (value &amp;lt; 500000.00f)
+            commission = 155.00f + .0011f * value;
+        else
+            commission = 255.00f + .0009f * value;
+
+        if (commission &amp;lt; 39.00f)
+            commission = 39.00f;
+
+        printf(&#34;Commission: $%.2f\n\n&#34;, commission);
+        printf(&#34;Enter value of trade: &#34;);
+        scanf(&#34;%f&#34;, &amp;amp;value);
+    }
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;6-6偶数平方&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-6偶数平方&#34;&gt;#&lt;/a&gt; 6-6：偶数平⽅&lt;/h4&gt;
+&lt;p&gt;编写程序，提示⽤户输⼊⼀个数 n，然后显示出 1~n 的所有偶数的平⽅值。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;br&gt;
+Enter a number: 100&lt;br&gt;
+4&lt;br&gt;
+16&lt;br&gt;
+36&lt;br&gt;
+64&lt;br&gt;
+100&lt;/p&gt;
+&lt;p&gt;Enter a number: 50&lt;br&gt;
+4&lt;br&gt;
+16&lt;br&gt;
+36&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int i, a, b;
+    printf(&#34;please enter a number:  \n&#34;);
+    scanf(&#34;%d&#34;, &amp;amp;i);
+    for (a = 2; a * a &amp;lt;= i; a = a + 2)
+    {
+        b = a * a;
+        printf(&#34;%d \n&#34;, b);
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;6-8日历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-8日历&#34;&gt;#&lt;/a&gt; 6-8：日历&lt;/h4&gt;
+&lt;p&gt;编写程序显示单⽉的⽇历。⽤户指定这个⽉的天数和该⽉起始⽇是星期⼏。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;/p&gt;
+&lt;p&gt;Enter number of days in month: 31&lt;/p&gt;
+&lt;p&gt;Enter starting day of the week(1=Sun, 7=Sat): 3&lt;/p&gt;
+&lt;p&gt;日	一	二	三	四	五	六&lt;br&gt;
+ 1	2	 3	 4	 5&lt;br&gt;
+6	 7	 8	 9	10	11	12&lt;br&gt;
+13	14	15	16	17	18	19&lt;br&gt;
+20	21	22	23	24	25	26&lt;br&gt;
+27	28	29	30	31&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int a, b, c, i, d;
+    printf(&#34;Enter number of days in month: \n&#34;);
+    scanf(&#34;%d&#34;, &amp;amp;a);
+    printf(&#34;Enter starting day of the week(1=Sun, 7=Sat) \n&#34;);
+    scanf(&#34;%d&#34;, &amp;amp;b);
+    printf(&#34;Su Mo Tu We Th Fr Sa \n&#34;);
+    for (c = 1; c &amp;lt; b; c++)
+    {
+        printf(&#34;   &#34;);
+    }
+    for (i = 1; i &amp;lt;= a; i++)
+    {
+        printf(&#34;%2d &#34;, i);
+        d = (i + b - 1) % 7;
+        if (d == 0)
+        {
+            printf(&#34; \n&#34;);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;实验三&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实验三&#34;&gt;#&lt;/a&gt; 实验三&lt;/h3&gt;
+&lt;h4 id=&#34;7-4翻译&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-4翻译&#34;&gt;#&lt;/a&gt; 7-4：翻译&lt;/h4&gt;
+&lt;p&gt;编写程序可以把字⺟格式的电话号码翻译成数值格式：&lt;/p&gt;
+&lt;p&gt;Enter phone number: CALLATT&lt;/p&gt;
+&lt;p&gt;2255288&lt;/p&gt;
+&lt;p&gt;如果没有电话在身边，参考这⾥给出的字⺟在键盘上的对应关系：（2=ABC，3=DEF，4=GHI，5=JKL，6=MNO，7=PQRS，8=TUV，9=WXYZ）原始电话号码中的⾮字⺟字符（例如数字或标点符号）保持不变：&lt;/p&gt;
+&lt;p&gt;Enter phone number: 1-800-COL-LECT1-800-265-5328&lt;/p&gt;
+&lt;p&gt;可以假设任何⽤户输⼊的字⺟都是⼤写字⺟。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;/p&gt;
+&lt;p&gt;Enter phone number: 1-DCKS-A2D-OLED&lt;/p&gt;
+&lt;p&gt;1-3257-223-6533&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    char ch;
+    printf(&#34;Enter phone number: \n&#34;);
+    while ((ch = getchar()) != &#39;\n&#39;)
+    {
+        if (ch == &#39;A&#39; || ch == &#39;B&#39; || ch == &#39;C&#39;)
+        {
+            printf(&#34;2&#34;);
+        }
+        else if (ch == &#39;D&#39; || ch == &#39;E&#39; || ch == &#39;F&#39;)
+        {
+            printf(&#34;3&#34;);
+        }
+        else if (ch == &#39;G&#39; || ch == &#39;H&#39; || ch == &#39;I&#39;)
+        {
+            printf(&#34;4&#34;);
+        }
+        else if (ch == &#39;J&#39; || ch == &#39;K&#39; || ch == &#39;L&#39;)
+        {
+            printf(&#34;5&#34;);
+        }
+        else if (ch == &#39;M&#39; || ch == &#39;N&#39; || ch == &#39;O&#39;)
+        {
+            printf(&#34;6&#34;);
+        }
+        else if (ch == &#39;P&#39; || ch == &#39;Q&#39; || ch == &#39;R&#39; || ch == &#39;S&#39;)
+        {
+            printf(&#34;7&#34;);
+        }
+        else if (ch == &#39;T&#39; || ch == &#39;U&#39; || ch == &#39;V&#39;)
+        {
+            printf(&#34;8&#34;);
+        }
+        else if (ch == &#39;W&#39; || ch == &#39;X&#39; || ch == &#39;Y&#39; || ch == &#39;Z&#39;)
+        {
+            printf(&#34;9&#34;);
+        }
+        else
+        {
+            printf(&#34;%c&#34;, ch);
+        }
+    }
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;7-12表达式求值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-12表达式求值&#34;&gt;#&lt;/a&gt; 7-12：表达式求值&lt;/h4&gt;
+&lt;p&gt;编写程序对表达式求值。&lt;/p&gt;
+&lt;p&gt;Enter an expression: 1+2.5*3&lt;br&gt;
+Value of expression: 10.5&lt;/p&gt;
+&lt;p&gt;表达式中的操作数是浮点数，运算符是 +、-、* 和 /。表达式从左向右求值（所有运算符的优先级都⼀样）。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;/p&gt;
+&lt;p&gt;Enter an expression: 2+3*4-5/2&lt;br&gt;
+Value of expression: 7.5&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    float a, b;
+    char ch;
+    printf(&#34;Enter an expressio: \n&#34;);
+    scanf(&#34;%f&#34;, &amp;amp;a);
+    while ((ch = getchar()) != &#39;\n&#39;)
+    {
+        scanf(&#34;%f&#34;, &amp;amp;b);
+        switch (ch)
+        {
+        case &#39;+&#39;:
+            a = a + b;
+            break;
+        case &#39;-&#39;:
+            a = a - b;
+            break;
+        case &#39;*&#39;:
+            a = a * b;
+            break;
+        case &#39;/&#39;:
+            a = a / b;
+            break;
+        default:
+            break;
+        }
+    }
+    printf(&#34;Value of expression: %f&#34;, a);
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;8-2出现次数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-2出现次数&#34;&gt;#&lt;/a&gt; 8-2：出现次数&lt;/h4&gt;
+&lt;p&gt;修改如下程序 (8.1 节的 repdigit.c)，使其打印⼀份列表，显示出每个数字在数中出现的次数。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;/p&gt;
+&lt;p&gt;Enter a number: 41271092&lt;/p&gt;
+&lt;p&gt;Digit:	0	1	2	3	4	5	6	7	8	9&lt;br&gt;
+Occurrences:	1	2	2	0	1	0	0	1	0	1&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    char ch;
+    int appear[10] = {0};
+    int a ;
+    printf(&#34;Enter a number: \n&#34;);
+    while ((ch = getchar()) != &#39;\n&#39;)
+    {
+     a = ch - 48;
+        appear[a]++;
+    }
+    printf(&#34;Digit:	    0 1 2 3 4 5 6 7 8 9 \n&#34;);
+    printf(&#34;Occurrences:%d %d %d %d %d %d %d %d %d %d&#34;, appear[0], appear[1], appear[2], appear[3], appear[4], &amp;gt;     appear[5], appear[6], appear[7], appear[8], appear[9]);
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
