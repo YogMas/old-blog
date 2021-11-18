@@ -558,6 +558,194 @@ int main(void)
     printf(&#34;Digit:	    0 1 2 3 4 5 6 7 8 9 \n&#34;);
     printf(&#34;Occurrences:%d %d %d %d %d %d %d %d %d %d&#34;, appear[0], appear[1], appear[2], appear[3], appear[4], &amp;gt;     appear[5], appear[6], appear[7], appear[8], appear[9]);
     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;8-9随机步法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-9随机步法&#34;&gt;#&lt;/a&gt; 8-9 随机步法&lt;/h4&gt;
+&lt;p&gt;8-9：随机步法（Random Walk）&lt;/p&gt;
+&lt;p&gt;编写程序，⽣成⼀种贯穿 10×10 字符数组（初始时全为字符’.’）的 “随机步法”。程序必须随机地从⼀个元素 “⾛到” 另⼀个元素，每次都向上、向下、向左或向右移动⼀个元素位置。已访问过的元素按访问顺序⽤字⺟ A 到 Z 进⾏标记。&lt;/p&gt;
+&lt;p&gt;下⾯是⼀个输出示例：&lt;/p&gt;
+&lt;p&gt;A	.	.	.	.	.	.	.	.	.&lt;br&gt;
+B	C	D	.	.	.	.	.	.	.&lt;br&gt;
+.	F	E	.	.	.	.	.	.	.&lt;br&gt;
+H	G	.	.	.	.	.	.	.	.&lt;br&gt;
+I	.	.	.	.	.	.	.	.	.&lt;br&gt;
+J	.	.	.	.	.	.	.	Z	.&lt;br&gt;
+K	.	.	R	S	T	U	V	Y	.&lt;br&gt;
+L	M	P	Q	.	.	.	W	X	.&lt;br&gt;
+.	N	O	.	.	.	.	.	.	.&lt;br&gt;
+ 利⽤ srand 函数和 rand 函数（⻅程序 deal.c）产⽣随机数，然后查看次数除以 4 的余数。余数⼀共有 4 种可能的值（0、1、2 和 3），指示下⼀次移动的 4 种可能⽅向。在执⾏移动之前，需要检查两项内容：⼀是不能⾛到数组外⾯，⼆是不能⾛到已有字⺟标记的位置。只要⼀个条件不满⾜，就得尝试换⼀个⽅向移动。如果 4 个⽅向都堵住了，程序就必须终⽌了。下⾯是提前结束的⼀个示例:&lt;/p&gt;
+&lt;p&gt;A	B	G	H	I	.	.	.	.	.&lt;br&gt;
+.	C	F	O	J	K	.	.	.	.&lt;br&gt;
+.	D	E	N	M	L	.	.	.	.&lt;br&gt;
+.	.	.	.	.	.	.	.	.	.&lt;br&gt;
+.	.	.	.	.	.	.	.	.	.&lt;br&gt;
+.	.	.	.	.	.	.	.	.	.&lt;br&gt;
+.	.	.	.	.	.	.	.	.	.&lt;br&gt;
+.	.	.	.	.	.	.	.	.	.&lt;br&gt;
+.	.	.	.	.	.	.	.	.	.&lt;br&gt;
+ 因为 Y 的 4 个⽅向都堵住了，所以没有地⽅可以放置下⼀步的 Z 了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;time.h&amp;gt;
+int main(void)
+{
+    char arr[10][10] = {
+        //声明数组
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+        {&#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;},
+    };
+    int row = 0;
+    int line = 0;
+    int j = 0; //测试用防止死循环
+    char ch = &#39;A&#39;;
+    srand((unsigned)time(NULL));
+    arr[0][0] = ch;
+    do
+    {
+        j++; //测试用防止死循环 因为之前出现了死循环
+        int fate = rand() % 4; //获得0到4的随机数
+        ch++;                  //先增如果不符合后面再减
+        switch (fate)          //根据随机数的大小来确定往哪个方向走
+        {
+        case 1: //向右
+            row++;
+            if (0 &amp;lt;= row &amp;amp;&amp;amp; row &amp;lt;= 9 &amp;amp;&amp;amp; arr[row][line] == &#39;.&#39;) //判别向右右边不是边界并且右边不是已经走过的地点了
+            {
+                arr[row][line] = ch; //判定成功 走向右边 终止switch循环
+                break;
+            }
+            else
+            {
+                row--; //判别失败 ch返回原值 row返回原值 退出swtich 等待进行下一次while循环
+                ch--;
+                break;
+            }
+        case 2: //向下
+            line++;
+            if (0 &amp;lt;= line &amp;amp;&amp;amp; line &amp;lt;= 9 &amp;amp;&amp;amp; arr[row][line] == &#39;.&#39;) //判别向下不是边界并且下边不是已经走过的地方
+            {
+                arr[row][line] = ch; //判定成功 走向下边 终止switch循环
+                break;
+            }
+            else
+            {
+                line--; //判别失败 ch返回原值 line返回原值 退出swtich 等待进行下一次while循环
+                ch--;
+                break;
+            }
+        case 3: //向左
+            row--;
+            if (0 &amp;lt;= row &amp;amp;&amp;amp; row &amp;lt;= 9 &amp;amp;&amp;amp; arr[row][line] == &#39;.&#39;) //判别向左不是边界并且下边不是已经走过的地方
+            {
+                arr[row][line] = ch; //判定成功 走向左边 终止switch循环
+                break;
+            }
+            else
+            {
+                row++; //判别失败 ch返回原值 row返回原值 退出swtich 等待进行下一次while循环
+                ch--;
+                break;
+            }
+        default:
+            line--;                                              //向上
+            if (0 &amp;lt;= line &amp;amp;&amp;amp; line &amp;lt;= 9 &amp;amp;&amp;amp; arr[row][line] == &#39;.&#39;) //判别向上不是边界并且下边不是已经走过的地方
+            {
+                arr[row][line] = ch; //判定成功 走向上边 终止switch循环
+                break;
+            }
+            else
+            {
+                line++; //判别失败 ch返回原值 line返回原值 退出swtich 等待进行下一次while循环
+                ch--;
+                break;
+            }
+        }
+    } while (65 &amp;lt;= ch &amp;amp;&amp;amp; ch &amp;lt; 90 &amp;amp;&amp;amp; (arr[row + 1][line] == &#39;.&#39; || arr[row - 1][line] == &#39;.&#39; || arr[row][line + 1] &amp;gt;     == &#39;.&#39; || arr[row][line - 1] == &#39;.&#39;) &amp;amp;&amp;amp; j &amp;lt; 100); //while循环判定 CH在A到Z之内 并且上下左右没有都被堵住
+    for (int k = 0; k &amp;lt; 10; k+&amp;gt;     +)                                                                                                              &amp;gt;                           //嵌套for循环打印二维数组
+    {
+        printf(&#34;\n&#34;);
+        for (int i = 0; i &amp;lt; 10; i++)
+        {
+            printf(&#34;%c&#34;, arr[i][k]);
+        }
+    }
+
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;8-15加密&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-15加密&#34;&gt;#&lt;/a&gt; 8-15 加密&lt;/h4&gt;
+&lt;p&gt;8-15：加密（Encryption）&lt;/p&gt;
+&lt;p&gt;已知的最古⽼的⼀种加密技术是凯撒加密（得名于 Julius caesar）。该⽅法把⼀条消息中的每个字⺟⽤字⺟表中固定距离之后的那个字⺟来替代。（如果越过了字⺟ Z，会绕回到字⺟表的起始位置。例如，如果每个字⺟都⽤字⺟表中两个位置之后的字⺟代替，那么 Y 就被替换为 A，Z 就被替换为 B。）&lt;/p&gt;
+&lt;p&gt;编写程序⽤凯撒加密⽅法对消息进⾏加密。⽤户输⼊待加密的消息和移位计数（字⺟移动的位置数⽬）：&lt;br&gt;
+Enter message to be encrypted: Go ahead, make my day.&lt;br&gt;
+Enter shift amount (1-25): 3&lt;br&gt;
+Encrypted message: Jr dkhdg, pdnh pb gdb.&lt;/p&gt;
+&lt;p&gt;注意，当⽤户输⼊ 26 与移位计数的差值时，程序可以对消息进⾏解密:&lt;/p&gt;
+&lt;p&gt;Enter message to be encrypted: Jr dkhdg, pdnh pb gdb.&lt;br&gt;
+Enter shift amount (1-25): 23&lt;br&gt;
+Encrypted message: Go ahead, make my day&lt;/p&gt;
+&lt;p&gt;不是字⺟的那些字符不要改动。此外，加密时不要改变字⺟的⼤⼩写。&lt;/p&gt;
+&lt;p&gt;输出范例：&lt;/p&gt;
+&lt;p&gt;Enter message to be encrypted: Hello, world!&lt;br&gt;
+Enter shift amount (1-25): 3&lt;br&gt;
+Encrypted message: Khoor, zruog!&lt;/p&gt;
+&lt;p&gt;Enter message to be encrypted: Khoor, zruog!&lt;br&gt;
+Enter shift amount (1-25): 23&lt;br&gt;
+Encrypted message: Hello, world!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+    int a = 0;
+    int x;
+    char ch;
+    char basic[100] = {0};
+    printf(&#34;Enter message to be encrypted: \n&#34;);
+    while ((ch = getchar()) != &#39;\n&#39;)
+    {
+        basic[a] = ch;
+        a++;
+    }
+    printf(&#34;Enter shift amount (1-25)&#34;);
+    scanf(&#34;%d&#34;, &amp;amp;x);
+    printf(&#34;Encrypted message: &#34;);
+    for (int i = 0; i &amp;lt; (sizeof(basic) / sizeof(basic[0])); i++)
+    {
+        if ((64 &amp;lt; basic[i]) &amp;amp;&amp;amp; (basic[i] &amp;lt; 91))
+        {
+            basic[i] = basic[i] + x - 26;
+            if (basic[i] &amp;lt;= 64)
+            {
+                basic[i] = basic[i] + 26;
+            }
+            printf(&#34;%c&#34;, basic[i]);
+        }
+        else if ((96 &amp;lt; basic[i]) &amp;amp;&amp;amp; (basic[i] &amp;lt; 123))
+        {
+            basic[i] = basic[i] + x - 26;
+            if (basic[i] &amp;lt;= 96)
+            {
+                basic[i] = basic[i] + 26;
+            }
+            printf(&#34;%c&#34;, basic[i]);
+        }
+        else if (basic[i] == 48)
+            ;
+        else
+            printf(&#34;%c&#34;, basic[i]);
+    }
+    return 0;
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
  ]]></description>
