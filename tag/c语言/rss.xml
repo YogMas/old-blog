@@ -1330,6 +1330,92 @@ display(5, 12, sales);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;虽然上述讨论中使用的是 int 类型的数组和 double 类型的数组，其他类型的数组也是如此。然而，字符串有一些特殊的规则，这是由于其末尾的空字符所致。有了这个空字符，不用传递数组的大小，函数通过检测字符串的末尾也知道在何处停止。我们将在第 11 章中详细介绍。&lt;/p&gt;
+&lt;h3 id=&#34;字符串和字符串函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串和字符串函数&#34;&gt;#&lt;/a&gt; 字符串和字符串函数&lt;/h3&gt;
+&lt;h4 id=&#34;表示字符串和字符串io&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表示字符串和字符串io&#34;&gt;#&lt;/a&gt; 表示字符串和字符串 I/O&lt;/h4&gt;
+&lt;p&gt;字符串是以空字符 (\o) 结尾的 char 类型数组&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#define MSG &#34;I am a symbolic string constant.&#34;
+#define MAXLENGTH 81
+int main(void)
+{
+     char words[MAXLENGTH] = &#34;I am a string in an array.&#34;;
+     const char * pt1 = &#34;Something is pointing at me.&#34;;
+     puts(&#34;Here are some strings:&#34;);
+     puts(MSG);
+     puts(words);
+     puts(pt1);
+     words[8] = &#39;p&#39;;
+     puts(words);
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;和 printf () 函数相同 puts () 函数也属于 stdio.h 系列的输出 / 输出函数 但是和 printf () 不同的是 puts () 函数只显示字符串 而且自动在显示的字符串末尾加上换行符&lt;/p&gt;
+&lt;h5 id=&#34;在程序中定义字符串&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在程序中定义字符串&#34;&gt;#&lt;/a&gt; 在程序中定义字符串&lt;/h5&gt;
+&lt;h6 id=&#34;1字符串字面量字符串常量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1字符串字面量字符串常量&#34;&gt;#&lt;/a&gt; 1. 字符串字面量 (字符串常量)&lt;/h6&gt;
+&lt;p&gt;字符串字面量 (字符串常量): 用双引号括起来的内容 双引号中的字符和编译器自动加入末尾的 \O 字符 都作为字符串存储在内存中&lt;br&gt;
+从 ANSI C 标准起 如果字符串字面量之间没有间隔 或者用空白字符分隔 C 会将其视为串联起来的字符串常量&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;char greeting[50] = &#34;Hello,and&#34;&#34;how are&#34;  &#34; you&#34;
+                     &#34;&#34; today!&#34; ;
+char greeting [50] = &#34;Hello,and how are you today!&#34;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这两行代码是等价的&lt;br&gt;
+如果要在字符串内部使用双引号 必须要在双引号前面加上一个反斜杠 (\)&lt;br&gt;
+ 字符串常量属于&lt;strong&gt;静态存储类别&lt;/strong&gt;，这说明 如果在函数中使用字符串常量 该字符串只会被存储一次 在整个程序的生命周期内存在 即使函数被调用多次 用双引号括起来的内容被视为指向该字符串存储位置的指针。类似于把数组名作为指向该数组位置的指针&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+     printf(&#34;%s, %p, %c\n&#34;, &#34;We&#34;, &#34;are&#34;, *&#34;space farers&#34;);
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;% s 打印 We 根据 % p 转换说明打印一个地址 *&#34;space farers&#34; 表示该字符串所指向地址所存储的值 应该是字符串 &#34;space farers&#34; 的首字符&lt;/p&gt;
+&lt;h6 id=&#34;2字符串数组和初始化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2字符串数组和初始化&#34;&gt;#&lt;/a&gt; 2. 字符串数组和初始化&lt;/h6&gt;
+&lt;p&gt;定义字符串数组时 必须让编译器知道需要多少空间 一种方法是用足够空间的数组 存储字符串&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const char m1[40] = &#34;Limit yourself to one line&#39;s worth.&#34;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这种形式的初始化比标准的数组初始化形式简单得多&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const char m1[40] = { &#39;L&#39;,&#39;i&#39;, &#39;m&#39;, &#39;i&#39;, &#39;t&#39;, &#39; &#39;, &#39;y&#39;, &#39;o&#39;, &#39;u&#39;, &#39;r&#39;, &#39;s&#39;, &#39;e&#39;, &#39;l&#39;,
+                      &#39;f&#39;, &#39; &#39;, &#39;t&#39;, &#39;o&#39;, &#39; &#39;, &#39;o&#39;, &#39;n&#39;, &#39;e&#39;, &#39; &#39;,&#39;l&#39;, &#39;i&#39;, &#39;n&#39;, &#39;e&#39;,   
+                      &#39;\&#39;, &#39;s&#39;, &#39; &#39;, &#39;w&#39;, &#39;o&#39;, &#39;r&#39;,&#39;t&#39;, &#39;h&#39;, &#39;.&#39;, &#39;\0&#39;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注意最后的空字符 没有这个空字符 这就不是一个字符串 而是一个字符数组&lt;br&gt;
+在指定数组大小时候要确保数组的元素个数至少比字符串长度多 1 (为了容纳空字符) 所有违背使用的元素都被自动化初始为 \0 空字符&lt;br&gt;
+省略数组初始化声明中的大小编译器会自动计算数组的大小&lt;br&gt;
+处理字符串的函数通常都不知道数组的大小 这些函数通过查找字符串末尾的空字符确定字符串在何处结束&lt;br&gt;
+让编译器计算输的的大小只能用在初始化数组时。如果创建一个稍后再填充的数组 就必须在声明时指定大小。声明数组时数组大小 IXUS 是可求值得整数 在 CC 新增变长数组迁 数组的大小必须是整型变量 包括由整型变量组成的表达式&lt;/p&gt;
+&lt;p&gt;字符数组名和其他数组名一样 是该数组首元素的地址&lt;/p&gt;
+&lt;p&gt;同时还可以使用指针表示法创建字符串&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;const char * pt1 =&#34;yogmas best&#34;;
+const char ar1[] = &#34;yogmas best&#34;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这两个声明几乎相同&lt;br&gt;
+以上两个声明表示 pt1 和 ar1 都是该字符串的地址 在这两种情况下 带双引号的字符串本身决定了鱼类给字符串的存储空间 尽管如此 这两种形式并不完全相同&lt;/p&gt;
+&lt;h6 id=&#34;3数组和指针&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3数组和指针&#34;&gt;#&lt;/a&gt; 3. 数组和指针&lt;/h6&gt;
+&lt;p&gt;数组形式和指针形式有一些不同点&lt;br&gt;
+数组形式：数组形式在计算机的内存中分配一个数组 (每个元素对应一个字符 再加上一个末尾的空字符), 每个元素被初始化为字符串字面量对应的字符.&lt;br&gt;
+ 字符串都作为可执行文件的一部分存储在数据段中 当把程序载入内存时 也载入了了程序中的字符串 字符串存储在静态存储区中&lt;br&gt;
+程序在开始运行时 才为该数组分配内存 此时 才将字符串拷贝到数组中&lt;br&gt;
+此时字符串有两个副本 一个是在静态内存中的字符串字面量 另一个是存储在数组中的字符串&lt;br&gt;
+编译器把数组名识别为该数组首元素地址的别名 这以为着在数组形式中数组名是字符常量 不能更改 如果改变了就意味着改变了数组的存储位置 可以进行类似 ar1+1 这样的操作 表示数组的下一个元素 但是不允许进行 ++ar1 这样的操作 递增运算符只能用于变量名前&lt;/p&gt;
+&lt;p&gt;指针形式：指针形式是的编译器为字符串在静态存储区预留 29 个元素的空间 另外一旦开始执行程序 他会为&lt;strong&gt;指针变量&lt;/strong&gt;留出一个存储位置 并把字符串的地址存储在指针变量中 该变量最初指向该字符串的首字符但是它的值可以改变 因此可以使用递增运算符&lt;br&gt;
+&lt;strong&gt;字符串字面量被视为 const 数据&lt;/strong&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
