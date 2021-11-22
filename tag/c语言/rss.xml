@@ -1027,10 +1027,12 @@ pc = &amp;amp;rates[2]; 不逊于 因为该指针不能指向别处
 &lt;pre&gt;&lt;code&gt;int zippo[4][2];  /内涵int数组的数组/
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;1. 数组名 zippo 是该数组首元素的地址 zippo 的首元素一个内含 2 个 int 值得数组 所以 zippo 是这个内涵两个 int 值的数组的地址&lt;br&gt;
- 2.zippo 是数组首元素的地址 zippo [0] 那么就是数组首元素数组的首元素的值 zippo [0] 是一个占用一个 int 大小对象的地址 而 zippo 是一个占用两个 int 大小对象的地址 由于这个整数和内涵两个整数的数组都开始与同一个地址所以 zippo 和 zippo [0] 的值相同&lt;br&gt;
- 3. 给指针或地址加 1 其值会增加对应类型的大小 &lt;strong&gt;在这方面 zippo 和 zippo [0] 不同&lt;/strong&gt; 因为 zippo 指向的对象占用了两个 int 大小 而 zippo [0] 指向的的对象只占用一个 int 大小&lt;br&gt;
- 4. 在解引用一个指针或在数组名后使用带下标的 [] 运算符，得到解引用对象代表的值 *zippo 代表的是 zippo 首元素的值 而 zippo 首元素的值是一个数组那么这个数组的值就是 zippo 首元素数组的首元素的地址 这样来说 **zippo 和 *&amp;amp;zippo [0][0] 等价简而言之 zippo 是地址的地址，必须解引用两次才能获得原始值 地址的地址 或者指针的指针就是双重间接&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数组名 zippo 是该数组首元素的地址 zippo 的首元素一个内含 2 个 int 值得数组 所以 zippo 是这个内涵两个 int 值的数组的地址&lt;/li&gt;
+&lt;li&gt;zippo 是数组首元素的地址 zippo [0] 那么就是数组首元素数组的首元素的值 zippo [0] 是一个占用一个 int 大小对象的地址 而 zippo 是一个占用两个 int 大小对象的地址 由于这个整数和内涵两个整数的数组都开始与同一个地址所以 zippo 和 zippo [0] 的值相同&lt;/li&gt;
+&lt;li&gt;给指针或地址加 1 其值会增加对应类型的大小 &lt;strong&gt;在这方面 zippo 和 zippo [0] 不同&lt;/strong&gt; 因为 zippo 指向的对象占用了两个 int 大小 而 zippo [0] 指向的的对象只占用一个 int 大小&lt;/li&gt;
+&lt;li&gt;在解引用一个指针或在数组名后使用带下标的 [] 运算符，得到解引用对象代表的值 *zippo 代表的是 zippo 首元素的值 而 zippo 首元素的值是一个数组那么这个数组的值就是 zippo 首元素数组的首元素的地址 这样来说 **zippo 和 *&amp;amp;zippo [0][0] 等价简而言之 zippo 是地址的地址，必须解引用两次才能获得原始值 地址的地址 或者指针的指针就是双重间接&lt;/li&gt;
+&lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
 int main(void)

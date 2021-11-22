@@ -390,7 +390,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-19
+                    2021-11-20
                 </div>
                 
 
@@ -1441,10 +1441,12 @@ pc = &amp;rates[2]; 不逊于 因为该指针不能指向别处
 <pre><code>int zippo[4][2];  /内涵int数组的数组/
 </code></pre>
 </blockquote>
-<p>1. 数组名 zippo 是该数组首元素的地址 zippo 的首元素一个内含 2 个 int 值得数组 所以 zippo 是这个内涵两个 int 值的数组的地址<br>
- 2.zippo 是数组首元素的地址 zippo [0] 那么就是数组首元素数组的首元素的值 zippo [0] 是一个占用一个 int 大小对象的地址 而 zippo 是一个占用两个 int 大小对象的地址 由于这个整数和内涵两个整数的数组都开始与同一个地址所以 zippo 和 zippo [0] 的值相同<br>
- 3. 给指针或地址加 1 其值会增加对应类型的大小 <strong>在这方面 zippo 和 zippo [0] 不同</strong> 因为 zippo 指向的对象占用了两个 int 大小 而 zippo [0] 指向的的对象只占用一个 int 大小<br>
- 4. 在解引用一个指针或在数组名后使用带下标的 [] 运算符，得到解引用对象代表的值 *zippo 代表的是 zippo 首元素的值 而 zippo 首元素的值是一个数组那么这个数组的值就是 zippo 首元素数组的首元素的地址 这样来说 **zippo 和 *&amp;zippo [0][0] 等价简而言之 zippo 是地址的地址，必须解引用两次才能获得原始值 地址的地址 或者指针的指针就是双重间接</p>
+<ol>
+<li>数组名 zippo 是该数组首元素的地址 zippo 的首元素一个内含 2 个 int 值得数组 所以 zippo 是这个内涵两个 int 值的数组的地址</li>
+<li>zippo 是数组首元素的地址 zippo [0] 那么就是数组首元素数组的首元素的值 zippo [0] 是一个占用一个 int 大小对象的地址 而 zippo 是一个占用两个 int 大小对象的地址 由于这个整数和内涵两个整数的数组都开始与同一个地址所以 zippo 和 zippo [0] 的值相同</li>
+<li>给指针或地址加 1 其值会增加对应类型的大小 <strong>在这方面 zippo 和 zippo [0] 不同</strong> 因为 zippo 指向的对象占用了两个 int 大小 而 zippo [0] 指向的的对象只占用一个 int 大小</li>
+<li>在解引用一个指针或在数组名后使用带下标的 [] 运算符，得到解引用对象代表的值 *zippo 代表的是 zippo 首元素的值 而 zippo 首元素的值是一个数组那么这个数组的值就是 zippo 首元素数组的首元素的地址 这样来说 **zippo 和 *&amp;zippo [0][0] 等价简而言之 zippo 是地址的地址，必须解引用两次才能获得原始值 地址的地址 或者指针的指针就是双重间接</li>
+</ol>
 <blockquote>
 <pre><code>#include &lt;stdio.h&gt;
 int main(void)
@@ -2092,8 +2094,8 @@ const char ar1[] = "yogmas best";
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    C语言
+                            <a href="/categories/%E7%AD%94%E6%A1%88/" class="post-category">
+                                    答案
                                 </a>
                             
                             
@@ -2339,7 +2341,7 @@ const char ar1[] = "yogmas best";
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.2k</span>&nbsp;字
+                class="white-color">43.7k</span>&nbsp;字
             
             
             
