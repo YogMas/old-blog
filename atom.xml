@@ -3,15 +3,16 @@
     <id>http://yogmas-wang.top</id>
     <title>YogMas学习站</title>
     <link href="http://yogmas-wang.top" />
-    <updated>2021-11-20T12:49:41.943Z</updated>
+    <updated>2021-11-19T16:00:00.000Z</updated>
     <category term="Css" />
     <category term="C语言" />
     <category term="Html" />
     <category term="Javascript" />
     <category term="icoding答案" />
+    <category term="数学建模" />
     <entry>
         <id>http://yogmas-wang.top/2021/11/20/shu-xue-jian-mo/</id>
-        <title></title>
+        <title>数学建模</title>
         <link rel="alternate" href="http://yogmas-wang.top/2021/11/20/shu-xue-jian-mo/"/>
         <content type="html">&lt;h1 id=&#34;数学建模&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数学建模&#34;&gt;#&lt;/a&gt; 数学建模&lt;/h1&gt;
 &lt;h2 id=&#34;the-article-made-bu-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-made-bu-yogmas-also-sam&#34;&gt;#&lt;/a&gt; The article made bu YogMas also sam&lt;/h2&gt;
@@ -160,7 +161,8 @@
 一定不要把网上收到的代码直接复制粘贴&lt;br&gt;
 把查到的代码变量名缓一缓就不会被查重&lt;/p&gt;
 </content>
-        <updated>2021-11-20T12:49:41.943Z</updated>
+        <category term="数学建模" />
+        <updated>2021-11-19T16:00:00.000Z</updated>
     </entry>
     <entry>
         <id>http://yogmas-wang.top/2021/11/18/dian-ke-icoding/</id>
@@ -4380,7 +4382,9 @@ BOM 的构成&lt;br&gt;
 &lt;h4 id=&#34;this指向问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#this指向问题&#34;&gt;#&lt;/a&gt; this 指向问题&lt;/h4&gt;
 &lt;p&gt;1. 全局作用域或者普通函数中 this 指向全局对象 window (定时器里面的 this 指向 window)&lt;br&gt;
  2. 方法调用中谁调用 this 指向谁&lt;br&gt;
- 3. 构造函数中 this 可以指向构造函数&lt;/p&gt;
+ 3. 构造函数中 this 可以指向构造函数&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oSEMu9&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/22/oSEMu9.png&#34; alt=&#34;oSEMu9.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oSEQBR&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/22/oSEQBR.png&#34; alt=&#34;oSEQBR.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;js的执行队列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#js的执行队列&#34;&gt;#&lt;/a&gt; js 的执行队列&lt;/h4&gt;
 &lt;p&gt;js 是单线程的 同一个时间只能做一件事&lt;br&gt;
 为了解决这个问题，利用多核 CPU 的计算能力，HTML5 允许 js 脚本创建多个线程，于是 js 中出现了同步和异步&lt;br&gt;
