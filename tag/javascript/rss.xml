@@ -1155,17 +1155,27 @@ BOM 的构成&lt;br&gt;
 &lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IGw1b9&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IGw1b9.png&#34; alt=&#34;IGw1b9.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://imgtu.com/i/IGwQu4&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IGwQu4.png&#34; alt=&#34;IGwQu4.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://imgtu.com/i/IJkczF&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJkczF.png&#34; alt=&#34;IJkczF.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://imgtu.com/i/IJFz2F&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJFz2F.png&#34; alt=&#34;IJFz2F.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://imgtu.com/i/IJFz2F&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJFz2F.png&#34; alt=&#34;IJFz2F.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+ 事件循环：主线程不断的城府获得任务 执行任务 再获取任务 执行任务&lt;/p&gt;
 &lt;h4 id=&#34;location对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#location对象&#34;&gt;#&lt;/a&gt; location 对象&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IJAmF0&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJAmF0.png&#34; alt=&#34;IJAmF0.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://imgtu.com/i/IJAnYV&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJAnYV.png&#34; alt=&#34;IJAnYV.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;location对象方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#location对象方法&#34;&gt;#&lt;/a&gt; location 对象方法&lt;/h5&gt;
-&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IGwJ4x&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IGwJ4x.png&#34; alt=&#34;IGwJ4x.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IGwJ4x&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IGwJ4x.png&#34; alt=&#34;IGwJ4x.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+assign 能够记录历史 可以实现后退功能&lt;/p&gt;
 &lt;h4 id=&#34;navigator对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#navigator对象&#34;&gt;#&lt;/a&gt; navigator 对象&lt;/h4&gt;
-&lt;p&gt;包含浏览器的信息 我们最常用的属性是 userAgent&lt;/p&gt;
+&lt;p&gt;包含浏览器的信息 有很多属性 我们最常用的属性是 userAgent 该属性可以返回由客户机发送服务器的 user-agent 头部的值&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IJAuWT&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJAuWT.png&#34; alt=&#34;IJAuWT.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;history对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#history对象&#34;&gt;#&lt;/a&gt; history 对象&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IJAQlF&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJAQlF.png&#34; alt=&#34;IJAQlF.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;btn.addEventListener(&#39;click&#39;,function(){
+history.forward();  
+})
+back() 和 go() 同理
+其中go(-1) 表示后退一页 go(-1)表示后退两页
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;pc端网页特效&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pc端网页特效&#34;&gt;#&lt;/a&gt; PC 端网页特效&lt;/h3&gt;
  ]]></description>
         </item>

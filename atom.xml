@@ -2344,6 +2344,141 @@ const char ar1[] = &#34;yogmas best&#34;;
 编译器把数组名识别为该数组首元素地址的别名 这以为着在数组形式中数组名是字符常量 不能更改 如果改变了就意味着改变了数组的存储位置 可以进行类似 ar1+1 这样的操作 表示数组的下一个元素 但是不允许进行 ++ar1 这样的操作 递增运算符只能用于变量名前&lt;/p&gt;
 &lt;p&gt;指针形式：指针形式是的编译器为字符串在静态存储区预留 29 个元素的空间 另外一旦开始执行程序 他会为&lt;strong&gt;指针变量&lt;/strong&gt;留出一个存储位置 并把字符串的地址存储在指针变量中 该变量最初指向该字符串的首字符但是它的值可以改变 因此可以使用递增运算符&lt;br&gt;
 &lt;strong&gt;字符串字面量被视为 const 数据&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&#34;指针和字符串&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指针和字符串&#34;&gt;#&lt;/a&gt; 指针和字符串&lt;/h5&gt;
+&lt;p&gt;字符串的绝大多数操作都是通过指针完成的&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+     const char * mesg = &#34;Don&#39;t be a fool!&#34;;
+     const char * copy;
+
+     copy = mesg;
+     printf(&#34;%s\n&#34;, copy);
+     printf(&#34;mesg = %s; &amp;amp;mesg = %p; value = %p\n&#34;, mesg, &amp;amp;mesg, mesg);
+     printf(&#34;copy = %s; &amp;amp;copy = %p; value = %p\n&#34;, copy, &amp;amp;copy, copy);
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果编译器不识别 % p 用 % u 或者 % lu 来代替&lt;br&gt;
+字符串形式输出用 % s 转换说明&lt;br&gt;
+因为最后 mesg 和 copy 指针输出的值是一样的 即两个指针指向地址是一样的 这说明程序并未拷贝字符串 copy=mesg 仅仅把 mesg 的值即 mesg 存储的地址赋值给 copy 让 copy 也指向这一个地址&lt;br&gt;
+不拷贝整个字符串的原因是因为这样做更具有效率 如果一定要拷贝字符串可以使用 **strcpy () 和 strncpy ()** 函数，后续会介绍这两个函数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;字符串输入&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串输入&#34;&gt;#&lt;/a&gt; 字符串输入&lt;/h4&gt;
+&lt;p&gt;如果想把一个字符串读入程序 首先必须预留存储该字符串的空间 然后用输入函数获取该字符串&lt;/p&gt;
+&lt;h5 id=&#34;分配空间&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分配空间&#34;&gt;#&lt;/a&gt; 分配空间&lt;/h5&gt;
+&lt;p&gt;分配空间的时候必须为字符串分配足够的空间 &lt;strong&gt;不要指望计算机在读取字符串的时候顺便计算它的长度然后再分配空间&lt;/strong&gt; (计算机不会这样做 除非你编写一个处理这些任务的函数)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;char * name;
+scanf(&#34;%s&#34;,name);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可能会通过编译 但是在读入 name 时 name 可能会擦写掉程序中的数据或代码 而导致程序异常终止&lt;br&gt;
+因为 scanf () 要把信息拷贝到参数指定的地址上 此时 该参数是个未初始化的指针 name 可能会指向任何地方&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最简单的方法是 在声明时指明数组的大小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;char name[81];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;还有一种方法：使用 C 库函数来分配内存 (第 12 章)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为字符串分配玩内存后 开始讨论读取字符串的函数&lt;/p&gt;
+&lt;h5 id=&#34;gets函数不幸&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gets函数不幸&#34;&gt;#&lt;/a&gt; gets () 函数–不幸&lt;/h5&gt;
+&lt;p&gt;在读取字符串时，scanf () 和转换说明 % s 只能读取一个单词&lt;br&gt;
+程序中经常要读取一整行输入 gets () 函数就用于处理这种情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;get () 函数读取整行输入 直到遇到换行符 然后丢弃换行符 存储其余字符 并在这些字符的末尾添加一个空字符使其称为一个 C 字符串 其经常和 puts () 函数配对使用&lt;/li&gt;
+&lt;li&gt;puts () 函数用于显示字符串 并且在末尾添加换行符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#define STLEN 81
+int main(void)
+{
+     char words[STLEN];
+
+     puts(&#34;Enter a string, please.&#34;);
+     gets(words);  // 典型用法
+     printf(&#34;Your string twice:\n&#34;);
+     printf(&#34;%s\n&#34;, words);
+     puts(words);
+     puts(&#34;Done.&#34;);
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;整行输入都被存储在 words 中 put () 和 printf () 的效果相同&lt;br&gt;
+但是在有些编译器中并不会输出正确的结果，并且会给出警告&lt;br&gt;
+ gets () 的唯一参数是 words, 他无法检查数组是否装得下输入行.&lt;br&gt;
+ 数组名仅仅是数组首元素的地址。因此，gets () 函数只知道数组的开始处 并不知道数组中有多少个元素&lt;/p&gt;
+&lt;p&gt;如果输入的字符过长 会导致&lt;strong&gt;缓冲区溢出&lt;/strong&gt;即多余的字符超出了指定的目标空间 如果这些多于的字符只是占用了&lt;strong&gt;尚未使用&lt;/strong&gt;的内存就不会立即出现问题 如果他们擦写掉程序中的其他数据就会导致程序异常中止&lt;br&gt;
+&lt;em&gt;在过去有些人通过系统编程 利用 gets () 插入和运行一些破坏系统安全的代码&lt;/em&gt;&lt;br&gt;
+ C99 中承认了 gets () 的问题并且建议不要使用它 尽管如此 现有程序中因为含有大量使用该函数的代码 所以在标准中保留了 gets ()&lt;br&gt;
+ C11 直接从标准中废除了 gets () 函数&lt;br&gt;
+所以这就导致了有些编译器支持 gets () 函数而有些编译器不支持 gets () 函数&lt;br&gt;
+部分编译器为了兼容以前的代码 就继续支持 gets () 函数&lt;/p&gt;
+&lt;h5 id=&#34;gets的替代品&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gets的替代品&#34;&gt;#&lt;/a&gt; gets () 的替代品&lt;/h5&gt;
+&lt;p&gt;过去尝尝用 fgets () 来代替 gets (),fgets () 函数稍微复杂些 在处理输入方面与 gets () 略有不同 C11 标准新增的 gets_s () 也可以代替 gets () 该函数与 gets () 函数更为接近 但是 它是 stdio.h 输入 / 输出函数系列中的可选拓展 所以编译器不一定支持它&lt;/p&gt;
+&lt;h6 id=&#34;fgets函数和fputs&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fgets函数和fputs&#34;&gt;#&lt;/a&gt; fgets () 函数和 (fputs)&lt;/h6&gt;
+&lt;p&gt;fgets () 函数通过第 2 个参数限制读入的字符数来解决溢出的问题&lt;br&gt;
+&lt;strong&gt;该函数专门设计处理文件输入&lt;/strong&gt;一般情况下可能不太好用&lt;br&gt;
+ fgets () 与 gets () 的区别如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fgets () 函数的第 2 个参数指明了读入字符的最大数量，如果该参数是 n 那么 fgets () 函数将读入 n-1 个字符 或者读到遇到的第一个换行符为止&lt;/li&gt;
+&lt;li&gt;如果 fgets () 读到一个换行符，会把它存储在字符串中 这点和 gets () 不同，gets () 会丢地换行符&lt;/li&gt;
+&lt;li&gt;fgets () 函数的第三个参数执行要读入的文件 如果读入从键盘输入的数据 则以 **stdin (标准输入)&lt;strong&gt; 作为参数 该标识符定义在 stdio.h 中&lt;br&gt;
+因为 fgets () 函数把换行符放在字符串的末尾 (假设输入行不溢出) 通常要与 fputs () 配对使用，除非该函数不在字符串末尾添加换行符 fputs () 的第 2 个参数指明它要写入的文件 如果要显示在计算机显示器上，应使用&lt;/strong&gt; stdout (标准输出)** 作为参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#define STLEN 14
+int main(void)
+{
+     char words[STLEN];
+
+     puts(&#34;Enter a string, please.&#34;);
+     fgets(words, STLEN, stdin);
+     printf(&#34;Your string twice (puts(), then fputs()):\n&#34;);
+     puts(words);
+     fputs(words, stdout);
+     puts(&#34;Enter another string, please.&#34;);
+     fgets(words, STLEN, stdin);
+     printf(&#34;Your string twice (puts(), then fputs()):\n&#34;);
+     puts(words);
+     fputs(words, stdout);
+     puts(&#34;Done.&#34;);
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;输入案例&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;Enter a string, please.
+apple pie
+Your string twice (puts(), then fputs()):
+apple pie
+
+apple pie
+Enter another string, please.
+strawberry shortcake
+Your string twice (puts(), then fputs()):
+strawberry sh
+strawberry shDone.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;第一行输入 apple pie 比 fgets () 读入的整行输入短 因此 apple pie 被存储在数组中 所以当 puts () 显示该字符串时又在末尾添加了换行符 因此 apple pie 后面有一行空行 因为 fputs () 不在字符串末尾添加换行符 所以并未打印出空行&lt;/li&gt;
+&lt;li&gt;第二行输入 的字符超过了大小的限制 所以只会读入相应的字符 然后把前几个范围内的存储在数组中&lt;br&gt;
+&lt;strong&gt; puts () 函数会在待输入字符串末尾添加一个换行符 而 fputs () 不会这样做&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;同样 fgets () 存储时会在末尾自动存储一个换行符 而 gets () 不会这样&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>
@@ -4393,17 +4528,27 @@ BOM 的构成&lt;br&gt;
 &lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IGw1b9&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IGw1b9.png&#34; alt=&#34;IGw1b9.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://imgtu.com/i/IGwQu4&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IGwQu4.png&#34; alt=&#34;IGwQu4.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://imgtu.com/i/IJkczF&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJkczF.png&#34; alt=&#34;IJkczF.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://imgtu.com/i/IJFz2F&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJFz2F.png&#34; alt=&#34;IJFz2F.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://imgtu.com/i/IJFz2F&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJFz2F.png&#34; alt=&#34;IJFz2F.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+ 事件循环：主线程不断的城府获得任务 执行任务 再获取任务 执行任务&lt;/p&gt;
 &lt;h4 id=&#34;location对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#location对象&#34;&gt;#&lt;/a&gt; location 对象&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IJAmF0&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJAmF0.png&#34; alt=&#34;IJAmF0.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
 &lt;a href=&#34;https://imgtu.com/i/IJAnYV&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJAnYV.png&#34; alt=&#34;IJAnYV.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;location对象方法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#location对象方法&#34;&gt;#&lt;/a&gt; location 对象方法&lt;/h5&gt;
-&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IGwJ4x&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IGwJ4x.png&#34; alt=&#34;IGwJ4x.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IGwJ4x&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IGwJ4x.png&#34; alt=&#34;IGwJ4x.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+assign 能够记录历史 可以实现后退功能&lt;/p&gt;
 &lt;h4 id=&#34;navigator对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#navigator对象&#34;&gt;#&lt;/a&gt; navigator 对象&lt;/h4&gt;
-&lt;p&gt;包含浏览器的信息 我们最常用的属性是 userAgent&lt;/p&gt;
+&lt;p&gt;包含浏览器的信息 有很多属性 我们最常用的属性是 userAgent 该属性可以返回由客户机发送服务器的 user-agent 头部的值&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IJAuWT&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJAuWT.png&#34; alt=&#34;IJAuWT.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;history对象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#history对象&#34;&gt;#&lt;/a&gt; history 对象&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IJAQlF&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/08/IJAQlF.png&#34; alt=&#34;IJAQlF.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;btn.addEventListener(&#39;click&#39;,function(){
+history.forward();  
+})
+back() 和 go() 同理
+其中go(-1) 表示后退一页 go(-1)表示后退两页
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;pc端网页特效&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pc端网页特效&#34;&gt;#&lt;/a&gt; PC 端网页特效&lt;/h3&gt;
 </content>
         <category term="Javascript" />
