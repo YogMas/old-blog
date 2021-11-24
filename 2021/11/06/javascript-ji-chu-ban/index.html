@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-23
+                    2021-11-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    9.9k
+                    10.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    36 分
+                    37 分
                 </div>
                 
 
@@ -1590,6 +1590,38 @@ back() 和 go() 同理
 </code></pre>
 </blockquote>
 <h3 id="pc端网页特效"><a class="markdownIt-Anchor" href="#pc端网页特效">#</a> PC 端网页特效</h3>
+<h4 id="元素偏移量offset系列"><a class="markdownIt-Anchor" href="#元素偏移量offset系列">#</a> 元素偏移量 offset 系列</h4>
+<p>动态获取元素位置和大小</p>
+<ul>
+<li>获取元素距离带有定位父元素的位置</li>
+<li>获得元素自身的大小 (包含 padding 和 border)</li>
+<li>返回的数值不带单位</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oih8C6"><img src="https://z3.ax1x.com/2021/11/24/oih8C6.png" alt="oih8C6.png"></a><br>
+offsetParent  返回的是带有定位的父元素 (没有则返回 body)<br>
+ parentNode 返回的是最近一级的父元素 不管父元素有没有定位</p>
+<h5 id="offset和style的区别"><a class="markdownIt-Anchor" href="#offset和style的区别">#</a> offset 和 style 的区别</h5>
+<ul>
+<li>offsetWidth 与 style.width<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/oiTCtA"><img src="https://z3.ax1x.com/2021/11/24/oiTCtA.png" alt="oiTCtA.png"></a></li>
+</ul>
+<h4 id="元素可视区client系列"><a class="markdownIt-Anchor" href="#元素可视区client系列">#</a> 元素可视区 client 系列</h4>
+<p>使用 client 系列的相关属性获取元素可视区的相关信息<br>
+通过 client 系列的相关属性可以动态得到该元素的边框大小，元素大小等<br>
+<a target="_blank" rel="noopener" href="https://imgtu.com/i/oib09s"><img src="https://z3.ax1x.com/2021/11/24/oib09s.png" alt="oib09s.png"></a></p>
+<h4 id="淘宝源码分析"><a class="markdownIt-Anchor" href="#淘宝源码分析">#</a> 淘宝源码分析</h4>
+<h5 id="立即执行函数"><a class="markdownIt-Anchor" href="#立即执行函数">#</a> 立即执行函数</h5>
+<p>不需要调用 立即执行</p>
+<blockquote>
+<pre><code>(function XXX() { })()  第二个小括号可以看成调用函数 也可以传递参数
+(function XXX(){}()) 第二个小括号可以看成调用函数 也可以传递参数
+</code></pre>
+</blockquote>
+<ul>
+<li>XXX 为函数名 可以省略</li>
+<li><strong>多个立即执行函数之间必须使用分号隔开</strong></li>
+<li>好处：独立创建了一个作用域 里面所有的变量都是局部变量 避免了命名冲突的问题</li>
+</ul>
 
                 
             </div>
@@ -2099,7 +2131,7 @@ back() 和 go() 同理
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">45.5k</span>&nbsp;字
+                class="white-color">47.4k</span>&nbsp;字
             
             
             

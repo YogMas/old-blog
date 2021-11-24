@@ -1177,6 +1177,38 @@ back() 和 go() 同理
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;pc端网页特效&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pc端网页特效&#34;&gt;#&lt;/a&gt; PC 端网页特效&lt;/h3&gt;
+&lt;h4 id=&#34;元素偏移量offset系列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#元素偏移量offset系列&#34;&gt;#&lt;/a&gt; 元素偏移量 offset 系列&lt;/h4&gt;
+&lt;p&gt;动态获取元素位置和大小&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;获取元素距离带有定位父元素的位置&lt;/li&gt;
+&lt;li&gt;获得元素自身的大小 (包含 padding 和 border)&lt;/li&gt;
+&lt;li&gt;返回的数值不带单位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/oih8C6&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/24/oih8C6.png&#34; alt=&#34;oih8C6.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+offsetParent  返回的是带有定位的父元素 (没有则返回 body)&lt;br&gt;
+ parentNode 返回的是最近一级的父元素 不管父元素有没有定位&lt;/p&gt;
+&lt;h5 id=&#34;offset和style的区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#offset和style的区别&#34;&gt;#&lt;/a&gt; offset 和 style 的区别&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;offsetWidth 与 style.width&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oiTCtA&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/24/oiTCtA.png&#34; alt=&#34;oiTCtA.png&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;元素可视区client系列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#元素可视区client系列&#34;&gt;#&lt;/a&gt; 元素可视区 client 系列&lt;/h4&gt;
+&lt;p&gt;使用 client 系列的相关属性获取元素可视区的相关信息&lt;br&gt;
+通过 client 系列的相关属性可以动态得到该元素的边框大小，元素大小等&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oib09s&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/24/oib09s.png&#34; alt=&#34;oib09s.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;淘宝源码分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#淘宝源码分析&#34;&gt;#&lt;/a&gt; 淘宝源码分析&lt;/h4&gt;
+&lt;h5 id=&#34;立即执行函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#立即执行函数&#34;&gt;#&lt;/a&gt; 立即执行函数&lt;/h5&gt;
+&lt;p&gt;不需要调用 立即执行&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;(function XXX() { })()  第二个小括号可以看成调用函数 也可以传递参数
+(function XXX(){}()) 第二个小括号可以看成调用函数 也可以传递参数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;XXX 为函数名 可以省略&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多个立即执行函数之间必须使用分号隔开&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;好处：独立创建了一个作用域 里面所有的变量都是局部变量 避免了命名冲突的问题&lt;/li&gt;
+&lt;/ul&gt;
  ]]></description>
         </item>
     </channel>

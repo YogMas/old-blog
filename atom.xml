@@ -947,7 +947,7 @@ int main(void)
         <content type="html">&lt;h1 id=&#34;c语言&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言&#34;&gt;#&lt;/a&gt; C 语言&lt;/h1&gt;
 &lt;!-- The Article Made by YogMas --&gt;
 &lt;h2 id=&#34;the-article-made-by-yogmas&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-made-by-yogmas&#34;&gt;#&lt;/a&gt; The Article Made by YogMas&lt;/h2&gt;
-&lt;p&gt;推荐用书: C Primer Plus (本文章绝大部分内容来自于关于此书的学习过程中记录 还有部分来自于 C 语言程序设计第二版)&lt;/p&gt;
+&lt;p&gt;推荐用书: C Primer Plus (本文章绝大部分内容来自于关于此书的学习过程中记录 还有部分来自于 C 语言程序设计第二版 以及 UESTC MOOC)&lt;/p&gt;
 &lt;h3 id=&#34;c语言的执行过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c语言的执行过程&#34;&gt;#&lt;/a&gt; C 语言的执行过程&lt;/h3&gt;
 &lt;p&gt;1. 预处理：可以给程序添加内容也可以修改程序 (例如: #include&amp;lt;stdio.h&amp;gt; 就会在预处理中运用 stdio.h 中的内容对源代码进行处理)&lt;br&gt;
  2. 编译：将预处理过的语言转变为机器指令.&lt;br&gt;
@@ -2051,7 +2051,7 @@ p2 = &amp;amp;pt;            // 都是指向int *的指针
 p2 = ar2;            // 无效
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;理解以上的代码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;理解以上的代码&lt;/p&gt;
 &lt;h5 id=&#34;函数和多维数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数和多维数组&#34;&gt;#&lt;/a&gt; 函数和多维数组&lt;/h5&gt;
 &lt;p&gt;编写一个处理二维数组的函数 一种方法是 利用 for 循环把处理一维数组的函数应用到二维数组的每一行&lt;/p&gt;
 &lt;blockquote&gt;
@@ -2291,11 +2291,11 @@ int main(void)
 char greeting [50] = &#34;Hello,and how are you today!&#34;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-&lt;p&gt;这两行代码是等价的&lt;br&gt;
-如果要在字符串内部使用双引号 必须要在双引号前面加上一个反斜杠 (\)&lt;br&gt;
+&lt;p&gt;这两行代码是等价的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果要在字符串内部使用双引号 必须要在双引号前面加上一个反斜杠 (\)&lt;br&gt;
  字符串常量属于&lt;strong&gt;静态存储类别&lt;/strong&gt;，这说明 如果在函数中使用字符串常量 该字符串只会被存储一次 在整个程序的生命周期内存在 即使函数被调用多次 用双引号括起来的内容被视为指向该字符串存储位置的指针。类似于把数组名作为指向该数组位置的指针&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
 int main(void)
@@ -2478,6 +2478,149 @@ strawberry shDone.
 &lt;li&gt;第二行输入 的字符超过了大小的限制 所以只会读入相应的字符 然后把前几个范围内的存储在数组中&lt;br&gt;
 &lt;strong&gt; puts () 函数会在待输入字符串末尾添加一个换行符 而 fputs () 不会这样做&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;同样 fgets () 存储时会在末尾自动存储一个换行符 而 gets () 不会这样&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;fgets () 函数返回 char 的指针 该函数返回的地址与传入的一个参数相同 如果读到文件末尾将返回&lt;strong&gt;空指针&lt;/strong&gt;该指针保证不会指向有效的数据 所以可用于表述特殊情况 在 C 语言中用宏 NULL 来代替 (如果读入数据错误 该函数也返回 NULL).&lt;/p&gt;
+&lt;p&gt;下列函数演示了一个简单的循环 读入并显示用户输入的内容 直到 fgets () 读到文件末尾或空行 (首字符是换行符)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#define STLEN 10
+int main(void)
+{
+     char words[STLEN];
+
+     puts(&#34;Enter strings (empty line to quit):&#34;);
+     while (fgets(words, STLEN, stdin) != NULL &amp;amp;&amp;amp; words[0] != &#39;\n&#39;)
+          fputs(words, stdout);
+     puts(&#34;Done.&#34;);
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;输出结果如下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;Enter strings (empty line to quit):
+By the way, the gets() function
+By the way, the gets() function
+also returns a null pointer if it
+also returns a null pointer if it
+encounters end-of-file.
+encounters end-of-file.
+
+Done.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;神奇的是 这个程序在处理过长的输入时完全没有问题&lt;br&gt;
+通过 while 循环每次读入 9 个字符 (虽然 STLEN 为 10 但是最后一个位置需要留给 \0) 并且没有换行由此不断叠加&lt;br&gt;
+&lt;strong&gt; important&lt;/strong&gt; 系统使用缓冲的 I/O 用户按 enter 键之前 输入都被存储在缓冲区中 按下 enter 键就在输入中增加了一个换行符 并且把整行输入发送给 fgets () 对出输出 fputs () 把字符发送给另一个缓冲区 当发送换行符时 缓冲区的内容被发送到屏幕上&lt;br&gt;
+ fgets () 存储换行符有好有坏&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;好处：对于存储的字符串而言 检查末尾是否有换行符可以判断是否读取了一整行&lt;/li&gt;
+&lt;li&gt;坏处：可能编者本身并不想把换行符存储在字符串中 这样的换行符会带来一些麻烦&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;存储的字符串 如果不是一整行 要妥善处理一行中剩下的字符&lt;/p&gt;
+&lt;p&gt;如何处理掉换行符呢&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在已存储的字符串中查找换行符 并将其替换成空字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;while (words[i] != &#39;\n&#39;) // 假设\n在words中
+     i++;
+words[i] = &#39;\0&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;如果仍然有字符串留在输入行怎么办，如果目标数组装不下一整行输入就丢弃多出的字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;while (getchar() != &#39;\n&#39;)    // 读取但不存储输入，包括\n
+continue;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以下程序读取输入航 删除存储在字符串中的换行符  如果没有换行符 就丢弃数组装不下的字符&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#define STLEN 10
+int main(void)
+{
+     char words[STLEN];
+     int i;
+
+     puts(&#34;Enter strings (empty line to quit):&#34;);
+     while (fgets(words, STLEN, stdin) != NULL &amp;amp;&amp;amp; words[0] != &#39;\n&#39;)
+     {
+          i = 0;
+          while (words[i] != &#39;\n&#39; &amp;amp;&amp;amp; words[i] != &#39;\0&#39;)
+               i++;
+          if (words[i] == &#39;\n&#39;)
+               words[i] = &#39;\0&#39;;
+          else    // 如果word[i] == &#39;\0&#39;则执行这部分代码
+               while (getchar() != &#39;\n&#39;)
+                     continue;
+          puts(words);
+     }
+     puts(&#34;done&#34;);
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;遍历字符串 直到遇到换行符或者空字符 如果先遇到换行符 就替换成空字符 如果先遇到空字符 else 部分就丢弃输入行的剩余字符&lt;/p&gt;
+&lt;h6 id=&#34;gets_s函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gets_s函数&#34;&gt;#&lt;/a&gt; gets_s () 函数&lt;/h6&gt;
+&lt;p&gt;和 fgets () 函数类似 用一个参数限制读入的字符数目&lt;/p&gt;
+&lt;p&gt;区别如下:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gets_s () 只从标准输入中读取数据 不需要第三个参数&lt;/li&gt;
+&lt;li&gt;gets_s 读到换行符会丢弃换行符而不是存储&lt;/li&gt;
+&lt;li&gt;如果 gets_s 读到最大字符数都没有读到换行符 他会先把数组中的首字符设置成空字符 读取然后丢弃随后的输入 知道读到换行符 然后返回空指针 接着调用 &#34;处理函数&#34; (可能会终止或者退出程序)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果输入行未超过最大字符数目 gets_s () 和 gets () 相同&lt;/p&gt;
+&lt;p&gt;如果目标存储区装得下输入行 以上函数效果都一样&lt;/p&gt;
+&lt;p&gt;如果输入行太长会怎样&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 gets () 会擦写现有数据 具有安全隐患&lt;/li&gt;
+&lt;li&gt;gets_s () 很安全 但是如果不希望程序终止或者退出 就要知道如何编写 &#34;处理函数&#34; 如果让程序继续运行 gets_s 会丢弃该输入行的其余字符&lt;/li&gt;
+&lt;li&gt;fgets () 综合了以上两个 可以自由选择 是截取丢弃 还是继续使用输入行中超出的字符 可以参考以上 fgets () 中两个程序的处理方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;s_gets函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#s_gets函数&#34;&gt;#&lt;/a&gt; s_gets () 函数&lt;/h6&gt;
+&lt;p&gt;fgets () 函数的一种语法 读取郑航输入并用空字符代替换行符 或者读取一部分输入 并丢弃其余部分 然而并没有处理这种情况的标准 C 库函数&lt;br&gt;
+所以我们就创建一个 或许在后面的程序中会用得上&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;char * s_gets(char * st, int n)
+{
+     char * ret_val;
+     int i = 0;
+
+     ret_val = fgets(st, n, stdin);
+     if (ret_val)    // 即，ret_val != NULL
+     {
+          while (st[i] != &#39;\n&#39; &amp;amp;&amp;amp; st[i] != &#39;\0&#39;)
+               i++;
+          if (st[i] == &#39;\n&#39;)
+               st[i] = &#39;\0&#39;;
+          else&amp;lt;ins&amp;gt;
+&amp;lt;/ins&amp;gt;               while (getchar() != &#39;\n&#39;)
+                     continue;
+     }
+     return ret_val;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果 fgets () 返回 NULL，说明读到文件结尾或出现读取错误，s_gets () 函数跳过了这个过程。它模仿上面处理 fgets () 函数的的处理方法，如果字符串中出现换行符，就用空字符替换它；如果字符串中出现空字符，就丢弃该输入行的其余字符，然后返回与 fgets () 相同的值。我们在后面的示例中将讨论 fgets () 函数。&lt;/p&gt;
+&lt;p&gt;为什么要丢弃过长输入行中的余下字符。&lt;br&gt;
+这是因为，输入行中多出来的字符会被留在缓冲区中，成为下一次读取语句的输入。&lt;br&gt;
+例如，如果下一条读取语句要读取的是 double 类型的值，就可能导致程序崩溃。丢弃输入行余下的字符保证了读取语句与键盘输入同步。&lt;/p&gt;
+&lt;p&gt;s_gets () 函数并不完美，它最严重的缺陷是遇到不合适的输入时毫无反应。它丢弃多余的字符时，既不通知程序也不告知用户。但是，用来替换前面程序示例中的 gets () 足够了。&lt;/p&gt;
+&lt;h6 id=&#34;空字符和空指针&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#空字符和空指针&#34;&gt;#&lt;/a&gt; 空字符和空指针&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;空字符 (\0) 用于标记 C 字符串末尾的字符 对应字符编码为 0 由于其他字符的编码不可能为 0 所以空字符不可能是字符串的一部分&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;空指针 (NULL) 有一个值 该值不会与任何数据的有效地址对应.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;空指针是整数类型 空指针是指针类型 空字符是一个字符占 1 字节 空指针是一个地址 占 4 字节&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </content>
         <category term="C语言" />
@@ -4550,6 +4693,38 @@ back() 和 go() 同理
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;pc端网页特效&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pc端网页特效&#34;&gt;#&lt;/a&gt; PC 端网页特效&lt;/h3&gt;
+&lt;h4 id=&#34;元素偏移量offset系列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#元素偏移量offset系列&#34;&gt;#&lt;/a&gt; 元素偏移量 offset 系列&lt;/h4&gt;
+&lt;p&gt;动态获取元素位置和大小&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;获取元素距离带有定位父元素的位置&lt;/li&gt;
+&lt;li&gt;获得元素自身的大小 (包含 padding 和 border)&lt;/li&gt;
+&lt;li&gt;返回的数值不带单位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/oih8C6&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/24/oih8C6.png&#34; alt=&#34;oih8C6.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+offsetParent  返回的是带有定位的父元素 (没有则返回 body)&lt;br&gt;
+ parentNode 返回的是最近一级的父元素 不管父元素有没有定位&lt;/p&gt;
+&lt;h5 id=&#34;offset和style的区别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#offset和style的区别&#34;&gt;#&lt;/a&gt; offset 和 style 的区别&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;offsetWidth 与 style.width&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oiTCtA&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/24/oiTCtA.png&#34; alt=&#34;oiTCtA.png&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;元素可视区client系列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#元素可视区client系列&#34;&gt;#&lt;/a&gt; 元素可视区 client 系列&lt;/h4&gt;
+&lt;p&gt;使用 client 系列的相关属性获取元素可视区的相关信息&lt;br&gt;
+通过 client 系列的相关属性可以动态得到该元素的边框大小，元素大小等&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oib09s&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/24/oib09s.png&#34; alt=&#34;oib09s.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;淘宝源码分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#淘宝源码分析&#34;&gt;#&lt;/a&gt; 淘宝源码分析&lt;/h4&gt;
+&lt;h5 id=&#34;立即执行函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#立即执行函数&#34;&gt;#&lt;/a&gt; 立即执行函数&lt;/h5&gt;
+&lt;p&gt;不需要调用 立即执行&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;(function XXX() { })()  第二个小括号可以看成调用函数 也可以传递参数
+(function XXX(){}()) 第二个小括号可以看成调用函数 也可以传递参数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;XXX 为函数名 可以省略&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多个立即执行函数之间必须使用分号隔开&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;好处：独立创建了一个作用域 里面所有的变量都是局部变量 避免了命名冲突的问题&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <category term="Javascript" />
         <updated>2021-11-05T16:00:00.000Z</updated>
