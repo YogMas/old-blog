@@ -753,7 +753,7 @@ interchange(&amp;amp;x,&amp;amp;y)
 &lt;p&gt;函数使用参数把值传给函数 使用关键字 return 把值返回函数 必须在函数定义和函数原型中指定函数的原型，如果需要在被调函数中修改主调函数的变量，使用地址或指针作为参数&lt;br&gt;
  ANSI C 提供了函数原型 允许编译器验证函数调用中使用的参数个数和类型是否正确&lt;br&gt;
  C 函数可以调用本身 即递归 一些编程问题要用递归来解决 但是递归消耗内存多 效率不高 而且费时&lt;/p&gt;
-&lt;h3 id=&#34;数组和指针&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组和指针&#34;&gt;#&lt;/a&gt; 数组和指针&lt;/h3&gt;
+&lt;h3 id=&#34;第十章数组和指针&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第十章数组和指针&#34;&gt;#&lt;/a&gt; 第十章数组和指针&lt;/h3&gt;
 &lt;h4 id=&#34;数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数组&#34;&gt;#&lt;/a&gt; 数组&lt;/h4&gt;
 &lt;p&gt;数组：数据类型相同的一系列元素组成 通过声明告诉编译器数组中含有多少元素和这些元素的类型&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1328,7 +1328,7 @@ display(5, 12, sales);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;虽然上述讨论中使用的是 int 类型的数组和 double 类型的数组，其他类型的数组也是如此。然而，字符串有一些特殊的规则，这是由于其末尾的空字符所致。有了这个空字符，不用传递数组的大小，函数通过检测字符串的末尾也知道在何处停止。我们将在第 11 章中详细介绍。&lt;/p&gt;
-&lt;h3 id=&#34;字符串和字符串函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串和字符串函数&#34;&gt;#&lt;/a&gt; 字符串和字符串函数&lt;/h3&gt;
+&lt;h3 id=&#34;第十一章字符串和字符串函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第十一章字符串和字符串函数&#34;&gt;#&lt;/a&gt; 第十一章字符串和字符串函数&lt;/h3&gt;
 &lt;h4 id=&#34;表示字符串和字符串io&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表示字符串和字符串io&#34;&gt;#&lt;/a&gt; 表示字符串和字符串 I/O&lt;/h4&gt;
 &lt;p&gt;字符串是以空字符 (\o) 结尾的 char 类型数组&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1692,6 +1692,233 @@ int main(void)
 &lt;p&gt;空指针是整数类型 空指针是指针类型 空字符是一个字符占 1 字节 空指针是一个地址 占 4 字节&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h5 id=&#34;scanf函数-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#scanf函数-2&#34;&gt;#&lt;/a&gt; scanf () 函数&lt;/h5&gt;
+&lt;p&gt;前面用 scanf () 和 % s 来读取字符串&lt;br&gt;
+ scanf () 和 gets () 以及 fgets () 的区别在于他们如何确定字符串的末尾&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;scanf () 更像是在 &#34;获取单词&#34; 而不是在 &#34;获取字符串&#34;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果预留区装得下输入航 gets () 和 fgets () 会读取第一个换行符之前所有的字符&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;scanf () 有两种方法确定输入结束，但是都是从第一个非空白字符作为字符的开始&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 % s 转换说明 以下一个空白字符 (空行 空格 制表符 换行符) 作为字符串的结束 (&lt;strong&gt;空白字符不存储在字符串中&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;如果指定了字符串的长度 如 %8s 那么 scanf () 将读取 8 个字符 或者读到空白符位置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/oFcCd0&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/25/oFcCd0.png&#34; alt=&#34;oFcCd0.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;scanf () 函数返回一个整数值 该值等于 scanf () 成功读取的项数 或者 EOF (读到文件末尾)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+int main(void)
+{
+     char name1[11], name2[11];
+     int count;
+
+     printf(&#34;Please enter 2 names.\n&#34;);
+     count = scanf(&#34;%5s %10s&#34;, name1, name2);
+     printf(&#34;I read the %d names %s and %s.\n&#34;, count, name1, name2);
+
+     return 0
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;输入示例&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Please enter 2 names.&lt;br&gt;
+Jesse Jukes&lt;br&gt;
+I read the 2 names Jesse and Jukes.  // 都未超出字段宽度&lt;br&gt;
+ Please enter 2 names.&lt;br&gt;
+Liza Applebottham&lt;br&gt;
+I read the 2 names Liza and Applebotth.  // 第二个超出了字段宽度 自动截取了&lt;br&gt;
+ Please enter 2 names.&lt;br&gt;
+Portensia Callowit&lt;br&gt;
+I read the 2 names Porte and nsia.   先读取了 5 个字符 (第一次调用 scanf ()) 然后又读取了 4 字符 (第二次调用 scanf () 从上一次调用结束的地方继续读取数据)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;根据输入数据的性质 用 scanf () 读取键盘输入的数据 有时并不合适&lt;br&gt;
+ scanf () 无法完整地读入书名或者歌曲名 除非这些名称是一个单词&lt;br&gt;
+ scanf () 的典型用法：读取并转换混合数据类型为某种标准形式&lt;br&gt;
+ scanf () 缺点：输入行过长也会导致数据溢出&lt;br&gt;
+解决方法：在 % s 转换说明中限制字段宽度&lt;/p&gt;
+&lt;h4 id=&#34;字符串输出&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串输出&#34;&gt;#&lt;/a&gt; 字符串输出&lt;/h4&gt;
+&lt;p&gt;C 中 3 个用于打印字符串的标准库函数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;puts()&lt;/li&gt;
+&lt;li&gt;fputs()&lt;/li&gt;
+&lt;li&gt;printf()&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;puts函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#puts函数&#34;&gt;#&lt;/a&gt; puts () 函数&lt;/h5&gt;
+&lt;p&gt;puts () 函数会在末尾自动添加一个换行符&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#define DEF &#34;I am a #defined string.&#34;
+int main(void)
+{
+     char str1[80] = &#34;An array was initialized to me.&#34;;
+     const char * str2 = &#34;A pointer was initialized to me.&#34;;
+
+     puts(&#34;I&#39;m an argument to puts().&#34;);
+     puts(DEF);
+     puts(str1);
+     puts(str2);
+     puts(&amp;amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
+     puts(str2 + 4);
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;输出如下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I’m an argument to puts().&lt;br&gt;
+I am a #defined string.&lt;br&gt;
+An array was initialized to me.&lt;br&gt;
+A pointer was initialized to me.&lt;br&gt;
+ray was initialized to me.&lt;br&gt;
+inter was initialized to me.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;puts 遇到空字符就停止输入 所以必须却要有空字符&lt;br&gt;
+如果缺少空字符他会一直打印内存后面中的内容 直到读到空字符的位置为止&lt;/p&gt;
+&lt;h5 id=&#34;fputs函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#fputs函数&#34;&gt;#&lt;/a&gt; fputs () 函数&lt;/h5&gt;
+&lt;p&gt;与 puts () 函数的区别如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fputs () 的第二个参数指明要写入数据的文件 如果要打印在显示器上 用定义在 stdio.h 中的 stdout (标准输出) 作为该参数&lt;/li&gt;
+&lt;li&gt;fputs () 不会在输出的末尾添加换行符 而 puts () 会&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;与前面的输入函数关联起来 也就是前面提过的&lt;br&gt;
+&lt;strong&gt; puts () 函数会在待输入字符串末尾添加一个换行符 而 fputs () 不会这样做&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;同样 fgets () 存储时会在末尾自动存储一个换行符 而 gets () 不会这样&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不推荐使用 gets () 因为已经废弃了  学习 gets () 只是以防以后看到 gets () 代码看不懂&lt;/p&gt;
+&lt;h5 id=&#34;printf函数-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#printf函数-2&#34;&gt;#&lt;/a&gt; printf () 函数&lt;/h5&gt;
+&lt;p&gt;printf () 把字符串的地址作为参数&lt;br&gt;
+ printf () 不是那么方便 但是它可以格式化不同的数据类型&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;printf(&#34;%s \n&#34;,string)
+puts(string); 这两个语句的效果是相同的
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;自定义输入输出函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自定义输入输出函数&#34;&gt;#&lt;/a&gt; 自定义输入 / 输出函数&lt;/h4&gt;
+&lt;p&gt;以下是一个 类似 puts 但是不会就自动添加换行符的函数&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+void put1(const char * string)/* 不会改变字符串 */
+{
+     while (*string != &#39;\0&#39;)
+          putchar(*string++);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因为从右向左运算 *string++ 中递增是 string 本身而不是递增它所指向的字符&lt;/p&gt;
+&lt;p&gt;很多 C 程序员在 whild 中会使用下面的测试条件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;while (*string) 若*string是空字符 则为0 循环结束 这种方法风场渐变
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以下将打印一串字符串 并且 统计打印的字符个数&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt; int put2(const char * string)
+ {
+      int count = 0;
+      while (*string)    /* 常规用法 */
+      {
+           putchar(*string++);
+           count++;
+      }
+      putchar(&#39;\n&#39;);    /* 不统计换行符 */
+ 
+      return(count);
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;具体的程序使用&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+void put1(const char *);
+int put2(const char *);
+
+int main(void)
+{
+     put1(&#34;If I&#39;d as much money&#34;);
+     put1(&#34; as I could spend,\n&#34;);
+     printf(&#34;I count %d characters.\n&#34;,
+          put2(&#34;I never would cry old chairs to mend.&#34;));
+
+     return 0;
+}
+
+void put1(const char * string)
+{
+     while (*string)  /* 与 *string != &#39;\0&#39; 相同 */
+          putchar(*string++);
+}
+
+int put2(const char * string)
+{
+     int count = 0;
+     while (*string)
+     {
+          putchar(*string++);
+          count++;
+     }
+     putchar(&#39;\n&#39;);
+
+     return(count);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;字符串函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串函数&#34;&gt;#&lt;/a&gt; 字符串函数&lt;/h4&gt;
+&lt;p&gt;C 库中有多个处理字符串的函数 ANSI C 放在了 string.h 头文件中&lt;/p&gt;
+&lt;h5 id=&#34;strlen-函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strlen-函数&#34;&gt;#&lt;/a&gt; strlen () 函数&lt;/h5&gt;
+&lt;p&gt;strlen () 函数用于统计字符串的长度&lt;br&gt;
+以下函数用于缩短字符串的长度&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;void fit(char *string, unsigned int size)
+{
+     if (strlen(string) &amp;gt; size)
+         string[size] = &#39;\0&#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;strcat函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strcat函数&#34;&gt;#&lt;/a&gt; strcat () 函数&lt;/h5&gt;
+&lt;p&gt;strcat () 用于凭借字符串&lt;br&gt;
+函数接受两个字符串作为参数 该函数是把第二个字符串的备份附加在第一个字符串末尾 然后把拼接后形成的新字符串作为第一个字符串 第二个字符串不发生改变&lt;br&gt;
+ strcat () 的类型是指向 char 的指针 返回的值是第一个字符串的地址&lt;/p&gt;
+&lt;h5 id=&#34;strncat函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strncat函数&#34;&gt;#&lt;/a&gt; strncat () 函数&lt;/h5&gt;
+&lt;p&gt;strcat () 无法检查第一个数组 是否能够容纳第 2 个字符串 如果第一个数组的空间不够大 拼接的时候就会出现问题&lt;br&gt;
+ strncat () 的第三个参数制定了最大添加字符数&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;strncat(bugs,addon,13)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在加到第 13 个字符或者空字符的时候就停止&lt;br&gt;
+ strncat () 和 gets () 一样也会导致缓冲区溢出 但是并没有废弃&lt;/p&gt;
+&lt;h5 id=&#34;strcmp函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strcmp函数&#34;&gt;#&lt;/a&gt; strcmp () 函数&lt;/h5&gt;
+&lt;p&gt;strcmp 用于字符串的比较&lt;br&gt;
+如果两个字符串参数相同 函数就返回 0 否则返回非 0 数&lt;br&gt;
+&lt;strong&gt;注意&lt;/strong&gt;&lt;br&gt;
+ strcmp () 比较的是字符串不是整个数组 即使数组很大 strcmp () 也只会比较数组中存储的字符串 也就是第一个空字符前面的字符串&lt;/p&gt;
+&lt;h6 id=&#34;1strcmp的返回值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1strcmp的返回值&#34;&gt;#&lt;/a&gt; 1.strcmp () 的返回值&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;如果第一个字符串在第二个字符串前面 strcmp () 返回一个负数&lt;/li&gt;
+&lt;li&gt;如果两个字符串相同 则返回 0&lt;/li&gt;
+&lt;li&gt;如果第一个字符串在第二个字符串后面 strcmp () 返回一个正数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;比较过程中 strcmp () 会依次比较每个字符 知道发现第一对不同的字符为止 然后返回相应的值&lt;/p&gt;
+&lt;p&gt;strcmp () 与其说是比较字符串 不如说是根据 ASCII 的值 按照&lt;strong&gt;机器排序序列&lt;/strong&gt;进行比较&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt; strcmp () 比较的是字符串而不是字符 也就是说即使要比较单个字符 也应该写成 &#34;A&#34; 而不是’A’&lt;br&gt;
+实际上因为 char 类型实际上是 int 类型 所以比较字符时 也不需要使用到 strcmp () 函数&lt;/p&gt;
+&lt;h6 id=&#34;strncmp函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strncmp函数&#34;&gt;#&lt;/a&gt; strncmp () 函数&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;strcmp () 比较字符串中的字符 这一过程会持续到直到发现不同&lt;/li&gt;
+&lt;li&gt;strncmp () 在比较两个字符串时 可以限定函数只比较哪几个字符 这样可以用来查找哪个字母 或者开头 结尾 相同的单词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;strncmp(&#34;transform&#34;,&#34;transparent&#34;,5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此时函数就只会比较前面 5 个字符 并且输出的结果是 0 因为前 5 个字符 trans 相同&lt;/p&gt;
 </content>
         <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>
