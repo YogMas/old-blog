@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-25
+                    2021-11-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10.3k
+                    10.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    38 分
+                    39 分
                 </div>
                 
 
@@ -1631,6 +1631,37 @@ offsetParent  返回的是带有定位的父元素 (没有则返回 body)<br>
 <a target="_blank" rel="noopener" href="https://imgtu.com/i/oA0u8J"><img src="https://z3.ax1x.com/2021/11/25/oA0u8J.png" alt="oA0u8J.png"></a></p>
 <h5 id="scroll事件"><a class="markdownIt-Anchor" href="#scroll事件">#</a> scroll 事件</h5>
 <p>当滚动条发生变化时会触发的事件</p>
+<blockquote>
+<pre><code>XXX.document.addEventListener('scroll',function(){})
+</code></pre>
+</blockquote>
+<h4 id="动画函数封装"><a class="markdownIt-Anchor" href="#动画函数封装">#</a> 动画函数封装</h4>
+<p>通过定时器 setInterval () 不断移动盒子的位置<br>
+ 1. 获取当前位置<br>
+ 2. 给当前位置加一个移动距离<br>
+ 3. 利用定时器不断重复这个操作<br>
+ 4. 结束定时器<br>
+<strong> 5. 元素需要添加定位才能使用 element.style.left</strong></p>
+<h5 id="动画函数简单封装"><a class="markdownIt-Anchor" href="#动画函数简单封装">#</a> 动画函数简单封装</h5>
+<blockquote>
+<pre><code>function animate(obj, target) {
+    clearInterval(obj.timer)
+    obj.timer = setInterval(function () {
+        if (obj.offsetLeft &gt;= target) {
+            clearInterval(obj.timer)
+        } else
+            obj.style.left = obj.offsetLeft + 2 + 'px';
+    }, 30)
+}
+</code></pre>
+</blockquote>
+<h5 id="缓动动画"><a class="markdownIt-Anchor" href="#缓动动画">#</a> 缓动动画</h5>
+<ol>
+<li>让盒子每次移动的距离慢慢变小 速度就会慢慢慢下来</li>
+<li>核心算法：(目标值 - 现在的位置)/10</li>
+<li>盒子等于目标位置就停止计时器</li>
+</ol>
+<h5 id="缓动动画基本代码实现"><a class="markdownIt-Anchor" href="#缓动动画基本代码实现">#</a> 缓动动画基本代码实现</h5>
 
                 
             </div>
@@ -2140,7 +2171,7 @@ offsetParent  返回的是带有定位的父元素 (没有则返回 body)<br>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.2k</span>&nbsp;字
+                class="white-color">51.4k</span>&nbsp;字
             
             
             

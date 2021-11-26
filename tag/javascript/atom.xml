@@ -1213,6 +1213,37 @@ offsetParent  返回的是带有定位的父元素 (没有则返回 body)&lt;br&
 &lt;a href=&#34;https://imgtu.com/i/oA0u8J&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/25/oA0u8J.png&#34; alt=&#34;oA0u8J.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;scroll事件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#scroll事件&#34;&gt;#&lt;/a&gt; scroll 事件&lt;/h5&gt;
 &lt;p&gt;当滚动条发生变化时会触发的事件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;XXX.document.addEventListener(&#39;scroll&#39;,function(){})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;动画函数封装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动画函数封装&#34;&gt;#&lt;/a&gt; 动画函数封装&lt;/h4&gt;
+&lt;p&gt;通过定时器 setInterval () 不断移动盒子的位置&lt;br&gt;
+ 1. 获取当前位置&lt;br&gt;
+ 2. 给当前位置加一个移动距离&lt;br&gt;
+ 3. 利用定时器不断重复这个操作&lt;br&gt;
+ 4. 结束定时器&lt;br&gt;
+&lt;strong&gt; 5. 元素需要添加定位才能使用 element.style.left&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&#34;动画函数简单封装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#动画函数简单封装&#34;&gt;#&lt;/a&gt; 动画函数简单封装&lt;/h5&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;function animate(obj, target) {
+    clearInterval(obj.timer)
+    obj.timer = setInterval(function () {
+        if (obj.offsetLeft &amp;gt;= target) {
+            clearInterval(obj.timer)
+        } else
+            obj.style.left = obj.offsetLeft + 2 + &#39;px&#39;;
+    }, 30)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;缓动动画&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#缓动动画&#34;&gt;#&lt;/a&gt; 缓动动画&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;让盒子每次移动的距离慢慢变小 速度就会慢慢慢下来&lt;/li&gt;
+&lt;li&gt;核心算法：(目标值 - 现在的位置)/10&lt;/li&gt;
+&lt;li&gt;盒子等于目标位置就停止计时器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;缓动动画基本代码实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#缓动动画基本代码实现&#34;&gt;#&lt;/a&gt; 缓动动画基本代码实现&lt;/h5&gt;
 </content>
         <category term="Javascript" />
         <updated>2021-11-05T16:00:00.000Z</updated>
