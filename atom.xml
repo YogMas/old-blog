@@ -2812,7 +2812,7 @@ int put2(const char * string)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;h5 id=&#34;strcat函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strcat函数&#34;&gt;#&lt;/a&gt; strcat () 函数&lt;/h5&gt;
-&lt;p&gt;strcat () 用于凭借字符串&lt;br&gt;
+&lt;p&gt;strcat () 用于拼接字符串&lt;br&gt;
 函数接受两个字符串作为参数 该函数是把第二个字符串的备份附加在第一个字符串末尾 然后把拼接后形成的新字符串作为第一个字符串 第二个字符串不发生改变&lt;br&gt;
  strcat () 的类型是指向 char 的指针 返回的值是第一个字符串的地址&lt;/p&gt;
 &lt;h5 id=&#34;strncat函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strncat函数&#34;&gt;#&lt;/a&gt; strncat () 函数&lt;/h5&gt;
@@ -2849,6 +2849,144 @@ int put2(const char * string)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;此时函数就只会比较前面 5 个字符 并且输出的结果是 0 因为前 5 个字符 trans 相同&lt;/p&gt;
+&lt;h5 id=&#34;strcpy和strncpy函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strcpy和strncpy函数&#34;&gt;#&lt;/a&gt; strcpy () 和 strncpy () 函数&lt;/h5&gt;
+&lt;p&gt;如何希望拷贝整个字符串就用 strcpy ()&lt;br&gt;
+ strcpy () 函数相当于&lt;strong&gt;字符串赋值运算符&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;strcpy () 第二个参数 指向的字符串被拷贝至第一个参数指向的数组中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;拷贝出来的字符串被称为&lt;strong&gt;目标字符串&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;最初的字符串被称为&lt;strong&gt;源字符串&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果拷贝到的数组没有被初始化 这时候可能被拷贝到任意地方&lt;/p&gt;
+&lt;h6 id=&#34;strcpy的其他属性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#strcpy的其他属性&#34;&gt;#&lt;/a&gt; strcpy () 的其他属性&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;strcpy () 的返回类型是 char * 该函数返回第一个字符的地址&lt;/li&gt;
+&lt;li&gt;第一个参数不必指向数组的开始&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;更谨慎的选择-strncpy&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#更谨慎的选择-strncpy&#34;&gt;#&lt;/a&gt; 更谨慎的选择: strncpy ()&lt;/h6&gt;
+&lt;p&gt;strcpy () 不能检查目标空间是否能容纳源字符串的副本&lt;br&gt;
+ strncpy () 的第三个参数指明可拷贝的最大字符数&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;strncpy(target,source,n)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;把 source 中的 n 个字符或者空字符之前的字符拷贝到 target 中&lt;br&gt;
+ strncpy () 拷贝字符串的长度不会超过 n&lt;br&gt;
+&lt;strong&gt; 如果拷贝到底 n 还没有拷贝完整个字符串 就不会拷贝空字符&lt;/strong&gt;&lt;br&gt;
+如此写程序的时候可以用 if else 语句 把拷贝过去的字符串最后一个转化为空字符 以保证存储的是一个字符串&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h6 id=&#34;sprintf函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sprintf函数&#34;&gt;#&lt;/a&gt; sprintf () 函数&lt;/h6&gt;
+&lt;p&gt;sprintf 函数声明在 stdio.h 中&lt;br&gt;
+该函数和 printf 类似 但是是把数据写入字符串 而不是打印在电脑屏幕上&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sprintf () 的第一个参数是目标字符串的地址&lt;/li&gt;
+&lt;li&gt;其他参数和 printf () 相同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sprintf(formal,&#34;    &#34;,X,Y,Z)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;表示法 X,Y,Z 拼接成一个字符串并且存储在 formal 中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;其他字符串函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#其他字符串函数&#34;&gt;#&lt;/a&gt; 其他字符串函数&lt;/h5&gt;
+&lt;p&gt;对以上函数 和一些常用函数的总结&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;char *strcpy (char* restrict s1, const char * restrict s2);&lt;br&gt;
+ 该函数把 s2 指向的字符串（包括空字符）拷贝至 s1 指向的位置，返回值是 s1。&lt;br&gt;
+char*strncpy(char * restrict s1, const char * restrict s2, size_t n);&lt;br&gt;
+ 该函数把 s2 指向的字符串拷贝至 s1 指向的位置，拷贝的字符数不超过 n，其返回值是 s1。该函数不会拷贝空字符后面的字符，如果源字符串的字符少于 n 个，目标字符串就以拷贝的空字符结尾；如果源字符串有 n 个或超过 n 个字符，就不拷贝空字符。&lt;br&gt;
+char *strcat(char * restrict s1, const char * restrict s2);&lt;br&gt;
+ 该函数把 s2 指向的字符串拷贝至 s1 指向的字符串末尾。s2 字符串的第 1 个字符将覆盖 s1 字符串末尾的空字符。该函数返回 s1。&lt;br&gt;
+char *strncat(char * restrict s1, const char * restrict s2, size_t n);&lt;br&gt;
+ 该函数把 s2 字符串中的 n 个字符拷贝至 s1 字符串末尾。s2 字符串的第 1 个字符将覆盖 s1 字符串末尾的空字符。不会拷贝 s2 字符串中空字符和其后的字符，并在拷贝字符的末尾添加一个空字符。该函数返回 s1。&lt;br&gt;
+int strcmp(const char * s1, const char * s2);&lt;br&gt;
+ 如果 s1 字符串在机器排序序列中位于 s2 字符串的后面，该函数返回一个正数；如果两个字符串相等，则返回 0；如果 s1 字符串在机器排序序列中位于 s2 字符串的前面，则返回一个负数。&lt;br&gt;
+int strncmp(const char * s1, const char * s2, size_t n);&lt;br&gt;
+ 该函数的作用和 strcmp () 类似，不同的是，该函数在比较 n 个字符后或遇到第 1 个空字符时停止比较。&lt;br&gt;
+char *strchr(const char * s, int c);&lt;br&gt;
+ 如果 s 字符串中包含 c 字符，该函数返回指向 s 字符串首次出现的 c 字符的指针（末尾的空字符也是字符串的一部分，所以在查找范围内）；如果在字符串 s 中未找到 c 字符，该函数则返回空指针。&lt;br&gt;
+char *strpbrk(const char * s1, const char * s2);&lt;br&gt;
+ 如果 s1 字符中包含 s2 字符串中的任意字符，该函数返回指向 s1 字符串首位置的指针；如果在 s1 字符串中未找到任何 s2 字符串中的字符，则返回空字符。&lt;br&gt;
+char *strrchr(const char * s, char c);&lt;br&gt;
+ 该函数返回 s 字符串中 c 字符的最后一次出现的位置（末尾的空字符也是字符串的一部分，所以在查找范围内）。如果未找到 c 字符，则返回空指针。&lt;br&gt;
+char *strstr(const char * s1, const char * s2);&lt;br&gt;
+ 该函数返回指向 s1 字符串中 s2 字符串出现的首位置。如果在 s1 中没有找到 s2，则返回空指针。&lt;br&gt;
+size_t strlen(const char * s);&lt;br&gt;
+ 该函数返回 s 字符串中的字符数，不包括末尾的空字符。&lt;br&gt;
+请注意，那些使用 const 关键字的函数原型表明，函数不会更改字符串。例如，下面的函数原型：&lt;br&gt;
+char *strcpy(char * restrict s1, const char * restrict s2);&lt;br&gt;
+ 表明不能更改 s2 指向的字符串，至少不能在 strcpy () 函数中更改。但是可以更改 s1 指向的字符串。这样做很合理，因为 s1 是目标字符串，要改变，而 s2 是源字符串，不能更改。&lt;/p&gt;
+&lt;p&gt;关键字 restrict 将在第 12 章中介绍，该关键字限制了函数参数的用法。例如，不能把字符串拷贝给本身。&lt;/p&gt;
+&lt;p&gt;第 5 章中讨论过，size_t 类型是 sizeof 运算符返回的类型。C 规定 sizeof 运算符返回一个整数类型，但是并未指定是哪种整数类型，所以 size_t 在一个系统中可以是 unsigned int，而在另一个系统中可以是 unsigned long。string.h 头文件针对特定系统定义了 size_t，或者参考其他有 size_t 定义的头文件。&lt;/p&gt;
+&lt;p&gt;前面提到过，参考资料 V 中列出了 string.h 系列的所有函数。除提供 ANSI 标准要求的函数外，许多实现还提供一些其他函数。应查看你所使用的 C 实现文档，了解可以使用哪些函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;字符串示例字符串排序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串示例字符串排序&#34;&gt;#&lt;/a&gt; 字符串示例：字符串排序&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;string.h&amp;gt;
+#define SIZE 81        /* 限制字符串长度，包括 \0 */
+#define LIM 20         /* 可读入的最多行数 */
+#define HALT &#34;&#34;        /* 空字符串停止输入 */
+void stsrt(char *strings [], int num);    /* 字符串排序函数 */
+char * s_gets(char * st, int n);
+
+int main(void)
+{
+     char input[LIM][SIZE];       /* 存储输入的数组        */
+     char *ptstr[LIM];            /* 内含指针变量的数组    */
+     int ct = 0;                  /* 输入计数             */
+     int k;                       /* 输出计数             */
+
+     printf(&#34;Input up to %d lines, and I will sort them.\n&#34;, LIM);
+     printf(&#34;To stop, press the Enter key at a line&#39;s start.\n&#34;);
+     while (ct &amp;lt; LIM &amp;amp;&amp;amp; s_gets(input[ct], SIZE) != NULL
+               &amp;amp;&amp;amp; input[ct][0] != &#39;\0&#39;)
+     {
+          ptstr[ct] = input[ct];  /* 设置指针指向字符串    */
+          ct++;
+     }
+     stsrt(ptstr, ct);            /* 字符串排序函数        */
+     puts(&#34;\nHere&#39;s the sorted list:\n&#34;);
+     for (k = 0; k &amp;lt; ct; k++)
+          puts(ptstr[k]);         /* 排序后的指针          */
+
+     return 0;
+}
+
+/* 字符串-指针-排序函数 */
+void stsrt(char *strings [], int num)
+{
+     char *temp;
+     int top, seek;
+
+     for (top = 0; top &amp;lt; num - 1; top++)
+          for (seek = top + 1; seek &amp;lt; num; seek++)
+               if (strcmp(strings[top], strings[seek]) &amp;gt; 0)
+               {
+                    temp = strings[top];
+                    strings[top] = strings[seek];
+                    strings[seek] = temp;
+               }
+}
+
+char * s_gets(char * st, int n)
+{
+     char * ret_val;
+     int i = 0;
+
+     ret_val = fgets(st, n, stdin);
+     if (ret_val)
+     {
+          while (st[i] != &#39;\n&#39; &amp;amp;&amp;amp; st[i] != &#39;\0&#39;)
+               i++;
+          if (st[i] == &#39;\n&#39;)
+               st[i] = &#39;\0&#39;;
+          else 
+               while (getchar() != &#39;\n&#39;)
+                       continue;
+     }
+     return ret_val;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
 </content>
         <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>
@@ -4952,6 +5090,15 @@ offsetParent  返回的是带有定位的父元素 (没有则返回 body)&lt;br&
 &lt;li&gt;&lt;strong&gt;多个立即执行函数之间必须使用分号隔开&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;好处：独立创建了一个作用域 里面所有的变量都是局部变量 避免了命名冲突的问题&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h4 id=&#34;元素滚动scroll系列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#元素滚动scroll系列&#34;&gt;#&lt;/a&gt; 元素滚动 scroll 系列&lt;/h4&gt;
+&lt;p&gt;得到元素的大小 滚动距离 与页面中的滚动条有关&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oAwKnP&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/25/oAwKnP.png&#34; alt=&#34;oAwKnP.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt; 不包含边框 包含 padding 值&lt;/strong&gt;&lt;br&gt;
+对于超出父元素的汉字 会按照所有汉字叠加的高度计算 (真正的内容实际大小)&lt;br&gt;
+ 与 client 不同的是 client 并不会计算超出的大小 而只是原有父元素的大小&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oA0u8J&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/25/oA0u8J.png&#34; alt=&#34;oA0u8J.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;scroll事件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#scroll事件&#34;&gt;#&lt;/a&gt; scroll 事件&lt;/h5&gt;
+&lt;p&gt;当滚动条发生变化时会触发的事件&lt;/p&gt;
 </content>
         <category term="Javascript" />
         <updated>2021-11-05T16:00:00.000Z</updated>

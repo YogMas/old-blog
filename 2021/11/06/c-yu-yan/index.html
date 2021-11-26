@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-25
+                    2021-11-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    27k
+                    28.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    101 分
+                    108 分
                 </div>
                 
 
@@ -2300,7 +2300,7 @@ int put2(const char * string)
 </code></pre>
 </blockquote>
 <h5 id="strcat函数"><a class="markdownIt-Anchor" href="#strcat函数">#</a> strcat () 函数</h5>
-<p>strcat () 用于凭借字符串<br>
+<p>strcat () 用于拼接字符串<br>
 函数接受两个字符串作为参数 该函数是把第二个字符串的备份附加在第一个字符串末尾 然后把拼接后形成的新字符串作为第一个字符串 第二个字符串不发生改变<br>
  strcat () 的类型是指向 char 的指针 返回的值是第一个字符串的地址</p>
 <h5 id="strncat函数"><a class="markdownIt-Anchor" href="#strncat函数">#</a> strncat () 函数</h5>
@@ -2337,6 +2337,144 @@ int put2(const char * string)
 </code></pre>
 </blockquote>
 <p>此时函数就只会比较前面 5 个字符 并且输出的结果是 0 因为前 5 个字符 trans 相同</p>
+<h5 id="strcpy和strncpy函数"><a class="markdownIt-Anchor" href="#strcpy和strncpy函数">#</a> strcpy () 和 strncpy () 函数</h5>
+<p>如何希望拷贝整个字符串就用 strcpy ()<br>
+ strcpy () 函数相当于<strong>字符串赋值运算符</strong></p>
+<p>strcpy () 第二个参数 指向的字符串被拷贝至第一个参数指向的数组中</p>
+<ul>
+<li>拷贝出来的字符串被称为<strong>目标字符串</strong></li>
+<li>最初的字符串被称为<strong>源字符串</strong></li>
+</ul>
+<p>如果拷贝到的数组没有被初始化 这时候可能被拷贝到任意地方</p>
+<h6 id="strcpy的其他属性"><a class="markdownIt-Anchor" href="#strcpy的其他属性">#</a> strcpy () 的其他属性</h6>
+<ul>
+<li>strcpy () 的返回类型是 char * 该函数返回第一个字符的地址</li>
+<li>第一个参数不必指向数组的开始</li>
+</ul>
+<h6 id="更谨慎的选择-strncpy"><a class="markdownIt-Anchor" href="#更谨慎的选择-strncpy">#</a> 更谨慎的选择: strncpy ()</h6>
+<p>strcpy () 不能检查目标空间是否能容纳源字符串的副本<br>
+ strncpy () 的第三个参数指明可拷贝的最大字符数</p>
+<blockquote>
+<pre><code>strncpy(target,source,n)
+</code></pre>
+<p>把 source 中的 n 个字符或者空字符之前的字符拷贝到 target 中<br>
+ strncpy () 拷贝字符串的长度不会超过 n<br>
+<strong> 如果拷贝到底 n 还没有拷贝完整个字符串 就不会拷贝空字符</strong><br>
+如此写程序的时候可以用 if else 语句 把拷贝过去的字符串最后一个转化为空字符 以保证存储的是一个字符串</p>
+</blockquote>
+<h6 id="sprintf函数"><a class="markdownIt-Anchor" href="#sprintf函数">#</a> sprintf () 函数</h6>
+<p>sprintf 函数声明在 stdio.h 中<br>
+该函数和 printf 类似 但是是把数据写入字符串 而不是打印在电脑屏幕上</p>
+<ul>
+<li>sprintf () 的第一个参数是目标字符串的地址</li>
+<li>其他参数和 printf () 相同</li>
+</ul>
+<blockquote>
+<pre><code>sprintf(formal,"    ",X,Y,Z)
+</code></pre>
+<p>表示法 X,Y,Z 拼接成一个字符串并且存储在 formal 中</p>
+</blockquote>
+<h5 id="其他字符串函数"><a class="markdownIt-Anchor" href="#其他字符串函数">#</a> 其他字符串函数</h5>
+<p>对以上函数 和一些常用函数的总结</p>
+<blockquote>
+<p>char *strcpy (char* restrict s1, const char * restrict s2);<br>
+ 该函数把 s2 指向的字符串（包括空字符）拷贝至 s1 指向的位置，返回值是 s1。<br>
+char*strncpy(char * restrict s1, const char * restrict s2, size_t n);<br>
+ 该函数把 s2 指向的字符串拷贝至 s1 指向的位置，拷贝的字符数不超过 n，其返回值是 s1。该函数不会拷贝空字符后面的字符，如果源字符串的字符少于 n 个，目标字符串就以拷贝的空字符结尾；如果源字符串有 n 个或超过 n 个字符，就不拷贝空字符。<br>
+char *strcat(char * restrict s1, const char * restrict s2);<br>
+ 该函数把 s2 指向的字符串拷贝至 s1 指向的字符串末尾。s2 字符串的第 1 个字符将覆盖 s1 字符串末尾的空字符。该函数返回 s1。<br>
+char *strncat(char * restrict s1, const char * restrict s2, size_t n);<br>
+ 该函数把 s2 字符串中的 n 个字符拷贝至 s1 字符串末尾。s2 字符串的第 1 个字符将覆盖 s1 字符串末尾的空字符。不会拷贝 s2 字符串中空字符和其后的字符，并在拷贝字符的末尾添加一个空字符。该函数返回 s1。<br>
+int strcmp(const char * s1, const char * s2);<br>
+ 如果 s1 字符串在机器排序序列中位于 s2 字符串的后面，该函数返回一个正数；如果两个字符串相等，则返回 0；如果 s1 字符串在机器排序序列中位于 s2 字符串的前面，则返回一个负数。<br>
+int strncmp(const char * s1, const char * s2, size_t n);<br>
+ 该函数的作用和 strcmp () 类似，不同的是，该函数在比较 n 个字符后或遇到第 1 个空字符时停止比较。<br>
+char *strchr(const char * s, int c);<br>
+ 如果 s 字符串中包含 c 字符，该函数返回指向 s 字符串首次出现的 c 字符的指针（末尾的空字符也是字符串的一部分，所以在查找范围内）；如果在字符串 s 中未找到 c 字符，该函数则返回空指针。<br>
+char *strpbrk(const char * s1, const char * s2);<br>
+ 如果 s1 字符中包含 s2 字符串中的任意字符，该函数返回指向 s1 字符串首位置的指针；如果在 s1 字符串中未找到任何 s2 字符串中的字符，则返回空字符。<br>
+char *strrchr(const char * s, char c);<br>
+ 该函数返回 s 字符串中 c 字符的最后一次出现的位置（末尾的空字符也是字符串的一部分，所以在查找范围内）。如果未找到 c 字符，则返回空指针。<br>
+char *strstr(const char * s1, const char * s2);<br>
+ 该函数返回指向 s1 字符串中 s2 字符串出现的首位置。如果在 s1 中没有找到 s2，则返回空指针。<br>
+size_t strlen(const char * s);<br>
+ 该函数返回 s 字符串中的字符数，不包括末尾的空字符。<br>
+请注意，那些使用 const 关键字的函数原型表明，函数不会更改字符串。例如，下面的函数原型：<br>
+char *strcpy(char * restrict s1, const char * restrict s2);<br>
+ 表明不能更改 s2 指向的字符串，至少不能在 strcpy () 函数中更改。但是可以更改 s1 指向的字符串。这样做很合理，因为 s1 是目标字符串，要改变，而 s2 是源字符串，不能更改。</p>
+<p>关键字 restrict 将在第 12 章中介绍，该关键字限制了函数参数的用法。例如，不能把字符串拷贝给本身。</p>
+<p>第 5 章中讨论过，size_t 类型是 sizeof 运算符返回的类型。C 规定 sizeof 运算符返回一个整数类型，但是并未指定是哪种整数类型，所以 size_t 在一个系统中可以是 unsigned int，而在另一个系统中可以是 unsigned long。string.h 头文件针对特定系统定义了 size_t，或者参考其他有 size_t 定义的头文件。</p>
+<p>前面提到过，参考资料 V 中列出了 string.h 系列的所有函数。除提供 ANSI 标准要求的函数外，许多实现还提供一些其他函数。应查看你所使用的 C 实现文档，了解可以使用哪些函数。</p>
+</blockquote>
+<h4 id="字符串示例字符串排序"><a class="markdownIt-Anchor" href="#字符串示例字符串排序">#</a> 字符串示例：字符串排序</h4>
+<blockquote>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define SIZE 81        /* 限制字符串长度，包括 \0 */
+#define LIM 20         /* 可读入的最多行数 */
+#define HALT ""        /* 空字符串停止输入 */
+void stsrt(char *strings [], int num);    /* 字符串排序函数 */
+char * s_gets(char * st, int n);
+
+int main(void)
+{
+     char input[LIM][SIZE];       /* 存储输入的数组        */
+     char *ptstr[LIM];            /* 内含指针变量的数组    */
+     int ct = 0;                  /* 输入计数             */
+     int k;                       /* 输出计数             */
+
+     printf("Input up to %d lines, and I will sort them.\n", LIM);
+     printf("To stop, press the Enter key at a line's start.\n");
+     while (ct &lt; LIM &amp;&amp; s_gets(input[ct], SIZE) != NULL
+               &amp;&amp; input[ct][0] != '\0')
+     {
+          ptstr[ct] = input[ct];  /* 设置指针指向字符串    */
+          ct++;
+     }
+     stsrt(ptstr, ct);            /* 字符串排序函数        */
+     puts("\nHere's the sorted list:\n");
+     for (k = 0; k &lt; ct; k++)
+          puts(ptstr[k]);         /* 排序后的指针          */
+
+     return 0;
+}
+
+/* 字符串-指针-排序函数 */
+void stsrt(char *strings [], int num)
+{
+     char *temp;
+     int top, seek;
+
+     for (top = 0; top &lt; num - 1; top++)
+          for (seek = top + 1; seek &lt; num; seek++)
+               if (strcmp(strings[top], strings[seek]) &gt; 0)
+               {
+                    temp = strings[top];
+                    strings[top] = strings[seek];
+                    strings[seek] = temp;
+               }
+}
+
+char * s_gets(char * st, int n)
+{
+     char * ret_val;
+     int i = 0;
+
+     ret_val = fgets(st, n, stdin);
+     if (ret_val)
+     {
+          while (st[i] != '\n' &amp;&amp; st[i] != '\0')
+               i++;
+          if (st[i] == '\n')
+               st[i] = '\0';
+          else 
+               while (getchar() != '\n')
+                       continue;
+     }
+     return ret_val;
+}
+</code></pre>
+</blockquote>
 
                 
             </div>
@@ -2846,7 +2984,7 @@ int put2(const char * string)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.3k</span>&nbsp;字
+                class="white-color">51.2k</span>&nbsp;字
             
             
             

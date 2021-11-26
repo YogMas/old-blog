@@ -2109,6 +2109,15 @@ offsetParent  返回的是带有定位的父元素 (没有则返回 body)&lt;br&
 &lt;li&gt;&lt;strong&gt;多个立即执行函数之间必须使用分号隔开&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;好处：独立创建了一个作用域 里面所有的变量都是局部变量 避免了命名冲突的问题&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h4 id=&#34;元素滚动scroll系列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#元素滚动scroll系列&#34;&gt;#&lt;/a&gt; 元素滚动 scroll 系列&lt;/h4&gt;
+&lt;p&gt;得到元素的大小 滚动距离 与页面中的滚动条有关&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oAwKnP&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/25/oAwKnP.png&#34; alt=&#34;oAwKnP.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt; 不包含边框 包含 padding 值&lt;/strong&gt;&lt;br&gt;
+对于超出父元素的汉字 会按照所有汉字叠加的高度计算 (真正的内容实际大小)&lt;br&gt;
+ 与 client 不同的是 client 并不会计算超出的大小 而只是原有父元素的大小&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/oA0u8J&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/25/oA0u8J.png&#34; alt=&#34;oA0u8J.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;scroll事件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#scroll事件&#34;&gt;#&lt;/a&gt; scroll 事件&lt;/h5&gt;
+&lt;p&gt;当滚动条发生变化时会触发的事件&lt;/p&gt;
 </content>
         <category term="Javascript" />
         <updated>2021-11-05T16:00:00.000Z</updated>
