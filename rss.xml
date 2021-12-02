@@ -2992,6 +2992,158 @@ char * s_gets(char * st, int n)
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
+&lt;h5 id=&#34;排序指针而非字符串&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#排序指针而非字符串&#34;&gt;#&lt;/a&gt; 排序指针而非字符串&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/oYWJcq&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/12/02/oYWJcq.png&#34; alt=&#34;字符串排序&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;选择排序算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#选择排序算法&#34;&gt;#&lt;/a&gt; 选择排序算法&lt;/h5&gt;
+&lt;p&gt;用 for 循环依次将首元素与每个元素进行比较，排在前面的值就被放置在首元素的位置上，这样可以挑选出排序排在最前面的值；然后依靠外层 for 循环从第二个位置开始，寻找第二靠前的值，依次类推&lt;/p&gt;
+&lt;h4 id=&#34;ctypeh字符函数和字符串&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ctypeh字符函数和字符串&#34;&gt;#&lt;/a&gt; ctype.h 字符函数和字符串&lt;/h4&gt;
+&lt;p&gt;ToUpper () 函数，利用 toupper () 函数处理字符串中的每个字符，将整个字符串转化为大写&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;void ToUpper(char * str)
+{
+     while (*str)
+     {
+          *str = toupper(*str);
+          str++;
+     }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;PunctCount () 函数，利用 inpunct ()[被用来检测是不是标点符号] 统计字符串中的标点符号个数&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;int PunctCount(const char * str)
+{
+     int ct = 0;
+     while (*str)
+     {
+          if (ispunct(*str))
+               ct++;
+          str++;
+     }
+
+     return ct;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;isslower () 函数用户检查是否为小写 如果是 则判定为真 如果不是 则判定为假&lt;br&gt;
+ while (*str) 用来循环处理 str 指向地址中的每一个字符，直到遇到空字符，因为空字符的编码值是 0 判定为假 循环结束&lt;/p&gt;
+&lt;h4 id=&#34;命令行参数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#命令行参数&#34;&gt;#&lt;/a&gt; 命令行参数&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;命令行&lt;/strong&gt;是在命令环境中，用户为运行程序输入命令的行&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;/* repeat.c -- 带参数的 main() */
+#include &amp;lt;stdio.h&amp;gt;
+int main(int argc, char *argv [])
+{
+     int count;
+
+     printf(&#34;The command line has %d arguments:\n&#34;, argc - 1);
+     for (count = 1; count &amp;lt; argc; count++)
+          printf(&#34;%d: %s\n&#34;, count, argv[count]);
+     printf(&#34;\n&#34;);
+
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面是输出结果&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;C&amp;gt;repeat Resistance is futile&lt;br&gt;
+The command line has 3 argumentcs:&lt;br&gt;
+1: Resistance&lt;br&gt;
+2: is&lt;br&gt;
+3: futile&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;C 编译器允许没有参数或者有两个参数&lt;br&gt;
+当有两个参数的时候&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一个参数是命令行中的字符串数量 通常用 argc 表示 (argumenet count 参数计数)&lt;strong&gt; 系统用空格表示一个字符串的结束和下一个字符串的开始&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;第二个参数是存储命令行字符串的地址的数组 (argv 表示表示参数值 argument value)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;argv [0] 指向 repeat （对大部分系统而言）&lt;br&gt;
+argv [1] 指向 Resistance&lt;br&gt;
+argv [2] 指向 is&lt;br&gt;
+argv [3] 指向 futile&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;main 中形参的声明和其他函数函数中形参的声明一样&lt;/p&gt;
+&lt;h4 id=&#34;把字符串转化为数字&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#把字符串转化为数字&#34;&gt;#&lt;/a&gt; 把字符串转化为数字&lt;/h4&gt;
+&lt;p&gt;printf () 利用 % d 等转化说明可以把数字转化为字符串显示在屏幕上&lt;br&gt;
+ scanf () 可以将命令行中输入的字符串转化为数值&lt;br&gt;
+ atoi (用于把字母数字 (以字符串存储数字) 转化为整数 (int 类型)) 该函数接受一个字符串作为参数，返回相应的整数值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果字符串仅以整数开头 后面不是整数 那么 atoi 就会将其中的整数提取出来并且进行转化&lt;/li&gt;
+&lt;li&gt;如果命令行参数不是数字，atoi () 函数返回 0 (在 C 标准中这种情况下是未定义的)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;/* hello.c -- 把命令行参数转换为数字 */
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+
+int main(int argc, char *argv [])
+{
+     int i, times;
+
+     if (argc &amp;lt; 2 || (times = atoi(argv[1])) &amp;lt; 1)
+          printf(&#34;Usage: %s positive-number\n&#34;, argv[0]);
+     else
+          for (i = 0; i &amp;lt; times; i++)
+               puts(&#34;Hello, good looking!&#34;);
+     return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;输出示例&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ hello 3&lt;br&gt;
+Hello, good looking!&lt;br&gt;
+Hello, good looking!&lt;br&gt;
+Hello, good looking!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;该程序中包含了 stdlib.h 头文件，该头文件中包含了&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;atio (): 将字符串转化为 int 类型的值&lt;/li&gt;
+&lt;li&gt;atof (): 将字符串转化为 double 类型的值&lt;/li&gt;
+&lt;li&gt;atol (): 将字符串转化为 long 类型的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ANSI C 提供了一套更加智能的函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;strtol (): 把字符串转化为 long 类型的值&lt;/li&gt;
+&lt;li&gt;strtoul (): 把字符串转化为 unsigned long 类型的值&lt;/li&gt;
+&lt;li&gt;strtod (): 把字符串转化为 double 类型的值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些函数会识别和报告字符串的首字母是否为数字&lt;br&gt;
+同时 strtol 和 stroul 还可以指定数字的进制&lt;/p&gt;
+&lt;p&gt;strtol 函数原型:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;long strtol(const char * restrict nptr, char ** restrict endptr, int base);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;nptr 是指向待转换字符串的指针&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;endptr 是一个指针的地址，该指针被设置为标识输入数字结束字符的地址&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;base 表示以什么进制写入数字&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;strtol 最多可以转换三十六进制&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;strtoul 函数与 strtol 函数类似，但是它是吧字符串转化为无符号值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;strtod () 只以十进制转化，他只需要两个参数&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;字符串关键概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串关键概念&#34;&gt;#&lt;/a&gt; 字符串关键概念&lt;/h4&gt;
+&lt;p&gt;我们用言语互动，实用文本的例子不计其数，C 程序通过字符串的方式处理他们&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;字符串&lt;/strong&gt;，无论是右字符数组，指针，还是字符串常量来标识，都存储为包含字符编码的一系列字节并且最终以空字符串结尾；C 语言提供一系列库函数处理字符串，查找字符串并分析他们&lt;br&gt;
+字符串中用 strcmp () 来代替关系运算符&lt;br&gt;
+比较字符串的时候应该使用 strcpy () 和 strncpy () 代替赋值运算符把字符串赋给字符数组&lt;/p&gt;
+&lt;h4 id=&#34;字符串小结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串小结&#34;&gt;#&lt;/a&gt; 字符串小结&lt;/h4&gt;
  ]]></description>
         </item>
         <item>

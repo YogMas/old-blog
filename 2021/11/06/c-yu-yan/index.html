@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-26
+                    2021-12-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    28.7k
+                    30k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    108 分
+                    113 分
                 </div>
                 
 
@@ -2475,6 +2475,158 @@ char * s_gets(char * st, int n)
 }
 </code></pre>
 </blockquote>
+<h5 id="排序指针而非字符串"><a class="markdownIt-Anchor" href="#排序指针而非字符串">#</a> 排序指针而非字符串</h5>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oYWJcq"><img src="https://z3.ax1x.com/2021/12/02/oYWJcq.png" alt="字符串排序"></a></p>
+<h5 id="选择排序算法"><a class="markdownIt-Anchor" href="#选择排序算法">#</a> 选择排序算法</h5>
+<p>用 for 循环依次将首元素与每个元素进行比较，排在前面的值就被放置在首元素的位置上，这样可以挑选出排序排在最前面的值；然后依靠外层 for 循环从第二个位置开始，寻找第二靠前的值，依次类推</p>
+<h4 id="ctypeh字符函数和字符串"><a class="markdownIt-Anchor" href="#ctypeh字符函数和字符串">#</a> ctype.h 字符函数和字符串</h4>
+<p>ToUpper () 函数，利用 toupper () 函数处理字符串中的每个字符，将整个字符串转化为大写</p>
+<blockquote>
+<pre><code>void ToUpper(char * str)
+{
+     while (*str)
+     {
+          *str = toupper(*str);
+          str++;
+     }
+}
+</code></pre>
+</blockquote>
+<p>PunctCount () 函数，利用 inpunct ()[被用来检测是不是标点符号] 统计字符串中的标点符号个数</p>
+<blockquote>
+<pre><code>int PunctCount(const char * str)
+{
+     int ct = 0;
+     while (*str)
+     {
+          if (ispunct(*str))
+               ct++;
+          str++;
+     }
+
+     return ct;
+}
+</code></pre>
+</blockquote>
+<p>isslower () 函数用户检查是否为小写 如果是 则判定为真 如果不是 则判定为假<br>
+ while (*str) 用来循环处理 str 指向地址中的每一个字符，直到遇到空字符，因为空字符的编码值是 0 判定为假 循环结束</p>
+<h4 id="命令行参数"><a class="markdownIt-Anchor" href="#命令行参数">#</a> 命令行参数</h4>
+<p><strong>命令行</strong>是在命令环境中，用户为运行程序输入命令的行</p>
+<blockquote>
+<pre><code>/* repeat.c -- 带参数的 main() */
+#include &lt;stdio.h&gt;
+int main(int argc, char *argv [])
+{
+     int count;
+
+     printf("The command line has %d arguments:\n", argc - 1);
+     for (count = 1; count &lt; argc; count++)
+          printf("%d: %s\n", count, argv[count]);
+     printf("\n");
+
+     return 0;
+}
+</code></pre>
+</blockquote>
+<p>下面是输出结果</p>
+<blockquote>
+<p>C&gt;repeat Resistance is futile<br>
+The command line has 3 argumentcs:<br>
+1: Resistance<br>
+2: is<br>
+3: futile</p>
+</blockquote>
+<p>C 编译器允许没有参数或者有两个参数<br>
+当有两个参数的时候</p>
+<ul>
+<li>第一个参数是命令行中的字符串数量 通常用 argc 表示 (argumenet count 参数计数)<strong> 系统用空格表示一个字符串的结束和下一个字符串的开始</strong></li>
+<li>第二个参数是存储命令行字符串的地址的数组 (argv 表示表示参数值 argument value)</li>
+</ul>
+<blockquote>
+<p>argv [0] 指向 repeat （对大部分系统而言）<br>
+argv [1] 指向 Resistance<br>
+argv [2] 指向 is<br>
+argv [3] 指向 futile</p>
+</blockquote>
+<p>main 中形参的声明和其他函数函数中形参的声明一样</p>
+<h4 id="把字符串转化为数字"><a class="markdownIt-Anchor" href="#把字符串转化为数字">#</a> 把字符串转化为数字</h4>
+<p>printf () 利用 % d 等转化说明可以把数字转化为字符串显示在屏幕上<br>
+ scanf () 可以将命令行中输入的字符串转化为数值<br>
+ atoi (用于把字母数字 (以字符串存储数字) 转化为整数 (int 类型)) 该函数接受一个字符串作为参数，返回相应的整数值</p>
+<ul>
+<li>如果字符串仅以整数开头 后面不是整数 那么 atoi 就会将其中的整数提取出来并且进行转化</li>
+<li>如果命令行参数不是数字，atoi () 函数返回 0 (在 C 标准中这种情况下是未定义的)</li>
+</ul>
+<blockquote>
+<pre><code>/* hello.c -- 把命令行参数转换为数字 */
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char *argv [])
+{
+     int i, times;
+
+     if (argc &lt; 2 || (times = atoi(argv[1])) &lt; 1)
+          printf("Usage: %s positive-number\n", argv[0]);
+     else
+          for (i = 0; i &lt; times; i++)
+               puts("Hello, good looking!");
+     return 0;
+}
+</code></pre>
+</blockquote>
+<p>输出示例</p>
+<blockquote>
+<p>$ hello 3<br>
+Hello, good looking!<br>
+Hello, good looking!<br>
+Hello, good looking!</p>
+</blockquote>
+<p>该程序中包含了 stdlib.h 头文件，该头文件中包含了</p>
+<ul>
+<li>atio (): 将字符串转化为 int 类型的值</li>
+<li>atof (): 将字符串转化为 double 类型的值</li>
+<li>atol (): 将字符串转化为 long 类型的值</li>
+</ul>
+<p>ANSI C 提供了一套更加智能的函数</p>
+<ul>
+<li>strtol (): 把字符串转化为 long 类型的值</li>
+<li>strtoul (): 把字符串转化为 unsigned long 类型的值</li>
+<li>strtod (): 把字符串转化为 double 类型的值</li>
+</ul>
+<p>这些函数会识别和报告字符串的首字母是否为数字<br>
+同时 strtol 和 stroul 还可以指定数字的进制</p>
+<p>strtol 函数原型:</p>
+<blockquote>
+<pre><code>long strtol(const char * restrict nptr, char ** restrict endptr, int base);
+</code></pre>
+</blockquote>
+<ul>
+<li>
+<p>nptr 是指向待转换字符串的指针</p>
+</li>
+<li>
+<p>endptr 是一个指针的地址，该指针被设置为标识输入数字结束字符的地址</p>
+</li>
+<li>
+<p>base 表示以什么进制写入数字</p>
+</li>
+<li>
+<p>strtol 最多可以转换三十六进制</p>
+</li>
+<li>
+<p>strtoul 函数与 strtol 函数类似，但是它是吧字符串转化为无符号值</p>
+</li>
+<li>
+<p>strtod () 只以十进制转化，他只需要两个参数</p>
+</li>
+</ul>
+<h4 id="字符串关键概念"><a class="markdownIt-Anchor" href="#字符串关键概念">#</a> 字符串关键概念</h4>
+<p>我们用言语互动，实用文本的例子不计其数，C 程序通过字符串的方式处理他们</p>
+<p><strong>字符串</strong>，无论是右字符数组，指针，还是字符串常量来标识，都存储为包含字符编码的一系列字节并且最终以空字符串结尾；C 语言提供一系列库函数处理字符串，查找字符串并分析他们<br>
+字符串中用 strcmp () 来代替关系运算符<br>
+比较字符串的时候应该使用 strcpy () 和 strncpy () 代替赋值运算符把字符串赋给字符数组</p>
+<h4 id="字符串小结"><a class="markdownIt-Anchor" href="#字符串小结">#</a> 字符串小结</h4>
 
                 
             </div>
@@ -2984,7 +3136,7 @@ char * s_gets(char * st, int n)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.4k</span>&nbsp;字
+                class="white-color">52.6k</span>&nbsp;字
             
             
             
