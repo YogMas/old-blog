@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-02
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    30k
+                    30.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    113 分
+                    115 分
                 </div>
                 
 
@@ -1284,7 +1284,7 @@ int main(void)
     printf("MONTHLY AVERAGES:\n\n");
     printf(" Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct ");
     printf(" Nov  Dec\n");
-    
+            
     for (month = 0; month &lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &lt; YEARS; year++)
@@ -1292,7 +1292,7 @@ int main(void)
         printf("%4.1f ", subtot/YEARS);
     }
     printf("\n");
-    
+            
     return 0;
 }
 </code></pre>
@@ -1363,7 +1363,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf("The total number of marbles is %ld.\n", answer);
-    
+            
     return 0;
 }
 
@@ -1377,7 +1377,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-    
+            
     return total;
 }
 </code></pre>
@@ -1461,7 +1461,7 @@ int main(void)
      printf("    **zippo = %d\n", **zippo);
      printf("      zippo[2][1] = %d\n", zippo[2][1]);
      printf("*(*(zippo+2) + 1) = %d\n", *(*(zippo + 2) + 1));
-
+        
      return 0;
 }
 </code></pre>
@@ -1498,7 +1498,7 @@ int main(void)
      printf("    **pz = %d\n", **pz);
      printf("      pz[2][1] = %d\n", pz[2][1]);
      printf("*(*(pz+2) + 1) = %d\n", *(*(pz + 2) +   &gt;     1));
-
+        
      return 0;
 }
 </code></pre>
@@ -1577,7 +1577,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf("Sum of all elements = %d\n", sum2d(junk, ROWS));
-
+        
      return 0;
 }
 
@@ -1620,7 +1620,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &lt; rows; r++)
           for (c = 0; c &lt; COLS; c++)
                tot += ar[r][c];
-
+        
      return tot;
 }
 </code></pre>
@@ -1777,10 +1777,9 @@ int main(void)
 <pre><code>char greeting[50] = "Hello,and""how are"  " you"
                      "" today!" ;
 char greeting [50] = "Hello,and how are you today!"
+
+&gt; 这两行代码是等价的
 </code></pre>
-<blockquote>
-<p>这两行代码是等价的</p>
-</blockquote>
 </blockquote>
 <p>如果要在字符串内部使用双引号 必须要在双引号前面加上一个反斜杠 (\)<br>
  字符串常量属于<strong>静态存储类别</strong>，这说明 如果在函数中使用字符串常量 该字符串只会被存储一次 在整个程序的生命周期内存在 即使函数被调用多次 用双引号括起来的内容被视为指向该字符串存储位置的指针。类似于把数组名作为指向该数组位置的指针</p>
@@ -1845,7 +1844,7 @@ int main(void)
      printf("%s\n", copy);
      printf("mesg = %s; &amp;mesg = %p; value = %p\n", mesg, &amp;mesg, mesg);
      printf("copy = %s; &amp;copy = %p; value = %p\n", copy, &amp;copy, copy);
-
+        
      return 0;
 }
 </code></pre>
@@ -1896,7 +1895,7 @@ int main(void)
      printf("%s\n", words);
      puts(words);
      puts("Done.");
-
+        
      return 0;
 }
 </code></pre>
@@ -1941,7 +1940,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts("Done.");
-
+        
      return 0;
 }
 </code></pre>
@@ -1980,7 +1979,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;&amp; words[0] != '\n')
           fputs(words, stdout);
      puts("Done.");
-
+        
      return 0;
 }
 </code></pre>
@@ -2138,7 +2137,7 @@ int main(void)
      printf("Please enter 2 names.\n");
      count = scanf("%5s %10s", name1, name2);
      printf("I read the %d names %s and %s.\n", count, name1, name2);
-
+        
      return 0
 }
 </code></pre>
@@ -2183,7 +2182,7 @@ int main(void)
      puts(str2);
      puts(&amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-
+        
      return 0;
 }
 </code></pre>
@@ -2245,35 +2244,32 @@ void put1(const char * string)/* 不会改变字符串 */
            count++;
       }
       putchar('\n');    /* 不统计换行符 */
- 
+
       return(count);
  }
-</code></pre>
-</blockquote>
-<p>具体的程序使用</p>
-<blockquote>
-<pre><code>#include &lt;stdio.h&gt;
-void put1(const char *);
-int put2(const char *);
+ 具体的程序使用
+ #include &lt;stdio.h&gt;
+ void put1(const char *);
+ int put2(const char *);
 
-int main(void)
-{
+ int main(void)
+ {
      put1("If I'd as much money");
      put1(" as I could spend,\n");
      printf("I count %d characters.\n",
           put2("I never would cry old chairs to mend."));
 
      return 0;
-}
+ }
 
-void put1(const char * string)
-{
+ void put1(const char * string)
+ {
      while (*string)  /* 与 *string != '\0' 相同 */
           putchar(*string++);
-}
+ }
 
-int put2(const char * string)
-{
+ int put2(const char * string)
+ {
      int count = 0;
      while (*string)
      {
@@ -2283,7 +2279,8 @@ int put2(const char * string)
      putchar('\n');
 
      return(count);
-}
+
+ }
 </code></pre>
 </blockquote>
 <h4 id="字符串函数"><a class="markdownIt-Anchor" href="#字符串函数">#</a> 字符串函数</h4>
@@ -2317,7 +2314,7 @@ int put2(const char * string)
 如果两个字符串参数相同 函数就返回 0 否则返回非 0 数<br>
 <strong>注意</strong><br>
  strcmp () 比较的是字符串不是整个数组 即使数组很大 strcmp () 也只会比较数组中存储的字符串 也就是第一个空字符前面的字符串</p>
-<h6 id="1strcmp的返回值"><a class="markdownIt-Anchor" href="#1strcmp的返回值">#</a> 1.strcmp () 的返回值</h6>
+<h6 id="strcmp的返回值"><a class="markdownIt-Anchor" href="#strcmp的返回值">#</a> strcmp () 的返回值</h6>
 <ul>
 <li>如果第一个字符串在第二个字符串前面 strcmp () 返回一个负数</li>
 <li>如果两个字符串相同 则返回 0</li>
@@ -2327,7 +2324,7 @@ int put2(const char * string)
 <p>strcmp () 与其说是比较字符串 不如说是根据 ASCII 的值 按照<strong>机器排序序列</strong>进行比较</p>
 <p><strong>注意</strong> strcmp () 比较的是字符串而不是字符 也就是说即使要比较单个字符 也应该写成 "A" 而不是’A’<br>
 实际上因为 char 类型实际上是 int 类型 所以比较字符时 也不需要使用到 strcmp () 函数</p>
-<h6 id="strncmp函数"><a class="markdownIt-Anchor" href="#strncmp函数">#</a> strncmp () 函数</h6>
+<h5 id="strncmp函数"><a class="markdownIt-Anchor" href="#strncmp函数">#</a> strncmp () 函数</h5>
 <ul>
 <li>strcmp () 比较字符串中的字符 这一过程会持续到直到发现不同</li>
 <li>strncmp () 在比较两个字符串时 可以限定函数只比较哪几个字符 这样可以用来查找哪个字母 或者开头 结尾 相同的单词</li>
@@ -2408,7 +2405,7 @@ char *strcpy(char * restrict s1, const char * restrict s2);<br>
 </blockquote>
 <h4 id="字符串示例字符串排序"><a class="markdownIt-Anchor" href="#字符串示例字符串排序">#</a> 字符串示例：字符串排序</h4>
 <blockquote>
-<pre><code>#include &lt;stdio.h&gt;
+<pre><code><pre class="line-numbers language-none"><code class="language-none">#include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 #define SIZE 81        /* 限制字符串长度，包括 \0 */
 #define LIM 20         /* 可读入的最多行数 */
@@ -2423,20 +2420,21 @@ int main(void)
      int ct = 0;                  /* 输入计数             */
      int k;                       /* 输出计数             */
 
-     printf("Input up to %d lines, and I will sort them.\n", LIM);
-     printf("To stop, press the Enter key at a line's start.\n");
-     while (ct &lt; LIM &amp;&amp; s_gets(input[ct], SIZE) != NULL
-               &amp;&amp; input[ct][0] != '\0')
-     {
-          ptstr[ct] = input[ct];  /* 设置指针指向字符串    */
-          ct++;
-     }
-     stsrt(ptstr, ct);            /* 字符串排序函数        */
-     puts("\nHere's the sorted list:\n");
-     for (k = 0; k &lt; ct; k++)
-          puts(ptstr[k]);         /* 排序后的指针          */
+ printf("Input up to %d lines, and I will sort them.\n", LIM);
+ printf("To stop, press the Enter key at a line's start.\n");
+ while (ct &lt; LIM &amp;&amp; s_gets(input[ct], SIZE) != NULL
+           &amp;&amp; input[ct][0] != '\0')
+ {
+      ptstr[ct] = input[ct];  /* 设置指针指向字符串    */
+      ct++;
+ }
+ stsrt(ptstr, ct);            /* 字符串排序函数        */
+ puts("\nHere's the sorted list:\n");
+ for (k = 0; k &lt; ct; k++)
+      puts(ptstr[k]);         /* 排序后的指针          */
 
-     return 0;
+ return 0;
+
 }
 
 /* 字符串-指针-排序函数 */
@@ -2445,14 +2443,15 @@ void stsrt(char *strings [], int num)
      char *temp;
      int top, seek;
 
-     for (top = 0; top &lt; num - 1; top++)
-          for (seek = top + 1; seek &lt; num; seek++)
-               if (strcmp(strings[top], strings[seek]) &gt; 0)
-               {
-                    temp = strings[top];
-                    strings[top] = strings[seek];
-                    strings[seek] = temp;
-               }
+ for (top = 0; top &lt; num - 1; top++)
+      for (seek = top + 1; seek &lt; num; seek++)
+           if (strcmp(strings[top], strings[seek]) &gt; 0)
+           {
+                temp = strings[top];
+                strings[top] = strings[seek];
+                strings[seek] = temp;
+           }
+
 }
 
 char * s_gets(char * st, int n)
@@ -2460,19 +2459,20 @@ char * s_gets(char * st, int n)
      char * ret_val;
      int i = 0;
 
-     ret_val = fgets(st, n, stdin);
-     if (ret_val)
-     {
-          while (st[i] != '\n' &amp;&amp; st[i] != '\0')
-               i++;
-          if (st[i] == '\n')
-               st[i] = '\0';
-          else 
-               while (getchar() != '\n')
-                       continue;
-     }
-     return ret_val;
-}
+ ret_val = fgets(st, n, stdin);
+ if (ret_val)
+ {
+      while (st[i] != '\n' &amp;&amp; st[i] != '\0')
+           i++;
+      if (st[i] == '\n')
+           st[i] = '\0';
+      else 
+           while (getchar() != '\n')
+                   continue;
+ }
+ return ret_val;
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </code></pre>
 </blockquote>
 <h5 id="排序指针而非字符串"><a class="markdownIt-Anchor" href="#排序指针而非字符串">#</a> 排序指针而非字符串</h5>
@@ -2505,6 +2505,7 @@ char * s_gets(char * st, int n)
      }
 
      return ct;
+
 }
 </code></pre>
 </blockquote>
@@ -2523,7 +2524,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &lt; argc; count++)
           printf("%d: %s\n", count, argv[count]);
      printf("\n");
-
+        
      return 0;
 }
 </code></pre>
@@ -2627,6 +2628,40 @@ Hello, good looking!</p>
 字符串中用 strcmp () 来代替关系运算符<br>
 比较字符串的时候应该使用 strcpy () 和 strncpy () 代替赋值运算符把字符串赋给字符数组</p>
 <h4 id="字符串小结"><a class="markdownIt-Anchor" href="#字符串小结">#</a> 字符串小结</h4>
+<ol>
+<li>C 字符串是一系列 char 类型的字符，以空字符 (’\0’) 结尾.</li>
+</ol>
+<p>字符串可以存储在字符数组中 字符串还可以用<strong>字符串常量</strong>来表示 (括在双引号中), 空字符由编译器提供 自行加在字符数组的末尾处</p>
+<p>存储字符串时 字符串的存储长度要比字符串长度多 1, 因为多了一个空字符 (’\0’), 但是 strlen () 计算长度的时候不用考虑空字符的问题 因为 strlen () 函数会自动减去空字符</p>
+<ol start="2">
+<li>
+<p>字符串常量又叫做<strong>字符串字面量</strong>，用于初始化字符数组，按照上文所说，字符串的存储长度要比字符串的长度大 1, 所以为了容纳末尾的空字符，数组的大小至少要比容纳的数组长度多 1</p>
+</li>
+<li>
+<p>函数使用指向字符串首字符的指针来表示待处理的字符串，对应的实际参数分为三种，但是传递的都是首字符的地址，一般来说 没有必要传递字符串的长度 因为函数可以通过字符串末尾存储的空字符来确定字符串的结束</p>
+<ul>
+<li>数组名</li>
+<li>指针变量</li>
+<li>用双引号括起来的字符串</li>
+</ul>
+</li>
+<li>
+<p>fgets () 函数获取一行输入，puts () 和 fputs () 函数显示一行的输出，他们是 stdio.h 头文件中的函数 用于代替已被弃用的 gets ()</p>
+</li>
+<li>
+<p>C 库中有多个<strong>字符串处理函数</strong>，在 ANSI C 中，这些函数都声明在 string.h 文件中，C 库中海油许多<strong>字符处理函数</strong>，声明在 ctype.h 文件中</p>
+</li>
+<li>
+<p>给 main () 函数提供两个合适的形式参数，可以让程序访问命令行参数.</p>
+<ul>
+<li>第一个参数通常是 int 类型的 <code>argc</code> , 代表命令行的单词数量</li>
+<li>第二个参数是一个指向数组的指针 <code>argv</code>  数组内含指向 char 的指针，每个指向 char 的指针都指向一个命令行参数字符串 <code>argv[0]</code>  指向命令名称， <code>argv[1]</code>  指向第一个命令行参数以此类推</li>
+</ul>
+</li>
+<li>
+<p><code>atoi()</code> , <code>atol()</code> , <code>atof()</code>  函数把字符串形式的数组分别转化为 int,long 和 double 类型的数字， <code>strtol()</code> , <code>strtoul</code> , <code>strtod()</code>  函数把字符串形式的数字分别转化为 long,unsigned long 和 double 类型的数字.</p>
+</li>
+</ol>
 
                 
             </div>
@@ -3136,7 +3171,7 @@ Hello, good looking!</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.6k</span>&nbsp;字
+                class="white-color">53.2k</span>&nbsp;字
             
             
             
