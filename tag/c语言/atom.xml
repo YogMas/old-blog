@@ -866,7 +866,7 @@ int main(void)
     printf(&#34;MONTHLY AVERAGES:\n\n&#34;);
     printf(&#34; Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct &#34;);
     printf(&#34; Nov  Dec\n&#34;);
-            
+                
     for (month = 0; month &amp;lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &amp;lt; YEARS; year++)
@@ -874,7 +874,7 @@ int main(void)
         printf(&#34;%4.1f &#34;, subtot/YEARS);
     }
     printf(&#34;\n&#34;);
-            
+                
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -945,7 +945,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf(&#34;The total number of marbles is %ld.\n&#34;, answer);
-            
+                
     return 0;
 }
 
@@ -959,7 +959,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-            
+                
     return total;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1043,7 +1043,7 @@ int main(void)
      printf(&#34;    **zippo = %d\n&#34;, **zippo);
      printf(&#34;      zippo[2][1] = %d\n&#34;, zippo[2][1]);
      printf(&#34;*(*(zippo+2) + 1) = %d\n&#34;, *(*(zippo + 2) + 1));
-        
+            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1080,7 +1080,7 @@ int main(void)
      printf(&#34;    **pz = %d\n&#34;, **pz);
      printf(&#34;      pz[2][1] = %d\n&#34;, pz[2][1]);
      printf(&#34;*(*(pz+2) + 1) = %d\n&#34;, *(*(pz + 2) +   &amp;gt;     1));
-        
+            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1159,7 +1159,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf(&#34;Sum of all elements = %d\n&#34;, sum2d(junk, ROWS));
-        
+            
      return 0;
 }
 
@@ -1202,7 +1202,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &amp;lt; rows; r++)
           for (c = 0; c &amp;lt; COLS; c++)
                tot += ar[r][c];
-        
+            
      return tot;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1426,7 +1426,7 @@ int main(void)
      printf(&#34;%s\n&#34;, copy);
      printf(&#34;mesg = %s; &amp;amp;mesg = %p; value = %p\n&#34;, mesg, &amp;amp;mesg, mesg);
      printf(&#34;copy = %s; &amp;amp;copy = %p; value = %p\n&#34;, copy, &amp;amp;copy, copy);
-        
+            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1477,7 +1477,7 @@ int main(void)
      printf(&#34;%s\n&#34;, words);
      puts(words);
      puts(&#34;Done.&#34;);
-        
+            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1522,7 +1522,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts(&#34;Done.&#34;);
-        
+            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1561,7 +1561,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;amp;&amp;amp; words[0] != &#39;\n&#39;)
           fputs(words, stdout);
      puts(&#34;Done.&#34;);
-        
+            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1719,7 +1719,7 @@ int main(void)
      printf(&#34;Please enter 2 names.\n&#34;);
      count = scanf(&#34;%5s %10s&#34;, name1, name2);
      printf(&#34;I read the %d names %s and %s.\n&#34;, count, name1, name2);
-        
+            
      return 0
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1764,7 +1764,7 @@ int main(void)
      puts(str2);
      puts(&amp;amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-        
+            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -1812,7 +1812,7 @@ void put1(const char * string)/* 不会改变字符串 */
 &lt;p&gt;因为从右向左运算 *string++ 中递增是 string 本身而不是递增它所指向的字符&lt;/p&gt;
 &lt;p&gt;很多 C 程序员在 whild 中会使用下面的测试条件&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;while (*string) 若*string是空字符 则为0 循环结束 这种方法风场渐变
+&lt;pre&gt;&lt;code&gt;while (\*string) 若\*string是空字符 则为0 循环结束 这种方法非常简便
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;以下将打印一串字符串 并且 统计打印的字符个数&lt;/p&gt;
@@ -2106,7 +2106,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &amp;lt; argc; count++)
           printf(&#34;%d: %s\n&#34;, count, argv[count]);
      printf(&#34;\n&#34;);
-        
+            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;

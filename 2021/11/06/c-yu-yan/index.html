@@ -390,7 +390,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2021-12-09
                 </div>
                 
 
@@ -1284,7 +1284,7 @@ int main(void)
     printf("MONTHLY AVERAGES:\n\n");
     printf(" Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct ");
     printf(" Nov  Dec\n");
-            
+                
     for (month = 0; month &lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &lt; YEARS; year++)
@@ -1292,7 +1292,7 @@ int main(void)
         printf("%4.1f ", subtot/YEARS);
     }
     printf("\n");
-            
+                
     return 0;
 }
 </code></pre>
@@ -1363,7 +1363,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf("The total number of marbles is %ld.\n", answer);
-            
+                
     return 0;
 }
 
@@ -1377,7 +1377,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-            
+                
     return total;
 }
 </code></pre>
@@ -1461,7 +1461,7 @@ int main(void)
      printf("    **zippo = %d\n", **zippo);
      printf("      zippo[2][1] = %d\n", zippo[2][1]);
      printf("*(*(zippo+2) + 1) = %d\n", *(*(zippo + 2) + 1));
-        
+            
      return 0;
 }
 </code></pre>
@@ -1498,7 +1498,7 @@ int main(void)
      printf("    **pz = %d\n", **pz);
      printf("      pz[2][1] = %d\n", pz[2][1]);
      printf("*(*(pz+2) + 1) = %d\n", *(*(pz + 2) +   &gt;     1));
-        
+            
      return 0;
 }
 </code></pre>
@@ -1577,7 +1577,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf("Sum of all elements = %d\n", sum2d(junk, ROWS));
-        
+            
      return 0;
 }
 
@@ -1620,7 +1620,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &lt; rows; r++)
           for (c = 0; c &lt; COLS; c++)
                tot += ar[r][c];
-        
+            
      return tot;
 }
 </code></pre>
@@ -1844,7 +1844,7 @@ int main(void)
      printf("%s\n", copy);
      printf("mesg = %s; &amp;mesg = %p; value = %p\n", mesg, &amp;mesg, mesg);
      printf("copy = %s; &amp;copy = %p; value = %p\n", copy, &amp;copy, copy);
-        
+            
      return 0;
 }
 </code></pre>
@@ -1895,7 +1895,7 @@ int main(void)
      printf("%s\n", words);
      puts(words);
      puts("Done.");
-        
+            
      return 0;
 }
 </code></pre>
@@ -1940,7 +1940,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts("Done.");
-        
+            
      return 0;
 }
 </code></pre>
@@ -1979,7 +1979,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;&amp; words[0] != '\n')
           fputs(words, stdout);
      puts("Done.");
-        
+            
      return 0;
 }
 </code></pre>
@@ -2137,7 +2137,7 @@ int main(void)
      printf("Please enter 2 names.\n");
      count = scanf("%5s %10s", name1, name2);
      printf("I read the %d names %s and %s.\n", count, name1, name2);
-        
+            
      return 0
 }
 </code></pre>
@@ -2182,7 +2182,7 @@ int main(void)
      puts(str2);
      puts(&amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-        
+            
      return 0;
 }
 </code></pre>
@@ -2230,7 +2230,7 @@ void put1(const char * string)/* 不会改变字符串 */
 <p>因为从右向左运算 *string++ 中递增是 string 本身而不是递增它所指向的字符</p>
 <p>很多 C 程序员在 whild 中会使用下面的测试条件</p>
 <blockquote>
-<pre><code>while (*string) 若*string是空字符 则为0 循环结束 这种方法风场渐变
+<pre><code>while (\*string) 若\*string是空字符 则为0 循环结束 这种方法非常简便
 </code></pre>
 </blockquote>
 <p>以下将打印一串字符串 并且 统计打印的字符个数</p>
@@ -2524,7 +2524,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &lt; argc; count++)
           printf("%d: %s\n", count, argv[count]);
      printf("\n");
-        
+            
      return 0;
 }
 </code></pre>
@@ -3171,7 +3171,7 @@ Hello, good looking!</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">53.2k</span>&nbsp;字
+                class="white-color">53.8k</span>&nbsp;字
             
             
             
