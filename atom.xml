@@ -1992,7 +1992,7 @@ int main(void)
     printf(&#34;MONTHLY AVERAGES:\n\n&#34;);
     printf(&#34; Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct &#34;);
     printf(&#34; Nov  Dec\n&#34;);
-                
+                        
     for (month = 0; month &amp;lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &amp;lt; YEARS; year++)
@@ -2000,7 +2000,7 @@ int main(void)
         printf(&#34;%4.1f &#34;, subtot/YEARS);
     }
     printf(&#34;\n&#34;);
-                
+                        
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2071,7 +2071,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf(&#34;The total number of marbles is %ld.\n&#34;, answer);
-                
+                        
     return 0;
 }
 
@@ -2085,7 +2085,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-                
+                        
     return total;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2169,7 +2169,7 @@ int main(void)
      printf(&#34;    **zippo = %d\n&#34;, **zippo);
      printf(&#34;      zippo[2][1] = %d\n&#34;, zippo[2][1]);
      printf(&#34;*(*(zippo+2) + 1) = %d\n&#34;, *(*(zippo + 2) + 1));
-            
+                    
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2206,7 +2206,7 @@ int main(void)
      printf(&#34;    **pz = %d\n&#34;, **pz);
      printf(&#34;      pz[2][1] = %d\n&#34;, pz[2][1]);
      printf(&#34;*(*(pz+2) + 1) = %d\n&#34;, *(*(pz + 2) +   &amp;gt;     1));
-            
+                    
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2285,7 +2285,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf(&#34;Sum of all elements = %d\n&#34;, sum2d(junk, ROWS));
-            
+                    
      return 0;
 }
 
@@ -2328,7 +2328,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &amp;lt; rows; r++)
           for (c = 0; c &amp;lt; COLS; c++)
                tot += ar[r][c];
-            
+                    
      return tot;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2552,7 +2552,7 @@ int main(void)
      printf(&#34;%s\n&#34;, copy);
      printf(&#34;mesg = %s; &amp;amp;mesg = %p; value = %p\n&#34;, mesg, &amp;amp;mesg, mesg);
      printf(&#34;copy = %s; &amp;amp;copy = %p; value = %p\n&#34;, copy, &amp;amp;copy, copy);
-            
+                    
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2603,7 +2603,7 @@ int main(void)
      printf(&#34;%s\n&#34;, words);
      puts(words);
      puts(&#34;Done.&#34;);
-            
+                    
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2648,7 +2648,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts(&#34;Done.&#34;);
-            
+                    
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2687,7 +2687,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;amp;&amp;amp; words[0] != &#39;\n&#39;)
           fputs(words, stdout);
      puts(&#34;Done.&#34;);
-            
+                    
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2845,7 +2845,7 @@ int main(void)
      printf(&#34;Please enter 2 names.\n&#34;);
      count = scanf(&#34;%5s %10s&#34;, name1, name2);
      printf(&#34;I read the %d names %s and %s.\n&#34;, count, name1, name2);
-            
+                    
      return 0
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2890,7 +2890,7 @@ int main(void)
      puts(str2);
      puts(&amp;amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-            
+                    
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -3232,7 +3232,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &amp;lt; argc; count++)
           printf(&#34;%d: %s\n&#34;, count, argv[count]);
      printf(&#34;\n&#34;);
-            
+                    
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -3342,34 +3342,229 @@ Hello, good looking!&lt;/p&gt;
 &lt;p&gt;字符串可以存储在字符数组中 字符串还可以用&lt;strong&gt;字符串常量&lt;/strong&gt;来表示 (括在双引号中), 空字符由编译器提供 自行加在字符数组的末尾处&lt;/p&gt;
 &lt;p&gt;存储字符串时 字符串的存储长度要比字符串长度多 1, 因为多了一个空字符 (’\0’), 但是 strlen () 计算长度的时候不用考虑空字符的问题 因为 strlen () 函数会自动减去空字符&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;字符串常量又叫做&lt;strong&gt;字符串字面量&lt;/strong&gt;，用于初始化字符数组，按照上文所说，字符串的存储长度要比字符串的长度大 1, 所以为了容纳末尾的空字符，数组的大小至少要比容纳的数组长度多 1&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;函数使用指向字符串首字符的指针来表示待处理的字符串，对应的实际参数分为三种，但是传递的都是首字符的地址，一般来说 没有必要传递字符串的长度 因为函数可以通过字符串末尾存储的空字符来确定字符串的结束&lt;/p&gt;
+&lt;li&gt;字符串常量又叫做&lt;strong&gt;字符串字面量&lt;/strong&gt;，用于初始化字符数组，按照上文所说，字符串的存储长度要比字符串的长度大 1, 所以为了容纳末尾的空字符，数组的大小至少要比容纳的数组长度多 1&lt;/li&gt;
+&lt;li&gt;函数使用指向字符串首字符的指针来表示待处理的字符串，对应的实际参数分为三种，但是传递的都是首字符的地址，一般来说 没有必要传递字符串的长度 因为函数可以通过字符串末尾存储的空字符来确定字符串的结束
 &lt;ul&gt;
 &lt;li&gt;数组名&lt;/li&gt;
 &lt;li&gt;指针变量&lt;/li&gt;
 &lt;li&gt;用双引号括起来的字符串&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;fgets () 函数获取一行输入，puts () 和 fputs () 函数显示一行的输出，他们是 stdio.h 头文件中的函数 用于代替已被弃用的 gets ()&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;C 库中有多个&lt;strong&gt;字符串处理函数&lt;/strong&gt;，在 ANSI C 中，这些函数都声明在 string.h 文件中，C 库中海油许多&lt;strong&gt;字符处理函数&lt;/strong&gt;，声明在 ctype.h 文件中&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;给 main () 函数提供两个合适的形式参数，可以让程序访问命令行参数.&lt;/p&gt;
+&lt;li&gt;fgets () 函数获取一行输入，puts () 和 fputs () 函数显示一行的输出，他们是 stdio.h 头文件中的函数 用于代替已被弃用的 gets ()&lt;/li&gt;
+&lt;li&gt;C 库中有多个&lt;strong&gt;字符串处理函数&lt;/strong&gt;，在 ANSI C 中，这些函数都声明在 string.h 文件中，C 库中海油许多&lt;strong&gt;字符处理函数&lt;/strong&gt;，声明在 ctype.h 文件中&lt;/li&gt;
+&lt;li&gt;给 main () 函数提供两个合适的形式参数，可以让程序访问命令行参数.
 &lt;ul&gt;
 &lt;li&gt;第一个参数通常是 int 类型的 &lt;code&gt;argc&lt;/code&gt; , 代表命令行的单词数量&lt;/li&gt;
 &lt;li&gt;第二个参数是一个指向数组的指针 &lt;code&gt;argv&lt;/code&gt;  数组内含指向 char 的指针，每个指向 char 的指针都指向一个命令行参数字符串 &lt;code&gt;argv[0]&lt;/code&gt;  指向命令名称， &lt;code&gt;argv[1]&lt;/code&gt;  指向第一个命令行参数以此类推&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;atoi()&lt;/code&gt; , &lt;code&gt;atol()&lt;/code&gt; , &lt;code&gt;atof()&lt;/code&gt;  函数把字符串形式的数组分别转化为 int,long 和 double 类型的数字， &lt;code&gt;strtol()&lt;/code&gt; , &lt;code&gt;strtoul&lt;/code&gt; , &lt;code&gt;strtod()&lt;/code&gt;  函数把字符串形式的数字分别转化为 long,unsigned long 和 double 类型的数字.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第十二章-存储类别链接和内存管理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第十二章-存储类别链接和内存管理&#34;&gt;#&lt;/a&gt; 第十二章 存储类别，链接和内存管理&lt;/h3&gt;
+&lt;p&gt;程序员指定变量的作用域和生命期，实现对程序的控制 合理利用内存存储数据时设计程序的一个要点&lt;/p&gt;
+&lt;h4 id=&#34;121存储类别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#121存储类别&#34;&gt;#&lt;/a&gt; 12.1 存储类别&lt;/h4&gt;
+&lt;p&gt;C 语言提供不同的&lt;strong&gt;存储类别&lt;/strong&gt;在内存中存储数据&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;atoi()&lt;/code&gt; , &lt;code&gt;atol()&lt;/code&gt; , &lt;code&gt;atof()&lt;/code&gt;  函数把字符串形式的数组分别转化为 int,long 和 double 类型的数字， &lt;code&gt;strtol()&lt;/code&gt; , &lt;code&gt;strtoul&lt;/code&gt; , &lt;code&gt;strtod()&lt;/code&gt;  函数把字符串形式的数字分别转化为 long,unsigned long 和 double 类型的数字.&lt;/p&gt;
+&lt;p&gt;对象：数据存储在内存中 被存储的每个值都占有一定的物理内存，这样的一块内存叫做对象&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;标识符：一个名称，用来指定特定对象的内容&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;int entity = 3   其中 entity 就是一个标识符&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;左值：指向对象的表达式&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;int * pt = &amp;amp;entity&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;pt 是一个标识符，他指定了一个存储&lt;strong&gt;地址&lt;/strong&gt;的对象 所以他是左值&lt;/p&gt;
+&lt;p&gt;*pt 不是一个标识符 因为他不是一个名称，然而他指向了一个对象 所以他是左值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;存储期：对象在内存中保留了多长时间&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;作用域：描述程序中可访问标识符的区域&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;1211作用域&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1211作用域&#34;&gt;#&lt;/a&gt; 12.1.1 作用域&lt;/h5&gt;
+&lt;p&gt;作用域包括:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;块级作用域&lt;/li&gt;
+&lt;li&gt;函数作用域&lt;/li&gt;
+&lt;li&gt;函数原型作用域&lt;/li&gt;
+&lt;li&gt;文件作用域&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;块&lt;/strong&gt;：一对花括号括起来的代码区域 (对于 &lt;code&gt;for&lt;/code&gt; , &lt;code&gt;while&lt;/code&gt; , &lt;code&gt;do while&lt;/code&gt; , &lt;code&gt;if&lt;/code&gt;  等等判别式也包括在块以内)(函数的形参也包括在整个函数的块作用域内)&lt;/p&gt;
+&lt;p&gt;定义在块中的变量具有&lt;strong&gt;块作用域&lt;/strong&gt;，块作用域变量的课件范围时从定义出到包含该定义的块的末尾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;函数作用域&lt;/strong&gt;仅用于 &lt;code&gt;goto&lt;/code&gt;  语句的标签，即使一个标签首次出现在函数的内层快中 它的作用域也会延伸到整个函数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;函数作用域和块作用域的&lt;strong&gt;区别&lt;/strong&gt;：函数作用域作用于整个函数，而块作用域仅仅作用域方括号内&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;函数原型作用域&lt;/strong&gt;用于函数原型的形参名，作用范围是从形参定义处到原型声明结束，所以编译器只关心函数原型中的形参的类型 而对于形参名可有可无 因为即使有 也无法和函数定义中的形参名匹配&lt;strong&gt;只有在变长数组中 形参名才有用&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;变量的定义在函数外面的具有&lt;strong&gt;文件作用域&lt;/strong&gt;，从定义处到文件的结尾都可见&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; units &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+
+  &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里变量 units 具有文件作用域 (更准确是为外部链接文件作用域)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;文件作用域&lt;/strong&gt;也被称为&lt;strong&gt;全局变量&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;翻译单元&lt;/strong&gt;：编译器把源代码文件和所有的头文件都看成是一个包含信息的单独文件，这个文件被称为&lt;strong&gt;翻译单元&lt;/strong&gt;，若程序由多个源代码文件组成，那么该程序也将由多个翻译单元组成，每个翻译单元均对应一个源代码文件和它所包含的文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;1212链接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1212链接&#34;&gt;#&lt;/a&gt; 12.1.2 链接&lt;/h5&gt;
+&lt;p&gt;C 变量有三种链接属性&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;外部链接&lt;/li&gt;
+&lt;li&gt;内部链接&lt;/li&gt;
+&lt;li&gt;无链接&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;无链接变量&lt;/strong&gt;：具有块作用域，函数作用域或函数原型作用域的变量，这些变量属于定义他们的块，函数或原型私有&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;外链接变量&lt;/strong&gt;：可以在多文件程序中使用，简称为&lt;strong&gt;全局作用域&lt;/strong&gt;或者&lt;strong&gt;程序作用域&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内部链接变量&lt;/strong&gt;：只能在一个&lt;u&gt;翻译单元&lt;/u&gt;(一个源代码文件和它所包含的头文件) 中使用   简称为&lt;strong&gt;内部链接文件作用域&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;具有文件作用域的变量可以是外部链接，也可以是内部链接&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; giant &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;//文件作用域,外部链接(统一程序的所有文件都可以使用)&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; dodgerts &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token comment&#34;&gt;//文件作用域 内部链接(文件私有),使用关键字static&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+   &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;1213存储期&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1213存储期&#34;&gt;#&lt;/a&gt; 12.1.3 存储期&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;存储期&lt;/strong&gt;：描述了通过这些标识符访问的对象的生存期&lt;/p&gt;
+&lt;p&gt;C 语言有 4 种存储期:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;** 静态存储期:** 在程序的执行期间一直存在，&lt;strong&gt; 文件作用域变量&lt;/strong&gt; (外部链接和内部链接) 具有静态存储期&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;线程存储期&lt;/strong&gt;：用于并发程序设计，程序执行被分为多个线程，具有线程存储器的对象从被声明时到线程结束一直存在，以关键字 &lt;code&gt;_Thread_local&lt;/code&gt;  声明一个对象时，每个线程都获得该变量的私有备份&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;自动存储期&lt;/strong&gt;:&lt;strong&gt; 块作用域变量&lt;/strong&gt;通常都具有自动存储期，程序进入定义这些变量的块时，为这些变量分配内存，当退出这个块时，释放刚才为变量分配的内存&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;变长数组的存储期从声明处到块的末尾，而不是从块的开始处到快的末尾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;目前来说局部变量都是自动类别 (在使用函数时候被创建，在离开函数时被销毁)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;块作用域变量也能具有静态存储器，把变量声明在块中，并且在声明前面加上关键字 static, 但是只有在执行函数的时候程序才能使用 ct 访问它所指向的对象 (但是，该函数可以给其他函数提供该存储区的地址以便间接访问该对象，例如通过指针形参或返回值)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;动态分配存储期&lt;/strong&gt;：后续介绍&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/o5YBqg&#34;&gt;&lt;img src=&#34;https://s1.ax1x.com/2021/12/10/o5YBqg.png&#34; alt=&#34;5种存储类别&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;1214自动变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1214自动变量&#34;&gt;#&lt;/a&gt; 12.1.4 自动变量&lt;/h5&gt;
+&lt;p&gt;自动存储类别的变量具有自动存储期，块作用域且无链接，默认情况下，声明在块或函数头中的任何变量都属于自动存储类别，也可以显式使用关键字 &lt;code&gt;auto&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;auto&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; plox
+        &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;auto 是&lt;strong&gt;存储类别说明符&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;块作用域和无链接&lt;/strong&gt;意味着只有在变量定义所在块中才能通过变量名访问该变量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自动存储期&lt;/strong&gt;意味着，程序进入变量声明所在块时变量存在，程序在退出该块时变量小时&lt;/li&gt;
+&lt;li&gt;当内层块中的变量和外层块中的变量同名时，内层块会&lt;strong&gt;隐藏&lt;/strong&gt;外层块的定义，但是在离开内层块后外层变量的作用域又回到了原来的作用域&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;没有括号的块&lt;/p&gt;
+&lt;p&gt;作为循环或者 &lt;code&gt;if&lt;/code&gt;  语句的一部分，即使不适用花括号，也是一个块.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自动变量的初始化&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;自动变量&lt;/strong&gt;不会初始化，除非显式初始化它&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; repid&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;repid&lt;/code&gt;  变量的值不会是 0, 而是之前占用分配给 &lt;code&gt;repid&lt;/code&gt;  的空间中的任意值 (前提是存在)&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; rush&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; rance &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ruth&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 可以如此定义(前提是ruth已经在前面定义过了)&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;1215寄存器变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1215寄存器变量&#34;&gt;#&lt;/a&gt; 12.1.5 寄存器变量&lt;/h5&gt;
+&lt;p&gt;变量通常存储在计算器内存中，&lt;strong&gt; 如果幸运的话&lt;/strong&gt;，寄存器变量存在 CPU 的寄存器中，或者存在最快的可用内存中，与普通变量相比，访问和处理这些变量的速度更快.&lt;/p&gt;
+&lt;p&gt;但是由于寄存器变量存储在寄存器而非内存中，所以无法获取寄存器变量的地址&lt;/p&gt;
+&lt;p&gt;绝大多数方面寄存器变量和自动变量一样&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;register&lt;/code&gt;  可以声明寄存器变量&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;register&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; quick&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;声明变量为 &lt;code&gt;register&lt;/code&gt;  更像是一种&lt;strong&gt;请求&lt;/strong&gt;，编译器胡根据寄存器或者最快可用内存的数量衡量你的请求，或者直接忽略你的请求，这种情况下寄存器变量就编程了普通的自动变量，即使是这样，&lt;strong&gt; 仍然不能对该变量使用地址运算符&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可声明为 &lt;code&gt;register&lt;/code&gt;  的数据类型有限，比如处理器中的寄存器可能没有足够大的空间来存储 &lt;code&gt;double&lt;/code&gt;  类型的值&lt;/p&gt;
+&lt;h5 id=&#34;1216块作用域的静态变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1216块作用域的静态变量&#34;&gt;#&lt;/a&gt; 12.1.6 块作用域的静态变量&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;静态变量&lt;/strong&gt;：变量在内存中不变&lt;/p&gt;
+&lt;p&gt;具有文件作用域的变量自动具有静态存储期&lt;/p&gt;
+&lt;p&gt;使用 &lt;code&gt;static&lt;/code&gt;  可以创建具有静态存储期，块作用域的局部变，但是无法在函数的形参中使用&lt;u&gt;static&lt;/u&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;trystat&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; count&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+     &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;count &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; count &lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; count&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Here comes iteration %d:\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; count&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;trystat&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+
+     &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;trystat&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; fade &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; stay &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+     &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;fade = %d and stay = %d\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; fade&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; stay&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输出结果:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Here coms iteration 1:&lt;/p&gt;
+&lt;p&gt;fade = 1 and stay = 1&lt;/p&gt;
+&lt;p&gt;Here coms iteration 2:&lt;/p&gt;
+&lt;p&gt;fade = 1 and stay = 2&lt;/p&gt;
+&lt;p&gt;Here coms iteration 3:&lt;/p&gt;
+&lt;p&gt;fade = 1 and stay = 3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;显然可见静态变量 &lt;code&gt;stay&lt;/code&gt;  保存了他被递增后的值，而 &lt;code&gt;fade&lt;/code&gt;  变量每次都是 &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这表明了初始化的不同，每次调用 &lt;code&gt;trystat()&lt;/code&gt;  都会初始化 &lt;code&gt;fade&lt;/code&gt;  但是 &lt;code&gt;stay&lt;/code&gt;  只在编译 &lt;code&gt;trystat()&lt;/code&gt;  初始化一次&lt;/p&gt;
+&lt;p&gt;如果未显式初始化&lt;strong&gt;静态变量&lt;/strong&gt;，他们会被初始化为 0&lt;/p&gt;
+&lt;p&gt;事实上静态变量和外部变量在程序被载入内存时已经执行完毕了，把这条声明放在 &lt;code&gt;trystat()&lt;/code&gt;  函数中是为了告诉编译器只有 &lt;code&gt;trystat()&lt;/code&gt;  函数才能看到该变量.&lt;/p&gt;
+&lt;p&gt;具有块作用域的静态变量也被称为&lt;strong&gt;静态局部变量&lt;/strong&gt;，一些老的 C 语言文献称为&lt;strong&gt;内部静态存储类别&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&#34;1217外部链接的静态变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1217外部链接的静态变量&#34;&gt;#&lt;/a&gt; 12.1.7 外部链接的静态变量&lt;/h5&gt;
 </content>
         <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>

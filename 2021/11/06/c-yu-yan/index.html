@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-09
+                    2021-12-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    30.6k
+                    32.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    115 分
+                    123 分
                 </div>
                 
 
@@ -1284,7 +1284,7 @@ int main(void)
     printf("MONTHLY AVERAGES:\n\n");
     printf(" Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct ");
     printf(" Nov  Dec\n");
-                
+                        
     for (month = 0; month &lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &lt; YEARS; year++)
@@ -1292,7 +1292,7 @@ int main(void)
         printf("%4.1f ", subtot/YEARS);
     }
     printf("\n");
-                
+                        
     return 0;
 }
 </code></pre>
@@ -1363,7 +1363,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf("The total number of marbles is %ld.\n", answer);
-                
+                        
     return 0;
 }
 
@@ -1377,7 +1377,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-                
+                        
     return total;
 }
 </code></pre>
@@ -1461,7 +1461,7 @@ int main(void)
      printf("    **zippo = %d\n", **zippo);
      printf("      zippo[2][1] = %d\n", zippo[2][1]);
      printf("*(*(zippo+2) + 1) = %d\n", *(*(zippo + 2) + 1));
-            
+                    
      return 0;
 }
 </code></pre>
@@ -1498,7 +1498,7 @@ int main(void)
      printf("    **pz = %d\n", **pz);
      printf("      pz[2][1] = %d\n", pz[2][1]);
      printf("*(*(pz+2) + 1) = %d\n", *(*(pz + 2) +   &gt;     1));
-            
+                    
      return 0;
 }
 </code></pre>
@@ -1577,7 +1577,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf("Sum of all elements = %d\n", sum2d(junk, ROWS));
-            
+                    
      return 0;
 }
 
@@ -1620,7 +1620,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &lt; rows; r++)
           for (c = 0; c &lt; COLS; c++)
                tot += ar[r][c];
-            
+                    
      return tot;
 }
 </code></pre>
@@ -1844,7 +1844,7 @@ int main(void)
      printf("%s\n", copy);
      printf("mesg = %s; &amp;mesg = %p; value = %p\n", mesg, &amp;mesg, mesg);
      printf("copy = %s; &amp;copy = %p; value = %p\n", copy, &amp;copy, copy);
-            
+                    
      return 0;
 }
 </code></pre>
@@ -1895,7 +1895,7 @@ int main(void)
      printf("%s\n", words);
      puts(words);
      puts("Done.");
-            
+                    
      return 0;
 }
 </code></pre>
@@ -1940,7 +1940,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts("Done.");
-            
+                    
      return 0;
 }
 </code></pre>
@@ -1979,7 +1979,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;&amp; words[0] != '\n')
           fputs(words, stdout);
      puts("Done.");
-            
+                    
      return 0;
 }
 </code></pre>
@@ -2137,7 +2137,7 @@ int main(void)
      printf("Please enter 2 names.\n");
      count = scanf("%5s %10s", name1, name2);
      printf("I read the %d names %s and %s.\n", count, name1, name2);
-            
+                    
      return 0
 }
 </code></pre>
@@ -2182,7 +2182,7 @@ int main(void)
      puts(str2);
      puts(&amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-            
+                    
      return 0;
 }
 </code></pre>
@@ -2524,7 +2524,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &lt; argc; count++)
           printf("%d: %s\n", count, argv[count]);
      printf("\n");
-            
+                    
      return 0;
 }
 </code></pre>
@@ -2634,34 +2634,229 @@ Hello, good looking!</p>
 <p>字符串可以存储在字符数组中 字符串还可以用<strong>字符串常量</strong>来表示 (括在双引号中), 空字符由编译器提供 自行加在字符数组的末尾处</p>
 <p>存储字符串时 字符串的存储长度要比字符串长度多 1, 因为多了一个空字符 (’\0’), 但是 strlen () 计算长度的时候不用考虑空字符的问题 因为 strlen () 函数会自动减去空字符</p>
 <ol start="2">
-<li>
-<p>字符串常量又叫做<strong>字符串字面量</strong>，用于初始化字符数组，按照上文所说，字符串的存储长度要比字符串的长度大 1, 所以为了容纳末尾的空字符，数组的大小至少要比容纳的数组长度多 1</p>
-</li>
-<li>
-<p>函数使用指向字符串首字符的指针来表示待处理的字符串，对应的实际参数分为三种，但是传递的都是首字符的地址，一般来说 没有必要传递字符串的长度 因为函数可以通过字符串末尾存储的空字符来确定字符串的结束</p>
+<li>字符串常量又叫做<strong>字符串字面量</strong>，用于初始化字符数组，按照上文所说，字符串的存储长度要比字符串的长度大 1, 所以为了容纳末尾的空字符，数组的大小至少要比容纳的数组长度多 1</li>
+<li>函数使用指向字符串首字符的指针来表示待处理的字符串，对应的实际参数分为三种，但是传递的都是首字符的地址，一般来说 没有必要传递字符串的长度 因为函数可以通过字符串末尾存储的空字符来确定字符串的结束
 <ul>
 <li>数组名</li>
 <li>指针变量</li>
 <li>用双引号括起来的字符串</li>
 </ul>
 </li>
-<li>
-<p>fgets () 函数获取一行输入，puts () 和 fputs () 函数显示一行的输出，他们是 stdio.h 头文件中的函数 用于代替已被弃用的 gets ()</p>
-</li>
-<li>
-<p>C 库中有多个<strong>字符串处理函数</strong>，在 ANSI C 中，这些函数都声明在 string.h 文件中，C 库中海油许多<strong>字符处理函数</strong>，声明在 ctype.h 文件中</p>
-</li>
-<li>
-<p>给 main () 函数提供两个合适的形式参数，可以让程序访问命令行参数.</p>
+<li>fgets () 函数获取一行输入，puts () 和 fputs () 函数显示一行的输出，他们是 stdio.h 头文件中的函数 用于代替已被弃用的 gets ()</li>
+<li>C 库中有多个<strong>字符串处理函数</strong>，在 ANSI C 中，这些函数都声明在 string.h 文件中，C 库中海油许多<strong>字符处理函数</strong>，声明在 ctype.h 文件中</li>
+<li>给 main () 函数提供两个合适的形式参数，可以让程序访问命令行参数.
 <ul>
 <li>第一个参数通常是 int 类型的 <code>argc</code> , 代表命令行的单词数量</li>
 <li>第二个参数是一个指向数组的指针 <code>argv</code>  数组内含指向 char 的指针，每个指向 char 的指针都指向一个命令行参数字符串 <code>argv[0]</code>  指向命令名称， <code>argv[1]</code>  指向第一个命令行参数以此类推</li>
 </ul>
 </li>
+<li><code>atoi()</code> , <code>atol()</code> , <code>atof()</code>  函数把字符串形式的数组分别转化为 int,long 和 double 类型的数字， <code>strtol()</code> , <code>strtoul</code> , <code>strtod()</code>  函数把字符串形式的数字分别转化为 long,unsigned long 和 double 类型的数字.</li>
+</ol>
+<h3 id="第十二章-存储类别链接和内存管理"><a class="markdownIt-Anchor" href="#第十二章-存储类别链接和内存管理">#</a> 第十二章 存储类别，链接和内存管理</h3>
+<p>程序员指定变量的作用域和生命期，实现对程序的控制 合理利用内存存储数据时设计程序的一个要点</p>
+<h4 id="121存储类别"><a class="markdownIt-Anchor" href="#121存储类别">#</a> 12.1 存储类别</h4>
+<p>C 语言提供不同的<strong>存储类别</strong>在内存中存储数据</p>
+<ul>
 <li>
-<p><code>atoi()</code> , <code>atol()</code> , <code>atof()</code>  函数把字符串形式的数组分别转化为 int,long 和 double 类型的数字， <code>strtol()</code> , <code>strtoul</code> , <code>strtod()</code>  函数把字符串形式的数字分别转化为 long,unsigned long 和 double 类型的数字.</p>
+<p>对象：数据存储在内存中 被存储的每个值都占有一定的物理内存，这样的一块内存叫做对象</p>
+</li>
+<li>
+<p>标识符：一个名称，用来指定特定对象的内容</p>
+<blockquote>
+<p>int entity = 3   其中 entity 就是一个标识符</p>
+</blockquote>
+</li>
+<li>
+<p>左值：指向对象的表达式</p>
+<blockquote>
+<p>int * pt = &amp;entity</p>
+</blockquote>
+<p>pt 是一个标识符，他指定了一个存储<strong>地址</strong>的对象 所以他是左值</p>
+<p>*pt 不是一个标识符 因为他不是一个名称，然而他指向了一个对象 所以他是左值</p>
+</li>
+<li>
+<p>存储期：对象在内存中保留了多长时间</p>
+</li>
+<li>
+<p>作用域：描述程序中可访问标识符的区域</p>
+</li>
+</ul>
+<h5 id="1211作用域"><a class="markdownIt-Anchor" href="#1211作用域">#</a> 12.1.1 作用域</h5>
+<p>作用域包括:</p>
+<ol>
+<li>块级作用域</li>
+<li>函数作用域</li>
+<li>函数原型作用域</li>
+<li>文件作用域</li>
+</ol>
+<ul>
+<li>
+<p><strong>块</strong>：一对花括号括起来的代码区域 (对于 <code>for</code> , <code>while</code> , <code>do while</code> , <code>if</code>  等等判别式也包括在块以内)(函数的形参也包括在整个函数的块作用域内)</p>
+<p>定义在块中的变量具有<strong>块作用域</strong>，块作用域变量的课件范围时从定义出到包含该定义的块的末尾</p>
+</li>
+<li>
+<p><strong>函数作用域</strong>仅用于 <code>goto</code>  语句的标签，即使一个标签首次出现在函数的内层快中 它的作用域也会延伸到整个函数</p>
+</li>
+<li>
+<p>函数作用域和块作用域的<strong>区别</strong>：函数作用域作用于整个函数，而块作用域仅仅作用域方括号内</p>
+</li>
+<li>
+<p><strong>函数原型作用域</strong>用于函数原型的形参名，作用范围是从形参定义处到原型声明结束，所以编译器只关心函数原型中的形参的类型 而对于形参名可有可无 因为即使有 也无法和函数定义中的形参名匹配<strong>只有在变长数组中 形参名才有用</strong></p>
+</li>
+<li>
+<p>变量的定义在函数外面的具有<strong>文件作用域</strong>，从定义处到文件的结尾都可见</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+
+<span class="token keyword">int</span> units <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">{</span>
+
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里变量 units 具有文件作用域 (更准确是为外部链接文件作用域)</p>
+<p><strong>文件作用域</strong>也被称为<strong>全局变量</strong></p>
+</li>
+<li>
+<p><strong>翻译单元</strong>：编译器把源代码文件和所有的头文件都看成是一个包含信息的单独文件，这个文件被称为<strong>翻译单元</strong>，若程序由多个源代码文件组成，那么该程序也将由多个翻译单元组成，每个翻译单元均对应一个源代码文件和它所包含的文件</p>
+</li>
+</ul>
+<h5 id="1212链接"><a class="markdownIt-Anchor" href="#1212链接">#</a> 12.1.2 链接</h5>
+<p>C 变量有三种链接属性</p>
+<ol>
+<li>外部链接</li>
+<li>内部链接</li>
+<li>无链接</li>
+</ol>
+<ul>
+<li><strong>无链接变量</strong>：具有块作用域，函数作用域或函数原型作用域的变量，这些变量属于定义他们的块，函数或原型私有</li>
+<li><strong>外链接变量</strong>：可以在多文件程序中使用，简称为<strong>全局作用域</strong>或者<strong>程序作用域</strong></li>
+<li><strong>内部链接变量</strong>：只能在一个<u>翻译单元</u>(一个源代码文件和它所包含的头文件) 中使用   简称为<strong>内部链接文件作用域</strong></li>
+</ul>
+<p>具有文件作用域的变量可以是外部链接，也可以是内部链接</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> giant <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>  <span class="token comment">//文件作用域,外部链接(统一程序的所有文件都可以使用)</span>
+<span class="token keyword">static</span> <span class="token keyword">int</span> dodgerts <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span><span class="token comment">//文件作用域 内部链接(文件私有),使用关键字static</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+   <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="1213存储期"><a class="markdownIt-Anchor" href="#1213存储期">#</a> 12.1.3 存储期</h5>
+<p><strong>存储期</strong>：描述了通过这些标识符访问的对象的生存期</p>
+<p>C 语言有 4 种存储期:</p>
+<ol>
+<li>
+<p>** 静态存储期:** 在程序的执行期间一直存在，<strong> 文件作用域变量</strong> (外部链接和内部链接) 具有静态存储期</p>
+</li>
+<li>
+<p><strong>线程存储期</strong>：用于并发程序设计，程序执行被分为多个线程，具有线程存储器的对象从被声明时到线程结束一直存在，以关键字 <code>_Thread_local</code>  声明一个对象时，每个线程都获得该变量的私有备份</p>
+</li>
+<li>
+<p><strong>自动存储期</strong>:<strong> 块作用域变量</strong>通常都具有自动存储期，程序进入定义这些变量的块时，为这些变量分配内存，当退出这个块时，释放刚才为变量分配的内存</p>
+<ul>
+<li>
+<p>变长数组的存储期从声明处到块的末尾，而不是从块的开始处到快的末尾</p>
+</li>
+<li>
+<p>目前来说局部变量都是自动类别 (在使用函数时候被创建，在离开函数时被销毁)</p>
+</li>
+<li>
+<p>块作用域变量也能具有静态存储器，把变量声明在块中，并且在声明前面加上关键字 static, 但是只有在执行函数的时候程序才能使用 ct 访问它所指向的对象 (但是，该函数可以给其他函数提供该存储区的地址以便间接访问该对象，例如通过指针形参或返回值)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>动态分配存储期</strong>：后续介绍</p>
 </li>
 </ol>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/o5YBqg"><img src="https://s1.ax1x.com/2021/12/10/o5YBqg.png" alt="5种存储类别"></a></p>
+<h5 id="1214自动变量"><a class="markdownIt-Anchor" href="#1214自动变量">#</a> 12.1.4 自动变量</h5>
+<p>自动存储类别的变量具有自动存储期，块作用域且无链接，默认情况下，声明在块或函数头中的任何变量都属于自动存储类别，也可以显式使用关键字 <code>auto</code></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">auto</span> <span class="token keyword">int</span> plox
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>auto 是<strong>存储类别说明符</strong></p>
+<ul>
+<li><strong>块作用域和无链接</strong>意味着只有在变量定义所在块中才能通过变量名访问该变量</li>
+<li><strong>自动存储期</strong>意味着，程序进入变量声明所在块时变量存在，程序在退出该块时变量小时</li>
+<li>当内层块中的变量和外层块中的变量同名时，内层块会<strong>隐藏</strong>外层块的定义，但是在离开内层块后外层变量的作用域又回到了原来的作用域</li>
+</ul>
+<ol>
+<li>
+<p>没有括号的块</p>
+<p>作为循环或者 <code>if</code>  语句的一部分，即使不适用花括号，也是一个块.</p>
+</li>
+<li>
+<p>自动变量的初始化</p>
+<p><strong>自动变量</strong>不会初始化，除非显式初始化它</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> repid<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>repid</code>  变量的值不会是 0, 而是之前占用分配给 <code>repid</code>  的空间中的任意值 (前提是存在)</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> rush<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> rance <span class="token operator">=</span> <span class="token number">5</span> <span class="token operator">*</span> ruth<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token comment">// 可以如此定义(前提是ruth已经在前面定义过了)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h5 id="1215寄存器变量"><a class="markdownIt-Anchor" href="#1215寄存器变量">#</a> 12.1.5 寄存器变量</h5>
+<p>变量通常存储在计算器内存中，<strong> 如果幸运的话</strong>，寄存器变量存在 CPU 的寄存器中，或者存在最快的可用内存中，与普通变量相比，访问和处理这些变量的速度更快.</p>
+<p>但是由于寄存器变量存储在寄存器而非内存中，所以无法获取寄存器变量的地址</p>
+<p>绝大多数方面寄存器变量和自动变量一样</p>
+<p>使用 <code>register</code>  可以声明寄存器变量</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">register</span> <span class="token keyword">int</span> quick<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>声明变量为 <code>register</code>  更像是一种<strong>请求</strong>，编译器胡根据寄存器或者最快可用内存的数量衡量你的请求，或者直接忽略你的请求，这种情况下寄存器变量就编程了普通的自动变量，即使是这样，<strong> 仍然不能对该变量使用地址运算符</strong></p>
+<p>可声明为 <code>register</code>  的数据类型有限，比如处理器中的寄存器可能没有足够大的空间来存储 <code>double</code>  类型的值</p>
+<h5 id="1216块作用域的静态变量"><a class="markdownIt-Anchor" href="#1216块作用域的静态变量">#</a> 12.1.6 块作用域的静态变量</h5>
+<p><strong>静态变量</strong>：变量在内存中不变</p>
+<p>具有文件作用域的变量自动具有静态存储期</p>
+<p>使用 <code>static</code>  可以创建具有静态存储期，块作用域的局部变，但是无法在函数的形参中使用<u>static</u></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">void</span> <span class="token function">trystat</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+
+     <span class="token keyword">for</span> <span class="token punctuation">(</span>count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> count <span class="token operator">&lt;=</span> <span class="token number">3</span><span class="token punctuation">;</span> count<span class="token operator">++</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+          <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Here comes iteration %d:\n"</span><span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token function">trystat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+
+     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">trystat</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">int</span> fade <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+     <span class="token keyword">static</span> <span class="token keyword">int</span> stay <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"fade = %d and stay = %d\n"</span><span class="token punctuation">,</span> fade<span class="token operator">++</span><span class="token punctuation">,</span> stay<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果:</p>
+<blockquote>
+<p>Here coms iteration 1:</p>
+<p>fade = 1 and stay = 1</p>
+<p>Here coms iteration 2:</p>
+<p>fade = 1 and stay = 2</p>
+<p>Here coms iteration 3:</p>
+<p>fade = 1 and stay = 3</p>
+</blockquote>
+<p>显然可见静态变量 <code>stay</code>  保存了他被递增后的值，而 <code>fade</code>  变量每次都是 <code>1</code></p>
+<p>这表明了初始化的不同，每次调用 <code>trystat()</code>  都会初始化 <code>fade</code>  但是 <code>stay</code>  只在编译 <code>trystat()</code>  初始化一次</p>
+<p>如果未显式初始化<strong>静态变量</strong>，他们会被初始化为 0</p>
+<p>事实上静态变量和外部变量在程序被载入内存时已经执行完毕了，把这条声明放在 <code>trystat()</code>  函数中是为了告诉编译器只有 <code>trystat()</code>  函数才能看到该变量.</p>
+<p>具有块作用域的静态变量也被称为<strong>静态局部变量</strong>，一些老的 C 语言文献称为<strong>内部静态存储类别</strong></p>
+<h5 id="1217外部链接的静态变量"><a class="markdownIt-Anchor" href="#1217外部链接的静态变量">#</a> 12.1.7 外部链接的静态变量</h5>
 
                 
             </div>
@@ -3171,7 +3366,7 @@ Hello, good looking!</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">53.8k</span>&nbsp;字
+                class="white-color">56.1k</span>&nbsp;字
             
             
             
