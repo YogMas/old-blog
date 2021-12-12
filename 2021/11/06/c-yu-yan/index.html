@@ -397,14 +397,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    32.9k
+                    35.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    123 分
+                    134 分
                 </div>
                 
 
@@ -1284,7 +1284,7 @@ int main(void)
     printf("MONTHLY AVERAGES:\n\n");
     printf(" Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct ");
     printf(" Nov  Dec\n");
-                        
+                            
     for (month = 0; month &lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &lt; YEARS; year++)
@@ -1292,7 +1292,7 @@ int main(void)
         printf("%4.1f ", subtot/YEARS);
     }
     printf("\n");
-                        
+                            
     return 0;
 }
 </code></pre>
@@ -1363,7 +1363,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf("The total number of marbles is %ld.\n", answer);
-                        
+                            
     return 0;
 }
 
@@ -1377,7 +1377,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-                        
+                            
     return total;
 }
 </code></pre>
@@ -1461,7 +1461,7 @@ int main(void)
      printf("    **zippo = %d\n", **zippo);
      printf("      zippo[2][1] = %d\n", zippo[2][1]);
      printf("*(*(zippo+2) + 1) = %d\n", *(*(zippo + 2) + 1));
-                    
+                        
      return 0;
 }
 </code></pre>
@@ -1498,7 +1498,7 @@ int main(void)
      printf("    **pz = %d\n", **pz);
      printf("      pz[2][1] = %d\n", pz[2][1]);
      printf("*(*(pz+2) + 1) = %d\n", *(*(pz + 2) +   &gt;     1));
-                    
+                        
      return 0;
 }
 </code></pre>
@@ -1577,7 +1577,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf("Sum of all elements = %d\n", sum2d(junk, ROWS));
-                    
+                        
      return 0;
 }
 
@@ -1620,7 +1620,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &lt; rows; r++)
           for (c = 0; c &lt; COLS; c++)
                tot += ar[r][c];
-                    
+                        
      return tot;
 }
 </code></pre>
@@ -1844,7 +1844,7 @@ int main(void)
      printf("%s\n", copy);
      printf("mesg = %s; &amp;mesg = %p; value = %p\n", mesg, &amp;mesg, mesg);
      printf("copy = %s; &amp;copy = %p; value = %p\n", copy, &amp;copy, copy);
-                    
+                        
      return 0;
 }
 </code></pre>
@@ -1895,7 +1895,7 @@ int main(void)
      printf("%s\n", words);
      puts(words);
      puts("Done.");
-                    
+                        
      return 0;
 }
 </code></pre>
@@ -1940,7 +1940,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts("Done.");
-                    
+                        
      return 0;
 }
 </code></pre>
@@ -1979,7 +1979,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;&amp; words[0] != '\n')
           fputs(words, stdout);
      puts("Done.");
-                    
+                        
      return 0;
 }
 </code></pre>
@@ -2137,7 +2137,7 @@ int main(void)
      printf("Please enter 2 names.\n");
      count = scanf("%5s %10s", name1, name2);
      printf("I read the %d names %s and %s.\n", count, name1, name2);
-                    
+                        
      return 0
 }
 </code></pre>
@@ -2182,7 +2182,7 @@ int main(void)
      puts(str2);
      puts(&amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-                    
+                        
      return 0;
 }
 </code></pre>
@@ -2524,7 +2524,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &lt; argc; count++)
           printf("%d: %s\n", count, argv[count]);
      printf("\n");
-                    
+                        
      return 0;
 }
 </code></pre>
@@ -2857,6 +2857,286 @@ Hello, good looking!</p>
 <p>事实上静态变量和外部变量在程序被载入内存时已经执行完毕了，把这条声明放在 <code>trystat()</code>  函数中是为了告诉编译器只有 <code>trystat()</code>  函数才能看到该变量.</p>
 <p>具有块作用域的静态变量也被称为<strong>静态局部变量</strong>，一些老的 C 语言文献称为<strong>内部静态存储类别</strong></p>
 <h5 id="1217外部链接的静态变量"><a class="markdownIt-Anchor" href="#1217外部链接的静态变量">#</a> 12.1.7 外部链接的静态变量</h5>
+<p><strong>外部链接的静态变量</strong>具有</p>
+<ol>
+<li>文件作用域</li>
+<li>外部链接</li>
+<li>静态存储期</li>
+</ol>
+<p>该类别被称为<strong>外部存储类别</strong>，属于该类别的的变量称为<strong>外部变量</strong></p>
+<p>变量的定义性声明放在所有函数的外面便创建了外部变量，为了指出该函数使用了外部变量可以在函数中使用关键字 <code>extern</code>  再次声明</p>
+<p>如果一个源代码文件使用的外部变量定义在另一个源代码文件中，则必须用 <code>extern</code>  在该文件中声明该变量</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> Errupt<span class="token punctuation">;</span>                <span class="token comment">/* 外部定义的变量 */</span>
+<span class="token keyword">double</span> Up<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token comment">/* 外部定义的数组 */</span>
+<span class="token keyword">extern</span> <span class="token keyword">char</span> Coal<span class="token punctuation">;</span>          <span class="token comment">/* 如果Coal被定义在另一个文件， */</span>
+                           <span class="token comment">/*则必须这样声明*/</span>
+<span class="token keyword">void</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">extern</span> <span class="token keyword">int</span> Errupt<span class="token punctuation">;</span>     <span class="token comment">/* 可选的声明*/</span>
+
+     <span class="token keyword">extern</span> <span class="token keyword">double</span> Up<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">/* 可选的声明*/</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>事实上 <code>main()</code>  函数声明中的 <code>extern</code>  声明完全可以省略因为外部链接具有文件作用域，他们出现在那里，仅仅是为了说明 <code>main()</code>  函数要使用这两个变量</p>
+<p>如果在 <code>main()</code>  函数中创建变量时，去除了 <code>extern</code> , 那么他将会创建一个自动变量，简而言之就是和之前一样，会隐藏其同名外部变量，并且此自动变量只在这个函数内有效</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> Hocus<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">magic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword">int</span> Hocus<span class="token punctuation">;</span> <span class="token comment">// 声明Hocus，默认是自动变量</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> Pocus<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">magic</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">auto</span> <span class="token keyword">int</span> Hocus<span class="token punctuation">;</span> <span class="token comment">//把局部变量Hocus显式声明为自动变量</span>
+     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>外部变量的生命周期</strong>：在程序运行时一直存在，因为他们不会在某个函数返回后就消失</p>
+<ol>
+<li>
+<p>初始化外部变量</p>
+<p>外部变量也可以被显示初始化，如果未初始化外部变量，<strong> 那么他们会被自动初始化为 <code>0</code> </strong>, 并且外部变量只能使用<strong>常量表达式</strong>初始化.</p>
+</li>
+<li>
+<p>使用外部变量</p>
+<p>外部变量具有文件作用域，所以在一个翻译单元中都可以使用</p>
+</li>
+<li>
+<p>外部名称</p>
+<p>外部变量名比局部变量名的规则严格，因为外部变量名还要遵循局部环境规则，所受的限制更多</p>
+</li>
+<li>
+<p>定义和声明</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> tern <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">/* tern被定义 */</span>
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">extern</span> <span class="token keyword">int</span> tern<span class="token punctuation">;</span> <span class="token comment">/* 使用在别处定义的tern */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>tern</code>  被声明了两次，第一次声明为变量预留了存储空间，该声明构成了<strong>变量的定义</strong>，第二次声明只告诉编译器使用之前已创建的 <code>tern</code>  变量，所以这不是定义</p>
+<ul>
+<li>第一次声明被称为<strong>定义式声明</strong></li>
+<li>第二次声明被称为<strong>引用式声明</strong></li>
+<li>关键字 <code>extern</code>  表明该声明不是定义，因为他只是编译器去别处查询其定义，所以，<u>不要使用关键字 <code>extern</code>  创建外部定义，只用它来引用现有的外部定义</u></li>
+<li>外部变量只能<strong>初始化</strong>一次，且必须在定义该变量时进行</li>
+</ul>
+</li>
+</ol>
+<h5 id="1218内部链接的静态变量"><a class="markdownIt-Anchor" href="#1218内部链接的静态变量">#</a> 12.1.8 内部链接的静态变量</h5>
+<p>该存储类别的变量具有</p>
+<ol>
+<li>静态存储期</li>
+<li>文件作用域</li>
+<li>内部链接</li>
+</ol>
+<p>在所有函数的外部，用存储类别说明符 <code>static</code>  定义的变量具有这种存储类别</p>
+<p>内部链接的静态变量只能用于<strong>同一个文件中</strong>的函数，与外部链接相同可以使用存储类别说明符 <code>extern</code> , 在函数中重复声明任何具有文件作用域的变量，因为 <code>extern</code>  表明变量的定义在别处</p>
+<h5 id="1219多文件"><a class="markdownIt-Anchor" href="#1219多文件">#</a> 12.1.9 多文件</h5>
+<p>复杂的 C 程序通常由多个单独的源代码文件组成，这些文件可能要<strong>共享</strong>一个外部变量，C 通过在一个文件中进行<strong>定义式声明</strong>，然后在其他文件中进行<strong>引用式声明</strong>来是实现<strong>共享</strong></p>
+<p>除了一个<strong>定义式声明</strong>，其他声明要是用 <code>extern</code>  关键字，并且只有定义式声明才能<strong>初始化常量</strong></p>
+<p>如果外部变量定义在一个文件中，其他文件在使用该变量之前必须要用 <code>extern</code>  关键字声明它</p>
+<h5 id="12110-存储类别说明符"><a class="markdownIt-Anchor" href="#12110-存储类别说明符">#</a> 12.1.10 存储类别说明符</h5>
+<p>C 语言中有六个关键字作为存储类别说明符 <code>auto</code> , <code>register</code> , <code>static</code> , <code>extern</code> , <code>_Thread_local</code> , <code>typedef</code></p>
+<ol>
+<li><code>auto</code> : 只能用于<strong>块作用域</strong>的变量声明中，表明变量是自动存储期，可以省略因为块中声明的变量本身就有自动存储期。</li>
+<li><code>register</code> : 只能用于<strong>块作用域</strong>的变量声明中，它把变量归为寄存器存储类别，<strong> 请求</strong>以最快速度访问该变量，<u>此存储类别的变量的地址不可被获取</u></li>
+<li><code>static</code> : 表明该说明符创建的对象具有<strong>静态存储期</strong>
+<ul>
+<li>如果 <code>static</code>  用于文件作用域声明，作用域受限于该文件.</li>
+<li>如果 <code>static</code>  用于块作用声明，作用域受限于该块，在程序运行时，其值会一直保存，但是只有在执行块内的代码时，才能通过标识符访问.</li>
+<li>区分外部链接和内部链接就需要考 <code>static</code>  进行声明</li>
+<li>块作用域的静态变量无链接，文件作用域的静态变量具有内部链接</li>
+</ul>
+</li>
+<li><code>extern</code> : 表示声明的变量定义在别处.</li>
+</ol>
+<h5 id="12111存储类别和函数"><a class="markdownIt-Anchor" href="#12111存储类别和函数">#</a> 12.1.11 存储类别和函数</h5>
+<p>函数也有存储类别，可以分为<strong>外部函数 (默认)<strong> 和</strong>内部函数</strong>，C99 增加了第三种类别–<strong>内联函数</strong></p>
+<p>外部函数可以被其他文件的函数访问，但是静态函数只能用于其定义所在的文件.</p>
+<p>同样以 <code>static</code>  存储类别说明符创建的函数属于特定模块私有，这样有效避免了名称冲突的问题</p>
+<p><u>通常的做法是</u>: 用 <code>extern</code>  关键字声明定义在其他文件中的函数，</p>
+<p>除非使用 <code>static</code>  关键字，否则一般函数声明都默认为 <code>extern</code></p>
+<h5 id="12112存储类别的选择"><a class="markdownIt-Anchor" href="#12112存储类别的选择">#</a> 12.1.12 存储类别的选择</h5>
+<p>绝大多数存储类别的选择都是自动存储类别</p>
+<p>保护性程序设计的<strong>黄金法则</strong>是:"按需知道" 原则，尽量在函数内部解决该函数的任务，只共享那些需要共享的变量 \</p>
+<h4 id="122随机数函数和静态变量"><a class="markdownIt-Anchor" href="#122随机数函数和静态变量">#</a> 12.2 随机数函数和静态变量</h4>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"hello.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token keyword">extern</span> <span class="token keyword">void</span> <span class="token function">srand1</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">extern</span> <span class="token keyword">int</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> seed<span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"please enter your choice for seed. \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%u"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>seed<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">srand1</span><span class="token punctuation">(</span>seed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> count <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> count<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d \n"</span><span class="token punctuation">,</span> <span class="token function">rand1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Please enter next seed(q to quit): \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Done \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//hello.h 文件</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">int</span> next <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//next 仅仅能够给rand1() 和srand1()函数使用</span>
+
+<span class="token keyword">int</span> <span class="token function">rand1</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    next <span class="token operator">=</span> next <span class="token operator">*</span> <span class="token number">1103515245</span> <span class="token operator">+</span> <span class="token number">123456</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span>next <span class="token operator">/</span> <span class="token number">65536</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">32768</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">srand1</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> seed<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    next <span class="token operator">=</span> seed<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="123掷骰子"><a class="markdownIt-Anchor" href="#123掷骰子">#</a> 12.3 掷骰子</h4>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//manydice.c</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;time.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"hello.h"</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> dice<span class="token punctuation">,</span> roll<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> sides<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> status<span class="token punctuation">;</span>
+    <span class="token function">srand</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter the number of sides per dice,0 to stop \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>sides<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> sides <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"How many dice? \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>status <span class="token operator">=</span> <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>dice<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>status <span class="token operator">==</span> <span class="token constant">EOF</span><span class="token punctuation">)</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">/* 退出循环 */</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"You should have entered an integer."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" Let's begin again.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">'\n'</span><span class="token punctuation">)</span>
+                    <span class="token keyword">continue</span><span class="token punctuation">;</span> <span class="token comment">/* 处理错误的输入 */</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"How many sides? Enter 0 to stop.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span> <span class="token comment">/* 进入循环的下一轮迭代 */</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        roll <span class="token operator">=</span> <span class="token function">roll_n_dice</span><span class="token punctuation">(</span>dice<span class="token punctuation">,</span> sides<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"You have rolled a %d using %d %d-sided dice.\n"</span><span class="token punctuation">,</span>
+               roll<span class="token punctuation">,</span> dice<span class="token punctuation">,</span> sides<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"How many sides? Enter 0 to stop.\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The rollem() function was called %d times.\n"</span><span class="token punctuation">,</span>
+           roll_count<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 使用外部变量 */</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"GOOD FORTUNE TO YOU!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// hello.h</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">roll_n_dice</span><span class="token punctuation">(</span><span class="token keyword">int</span> dice<span class="token punctuation">,</span> <span class="token keyword">int</span> sides<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> roll_count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">rollem</span><span class="token punctuation">(</span><span class="token keyword">int</span> sides<span class="token punctuation">)</span> <span class="token comment">//计算骰子掷出的点数</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> roll<span class="token punctuation">;</span>
+
+    roll <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> sides <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token operator">++</span>roll_count<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> roll<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">roll_n_dice</span><span class="token punctuation">(</span><span class="token keyword">int</span> dice<span class="token punctuation">,</span> <span class="token keyword">int</span> sides<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> d<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>sides <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Need at least 2 sides. \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>dice <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Need at lease 1 dice. \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>d <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> d <span class="token operator">&lt;</span> dice<span class="token punctuation">;</span> d<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        total <span class="token operator">+=</span> <span class="token function">rollem</span><span class="token punctuation">(</span>sides<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> total<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="124分配内存malloc和free"><a class="markdownIt-Anchor" href="#124分配内存malloc和free">#</a> 12.4 分配内存:malloc () 和 free ()</h4>
+<p>C 语言可以通过库函数分配和管理内存</p>
+<p><code>malloc()</code> : 其接受所需的字节数，然后找到合适的空间内存块， <code>malloc()</code>  不会为其赋名，但是他会返回动态分配内存块的<strong>首字节的地址</strong>，可以把该地址付给指针，并使用指针访问这块内存。如果 <code>malloc()</code>  分配内存失败，将返回<strong>空指针</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">double</span> <span class="token operator">*</span> ptd<span class="token punctuation">;</span>
+ptd <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">double</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">30</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>此代码表示使用 <code>malloc()</code>  创建了一个可以存储 30 个 double 类型的数组，除了请求内存之外，还通过 ptd 指针记录了这块内存的位置</p>
+<p>需要注意的是 <code>molloc()</code>  的返回值是首字节的地址，并且指针指向类型为 <code>void</code> , 而指针指向 <code>void</code>  的指针赋给任意类型的指针都不用考虑类型匹配的问题，所以 <code>ptd</code>  指向的是首元素，也就是一个 <code>double</code>  类型，也就是说 <code>ptd</code>  可以当做<strong>数组名</strong>来使用</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">ptd <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">double</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span>n <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//可以如此声明动态数组</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>free()</code> : 用于释放内存，参数是需要释放的内存的地址</p>
+<p>通常 <code>malloc()</code>  和 <code>free()</code>  配套使用， <code>free()</code>  的参数是 <code>malloc()</code>  返回的值，由此可以实现使用函数时 <code>malloc()</code>  分配内存，函数结束时 <code>free()</code>  释放内存，并且不能用 <code>free()</code>  释放通过其他方式分配的内存</p>
+<p>可以调用 <code>exit()</code>  函数结束程序，其原型在 <code>stdlib.h</code>  中。标准提供了两个返回值以保证在所有操作系统中都能正常工作</p>
+<ol>
+<li>EXIT_SUCCESS 表示普通的程序结束</li>
+<li>EXIT_FAILURE 表示程序异常终止</li>
+</ol>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/* dyn_arr.c -- 动态分配数组 */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span> <span class="token comment">/* 为 malloc()、free()提供原型 */</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">double</span> <span class="token operator">*</span> ptd<span class="token punctuation">;</span>
+     <span class="token keyword">int</span> max<span class="token punctuation">;</span>
+     <span class="token keyword">int</span> number<span class="token punctuation">;</span>
+     <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+     <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"What is the maximum number of type double entries?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>max<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+          <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"Number not correctly entered -- bye."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token function">exit</span><span class="token punctuation">(</span>EXIT_FAILURE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     ptd <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">double</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span>max <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">if</span> <span class="token punctuation">(</span>ptd <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+          <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"Memory allocation failed. Goodbye."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token function">exit</span><span class="token punctuation">(</span>EXIT_FAILURE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     <span class="token comment">/* ptd 现在指向有max个元素的数组 */</span>
+     <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"Enter the values (q to quit):"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> max <span class="token operator">&amp;&amp;</span> <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>ptd<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+          <span class="token operator">++</span>i<span class="token punctuation">;</span>
+     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Here are your %d entries:\n"</span><span class="token punctuation">,</span> number <span class="token operator">=</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> number<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+          <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%7.2f "</span><span class="token punctuation">,</span> ptd<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">7</span> <span class="token operator">==</span> <span class="token number">6</span><span class="token punctuation">)</span>
+               <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">7</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+          <span class="token function">putchar</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">"Done."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token function">free</span><span class="token punctuation">(</span>ptd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -3366,7 +3646,7 @@ Hello, good looking!</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.1k</span>&nbsp;字
+                class="white-color">58.6k</span>&nbsp;字
             
             
             

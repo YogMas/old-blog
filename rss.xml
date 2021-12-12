@@ -1997,7 +1997,7 @@ int main(void)
     printf(&#34;MONTHLY AVERAGES:\n\n&#34;);
     printf(&#34; Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct &#34;);
     printf(&#34; Nov  Dec\n&#34;);
-                        
+                            
     for (month = 0; month &amp;lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &amp;lt; YEARS; year++)
@@ -2005,7 +2005,7 @@ int main(void)
         printf(&#34;%4.1f &#34;, subtot/YEARS);
     }
     printf(&#34;\n&#34;);
-                        
+                            
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2076,7 +2076,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf(&#34;The total number of marbles is %ld.\n&#34;, answer);
-                        
+                            
     return 0;
 }
 
@@ -2090,7 +2090,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-                        
+                            
     return total;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2174,7 +2174,7 @@ int main(void)
      printf(&#34;    **zippo = %d\n&#34;, **zippo);
      printf(&#34;      zippo[2][1] = %d\n&#34;, zippo[2][1]);
      printf(&#34;*(*(zippo+2) + 1) = %d\n&#34;, *(*(zippo + 2) + 1));
-                    
+                        
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2211,7 +2211,7 @@ int main(void)
      printf(&#34;    **pz = %d\n&#34;, **pz);
      printf(&#34;      pz[2][1] = %d\n&#34;, pz[2][1]);
      printf(&#34;*(*(pz+2) + 1) = %d\n&#34;, *(*(pz + 2) +   &amp;gt;     1));
-                    
+                        
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2290,7 +2290,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf(&#34;Sum of all elements = %d\n&#34;, sum2d(junk, ROWS));
-                    
+                        
      return 0;
 }
 
@@ -2333,7 +2333,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &amp;lt; rows; r++)
           for (c = 0; c &amp;lt; COLS; c++)
                tot += ar[r][c];
-                    
+                        
      return tot;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2557,7 +2557,7 @@ int main(void)
      printf(&#34;%s\n&#34;, copy);
      printf(&#34;mesg = %s; &amp;amp;mesg = %p; value = %p\n&#34;, mesg, &amp;amp;mesg, mesg);
      printf(&#34;copy = %s; &amp;amp;copy = %p; value = %p\n&#34;, copy, &amp;amp;copy, copy);
-                    
+                        
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2608,7 +2608,7 @@ int main(void)
      printf(&#34;%s\n&#34;, words);
      puts(words);
      puts(&#34;Done.&#34;);
-                    
+                        
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2653,7 +2653,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts(&#34;Done.&#34;);
-                    
+                        
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2692,7 +2692,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;amp;&amp;amp; words[0] != &#39;\n&#39;)
           fputs(words, stdout);
      puts(&#34;Done.&#34;);
-                    
+                        
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2850,7 +2850,7 @@ int main(void)
      printf(&#34;Please enter 2 names.\n&#34;);
      count = scanf(&#34;%5s %10s&#34;, name1, name2);
      printf(&#34;I read the %d names %s and %s.\n&#34;, count, name1, name2);
-                    
+                        
      return 0
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2895,7 +2895,7 @@ int main(void)
      puts(str2);
      puts(&amp;amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-                    
+                        
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -3237,7 +3237,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &amp;lt; argc; count++)
           printf(&#34;%d: %s\n&#34;, count, argv[count]);
      printf(&#34;\n&#34;);
-                    
+                        
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -3570,6 +3570,286 @@ Hello, good looking!&lt;/p&gt;
 &lt;p&gt;事实上静态变量和外部变量在程序被载入内存时已经执行完毕了，把这条声明放在 &lt;code&gt;trystat()&lt;/code&gt;  函数中是为了告诉编译器只有 &lt;code&gt;trystat()&lt;/code&gt;  函数才能看到该变量.&lt;/p&gt;
 &lt;p&gt;具有块作用域的静态变量也被称为&lt;strong&gt;静态局部变量&lt;/strong&gt;，一些老的 C 语言文献称为&lt;strong&gt;内部静态存储类别&lt;/strong&gt;&lt;/p&gt;
 &lt;h5 id=&#34;1217外部链接的静态变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1217外部链接的静态变量&#34;&gt;#&lt;/a&gt; 12.1.7 外部链接的静态变量&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;外部链接的静态变量&lt;/strong&gt;具有&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;文件作用域&lt;/li&gt;
+&lt;li&gt;外部链接&lt;/li&gt;
+&lt;li&gt;静态存储期&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;该类别被称为&lt;strong&gt;外部存储类别&lt;/strong&gt;，属于该类别的的变量称为&lt;strong&gt;外部变量&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;变量的定义性声明放在所有函数的外面便创建了外部变量，为了指出该函数使用了外部变量可以在函数中使用关键字 &lt;code&gt;extern&lt;/code&gt;  再次声明&lt;/p&gt;
+&lt;p&gt;如果一个源代码文件使用的外部变量定义在另一个源代码文件中，则必须用 &lt;code&gt;extern&lt;/code&gt;  在该文件中声明该变量&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; Errupt&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;                &lt;span class=&#34;token comment&#34;&gt;/* 外部定义的变量 */&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; Up&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;            &lt;span class=&#34;token comment&#34;&gt;/* 外部定义的数组 */&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;char&lt;/span&gt; Coal&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;          &lt;span class=&#34;token comment&#34;&gt;/* 如果Coal被定义在另一个文件， */&lt;/span&gt;
+                           &lt;span class=&#34;token comment&#34;&gt;/*则必须这样声明*/&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; Errupt&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;token comment&#34;&gt;/* 可选的声明*/&lt;/span&gt;
+
+     &lt;span class=&#34;token keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; Up&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;token comment&#34;&gt;/* 可选的声明*/&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;事实上 &lt;code&gt;main()&lt;/code&gt;  函数声明中的 &lt;code&gt;extern&lt;/code&gt;  声明完全可以省略因为外部链接具有文件作用域，他们出现在那里，仅仅是为了说明 &lt;code&gt;main()&lt;/code&gt;  函数要使用这两个变量&lt;/p&gt;
+&lt;p&gt;如果在 &lt;code&gt;main()&lt;/code&gt;  函数中创建变量时，去除了 &lt;code&gt;extern&lt;/code&gt; , 那么他将会创建一个自动变量，简而言之就是和之前一样，会隐藏其同名外部变量，并且此自动变量只在这个函数内有效&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; Hocus&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;magic&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; Hocus&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 声明Hocus，默认是自动变量&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; Pocus&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;magic&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;auto&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; Hocus&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//把局部变量Hocus显式声明为自动变量&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;外部变量的生命周期&lt;/strong&gt;：在程序运行时一直存在，因为他们不会在某个函数返回后就消失&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;初始化外部变量&lt;/p&gt;
+&lt;p&gt;外部变量也可以被显示初始化，如果未初始化外部变量，&lt;strong&gt; 那么他们会被自动初始化为 &lt;code&gt;0&lt;/code&gt; &lt;/strong&gt;, 并且外部变量只能使用&lt;strong&gt;常量表达式&lt;/strong&gt;初始化.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用外部变量&lt;/p&gt;
+&lt;p&gt;外部变量具有文件作用域，所以在一个翻译单元中都可以使用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;外部名称&lt;/p&gt;
+&lt;p&gt;外部变量名比局部变量名的规则严格，因为外部变量名还要遵循局部环境规则，所受的限制更多&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义和声明&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; tern &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* tern被定义 */&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; tern&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* 使用在别处定义的tern */&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;tern&lt;/code&gt;  被声明了两次，第一次声明为变量预留了存储空间，该声明构成了&lt;strong&gt;变量的定义&lt;/strong&gt;，第二次声明只告诉编译器使用之前已创建的 &lt;code&gt;tern&lt;/code&gt;  变量，所以这不是定义&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一次声明被称为&lt;strong&gt;定义式声明&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;第二次声明被称为&lt;strong&gt;引用式声明&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;关键字 &lt;code&gt;extern&lt;/code&gt;  表明该声明不是定义，因为他只是编译器去别处查询其定义，所以，&lt;u&gt;不要使用关键字 &lt;code&gt;extern&lt;/code&gt;  创建外部定义，只用它来引用现有的外部定义&lt;/u&gt;&lt;/li&gt;
+&lt;li&gt;外部变量只能&lt;strong&gt;初始化&lt;/strong&gt;一次，且必须在定义该变量时进行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;1218内部链接的静态变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1218内部链接的静态变量&#34;&gt;#&lt;/a&gt; 12.1.8 内部链接的静态变量&lt;/h5&gt;
+&lt;p&gt;该存储类别的变量具有&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;静态存储期&lt;/li&gt;
+&lt;li&gt;文件作用域&lt;/li&gt;
+&lt;li&gt;内部链接&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在所有函数的外部，用存储类别说明符 &lt;code&gt;static&lt;/code&gt;  定义的变量具有这种存储类别&lt;/p&gt;
+&lt;p&gt;内部链接的静态变量只能用于&lt;strong&gt;同一个文件中&lt;/strong&gt;的函数，与外部链接相同可以使用存储类别说明符 &lt;code&gt;extern&lt;/code&gt; , 在函数中重复声明任何具有文件作用域的变量，因为 &lt;code&gt;extern&lt;/code&gt;  表明变量的定义在别处&lt;/p&gt;
+&lt;h5 id=&#34;1219多文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1219多文件&#34;&gt;#&lt;/a&gt; 12.1.9 多文件&lt;/h5&gt;
+&lt;p&gt;复杂的 C 程序通常由多个单独的源代码文件组成，这些文件可能要&lt;strong&gt;共享&lt;/strong&gt;一个外部变量，C 通过在一个文件中进行&lt;strong&gt;定义式声明&lt;/strong&gt;，然后在其他文件中进行&lt;strong&gt;引用式声明&lt;/strong&gt;来是实现&lt;strong&gt;共享&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;除了一个&lt;strong&gt;定义式声明&lt;/strong&gt;，其他声明要是用 &lt;code&gt;extern&lt;/code&gt;  关键字，并且只有定义式声明才能&lt;strong&gt;初始化常量&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果外部变量定义在一个文件中，其他文件在使用该变量之前必须要用 &lt;code&gt;extern&lt;/code&gt;  关键字声明它&lt;/p&gt;
+&lt;h5 id=&#34;12110-存储类别说明符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12110-存储类别说明符&#34;&gt;#&lt;/a&gt; 12.1.10 存储类别说明符&lt;/h5&gt;
+&lt;p&gt;C 语言中有六个关键字作为存储类别说明符 &lt;code&gt;auto&lt;/code&gt; , &lt;code&gt;register&lt;/code&gt; , &lt;code&gt;static&lt;/code&gt; , &lt;code&gt;extern&lt;/code&gt; , &lt;code&gt;_Thread_local&lt;/code&gt; , &lt;code&gt;typedef&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;auto&lt;/code&gt; : 只能用于&lt;strong&gt;块作用域&lt;/strong&gt;的变量声明中，表明变量是自动存储期，可以省略因为块中声明的变量本身就有自动存储期。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;register&lt;/code&gt; : 只能用于&lt;strong&gt;块作用域&lt;/strong&gt;的变量声明中，它把变量归为寄存器存储类别，&lt;strong&gt; 请求&lt;/strong&gt;以最快速度访问该变量，&lt;u&gt;此存储类别的变量的地址不可被获取&lt;/u&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;static&lt;/code&gt; : 表明该说明符创建的对象具有&lt;strong&gt;静态存储期&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;如果 &lt;code&gt;static&lt;/code&gt;  用于文件作用域声明，作用域受限于该文件.&lt;/li&gt;
+&lt;li&gt;如果 &lt;code&gt;static&lt;/code&gt;  用于块作用声明，作用域受限于该块，在程序运行时，其值会一直保存，但是只有在执行块内的代码时，才能通过标识符访问.&lt;/li&gt;
+&lt;li&gt;区分外部链接和内部链接就需要考 &lt;code&gt;static&lt;/code&gt;  进行声明&lt;/li&gt;
+&lt;li&gt;块作用域的静态变量无链接，文件作用域的静态变量具有内部链接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;extern&lt;/code&gt; : 表示声明的变量定义在别处.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;12111存储类别和函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12111存储类别和函数&#34;&gt;#&lt;/a&gt; 12.1.11 存储类别和函数&lt;/h5&gt;
+&lt;p&gt;函数也有存储类别，可以分为&lt;strong&gt;外部函数 (默认)&lt;strong&gt; 和&lt;/strong&gt;内部函数&lt;/strong&gt;，C99 增加了第三种类别–&lt;strong&gt;内联函数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;外部函数可以被其他文件的函数访问，但是静态函数只能用于其定义所在的文件.&lt;/p&gt;
+&lt;p&gt;同样以 &lt;code&gt;static&lt;/code&gt;  存储类别说明符创建的函数属于特定模块私有，这样有效避免了名称冲突的问题&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;通常的做法是&lt;/u&gt;: 用 &lt;code&gt;extern&lt;/code&gt;  关键字声明定义在其他文件中的函数，&lt;/p&gt;
+&lt;p&gt;除非使用 &lt;code&gt;static&lt;/code&gt;  关键字，否则一般函数声明都默认为 &lt;code&gt;extern&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;12112存储类别的选择&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12112存储类别的选择&#34;&gt;#&lt;/a&gt; 12.1.12 存储类别的选择&lt;/h5&gt;
+&lt;p&gt;绝大多数存储类别的选择都是自动存储类别&lt;/p&gt;
+&lt;p&gt;保护性程序设计的&lt;strong&gt;黄金法则&lt;/strong&gt;是:&#34;按需知道&#34; 原则，尽量在函数内部解决该函数的任务，只共享那些需要共享的变量 \&lt;/p&gt;
+&lt;h4 id=&#34;122随机数函数和静态变量&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#122随机数函数和静态变量&#34;&gt;#&lt;/a&gt; 12.2 随机数函数和静态变量&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;hello.h&#34;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;srand1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;rand&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; count&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;unsigned&lt;/span&gt; seed&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;please enter your choice for seed. \n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%u&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;seed&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;srand1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;seed&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;count &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; count &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; count&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%d \n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;rand1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Please enter next seed(q to quit): \n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Done \n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//hello.h 文件&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; next &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//next 仅仅能够给rand1() 和srand1()函数使用&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;rand1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    next &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; next &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1103515245&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;123456&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;next &lt;span class=&#34;token operator&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;65536&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;32768&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;srand1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; seed&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    next &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; seed&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;123掷骰子&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#123掷骰子&#34;&gt;#&lt;/a&gt; 12.3 掷骰子&lt;/h4&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;//manydice.c&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;time.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;hello.h&#34;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; dice&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; roll&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; sides&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; status&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;srand&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Enter the number of sides per dice,0 to stop \n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%d&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;sides&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sides &lt;span class=&#34;token operator&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;How many dice? \n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;status &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%d&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;dice&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;status &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;EOF&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;token keyword&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* 退出循环 */&lt;/span&gt;
+            &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;
+            &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+                &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;You should have entered an integer.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+                &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34; Let&#39;s begin again.\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+                &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;getchar&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;\n&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+                    &lt;span class=&#34;token keyword&#34;&gt;continue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* 处理错误的输入 */&lt;/span&gt;
+                &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;How many sides? Enter 0 to stop.\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+                &lt;span class=&#34;token keyword&#34;&gt;continue&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* 进入循环的下一轮迭代 */&lt;/span&gt;
+            &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+        &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+        roll &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;roll_n_dice&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;dice&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; sides&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;You have rolled a %d using %d %d-sided dice.\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+               roll&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; dice&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; sides&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;How many sides? Enter 0 to stop.\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;The rollem() function was called %d times.\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;
+           roll_count&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* 使用外部变量 */&lt;/span&gt;
+
+    &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;GOOD FORTUNE TO YOU!\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;// hello.h&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;roll_n_dice&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; dice&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; sides&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; roll_count &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;rollem&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; sides&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//计算骰子掷出的点数&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; roll&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    roll &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;rand&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt; sides &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;roll_count&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; roll&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;roll_n_dice&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; dice&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; sides&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; d&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; total &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;sides &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Need at least 2 sides. \n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;dice &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Need at lease 1 dice. \n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;d &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; d &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; dice&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; d&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+        total &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;rollem&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;sides&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; total&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;124分配内存malloc和free&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#124分配内存malloc和free&#34;&gt;#&lt;/a&gt; 12.4 分配内存:malloc () 和 free ()&lt;/h4&gt;
+&lt;p&gt;C 语言可以通过库函数分配和管理内存&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;malloc()&lt;/code&gt; : 其接受所需的字节数，然后找到合适的空间内存块， &lt;code&gt;malloc()&lt;/code&gt;  不会为其赋名，但是他会返回动态分配内存块的&lt;strong&gt;首字节的地址&lt;/strong&gt;，可以把该地址付给指针，并使用指针访问这块内存。如果 &lt;code&gt;malloc()&lt;/code&gt;  分配内存失败，将返回&lt;strong&gt;空指针&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ptd&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+ptd &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;malloc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;30&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此代码表示使用 &lt;code&gt;malloc()&lt;/code&gt;  创建了一个可以存储 30 个 double 类型的数组，除了请求内存之外，还通过 ptd 指针记录了这块内存的位置&lt;/p&gt;
+&lt;p&gt;需要注意的是 &lt;code&gt;molloc()&lt;/code&gt;  的返回值是首字节的地址，并且指针指向类型为 &lt;code&gt;void&lt;/code&gt; , 而指针指向 &lt;code&gt;void&lt;/code&gt;  的指针赋给任意类型的指针都不用考虑类型匹配的问题，所以 &lt;code&gt;ptd&lt;/code&gt;  指向的是首元素，也就是一个 &lt;code&gt;double&lt;/code&gt;  类型，也就是说 &lt;code&gt;ptd&lt;/code&gt;  可以当做&lt;strong&gt;数组名&lt;/strong&gt;来使用&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;ptd &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;malloc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;n &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//可以如此声明动态数组&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;free()&lt;/code&gt; : 用于释放内存，参数是需要释放的内存的地址&lt;/p&gt;
+&lt;p&gt;通常 &lt;code&gt;malloc()&lt;/code&gt;  和 &lt;code&gt;free()&lt;/code&gt;  配套使用， &lt;code&gt;free()&lt;/code&gt;  的参数是 &lt;code&gt;malloc()&lt;/code&gt;  返回的值，由此可以实现使用函数时 &lt;code&gt;malloc()&lt;/code&gt;  分配内存，函数结束时 &lt;code&gt;free()&lt;/code&gt;  释放内存，并且不能用 &lt;code&gt;free()&lt;/code&gt;  释放通过其他方式分配的内存&lt;/p&gt;
+&lt;p&gt;可以调用 &lt;code&gt;exit()&lt;/code&gt;  函数结束程序，其原型在 &lt;code&gt;stdlib.h&lt;/code&gt;  中。标准提供了两个返回值以保证在所有操作系统中都能正常工作&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;EXIT_SUCCESS 表示普通的程序结束&lt;/li&gt;
+&lt;li&gt;EXIT_FAILURE 表示程序异常终止&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;/* dyn_arr.c -- 动态分配数组 */&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* 为 malloc()、free()提供原型 */&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ptd&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; max&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+     &lt;span class=&#34;token function&#34;&gt;puts&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;What is the maximum number of type double entries?&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%d&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;max&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;puts&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Number not correctly entered -- bye.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;exit&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;EXIT_FAILURE&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+     ptd &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;malloc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;max &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;ptd &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token constant&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;puts&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Memory allocation failed. Goodbye.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;exit&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;EXIT_FAILURE&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+     &lt;span class=&#34;token comment&#34;&gt;/* ptd 现在指向有max个元素的数组 */&lt;/span&gt;
+     &lt;span class=&#34;token function&#34;&gt;puts&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Enter the values (q to quit):&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; max &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%lf&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;ptd&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+          &lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Here are your %d entries:\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; number &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; i&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; number&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;%7.2f &#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; ptd&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+          &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+               &lt;span class=&#34;token function&#34;&gt;putchar&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;\n&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+     &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+          &lt;span class=&#34;token function&#34;&gt;putchar&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;\n&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token function&#34;&gt;puts&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Done.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     &lt;span class=&#34;token function&#34;&gt;free&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;ptd&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+
+     &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
  ]]></description>
         </item>
         <item>
