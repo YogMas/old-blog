@@ -390,21 +390,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-10
+                    2021-12-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    35.4k
+                    37.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    134 分
+                    141 分
                 </div>
                 
 
@@ -1284,7 +1284,7 @@ int main(void)
     printf("MONTHLY AVERAGES:\n\n");
     printf(" Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct ");
     printf(" Nov  Dec\n");
-                            
+                                
     for (month = 0; month &lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &lt; YEARS; year++)
@@ -1292,7 +1292,7 @@ int main(void)
         printf("%4.1f ", subtot/YEARS);
     }
     printf("\n");
-                            
+                                
     return 0;
 }
 </code></pre>
@@ -1363,7 +1363,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf("The total number of marbles is %ld.\n", answer);
-                            
+                                
     return 0;
 }
 
@@ -1377,7 +1377,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-                            
+                                
     return total;
 }
 </code></pre>
@@ -1461,7 +1461,7 @@ int main(void)
      printf("    **zippo = %d\n", **zippo);
      printf("      zippo[2][1] = %d\n", zippo[2][1]);
      printf("*(*(zippo+2) + 1) = %d\n", *(*(zippo + 2) + 1));
-                        
+                            
      return 0;
 }
 </code></pre>
@@ -1498,7 +1498,7 @@ int main(void)
      printf("    **pz = %d\n", **pz);
      printf("      pz[2][1] = %d\n", pz[2][1]);
      printf("*(*(pz+2) + 1) = %d\n", *(*(pz + 2) +   &gt;     1));
-                        
+                            
      return 0;
 }
 </code></pre>
@@ -1577,7 +1577,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf("Sum of all elements = %d\n", sum2d(junk, ROWS));
-                        
+                            
      return 0;
 }
 
@@ -1620,7 +1620,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &lt; rows; r++)
           for (c = 0; c &lt; COLS; c++)
                tot += ar[r][c];
-                        
+                            
      return tot;
 }
 </code></pre>
@@ -1844,7 +1844,7 @@ int main(void)
      printf("%s\n", copy);
      printf("mesg = %s; &amp;mesg = %p; value = %p\n", mesg, &amp;mesg, mesg);
      printf("copy = %s; &amp;copy = %p; value = %p\n", copy, &amp;copy, copy);
-                        
+                            
      return 0;
 }
 </code></pre>
@@ -1895,7 +1895,7 @@ int main(void)
      printf("%s\n", words);
      puts(words);
      puts("Done.");
-                        
+                            
      return 0;
 }
 </code></pre>
@@ -1940,7 +1940,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts("Done.");
-                        
+                            
      return 0;
 }
 </code></pre>
@@ -1979,7 +1979,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;&amp; words[0] != '\n')
           fputs(words, stdout);
      puts("Done.");
-                        
+                            
      return 0;
 }
 </code></pre>
@@ -2137,7 +2137,7 @@ int main(void)
      printf("Please enter 2 names.\n");
      count = scanf("%5s %10s", name1, name2);
      printf("I read the %d names %s and %s.\n", count, name1, name2);
-                        
+                            
      return 0
 }
 </code></pre>
@@ -2182,7 +2182,7 @@ int main(void)
      puts(str2);
      puts(&amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-                        
+                            
      return 0;
 }
 </code></pre>
@@ -2524,7 +2524,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &lt; argc; count++)
           printf("%d: %s\n", count, argv[count]);
      printf("\n");
-                        
+                            
      return 0;
 }
 </code></pre>
@@ -2948,7 +2948,7 @@ Hello, good looking!</p>
 <ul>
 <li>如果 <code>static</code>  用于文件作用域声明，作用域受限于该文件.</li>
 <li>如果 <code>static</code>  用于块作用声明，作用域受限于该块，在程序运行时，其值会一直保存，但是只有在执行块内的代码时，才能通过标识符访问.</li>
-<li>区分外部链接和内部链接就需要考 <code>static</code>  进行声明</li>
+<li>区分外部链接和内部链接就需要靠 <code>static</code>  进行声明</li>
 <li>块作用域的静态变量无链接，文件作用域的静态变量具有内部链接</li>
 </ul>
 </li>
@@ -3137,6 +3137,122 @@ ptd <span class="token operator">=</span> <span class="token punctuation">(</spa
 
      <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="1241free的重要性"><a class="markdownIt-Anchor" href="#1241free的重要性">#</a> 12.4.1free () 的重要性</h5>
+<p>静态内存的数量在编译时候是<strong>固定</strong>的，在<strong>程序运行期间</strong>不会改变，如果忘记添加 <code>free()</code>  可能导致<strong>内存遗漏</strong>问题，也就是在程序运行完之前就耗尽了所有的内存</p>
+<h5 id="1242calloc函数"><a class="markdownIt-Anchor" href="#1242calloc函数">#</a> 12.4.2 <code>calloc()</code>  函数</h5>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">long</span> <span class="token operator">*</span> newmem<span class="token punctuation">;</span>
+newmem <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">calloc</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><code>calloc()</code>  函数接受两个参数，第一个参数是所需的存储单元<strong>数量</strong>，第 2 个参数是存储单元的<strong>大小</strong> (以<strong>字节</strong>为单位)</p>
+<p><code>calloc()</code>  把块中所有的位都设置为 <code>0</code>  (有点不懂)</p>
+<p><code>free()</code>  函数也可以用来释放 calloc () 分配的内存</p>
+<h5 id="1243-动态内存分配和变长数组"><a class="markdownIt-Anchor" href="#1243-动态内存分配和变长数组">#</a> 12.4.3 动态内存分配和变长数组</h5>
+<p>变长数组是<strong>自动存储类型</strong>，程序在离开变长数组定义所在的块时，变长数组占用的内存空间会被自动释放</p>
+<p><code>malloc()</code>  创建的数组不必局限在一个函数内访问，可以被调函数创建一个数组并返回指针，供主调函数访问，然后主调函数在末尾用 free 释放之前被调函数分配的内存.</p>
+<p>多维数组使用变长数组更方便，也可以使用 <code>malloc()</code>  创建二维数组</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> ar2<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// n×m的变长数组（VLA）</span>
+<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span> p2<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// C99之前的写法</span>
+<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span> p3<span class="token punctuation">)</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 要求支持变长数组</span>
+p2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span>n <span class="token operator">*</span> <span class="token number">6</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// n×6 数组</span>
+p3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span>n <span class="token operator">*</span> m <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// n×m 数组（要求支持变长数组）</span>
+ar2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> p2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="1244-存储类别和动态内存分配"><a class="markdownIt-Anchor" href="#1244-存储类别和动态内存分配">#</a> 12.4.4 存储类别和动态内存分配</h5>
+<p>程序把可用的内存分为 3 部分:</p>
+<ul>
+<li>一部分供具有外部链接，内部链接和无链接的静态变量使用</li>
+<li>一部分供自动变量使用</li>
+<li>一部分供动态内存分配</li>
+</ul>
+<p>内存使用:</p>
+<ul>
+<li>静态存储类别所用的内存数量在编译时确定，在程序开始执行的时候被创建，在程序结束的时候被销毁.</li>
+<li>自动存储类别的变量在程序进入变量定义所在块时存在，在程序离开块时消失，随着程序调用函数和函数结束，自动边浪的内存数量也相应地增加和减少</li>
+<li>动态内存在调用 <code>malloc()</code>  或相关函数时存在，在调用 <code>free()</code>  后释放，这部分的内存由程序员管理，所以内存块可以在一个函数中创建，在另一个函数中销毁</li>
+</ul>
+<p><strong>程序把静态对象，自动对象和动态分配的动向存储在不同的区域</strong></p>
+<h4 id="125ansi-c类型限定符"><a class="markdownIt-Anchor" href="#125ansi-c类型限定符">#</a> 12.5ANSI C 类型限定符</h4>
+<p>C90 增加了两个属性：恒常性 (constancy) 和易变性 (volatility), 分别使用关键字 <code>const</code>  和 <code>volatile</code>  来恒明</p>
+<p>C99 标准新增了第三个限定符:  <code>restrict</code></p>
+<p>C11 标准新增了第四个限定符:  <code>_Atomic</code></p>
+<p>在一条声明中可以多次使用同一个限定符，多余的限定符将被忽略</p>
+<h5 id="1251-const类型限定符"><a class="markdownIt-Anchor" href="#1251-const类型限定符">#</a> 12.5.1  <code>const</code>  类型限定符</h5>
+<p>以 <code>const</code>  关键字声明的对象，其值不能通过赋值，但是可以初始化 <code>const</code>  变量</p>
+<ol>
+<li>
+<p>在指针和形参声明中使用 <code>const</code></p>
+<p><strong>注意区分 const 限定是指针本身还是指针指向的值</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">// pf指针指向的值不能更改但是指针指向的对象可以更改</span>
+<span class="token keyword">const</span> <span class="token keyword">float</span> <span class="token operator">*</span> pf<span class="token punctuation">;</span> <span class="token comment">/* pf 指向一个float类型的const值 */</span>
+<span class="token comment">// pt指针指向的对象不能更改,但是指向对象的值可以更改</span>
+<span class="token keyword">float</span> <span class="token operator">*</span> <span class="token keyword">const</span> pt<span class="token punctuation">;</span> <span class="token comment">/* pt 是一个const指针 */</span>
+
+<span class="token keyword">float</span> <span class="token keyword">const</span> <span class="token operator">*</span> pfc<span class="token punctuation">;</span> <span class="token comment">// 与const float * pfc;相同</span>
+<span class="token comment">//既不能修改ptr指针指向的对象的值,也不能修改ptr指针的指向的对象</span>
+<span class="token keyword">const</span> <span class="token keyword">float</span> <span class="token operator">*</span> <span class="token keyword">const</span> ptr<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><code>const</code>  放在 * 左侧的任意位置，限定了指针指向的数据不能改变</li>
+<li><code>const</code>  放在 * 的右侧，限定了指针本身不能改变</li>
+</ul>
+<p><code>const</code>  关键字的常见用法是声明为函数形参的指针，函数不会改变传入地址指向的数据</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">int</span> array<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> limit<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p>对全局数据使用 <code>const</code></p>
+<p>在文件间共享 <code>const</code>  数据可以采取两个策略</p>
+<ul>
+<li>在一个文件中使用定义式声明，在其他文件中使用引用式声明 ( <code>extern</code>  关键字)</li>
+<li>把 <code>const</code>  变量放在一个头文件中，然后在其他文件中包含该头文件（这样做必须在头文件中用关键字 <code>static</code>  声明全局 <code>const</code>  变量，否则会导致每一个文件中都有一个相同标识符的定义式声明)</li>
+</ul>
+</li>
+</ol>
+<h5 id="1252-volatile类型限定符"><a class="markdownIt-Anchor" href="#1252-volatile类型限定符">#</a> 12.5.2  <code>volatile</code>  类型限定符</h5>
+<p><code>volatile</code>  限定符告知计算机，代理可以改变该变量的值，通常被用于硬件地址以及在其他程序或同时运行的线程中共享数据</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">volatile</span> <span class="token keyword">int</span> loc1<span class="token punctuation">;</span>      <span class="token comment">/* loc1 是一个易变的位置 */</span>
+<span class="token keyword">volatile</span> <span class="token keyword">int</span> <span class="token operator">*</span> ploc<span class="token punctuation">;</span>    <span class="token comment">/* ploc 是一个指向易变的位置的指针 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><code>volatile</code>  可以在一定程度上节约程序运行的时间</p>
+<p>高速缓存的概念:</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">val1 <span class="token operator">=</span> x<span class="token punctuation">;</span>
+<span class="token comment">/* 一些不使用 x 的代码*/</span>
+val2 <span class="token operator">=</span> x<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>编译器会注意到使用了两次 <code>X</code> , 但并未改变它的值，编译器会把 X 的值临时存储在寄存器中，然后在 <code>val2</code>  需要使用 <code>X</code>  时，才从寄存器 (<strong>不是从原始内存位置上</strong>) 中读取 x 的值，以此来节约时间，这个过程被称为<strong>高速缓存</strong>.</p>
+<p>如果以上两条语句之间改变了 X 的值，就不能这样优化</p>
+<p>所以如果没有 <code>volatile</code>  关键字，编译器就不知道这种事情是否会发生，为了安全起见，编译器就不会进行高速缓存，这是 ANSI 之前的情况</p>
+<p>现在如果声明中没有 <code>volatile</code>  关键字，编译器会假定变量的值在使用过程中不变，然后再尝试优化代码</p>
+<h5 id="1253-restrict类型限定符"><a class="markdownIt-Anchor" href="#1253-restrict类型限定符">#</a> 12.5.3  <code>restrict</code>  类型限定符</h5>
+<p><code>restrict</code>  只能用于<strong>指针</strong>，表明该指针是访问数据对象的唯一且初始的方式</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> ar<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span> restrict restar <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">10</span> <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span> par <span class="token operator">=</span> ar<span class="token punctuation">;</span>
+<span class="token comment">// restar使用了关键字restrict,而其他变量没有</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> n <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> n<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     par<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+     restar<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+     ar<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">*=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+     par<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+     restar<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这里 <code>restar</code>  可以将两个赋值语句合并在一起为 <code>restar[n] +=8</code>  而 <code>par</code>  不能，因为 <code>par</code>  中间通过 <code>ar</code>  改变了数据的值</li>
+<li>如果没有使用关键字 <code>restrict</code> , 编译器就必须假设最坏的情况 (即，在两次使用指针之间，其他的标识符可能改变了数据), 如果使用了 <code>restrict</code>  关键字，编译器就可以选择捷径优化计算</li>
+</ul>
+<p><code>restrict</code>  关键字有两个读者</p>
+<p>一个是编译器，该关键字告诉编译器可以自由假定一些优化方案</p>
+<p>另一个读者是用户，该关键字告诉用户要使用满足 <code>restrict</code>  要求的参数</p>
+<h5 id="1254-_atomic类型限定符c11"><a class="markdownIt-Anchor" href="#1254-_atomic类型限定符c11">#</a> 12.5.4 _Atomic 类型限定符 (C11)</h5>
+<p>并发程序设计把程序执行分成可以同时执行的多个线程，C11 通过包含可选的头文件 <code>stdatomic.h</code>  和 <code>threads.h</code> , 提供了一些可以选择的管理方法，(当一个线程对一个原子类型的对象执行原子操作时，其他线程不能访问该对象)</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> hogs<span class="token punctuation">;</span>     <span class="token comment">// 普通声明</span>
+hogs <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>    <span class="token comment">// 普通赋值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>可以替换成</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">_Atomic</span> <span class="token keyword">int</span> hogs<span class="token punctuation">;</span>           <span class="token comment">// hogs 是一个原子类型的变量</span>
+<span class="token function">atomic_store</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>hogs<span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// stdatomic.h中的宏</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="1255-旧关键字的新位置"><a class="markdownIt-Anchor" href="#1255-旧关键字的新位置">#</a> 12.5.5 旧关键字的新位置</h5>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ofmouth</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span> <span class="token keyword">const</span> a1<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span> restrict a2<span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 以前的风格</span>
+<span class="token keyword">void</span> <span class="token function">ofmouth</span><span class="token punctuation">(</span><span class="token keyword">int</span> a1<span class="token punctuation">[</span><span class="token keyword">const</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> a2<span class="token punctuation">[</span>restrict<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 新的等价语法 C99允许</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><code>static</code>  的情况不同，新标准为 <code>static</code>  引入了一种与以前用法不相关的新用法，<strong> 新用法告知编译器如何使用形式参数</strong></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">double</span> <span class="token function">stick</span><span class="token punctuation">(</span><span class="token keyword">double</span> ar<span class="token punctuation">[</span><span class="token keyword">static</span> <span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>static</code>  的这种用法表明，函数调用中的实际参数应该是一个指向数组首元素的指针，并且该数组至少有 20 个元素</p>
 
                 
             </div>
@@ -3646,7 +3762,7 @@ ptd <span class="token operator">=</span> <span class="token punctuation">(</spa
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.6k</span>&nbsp;字
+                class="white-color">60.6k</span>&nbsp;字
             
             
             

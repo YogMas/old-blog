@@ -1992,7 +1992,7 @@ int main(void)
     printf(&#34;MONTHLY AVERAGES:\n\n&#34;);
     printf(&#34; Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct &#34;);
     printf(&#34; Nov  Dec\n&#34;);
-                            
+                                
     for (month = 0; month &amp;lt; MONTHS; month++)
     {             // for each month, sum rainfall over years
         for (year = 0, subtot =0; year &amp;lt; YEARS; year++)
@@ -2000,7 +2000,7 @@ int main(void)
         printf(&#34;%4.1f &#34;, subtot/YEARS);
     }
     printf(&#34;\n&#34;);
-                            
+                                
     return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2071,7 +2071,7 @@ int main(void)
     
     answer = sump(marbles, marbles + SIZE);
     printf(&#34;The total number of marbles is %ld.\n&#34;, answer);
-                            
+                                
     return 0;
 }
 
@@ -2085,7 +2085,7 @@ int sump(int * start, int * end)
         total += *start; // add value to total
         start++;         // advance pointer to next element
     }
-                            
+                                
     return total;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2169,7 +2169,7 @@ int main(void)
      printf(&#34;    **zippo = %d\n&#34;, **zippo);
      printf(&#34;      zippo[2][1] = %d\n&#34;, zippo[2][1]);
      printf(&#34;*(*(zippo+2) + 1) = %d\n&#34;, *(*(zippo + 2) + 1));
-                        
+                            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2206,7 +2206,7 @@ int main(void)
      printf(&#34;    **pz = %d\n&#34;, **pz);
      printf(&#34;      pz[2][1] = %d\n&#34;, pz[2][1]);
      printf(&#34;*(*(pz+2) + 1) = %d\n&#34;, *(*(pz + 2) +   &amp;gt;     1));
-                        
+                            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2285,7 +2285,7 @@ int main(void)
      sum_rows(junk, ROWS);
      sum_cols(junk, ROWS);
      printf(&#34;Sum of all elements = %d\n&#34;, sum2d(junk, ROWS));
-                        
+                            
      return 0;
 }
 
@@ -2328,7 +2328,7 @@ int sum2d(int ar[][COLS], int rows)
      for (r = 0; r &amp;lt; rows; r++)
           for (c = 0; c &amp;lt; COLS; c++)
                tot += ar[r][c];
-                        
+                            
      return tot;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2552,7 +2552,7 @@ int main(void)
      printf(&#34;%s\n&#34;, copy);
      printf(&#34;mesg = %s; &amp;amp;mesg = %p; value = %p\n&#34;, mesg, &amp;amp;mesg, mesg);
      printf(&#34;copy = %s; &amp;amp;copy = %p; value = %p\n&#34;, copy, &amp;amp;copy, copy);
-                        
+                            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2603,7 +2603,7 @@ int main(void)
      printf(&#34;%s\n&#34;, words);
      puts(words);
      puts(&#34;Done.&#34;);
-                        
+                            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2648,7 +2648,7 @@ int main(void)
      puts(words);
      fputs(words, stdout);
      puts(&#34;Done.&#34;);
-                        
+                            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2687,7 +2687,7 @@ int main(void)
      while (fgets(words, STLEN, stdin) != NULL &amp;amp;&amp;amp; words[0] != &#39;\n&#39;)
           fputs(words, stdout);
      puts(&#34;Done.&#34;);
-                        
+                            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2845,7 +2845,7 @@ int main(void)
      printf(&#34;Please enter 2 names.\n&#34;);
      count = scanf(&#34;%5s %10s&#34;, name1, name2);
      printf(&#34;I read the %d names %s and %s.\n&#34;, count, name1, name2);
-                        
+                            
      return 0
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2890,7 +2890,7 @@ int main(void)
      puts(str2);
      puts(&amp;amp;str1[5]);  //puts后面需要跟的是一个地址 字符串的起始地址
      puts(str2 + 4);
-                        
+                            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -3232,7 +3232,7 @@ int main(int argc, char *argv [])
      for (count = 1; count &amp;lt; argc; count++)
           printf(&#34;%d: %s\n&#34;, count, argv[count]);
      printf(&#34;\n&#34;);
-                        
+                            
      return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -3656,7 +3656,7 @@ Hello, good looking!&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果 &lt;code&gt;static&lt;/code&gt;  用于文件作用域声明，作用域受限于该文件.&lt;/li&gt;
 &lt;li&gt;如果 &lt;code&gt;static&lt;/code&gt;  用于块作用声明，作用域受限于该块，在程序运行时，其值会一直保存，但是只有在执行块内的代码时，才能通过标识符访问.&lt;/li&gt;
-&lt;li&gt;区分外部链接和内部链接就需要考 &lt;code&gt;static&lt;/code&gt;  进行声明&lt;/li&gt;
+&lt;li&gt;区分外部链接和内部链接就需要靠 &lt;code&gt;static&lt;/code&gt;  进行声明&lt;/li&gt;
 &lt;li&gt;块作用域的静态变量无链接，文件作用域的静态变量具有内部链接&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -3845,6 +3845,122 @@ ptd &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#3
 
      &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;1241free的重要性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1241free的重要性&#34;&gt;#&lt;/a&gt; 12.4.1free () 的重要性&lt;/h5&gt;
+&lt;p&gt;静态内存的数量在编译时候是&lt;strong&gt;固定&lt;/strong&gt;的，在&lt;strong&gt;程序运行期间&lt;/strong&gt;不会改变，如果忘记添加 &lt;code&gt;free()&lt;/code&gt;  可能导致&lt;strong&gt;内存遗漏&lt;/strong&gt;问题，也就是在程序运行完之前就耗尽了所有的内存&lt;/p&gt;
+&lt;h5 id=&#34;1242calloc函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1242calloc函数&#34;&gt;#&lt;/a&gt; 12.4.2 &lt;code&gt;calloc()&lt;/code&gt;  函数&lt;/h5&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; newmem&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+newmem &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;calloc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;sizeof&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;calloc()&lt;/code&gt;  函数接受两个参数，第一个参数是所需的存储单元&lt;strong&gt;数量&lt;/strong&gt;，第 2 个参数是存储单元的&lt;strong&gt;大小&lt;/strong&gt; (以&lt;strong&gt;字节&lt;/strong&gt;为单位)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;calloc()&lt;/code&gt;  把块中所有的位都设置为 &lt;code&gt;0&lt;/code&gt;  (有点不懂)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;free()&lt;/code&gt;  函数也可以用来释放 calloc () 分配的内存&lt;/p&gt;
+&lt;h5 id=&#34;1243-动态内存分配和变长数组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1243-动态内存分配和变长数组&#34;&gt;#&lt;/a&gt; 12.4.3 动态内存分配和变长数组&lt;/h5&gt;
+&lt;p&gt;变长数组是&lt;strong&gt;自动存储类型&lt;/strong&gt;，程序在离开变长数组定义所在的块时，变长数组占用的内存空间会被自动释放&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;malloc()&lt;/code&gt;  创建的数组不必局限在一个函数内访问，可以被调函数创建一个数组并返回指针，供主调函数访问，然后主调函数在末尾用 free 释放之前被调函数分配的内存.&lt;/p&gt;
+&lt;p&gt;多维数组使用变长数组更方便，也可以使用 &lt;code&gt;malloc()&lt;/code&gt;  创建二维数组&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; m &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; ar2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// n×m的变长数组（VLA）&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; p2&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// C99之前的写法&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; p3&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 要求支持变长数组&lt;/span&gt;
+p2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;malloc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;n &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// n×6 数组&lt;/span&gt;
+p3 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;malloc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;n &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; m &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// n×m 数组（要求支持变长数组）&lt;/span&gt;
+ar2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; p2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;1244-存储类别和动态内存分配&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1244-存储类别和动态内存分配&#34;&gt;#&lt;/a&gt; 12.4.4 存储类别和动态内存分配&lt;/h5&gt;
+&lt;p&gt;程序把可用的内存分为 3 部分:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一部分供具有外部链接，内部链接和无链接的静态变量使用&lt;/li&gt;
+&lt;li&gt;一部分供自动变量使用&lt;/li&gt;
+&lt;li&gt;一部分供动态内存分配&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;内存使用:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;静态存储类别所用的内存数量在编译时确定，在程序开始执行的时候被创建，在程序结束的时候被销毁.&lt;/li&gt;
+&lt;li&gt;自动存储类别的变量在程序进入变量定义所在块时存在，在程序离开块时消失，随着程序调用函数和函数结束，自动边浪的内存数量也相应地增加和减少&lt;/li&gt;
+&lt;li&gt;动态内存在调用 &lt;code&gt;malloc()&lt;/code&gt;  或相关函数时存在，在调用 &lt;code&gt;free()&lt;/code&gt;  后释放，这部分的内存由程序员管理，所以内存块可以在一个函数中创建，在另一个函数中销毁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;程序把静态对象，自动对象和动态分配的动向存储在不同的区域&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;125ansi-c类型限定符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#125ansi-c类型限定符&#34;&gt;#&lt;/a&gt; 12.5ANSI C 类型限定符&lt;/h4&gt;
+&lt;p&gt;C90 增加了两个属性：恒常性 (constancy) 和易变性 (volatility), 分别使用关键字 &lt;code&gt;const&lt;/code&gt;  和 &lt;code&gt;volatile&lt;/code&gt;  来恒明&lt;/p&gt;
+&lt;p&gt;C99 标准新增了第三个限定符:  &lt;code&gt;restrict&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;C11 标准新增了第四个限定符:  &lt;code&gt;_Atomic&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在一条声明中可以多次使用同一个限定符，多余的限定符将被忽略&lt;/p&gt;
+&lt;h5 id=&#34;1251-const类型限定符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1251-const类型限定符&#34;&gt;#&lt;/a&gt; 12.5.1  &lt;code&gt;const&lt;/code&gt;  类型限定符&lt;/h5&gt;
+&lt;p&gt;以 &lt;code&gt;const&lt;/code&gt;  关键字声明的对象，其值不能通过赋值，但是可以初始化 &lt;code&gt;const&lt;/code&gt;  变量&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在指针和形参声明中使用 &lt;code&gt;const&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意区分 const 限定是指针本身还是指针指向的值&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token comment&#34;&gt;// pf指针指向的值不能更改但是指针指向的对象可以更改&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; pf&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* pf 指向一个float类型的const值 */&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// pt指针指向的对象不能更改,但是指向对象的值可以更改&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; pt&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;/* pt 是一个const指针 */&lt;/span&gt;
+
+&lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; pfc&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;// 与const float * pfc;相同&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;//既不能修改ptr指针指向的对象的值,也不能修改ptr指针的指向的对象&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; ptr&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;const&lt;/code&gt;  放在 * 左侧的任意位置，限定了指针指向的数据不能改变&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;const&lt;/code&gt;  放在 * 的右侧，限定了指针本身不能改变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;const&lt;/code&gt;  关键字的常见用法是声明为函数形参的指针，函数不会改变传入地址指向的数据&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; array&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; limit&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对全局数据使用 &lt;code&gt;const&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在文件间共享 &lt;code&gt;const&lt;/code&gt;  数据可以采取两个策略&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在一个文件中使用定义式声明，在其他文件中使用引用式声明 ( &lt;code&gt;extern&lt;/code&gt;  关键字)&lt;/li&gt;
+&lt;li&gt;把 &lt;code&gt;const&lt;/code&gt;  变量放在一个头文件中，然后在其他文件中包含该头文件（这样做必须在头文件中用关键字 &lt;code&gt;static&lt;/code&gt;  声明全局 &lt;code&gt;const&lt;/code&gt;  变量，否则会导致每一个文件中都有一个相同标识符的定义式声明)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;1252-volatile类型限定符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1252-volatile类型限定符&#34;&gt;#&lt;/a&gt; 12.5.2  &lt;code&gt;volatile&lt;/code&gt;  类型限定符&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;volatile&lt;/code&gt;  限定符告知计算机，代理可以改变该变量的值，通常被用于硬件地址以及在其他程序或同时运行的线程中共享数据&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;volatile&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; loc1&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;      &lt;span class=&#34;token comment&#34;&gt;/* loc1 是一个易变的位置 */&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;volatile&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; ploc&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;token comment&#34;&gt;/* ploc 是一个指向易变的位置的指针 */&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;volatile&lt;/code&gt;  可以在一定程度上节约程序运行的时间&lt;/p&gt;
+&lt;p&gt;高速缓存的概念:&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;val1 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;/* 一些不使用 x 的代码*/&lt;/span&gt;
+val2 &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; x&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编译器会注意到使用了两次 &lt;code&gt;X&lt;/code&gt; , 但并未改变它的值，编译器会把 X 的值临时存储在寄存器中，然后在 &lt;code&gt;val2&lt;/code&gt;  需要使用 &lt;code&gt;X&lt;/code&gt;  时，才从寄存器 (&lt;strong&gt;不是从原始内存位置上&lt;/strong&gt;) 中读取 x 的值，以此来节约时间，这个过程被称为&lt;strong&gt;高速缓存&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;如果以上两条语句之间改变了 X 的值，就不能这样优化&lt;/p&gt;
+&lt;p&gt;所以如果没有 &lt;code&gt;volatile&lt;/code&gt;  关键字，编译器就不知道这种事情是否会发生，为了安全起见，编译器就不会进行高速缓存，这是 ANSI 之前的情况&lt;/p&gt;
+&lt;p&gt;现在如果声明中没有 &lt;code&gt;volatile&lt;/code&gt;  关键字，编译器会假定变量的值在使用过程中不变，然后再尝试优化代码&lt;/p&gt;
+&lt;h5 id=&#34;1253-restrict类型限定符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1253-restrict类型限定符&#34;&gt;#&lt;/a&gt; 12.5.3  &lt;code&gt;restrict&lt;/code&gt;  类型限定符&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;restrict&lt;/code&gt;  只能用于&lt;strong&gt;指针&lt;/strong&gt;，表明该指针是访问数据对象的唯一且初始的方式&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; ar&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; restrict restar &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;malloc&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; par &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; ar&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token comment&#34;&gt;// restar使用了关键字restrict,而其他变量没有&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;n &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; n &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; n&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+     par&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     restar&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     ar&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     par&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+     restar&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;这里 &lt;code&gt;restar&lt;/code&gt;  可以将两个赋值语句合并在一起为 &lt;code&gt;restar[n] +=8&lt;/code&gt;  而 &lt;code&gt;par&lt;/code&gt;  不能，因为 &lt;code&gt;par&lt;/code&gt;  中间通过 &lt;code&gt;ar&lt;/code&gt;  改变了数据的值&lt;/li&gt;
+&lt;li&gt;如果没有使用关键字 &lt;code&gt;restrict&lt;/code&gt; , 编译器就必须假设最坏的情况 (即，在两次使用指针之间，其他的标识符可能改变了数据), 如果使用了 &lt;code&gt;restrict&lt;/code&gt;  关键字，编译器就可以选择捷径优化计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;restrict&lt;/code&gt;  关键字有两个读者&lt;/p&gt;
+&lt;p&gt;一个是编译器，该关键字告诉编译器可以自由假定一些优化方案&lt;/p&gt;
+&lt;p&gt;另一个读者是用户，该关键字告诉用户要使用满足 &lt;code&gt;restrict&lt;/code&gt;  要求的参数&lt;/p&gt;
+&lt;h5 id=&#34;1254-_atomic类型限定符c11&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1254-_atomic类型限定符c11&#34;&gt;#&lt;/a&gt; 12.5.4 _Atomic 类型限定符 (C11)&lt;/h5&gt;
+&lt;p&gt;并发程序设计把程序执行分成可以同时执行的多个线程，C11 通过包含可选的头文件 &lt;code&gt;stdatomic.h&lt;/code&gt;  和 &lt;code&gt;threads.h&lt;/code&gt; , 提供了一些可以选择的管理方法，(当一个线程对一个原子类型的对象执行原子操作时，其他线程不能访问该对象)&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; hogs&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;token comment&#34;&gt;// 普通声明&lt;/span&gt;
+hogs &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;token comment&#34;&gt;// 普通赋值&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以替换成&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;_Atomic&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; hogs&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;           &lt;span class=&#34;token comment&#34;&gt;// hogs 是一个原子类型的变量&lt;/span&gt;
+&lt;span class=&#34;token function&#34;&gt;atomic_store&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;hogs&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;token comment&#34;&gt;// stdatomic.h中的宏&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;1255-旧关键字的新位置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1255-旧关键字的新位置&#34;&gt;#&lt;/a&gt; 12.5.5 旧关键字的新位置&lt;/h5&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;ofmouth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt; a1&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; restrict a2&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;token comment&#34;&gt;// 以前的风格&lt;/span&gt;
+&lt;span class=&#34;token keyword&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;ofmouth&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; a1&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;const&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; a2&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;restrict&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;token comment&#34;&gt;// 新的等价语法 C99允许&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;static&lt;/code&gt;  的情况不同，新标准为 &lt;code&gt;static&lt;/code&gt;  引入了一种与以前用法不相关的新用法，&lt;strong&gt; 新用法告知编译器如何使用形式参数&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c&#34; data-language=&#34;c&#34;&gt;&lt;code class=&#34;language-c&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;stick&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;double&lt;/span&gt; ar&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;static&lt;/code&gt;  的这种用法表明，函数调用中的实际参数应该是一个指向数组首元素的指针，并且该数组至少有 20 个元素&lt;/p&gt;
 </content>
         <category term="C语言" />
         <updated>2021-11-05T16:00:00.000Z</updated>
