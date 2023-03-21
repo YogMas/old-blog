@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "S1m • All posts by \"工具\" category",
+    "description": "博客记录个人学习笔记,处于不断完善中",
+    "home_page_url": "https://github.com/YogMas/YogMas.github.io",
+    "items": [
+        {
+            "id": "https://github.com/YogMas/YogMas.github.io/2022/09/16/git/",
+            "url": "https://github.com/YogMas/YogMas.github.io/2022/09/16/git/",
+            "title": "Git",
+            "date_published": "2022-09-15T16:00:00.000Z",
+            "content_html": "<h1 id=\"git\"><a class=\"markdownIt-Anchor\" href=\"#git\">#</a> Git</h1>\n<h2 id=\"常用指令\"><a class=\"markdownIt-Anchor\" href=\"#常用指令\">#</a> 常用指令</h2>\n<ul>\n<li><code>git add 文件名</code> ：添加到缓存区</li>\n<li><code>git commit -m \"提交说明\"</code>   : 提交到本地代码库</li>\n<li><code>git init</code>  : 初始化 git 仓库</li>\n<li><code>git status</code> : 时刻掌握仓库当前的状态</li>\n<li><code>git diff</code> : 查看仓库更改中的不同</li>\n<li><code>git log （--pretty=online）</code> : 显示从最近到最远的提交日志 后面的参数可以简化显示</li>\n<li><code>git reset --hard HEAD^ (commit ID)</code> : 文件版本回退</li>\n<li><code>git reflog</code> : 显示你之前的每一次命令</li>\n<li><code>git checkout -- file</code> : 把 file 文件在工作区的修改全部撤销，原理是用版本库里的版本替换工作区的版本</li>\n<li><code>git reset HEAD &lt;file&gt;</code> : 把暂存区的修改撤销掉，重新放回工作区</li>\n<li><code>git rm</code> : 删除文件，执行后再 <code>git commit</code>  才能从版本库中删除</li>\n<li></li>\n</ul>\n<h2 id=\"基本知识\"><a class=\"markdownIt-Anchor\" href=\"#基本知识\">#</a> 基本知识</h2>\n<p>git 中使用 <code>HEAD</code>  来表示当前版本  <code>HEAD^</code>  来表示上一个版本  <code>HEAD^^</code>  来表示上上个版本 还可以写作  <code>HEAD~100</code>  来表示前一百个版本</p>\n",
+            "tags": [
+                "Git"
+            ]
+        }
+    ]
+}

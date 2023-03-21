@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>S1m • Posts by &#34;文本编辑&#34; category</title>
+        <link>https://github.com/YogMas/YogMas.github.io</link>
+        <description>博客记录个人学习笔记,处于不断完善中</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
+        <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0800</lastBuildDate>
+        <category>C语言</category>
+        <category>Latex</category>
+        <category>操作系统</category>
+        <category>Css</category>
+        <category>vue</category>
+        <category>python</category>
+        <category>Git</category>
+        <category>Html</category>
+        <category>java</category>
+        <category>机器学习</category>
+        <category>Javascript</category>
+        <category>icoding答案</category>
+        <category>算法啊</category>
+        <category>计算机组成原理</category>
+        <category>课内课程</category>
+        <item>
+            <guid isPermalink="true">https://github.com/YogMas/YogMas.github.io/2021/11/06/latex/</guid>
+            <title>Latex</title>
+            <link>https://github.com/YogMas/YogMas.github.io/2021/11/06/latex/</link>
+            <category>Latex</category>
+            <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;latex&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#latex&#34;&gt;#&lt;/a&gt; Latex&lt;/h1&gt;
+&lt;p&gt;latex 命令多采用 &lt;code&gt;\   []{}&lt;/code&gt;  的格式&lt;/p&gt;
+&lt;p&gt;基本结构&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-latex&#34; data-language=&#34;latex&#34;&gt;&lt;code class=&#34;language-latex&#34;&gt;&lt;span class=&#34;token function selector&#34;&gt;\document&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;UTF8&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;ctexart&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;token function selector&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;token function selector&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;字体&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字体&#34;&gt;#&lt;/a&gt; 字体&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\textbf {文本内容}&lt;/code&gt; : 加粗文本内容&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\textit {文本内容}&lt;/code&gt; : 设置斜体&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\underline {文本内容}&lt;/code&gt; : 设置下划线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;章和节&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#章和节&#34;&gt;#&lt;/a&gt; 章和节&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;切换段落需要输入两个换行符 也就是按两次回车  一个换行符仅仅会显示一个空格&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\part {部名称}&lt;/code&gt; : 表示书籍中的第几部&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\chapter {章节名称}&lt;/code&gt;  通常用于表示章节中的第几章，大于 chapter&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\section {章节名称}&lt;/code&gt; : 开启一个新的章节&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\subsection {章节名称}&lt;/code&gt; : 创建下一级的章节，要创建更下一级的章节就多加个 sub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;图片&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图片&#34;&gt;#&lt;/a&gt; 图片&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;第一步要先引用包  &lt;code&gt;\usepackage{grathicx}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;\includegraphics [可选参数]{图片文件名字}&lt;/code&gt; : 在当前位置添加一张图片  可以省略图片后的扩展名称&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;width=0.5\textwidth&lt;/code&gt; :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;给图片添加标题&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-latex&#34; data-language=&#34;latex&#34;&gt;&lt;code class=&#34;language-latex&#34;&gt;&lt;span class=&#34;token function selector&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;figure&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;    放在figure中
+&lt;span class=&#34;token function selector&#34;&gt;\centering&lt;/span&gt;   居中显示
+&lt;span class=&#34;token function selector&#34;&gt;\includegraphicx&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;head&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token function selector&#34;&gt;\caption&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;哈哈哈&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;       标题名称
+&lt;span class=&#34;token function selector&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;figure&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#列表&#34;&gt;#&lt;/a&gt; 列表&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;切换到列表中的环境&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;无序列表:&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-latex&#34; data-language=&#34;latex&#34;&gt;&lt;code class=&#34;language-latex&#34;&gt;&lt;span class=&#34;token function selector&#34;&gt;\begin&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;itemize&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token function selector&#34;&gt;\item&lt;/span&gt; 列表项1
+&lt;span class=&#34;token function selector&#34;&gt;\item&lt;/span&gt; 列表项2
+&lt;span class=&#34;token function selector&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;itemize&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;有序列表&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-latex&#34; data-language=&#34;latex&#34;&gt;&lt;code class=&#34;language-latex&#34;&gt;&lt;span class=&#34;token function selector&#34;&gt;\begin&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;enumerate&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token function selector&#34;&gt;\item&lt;/span&gt; 列表项1
+&lt;span class=&#34;token function selector&#34;&gt;\item&lt;/span&gt; 列表项2
+&lt;span class=&#34;token function selector&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;enumerate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;数学公式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数学公式&#34;&gt;#&lt;/a&gt; 数学公式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;行内公式: &lt;code&gt;$   $&lt;/code&gt;  在行内直接显示公式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;单独显示一行公式&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-latex&#34; data-language=&#34;latex&#34;&gt;&lt;code class=&#34;language-latex&#34;&gt;&lt;span class=&#34;token function selector&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;equation&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;token function selector&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;quation&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+
+可以简写为
+&lt;span class=&#34;token equation string&#34;&gt;\[
+
+\]&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;公式常用指令&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\over&lt;/code&gt; : 表示分数  分子在前 分母在后&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\varphi&lt;/code&gt; : 小写的 φ&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\phi&lt;/code&gt; : 大写的 φ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以使用在线公式编辑器和 mathpix&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://latex.codecogs.com/eqneditor/editor.php&#34;&gt;latex.codecogs.com/eqneditor/editor.php&lt;/a&gt; 在线公式编辑器 也可以快速查阅公式的语法&lt;/p&gt;
+&lt;h2 id=&#34;表格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表格&#34;&gt;#&lt;/a&gt; 表格&lt;/h2&gt;
+&lt;pre class=&#34;line-numbers language-latex&#34; data-language=&#34;latex&#34;&gt;&lt;code class=&#34;language-latex&#34;&gt;&lt;span class=&#34;token function selector&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;tabular&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;传入参数|参数&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt; c表示居中 l表示靠左 多少个字母就表示多少列    p&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;列宽&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt; 单独指定每一列的宽度
+&lt;span class=&#34;token function selector&#34;&gt;\hline&lt;/span&gt;
+1 &lt;span class=&#34;token punctuation&#34;&gt;&amp;amp;&lt;/span&gt; 2 ^ 3 &lt;span class=&#34;token function selector&#34;&gt;\\&lt;/span&gt;
+&lt;span class=&#34;token function selector&#34;&gt;\hline&lt;/span&gt;    水平方向边框
+1 &lt;span class=&#34;token punctuation&#34;&gt;&amp;amp;&lt;/span&gt; 3 &lt;span class=&#34;token punctuation&#34;&gt;&amp;amp;&lt;/span&gt; 2 &lt;span class=&#34;token function selector&#34;&gt;\\&lt;/span&gt;      每一列数据用&lt;span class=&#34;token punctuation&#34;&gt;&amp;amp;&lt;/span&gt;分割
+				每一行的数据用&lt;span class=&#34;token function selector&#34;&gt;\\&lt;/span&gt;分割
+				
+&lt;span class=&#34;token function selector&#34;&gt;\caption&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;表格的标题&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token function selector&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;tabular&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
