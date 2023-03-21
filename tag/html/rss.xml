@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>S1m • Posts by &#34;html&#34; tag</title>
+        <link>https://github.com/YogMas/YogMas.github.io</link>
+        <description>博客记录个人学习笔记,处于不断完善中</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
+        <lastBuildDate>Sat, 06 Nov 2021 00:00:00 +0800</lastBuildDate>
+        <category>C语言</category>
+        <category>Latex</category>
+        <category>操作系统</category>
+        <category>Css</category>
+        <category>vue</category>
+        <category>python</category>
+        <category>Git</category>
+        <category>Html</category>
+        <category>java</category>
+        <category>机器学习</category>
+        <category>Javascript</category>
+        <category>icoding答案</category>
+        <category>算法啊</category>
+        <category>计算机组成原理</category>
+        <category>课内课程</category>
+        <item>
+            <guid isPermalink="true">https://github.com/YogMas/YogMas.github.io/2021/11/06/html-xia/</guid>
+            <title>Html-second</title>
+            <link>https://github.com/YogMas/YogMas.github.io/2021/11/06/html-xia/</link>
+            <category>Html</category>
+            <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;html下&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html下&#34;&gt;#&lt;/a&gt; Html (下)&lt;/h1&gt;
+&lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
+&lt;h4 id=&#34;1表格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1表格&#34;&gt;#&lt;/a&gt; 1. 表格&lt;/h4&gt;
+&lt;h6 id=&#34;表格基本语法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表格基本语法&#34;&gt;#&lt;/a&gt; 表格基本语法&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;table&amp;gt;
+  &amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;
+  &amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h6 id=&#34;表头单元格标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表头单元格标签&#34;&gt;#&lt;/a&gt; 表头单元格标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;p&gt;align=&#34;&#34;&lt;br&gt;
+border=&#34;&#34;&lt;br&gt;
+cellpadding=&#34;&#34;&lt;br&gt;
+cellspacing=&#34;&#34;&lt;br&gt;
+width=&#34;&#34;&lt;br&gt;
+height=&#34;&#34;&lt;br&gt;
+&lt;strong&gt; 这些标签要写到 table 里面去&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;align: 表格中的文字所处的文字 eg.center 就是未于中间类似的还有 left,right&lt;br&gt;
+border：表示表格边框的大小 0 表示没有 &lt;strong&gt;此属性的参数值是数字&lt;/strong&gt;&lt;br&gt;
+ cellpadding：代表单元格边框到内容之间的距离（留白）&lt;br&gt;
+cellspacing：用来指定表格各单元格之间的空隙。&lt;strong&gt;此属性的参数值是数字&lt;/strong&gt;，表示单元格间隙所占的像素点数。&lt;br&gt;
+同样 width,height 已经介绍过了 ，大多数时候都会用&lt;strong&gt; CSS&lt;/strong&gt; 来写&lt;/p&gt;
+&lt;h6 id=&#34;合并单元格&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#合并单元格&#34;&gt;#&lt;/a&gt; 合并单元格&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rowspan=“合并单元格数目”&lt;br&gt;
+colspan=“合并单元格数目”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;rowspan: 合并行 (也就是将一列上的各行合并)&lt;br&gt;
+ colspan: 合并列 (也就是将一行上的各列合并)&lt;br&gt;
+ 合并准则：如果 rowspan 就在最上面的表格的标签里面加上 rowspan=&#34;合并数目&#34; 并且删除已经被合并的表格&lt;br&gt;
+ colspan 同理，注意 colspan 加在最左边的表格标签&lt;br&gt;
+ eg.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;  &amp;lt;tr&amp;gt;
+     &amp;lt;td&amp;gt;&amp;lt;/td&amp;gt;
+      &amp;lt;td colspan=&#34;2&#34;&amp;gt;&amp;lt;/td&amp;gt;
+
+  &amp;lt;/tr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;表示合并一行上的 2 列 第三列删除 colspan 写在第二列的 td 表格标签内&lt;/p&gt;
+&lt;h4 id=&#34;2列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2列表&#34;&gt;#&lt;/a&gt; 2. 列表&lt;/h4&gt;
+&lt;h6 id=&#34;无序列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#无序列表&#34;&gt;#&lt;/a&gt; 无序列表&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+  &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+    …………
+  &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其中的 li 标签各位根据需要而定&lt;br&gt;
+ ul:unorderlist&lt;br&gt;
+li:list&lt;/p&gt;
+&lt;h6 id=&#34;有序列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#有序列表&#34;&gt;#&lt;/a&gt; 有序列表&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ol&amp;gt;
+  &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+    …………
+  &amp;lt;li&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ol:orderlist&lt;br&gt;
+li:list&lt;/p&gt;
+&lt;h6 id=&#34;自定义列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#自定义列表&#34;&gt;#&lt;/a&gt; 自定义列表&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt; &amp;lt;dl&amp;gt;
+   &amp;lt;dt&amp;gt;&amp;lt;/dt&amp;gt;顶部总标签
+   &amp;lt;dd&amp;gt;&amp;lt;/dd&amp;gt;
+   &amp;lt;dt&amp;gt;&amp;lt;/dt&amp;gt;
+   &amp;lt;dd&amp;gt;&amp;lt;/dd
+ &amp;lt;/dl&amp;gt;
+ 一个&amp;lt;dt&amp;gt;和&amp;lt;/dt&amp;gt;标签出现代表一列
+ 直到下一个&amp;lt;dt&amp;gt;和&amp;lt;/dt&amp;gt;出现才换列
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;3表单&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3表单&#34;&gt;#&lt;/a&gt; 3. 表单&lt;/h4&gt;
+&lt;h6 id=&#34;表单域&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表单域&#34;&gt;#&lt;/a&gt; 表单域&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;form action=&#34;&#34; method=&#34;&#34; name=&#34;&#34;&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;表单域需要与后端结合使用只是接下来的一系列需要传输数据到后端的都需要写到表单域内&lt;br&gt;
+附：此时作者还不知道表单域的 action 等标签充当的角色和用处&lt;/p&gt;
+&lt;h6 id=&#34;input表单元素&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#input表单元素&#34;&gt;#&lt;/a&gt; input 表单元素&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&#34;&#34; value=&#34;&#34; name=&#34;&#34; &amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IJqbX8&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/09/IJqbX8.png&#34; alt=&#34;IJqbX8.png&#34;&gt;&lt;/a&gt;&lt;br&gt;
+type 里面可以填写的元素&lt;br&gt;
+ text: 文本框，用户可以输入任何文字，但可以用 maxlength 等来加以限定&lt;br&gt;
+ password：密码框，可以对你输入的数字进行保密 此时显示 *******&lt;br&gt;
+radio: 单选按钮&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将两个 input+radio 元素的标签 name 设置成相同 才可以进行单选 具体下面看图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;checkbox: 复选框，可以进行多个选择&lt;br&gt;
+ submit: 提交按钮，点击可以将数据提交给后端&lt;br&gt;
+ reset: 重新填写&lt;br&gt;
+ button: 点击  例如：获取短信验证码需要使用&lt;/p&gt;
+&lt;p&gt;与 type 同等级的元素作用&lt;br&gt;
+ value：提前显示在文本框内的文字&lt;br&gt;
+ name：传送给后端时的数据名称，radio 只有 name 相同才能单选&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/IQmXRg&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/06/IQmXRg.png&#34; alt=&#34;IQmXRg.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h6 id=&#34;label标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#label标签&#34;&gt;#&lt;/a&gt; label 标签&lt;/h6&gt;
+&lt;p&gt;点击添加了 label 标签的元素等于点击 label 标签的输出端&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;label for=&#34;XXX&#34;&amp;gt; &amp;lt;/label&amp;gt;
+&amp;lt;input type=&#34;&#34; id=&#34;XXX&#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;并不一定要是 input 只是在 input 等填写数据中较为广泛地使用，xxx 可以换成任何自己命名的单词字母等&lt;br&gt;
+ for 和 id 中填写的必须相同&lt;/p&gt;
+&lt;h6 id=&#34;select下拉表单&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#select下拉表单&#34;&gt;#&lt;/a&gt; select 下拉表单&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;select&amp;gt;
+&amp;lt;option&amp;gt;&amp;lt;/option&amp;gt;
+&amp;lt;option selected=&#34;selected&#34;&amp;gt; &amp;lt;/potion&amp;gt;
+&amp;lt;/select&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;option 标签中间填写下拉菜单中的文字等&lt;br&gt;
+添加了 selected 元素的表示 未下拉时显示在表面的选项&lt;/p&gt;
+&lt;h6 id=&#34;textarea文本域&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#textarea文本域&#34;&gt;#&lt;/a&gt; textarea 文本域&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;textarea cols=&#34;&#34; rows=&#34;&#34;&amp;gt;
+&amp;lt;/textarea&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;文本域通常很大所以用 cols 和 rows 来进行限定&lt;br&gt;
+ cols 限定一行的字数 rows 限定行数&lt;br&gt;
+在后期的学习中可以用&lt;strong&gt; css&lt;/strong&gt; 将文本域的右下角拉伸和上下滑动进行去除，增加美观性&lt;/p&gt;
+&lt;h4 id=&#34;4html5新增&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4html5新增&#34;&gt;#&lt;/a&gt; 4.html5 新增&lt;/h4&gt;
+&lt;h6 id=&#34;语义化标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语义化标签&#34;&gt;#&lt;/a&gt; 语义化标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;header&amp;gt;头部标签&amp;lt;/header&amp;gt;
+
+&amp;lt;nav&amp;gt;导航栏标签&amp;lt;/nav&amp;gt;   
+&amp;lt;section&amp;gt;某个区域&amp;lt;/section&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h6 id=&#34;视频标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#视频标签&#34;&gt;#&lt;/a&gt; 视频标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;video src=&#34;&#34; autoplay=&#34;&#34;muted=&#34;muted&#34;  loop=&#34;loop&#34; poster=&#34;media/mi9.jpg&#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;src: 路径&lt;br&gt;
+ autoplay: 写入 autoplay 代表自动播放&lt;br&gt;
+ mute: 播放时静音&lt;br&gt;
+ loop: 预先加载&lt;br&gt;
+ poster: 播放还没有加载出来的时候显示的图片&lt;br&gt;
+ controls: 是否显示控制按钮&lt;/p&gt;
+&lt;h6 id=&#34;音频标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#音频标签&#34;&gt;#&lt;/a&gt; 音频标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;audio src=&#34;media/music.mp3&#34; autoplay=&#34;autoplay&#34; controls=&#34;controls&#34;&amp;gt;&amp;lt;/audio&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;与视频标签相差无几&lt;/p&gt;
+&lt;h6 id=&#34;input表单&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#input表单&#34;&gt;#&lt;/a&gt; input 表单&lt;/h6&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/IJqLnS&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/09/IJqLnS.png&#34; alt=&#34;IJqLnS.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h6 id=&#34;表单属性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#表单属性&#34;&gt;#&lt;/a&gt; 表单属性&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type=&#34;search&#34; name=&#34;sear&#34; id=&#34;&#34; required=&#34;required&#34; placeholder=&#34;pink老师&#34; autofocus=&#34;autofocus&#34; autocomplete=&#34;off&#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt; &amp;lt;input type=&#34;file&#34; name=&#34;&#34; id=&#34;&#34; multiple=&#34;multiple&#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;required: 需要填写才能点确定&lt;br&gt;
+ placeholder: 还没有填写时候显示的文字&lt;br&gt;
+ autofocus: 打开网页时，指标会自动点一下这里&lt;br&gt;
+ autocomplete: 自动储存你输入过的信息 (容易暴露信息，所以一般都会关闭)&lt;br&gt;
+ multiple: 可以选取多个文件&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://github.com/YogMas/YogMas.github.io/2021/11/06/html-shang/</guid>
+            <title>Html-first</title>
+            <link>https://github.com/YogMas/YogMas.github.io/2021/11/06/html-shang/</link>
+            <category>Html</category>
+            <pubDate>Sat, 06 Nov 2021 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;html上&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#html上&#34;&gt;#&lt;/a&gt; Html (上)&lt;/h1&gt;
+&lt;h3 id=&#34;the-article-from-yogmas-also-sam&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-article-from-yogmas-also-sam&#34;&gt;#&lt;/a&gt; the article from yogmas also sam&lt;/h3&gt;
+&lt;h4 id=&#34;1基本架构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1基本架构&#34;&gt;#&lt;/a&gt; 1. 基本架构&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;html&amp;gt; 
+&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;2html标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2html标签&#34;&gt;#&lt;/a&gt; 2.html 标签&lt;/h4&gt;
+&lt;h6 id=&#34;标题标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标题标签&#34;&gt;#&lt;/a&gt; 标题标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;   ……  &amp;lt;h6&amp;gt;&amp;lt;/h6&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一共六级标题，文字加粗，由大到小依次减小。&lt;br&gt;
+&lt;strong&gt;大多数标签都是成对存在的，只有少数例如 br 的单标签&lt;/strong&gt;&lt;/p&gt;
+&lt;h6 id=&#34;段落和换行标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#段落和换行标签&#34;&gt;#&lt;/a&gt; 段落和换行标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;/br&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;p 标签会自动换行，不用添加 br&lt;/p&gt;
+&lt;h6 id=&#34;文本格式化标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文本格式化标签&#34;&gt;#&lt;/a&gt; 文本格式化标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;strong&amp;gt;加粗&amp;lt;/strong&amp;gt; 或者 &amp;lt;b&amp;gt;加粗&amp;lt;/b&amp;gt;
+&amp;lt;em&amp;gt;倾斜&amp;lt;/em&amp;gt; 或者 &amp;lt;i&amp;gt;倾斜&amp;lt;/i&amp;gt;
+&amp;lt;del&amp;gt;删除线&amp;lt;/del&amp;gt; 或者 &amp;lt;s&amp;gt;删除线&amp;lt;/s&amp;gt;
+&amp;lt;ins&amp;gt;下划线&amp;lt;/ins&amp;gt; 或者 &amp;lt;u&amp;gt;下划线&amp;lt;/u&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h6 id=&#34;div和span标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#div和span标签&#34;&gt;#&lt;/a&gt; div 和 span 标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;形象来说 div 是一个大盒子，span 通常是用来放在大盒子里面的小盒子（后期 div 在页面构造中非常常用)&lt;/p&gt;
+&lt;h6 id=&#34;图像标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图像标签&#34;&gt;#&lt;/a&gt; 图像标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&#34;路径&#34; alt=&#34;图片不显示时显示出来的&#34; 
+title=&#34;鼠标放在图片上面显示出来的文字&#34; 
+width=&#34;&#34; height=&#34;&#34; border=&#34;&#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在后期使用的 width,height,border, 都会放入&lt;strong&gt; css&lt;/strong&gt; 中来运行使用不会单独列入 img 中&lt;br&gt;
+图像标签的路径&lt;br&gt;
+ 1. 同一级路径&lt;br&gt;
+ eg:(img.jpg)&lt;br&gt;
+ 2. 下一级路径&lt;br&gt;
+ eg:(images/img.jpg)&lt;br&gt;
+ 3. 绝对路径&lt;br&gt;
+ eg:(C:\Users\apple\Desktop\ 前端基础第一天 - HTML\ 案例 \img.jpg)&lt;br&gt;
+eg：(&lt;a href=&#34;http://www.itcast.cn/2018czgw/images/logo.png&#34;&gt;http://www.itcast.cn/2018czgw/images/logo.png&lt;/a&gt;)&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/IQmLi8&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/06/IQmLi8.png&#34; alt=&#34;IQmLi8.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h6 id=&#34;超链接标签&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#超链接标签&#34;&gt;#&lt;/a&gt; 超链接标签&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&#34;链接&#34;&amp;gt;LOL&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;LOL 可以以图片文字等等代替，点击就可以跳转到 href 所在的链接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以添加的元素：target=“X”&lt;br&gt;
+X 包括_self (覆盖当前页面)&lt;br&gt;
+ 和_blank 重新启动新的页面&lt;br&gt;
+链接分类&lt;br&gt;
+ 1. 内部链接：存放在你网站前端的链接也就是你写前端时电脑里面的链接&lt;br&gt;
+ 2. 外部链接：例如 http 这类的其他网站的链接&lt;br&gt;
+ 3. 空链接：当你还没有链接可以填时，留出空位用 #代替&lt;br&gt;
+ 4. 下载链接：通常是以.zip 结尾的压缩包&lt;br&gt;
+&lt;a href=&#34;https://imgtu.com/i/IQC8kd&#34;&gt;&lt;img src=&#34;https://z3.ax1x.com/2021/11/06/IQC8kd.png&#34; alt=&#34;IQC8kd.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h6 id=&#34;锚点定位&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#锚点定位&#34;&gt;#&lt;/a&gt; 锚点定位&lt;/h6&gt;
+&lt;p&gt;由两个相互呼应的标签组成&lt;br&gt;
+可以从页面的一个地方跳转到当前页面的另外一个地方&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&#34;#ID&#34;&amp;gt;&amp;lt;/a&amp;gt;
+&amp;lt;h3 id=&#34;ID&#34;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ID 可以写成任何你定义的名称&lt;br&gt;
+ h3 并不是固定的，可以换成任意标签&lt;br&gt;
+当你点击 a 中携带的元素或标签时你将会跳转到拥有 id=“” 且和 a 相同 id 的标签这&lt;/p&gt;
+&lt;h6 id=&#34;注释标签和特殊字符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注释标签和特殊字符&#34;&gt;#&lt;/a&gt; 注释标签和特殊字符&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- 注释内容 --&amp;gt; 
+&amp;lt;用&amp;amp;lt  &amp;gt;用&amp;amp;gt；(由于&amp;lt;&amp;gt;符号在html中的特殊性)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;特殊内容可以用 ctrl+l 快速注释&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

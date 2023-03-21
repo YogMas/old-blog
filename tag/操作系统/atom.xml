@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://github.com/YogMas/YogMas.github.io</id>
+    <title>S1m • Posts by &#34;操作系统&#34; tag</title>
+    <link href="https://github.com/YogMas/YogMas.github.io" />
+    <updated>2021-02-09T16:00:00.000Z</updated>
+    <category term="C语言" />
+    <category term="Latex" />
+    <category term="操作系统" />
+    <category term="Css" />
+    <category term="vue" />
+    <category term="python" />
+    <category term="Git" />
+    <category term="Html" />
+    <category term="java" />
+    <category term="机器学习" />
+    <category term="Javascript" />
+    <category term="icoding答案" />
+    <category term="算法啊" />
+    <category term="计算机组成原理" />
+    <category term="课内课程" />
+    <entry>
+        <id>https://github.com/YogMas/YogMas.github.io/2021/02/10/linux/</id>
+        <title>操作系统</title>
+        <link rel="alternate" href="https://github.com/YogMas/YogMas.github.io/2021/02/10/linux/"/>
+        <content type="html">&lt;h1 id=&#34;操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作系统&#34;&gt;#&lt;/a&gt; 操作系统&lt;/h1&gt;
+&lt;p&gt;The article made by  &lt;code&gt;Yogmas&lt;/code&gt; ,beginning from 2022.1.18&lt;/p&gt;
+&lt;h2 id=&#34;简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#简介&#34;&gt;#&lt;/a&gt; 简介&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;裸机&lt;/strong&gt;：没有安装操作系统的电脑&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;操作系统&lt;/strong&gt;: 1. 对硬件进行操作 2. 将对硬件的一系列操作封装成为系统调用，方便程序员调用&lt;/p&gt;
+&lt;h3 id=&#34;不同领域的主流操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#不同领域的主流操作系统&#34;&gt;#&lt;/a&gt; 不同领域的主流操作系统&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;桌面操作系统
+&lt;ul&gt;
+&lt;li&gt;Windows&lt;/li&gt;
+&lt;li&gt;macOS&lt;/li&gt;
+&lt;li&gt;Linux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;服务器操作系统
+&lt;ul&gt;
+&lt;li&gt;Linux 免费 安全&lt;/li&gt;
+&lt;li&gt;Windows Server  付费&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;嵌入式操作系统
+&lt;ul&gt;
+&lt;li&gt;Linux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;移动设备操作系统
+&lt;ul&gt;
+&lt;li&gt;iOS&lt;/li&gt;
+&lt;li&gt;Android (基于 &lt;code&gt;Linux&lt;/code&gt; )&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;虚拟机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#虚拟机&#34;&gt;#&lt;/a&gt; 虚拟机&lt;/h3&gt;
+&lt;p&gt;相当于安装在电脑上的一台虚拟电脑&lt;/p&gt;
+&lt;h2 id=&#34;操作系统的发展史略&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作系统的发展史略&#34;&gt;#&lt;/a&gt; 操作系统的发展史 (略)&lt;/h2&gt;
+&lt;h3 id=&#34;unix&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#unix&#34;&gt;#&lt;/a&gt; Unix&lt;/h3&gt;
+&lt;p&gt;伴随着 B 语言和 C 语言的由来，同时由于其创作者可以直接访问使用该系统的电脑，电气公司将其私有化后随之产生了 &lt;code&gt;Minix&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;minix&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#minix&#34;&gt;#&lt;/a&gt; Minix&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Unix&lt;/code&gt;  私有化之后，大学无法使用 &lt;code&gt;Unix&lt;/code&gt;  系统进行教学，就出现了 &lt;code&gt;Minix&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;linux&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux&#34;&gt;#&lt;/a&gt; Linux&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Minix&lt;/code&gt;  上可以实现的功能非常少，为了达到相应的功能需要，就出现了 &lt;code&gt;Linux&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;linux操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux操作系统&#34;&gt;#&lt;/a&gt; Linux 操作系统&lt;/h2&gt;
+&lt;h3 id=&#34;linux内核及发行版&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux内核及发行版&#34;&gt;#&lt;/a&gt; Linux 内核及发行版&lt;/h3&gt;
+&lt;h4 id=&#34;linux内核&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux内核&#34;&gt;#&lt;/a&gt; Linux 内核&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Linux&lt;/code&gt;  内核对各种硬件进行操作并且将各种操作封装成为系统调用&lt;/p&gt;
+&lt;h4 id=&#34;linux发行版&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux发行版&#34;&gt;#&lt;/a&gt; Linux 发行版&lt;/h4&gt;
+&lt;p&gt;在 &lt;code&gt;Linux&lt;/code&gt;  内核的基础上包括了桌面环境，办公套件，数据库等应用软件&lt;/p&gt;
+&lt;h3 id=&#34;linux文件和目录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux文件和目录&#34;&gt;#&lt;/a&gt; Linux 文件和目录&lt;/h3&gt;
+&lt;h4 id=&#34;单用户与多用户&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#单用户与多用户&#34;&gt;#&lt;/a&gt; 单用户与多用户&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;单用户操作系统：一台电脑同一时间只能由一个用户使用  &lt;code&gt;Windows&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;多用户操作系统：一台电脑同一时间可以由多个用户使用  &lt;code&gt;Linux&lt;/code&gt; , &lt;code&gt;Unix&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;windows与linux&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#windows与linux&#34;&gt;#&lt;/a&gt; Windows 与 Linux&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Windows&lt;/code&gt;  下，看到的基本都是驱动器盘符&lt;/li&gt;
+&lt;li&gt;多用户操作系统下，看到的都是根目录结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux基本操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux基本操作&#34;&gt;#&lt;/a&gt; Linux 基本操作&lt;/h2&gt;
+&lt;h3 id=&#34;linux命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#linux命令&#34;&gt;#&lt;/a&gt; Linux 命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ls&lt;/code&gt;  显示当前目录下的所有文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pwd&lt;/code&gt;  显示当前目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd 地址&lt;/code&gt; 更改地址&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;touch 文件名&lt;/code&gt; 创建文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mkdir 文件名&lt;/code&gt; 创建目录&lt;/li&gt;
+&lt;li&gt;clear 清屏&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;command --help&lt;/code&gt;  帮助信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;man command&lt;/code&gt;  知识手册&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://imgtu.com/i/HvXbkT&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/21/HvXbkT.png&#34; alt=&#34;man操作键&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;文件和目录命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件和目录命令&#34;&gt;#&lt;/a&gt; 文件和目录命令&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/HvjUH0&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/21/HvjUH0.png&#34; alt=&#34;文件和目录相关命令&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;ls命令选项&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ls命令选项&#34;&gt;#&lt;/a&gt; ls 命令选项&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/HvvTiT&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/21/HvvTiT.png&#34; alt=&#34;ls命令选项&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;ls通配符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ls通配符&#34;&gt;#&lt;/a&gt; ls 通配符&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/Hxqm4g&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/22/Hxqm4g.png&#34; alt=&#34;ls通配符&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;切换目录&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#切换目录&#34;&gt;#&lt;/a&gt; 切换目录&lt;/h4&gt;
+&lt;h5 id=&#34;cd命令选项&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cd命令选项&#34;&gt;#&lt;/a&gt; cd 命令选项&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/HxLZs1&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/22/HxLZs1.png&#34; alt=&#34;cd&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;创建和删除操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#创建和删除操作&#34;&gt;#&lt;/a&gt; 创建和删除操作&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;touch&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;没有该名的文件存在，则创建一个新的文件&lt;/li&gt;
+&lt;li&gt;有改名字的文件存在，则更改文件的末次修改日期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;mkdir&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-p&lt;/code&gt;  连续创建多个目录&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-none&#34;&gt;&lt;code class=&#34;language-none&#34;&gt;mkdir -p a/b/c/d&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;rm&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-r&lt;/code&gt;  连续删除多个同一文件夹下的文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-f&lt;/code&gt;  强制删除无提示信息&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;ls&lt;/code&gt;  的通配符对 &lt;code&gt;rm&lt;/code&gt;  一样适用&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;拷贝和移动命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#拷贝和移动命令&#34;&gt;#&lt;/a&gt; 拷贝和移动命令&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;tree&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;以&lt;strong&gt;树状图&lt;/strong&gt;列出文件目录结构&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-d&lt;/code&gt;  只显示目录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cp 源文件 目标文件&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-i&lt;/code&gt;  覆盖文件前提示&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-r&lt;/code&gt;  复制整个目录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;mv 源文件 目标文件&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-i&lt;/code&gt;  覆盖前提示&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;文件内容命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件内容命令&#34;&gt;#&lt;/a&gt; 文件内容命令&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bSr1JO&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/22/bSr1JO.png&#34; alt=&#34;查看文件内容&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;cat&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-b&lt;/code&gt;  显示非空行编号&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-n&lt;/code&gt;  显示所有行编号&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;more&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bC3bsf&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bC3bsf.png&#34; alt=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep -n （） （文件）&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bC8SWn&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bC8SWn.png&#34; alt=&#34;grep&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;其他命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#其他命令&#34;&gt;#&lt;/a&gt; 其他命令&lt;/h4&gt;
+&lt;h5 id=&#34;echo和重定向&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#echo和重定向&#34;&gt;#&lt;/a&gt; echo 和重定向&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;echo&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在终端中显示参数指定的文字&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重定向&lt;/p&gt;
+&lt;p&gt;原本应该输出到终端中的内容重定向到其他文件中&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bCYd61&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bCYd61.png&#34; alt=&#34;bCYd61.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;管道&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#管道&#34;&gt;#&lt;/a&gt; 管道 &lt;code&gt;|&lt;/code&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bCN0IO&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bCN0IO.png&#34; alt=&#34;管道&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;远程管理常用命令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#远程管理常用命令&#34;&gt;#&lt;/a&gt; 远程管理常用命令&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;关机重启 &lt;code&gt;shutdown&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bCUtfg&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bCUtfg.png&#34; alt=&#34;shutdown&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;查看和配置网卡信息&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bCawCD&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bCawCD.png&#34; alt=&#34;bCawCD.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ifconfig&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bCduqI&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bCduqI.png&#34; alt=&#34;ifconfig&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ping&lt;/code&gt;  测试网络连接&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bCwOc4&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bCwOc4.png&#34; alt=&#34;ping&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;ssh工作及简介&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ssh工作及简介&#34;&gt;#&lt;/a&gt; SSH 工作及简介&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bC0R56&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bC0R56.png&#34; alt=&#34;SSH&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;域名和端口号&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bCBuL9&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/23/bCBuL9.png&#34; alt=&#34;域名和端口号&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SSH 客户端的简单实用&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh [-p port] user@remote&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;user&lt;/code&gt; : 远程机器上的用户名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;remote&lt;/code&gt; : 远程机器的地址&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;port&lt;/code&gt; :&lt;strong&gt;SSH server&lt;/strong&gt; 监听的端口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以对装有 SSH 客户端的电脑或者服务器进行&lt;strong&gt;远程控制&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;scp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#scp&#34;&gt;#&lt;/a&gt; SCP&lt;/h5&gt;
+&lt;p&gt;远程状态下进行文件拷贝&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bFnyod&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/24/bFnyod.png&#34; alt=&#34;scp&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;ftp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ftp&#34;&gt;#&lt;/a&gt; FTP&lt;/h5&gt;
+&lt;p&gt;在 &lt;code&gt;WINDOWS&lt;/code&gt;  下可以利用 FTP 进行文件拷贝 端口号默认为 21&lt;/p&gt;
+&lt;h5 id=&#34;ssh免密码登录设置&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ssh免密码登录设置&#34;&gt;#&lt;/a&gt; SSH 免密码登录设置&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bFMOSI&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/24/bFMOSI.png&#34; alt=&#34;SSH免密码登录设置&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;配置别名&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bFlUK0&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/24/bFlUK0.png&#34; alt=&#34;配置别名&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;用户权限&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用户权限&#34;&gt;#&lt;/a&gt; 用户权限&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bMMkvT&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/28/bMMkvT.png&#34; alt=&#34;用户权限&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;ls-l-指令介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ls-l-指令介绍&#34;&gt;#&lt;/a&gt;  &lt;code&gt;ls -l&lt;/code&gt;  指令介绍&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bMMTLF&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/28/bMMTLF.png&#34; alt=&#34;ls-l指令介绍&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;chmod指令&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#chmod指令&#34;&gt;#&lt;/a&gt;  &lt;code&gt;chmod&lt;/code&gt;  指令&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;chmod&lt;/code&gt;  change mod 用于修改用户对文件和目录的权限&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;chmod +/- rwx 文件/目录&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;超级用户&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#超级用户&#34;&gt;#&lt;/a&gt; 超级用户&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bMl759&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/28/bMl759.png&#34; alt=&#34;超级用户&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;组管理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组管理&#34;&gt;#&lt;/a&gt; 组管理&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bM1rM6&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/28/bM1rM6.png&#34; alt=&#34;组管理终端命令&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;用户管理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#用户管理&#34;&gt;#&lt;/a&gt; 用户管理&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bMYL2d&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/28/bMYL2d.png&#34; alt=&#34;用户管理&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;查看用户信息&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看用户信息&#34;&gt;#&lt;/a&gt; 查看用户信息&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bMtIQs&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/02/28/bMtIQs.png&#34; alt=&#34;查看用户信息&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;设置主组和附加组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#设置主组和附加组&#34;&gt;#&lt;/a&gt; 设置主组和附加组&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;usermod&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bl8pcR&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/01/bl8pcR.png&#34; alt=&#34;usermod&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;改变用户登录的 &lt;code&gt;shell&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;ubantu 默认的是 dash,dash 在 xshell 软件中存在 bug, 可以利用 &lt;code&gt;usermod&lt;/code&gt;  指令更改成为 bash&lt;/p&gt;
+&lt;h5 id=&#34;which&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#which&#34;&gt;#&lt;/a&gt;  &lt;code&gt;which&lt;/code&gt;&lt;/h5&gt;
+&lt;p&gt;查看命令执行所在文件夹&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bl6v11&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/01/bl6v11.png&#34; alt=&#34;which&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;bin和sbin文件的差别&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#bin和sbin文件的差别&#34;&gt;#&lt;/a&gt;  &lt;code&gt;bin&lt;/code&gt;  和 sbin 文件的差别&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/blcbKP&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/01/blcbKP.png&#34; alt=&#34;bin和sbin文件&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;su切换用户&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#su切换用户&#34;&gt;#&lt;/a&gt; su 切换用户&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bNWmee&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/04/bNWmee.png&#34; alt=&#34;su切换用户&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;修改文件权限&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#修改文件权限&#34;&gt;#&lt;/a&gt; 修改文件权限&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bNWNwQ&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/04/bNWNwQ.png&#34; alt=&#34;修改文件权限&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;chmod&lt;/code&gt;  的数字表示法&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bNhVVe&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/04/bNhVVe.png&#34; alt=&#34;chmod数字表示法&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;查询系统信息&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查询系统信息&#34;&gt;#&lt;/a&gt; 查询系统信息&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;时间和磁盘占用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bNIK2R&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/04/bNIK2R.png&#34; alt=&#34;时间日期额磁盘大小&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进程信息&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bNIsZ8&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/04/bNIsZ8.png&#34; alt=&#34;进程信息&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;其他命令-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#其他命令-2&#34;&gt;#&lt;/a&gt; 其他命令&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;查找文件&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bNTtgA&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/04/bNTtgA.png&#34; alt=&#34;查找文件&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件软链接&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bN7VVf&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/04/bN7VVf.png&#34; alt=&#34;文件软链接&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件硬链接&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/bNq3qI&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/04/bNq3qI.png&#34; alt=&#34;硬链接简介&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;打包和压缩&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#打包和压缩&#34;&gt;#&lt;/a&gt; 打包和压缩&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打包&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/b0plef&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/05/b0plef.png&#34; alt=&#34;tar打包和解包指令&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;压缩和解压缩&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;gzip&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/b0C1Pg&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/05/b0C1Pg.png&#34; alt=&#34;gzip&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;bzip2&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/b0CDG4&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/05/b0CDG4.png&#34; alt=&#34;bzip2 &#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;adp安装与卸载&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#adp安装与卸载&#34;&gt;#&lt;/a&gt; adp 安装与卸载&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/b0PKyR&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/05/b0PKyR.png&#34; alt=&#34;adp安装与卸载&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;adp设计软件源&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#adp设计软件源&#34;&gt;#&lt;/a&gt; adp 设计软件源&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://imgtu.com/i/b0iptO&#34;&gt;&lt;img src=&#34;https://s4.ax1x.com/2022/03/05/b0iptO.png&#34; alt=&#34;设置软件源&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+        <category term="操作系统" />
+        <updated>2021-02-09T16:00:00.000Z</updated>
+    </entry>
+</feed>

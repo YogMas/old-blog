@@ -1,0 +1,675 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://github.com/YogMas/YogMas.github.io</id>
+    <title>S1m • Posts by &#34;算法啊&#34; tag</title>
+    <link href="https://github.com/YogMas/YogMas.github.io" />
+    <updated>2022-10-08T16:00:00.000Z</updated>
+    <category term="C语言" />
+    <category term="Latex" />
+    <category term="操作系统" />
+    <category term="Css" />
+    <category term="vue" />
+    <category term="python" />
+    <category term="Git" />
+    <category term="Html" />
+    <category term="java" />
+    <category term="机器学习" />
+    <category term="Javascript" />
+    <category term="icoding答案" />
+    <category term="算法啊" />
+    <category term="计算机组成原理" />
+    <category term="课内课程" />
+    <entry>
+        <id>https://github.com/YogMas/YogMas.github.io/2022/10/09/suan-fa/</id>
+        <title>算法</title>
+        <link rel="alternate" href="https://github.com/YogMas/YogMas.github.io/2022/10/09/suan-fa/"/>
+        <content type="html">&lt;h1 id=&#34;算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#算法&#34;&gt;#&lt;/a&gt; 算法&lt;/h1&gt;
+&lt;p&gt;基于 Acwing 算法课&lt;/p&gt;
+&lt;h2 id=&#34;算法基础课&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#算法基础课&#34;&gt;#&lt;/a&gt; 算法基础课&lt;/h2&gt;
+&lt;h3 id=&#34;基础算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基础算法&#34;&gt;#&lt;/a&gt; 基础算法&lt;/h3&gt;
+&lt;p&gt;算法：以空间来换取时间&lt;/p&gt;
+&lt;h4 id=&#34;快速排序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#快速排序&#34;&gt;#&lt;/a&gt; 快速排序&lt;/h4&gt;
+&lt;p&gt;快速排序基于分治的思想，选取数&lt;strong&gt; x&lt;/strong&gt; (从数组中任选), 将大于 x 的数放置于数组的左边，小于 x 的数放置于数组的右边&lt;/p&gt;
+&lt;p&gt;处理过程采用&lt;strong&gt;双指针&lt;/strong&gt;和&lt;strong&gt;递归&lt;/strong&gt;进行处理&lt;/p&gt;
+&lt;p&gt;时间复杂度最快&lt;strong&gt; O (nlogn)&lt;/strong&gt; 最慢&lt;strong&gt; O (n^2)&lt;/strong&gt;  取决于每一次随机选取的数在数组中的大小关系&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;时间复杂度最快&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/java%E5%BF%AB%E6%8E%92%E6%9C%80%E5%BF%AB.png&#34; alt=&#34;快排最快&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;时间复杂度最慢&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/java195AF8FC790A2FAFE29FCFC35CCD6B87.png&#34; alt=&#34;时间复杂度最慢&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//快速排序基本模板
+void quick_sort(int q[],int l,int r)
+{
+    if(l &amp;gt;= r) return;
+    int x = q[l]; //int x = q[r], int x = q[l+r &amp;gt;&amp;gt;1] 都可以 因为是随机选择
+    //这里有个边界问题, 如果后面以j为边界,这里就不能为q[r]  
+    //如果后面以i为边界,这里就不能为q[l];
+    int i = l -1,j = r + 1; // 先- 先+ 因为后面do while循环 会先进行-- 和++
+    while(i &amp;lt; j)
+    {
+        //比较条件没有等号
+        do i++;while(q[i] &amp;lt;x);
+        do j--;while(q[j] &amp;gt;x);
+        if(i &amp;lt; j) swap(q[i],q[j]);
+    }
+    quick_sort(q,l,j);
+    quick_sort(q,j+1,r);
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;快速查找&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#快速查找&#34;&gt;#&lt;/a&gt; 快速 / 查找&lt;/h5&gt;
+&lt;p&gt;快速查找采用的是&lt;strong&gt;快速排序 + 二分&lt;/strong&gt;的思想，在排序过程中，如果可以确定值在两半的哪一半，就继续去查找那一半，另外一半就不需要查找了，这样&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最快的时间复杂度是 O (n);&lt;/li&gt;
+&lt;li&gt;最慢仍然是 O (n^2);&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//查找第k小的数
+int quick_search(int q[],int l,int r,int k)
+{
+    if(l &amp;gt;= r) return q[l];
+    int x = q[l + r &amp;gt;&amp;gt;1],i = l - 1, j = r +1;
+    while(i&amp;lt;j)
+    {
+        do i++;while(q[i] &amp;lt; x);
+        do j--;while(q[j] &amp;gt; x);
+        if(i &amp;lt; j) swap(q[i],q[j]);
+    }
+    if(k &amp;lt; j- l +1) return quick_search(q,l,j,k);
+    else return quick_search(q,j+1,r,k - (j -l +1));
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;归并排序&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#归并排序&#34;&gt;#&lt;/a&gt; 归并排序&lt;/h4&gt;
+&lt;p&gt;经典采取分治的思想，时间复杂度为 O (nlogn)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：时间复杂度为 O (nlogn);&lt;/li&gt;
+&lt;li&gt;缺点：使用了多余的空间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过不断递归，将整个数组无限二等分，直到最后分成单个，在通过比较，将分割后的数组合并起来.&lt;/p&gt;
+&lt;p&gt;时间复杂度证明可以参照上面的&lt;strong&gt;快排最优&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//归并排序基本模板
+void merge_sort(int q[],int l,int r)
+{
+    if(l &amp;gt;= r) return;
+    int mid = l + r &amp;gt;&amp;gt; 1;
+    
+    //递归不断二等分
+    merge_sort(q,l,mid);
+    merge_sort(q,mid + 1,r);
+    
+    //进行数组合并
+    int i =l,j = mid +1,k =0;
+    while(i &amp;lt;= mid &amp;amp;&amp;amp; j &amp;lt;= r)
+    {
+        if(q[i] &amp;lt;= q[j]) tmp[k++] =q[i++];                //tmp数组 用空间换时间 临时存储
+            else tmp[k++] = q[j++];
+    }
+    while(i &amp;lt;= mid) tmp[k++] = q[i++];
+    while(j &amp;lt;= r) tmp[k++] = q[j++];	
+    //将tmp排序好的数组重新赋值到原本的数组中
+    for(int i = l,j = 0;i &amp;lt;= r;i++,j++)
+    	q[i] = tmp[j];
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;二分查找&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二分查找&#34;&gt;#&lt;/a&gt; 二分查找&lt;/h4&gt;
+&lt;h5 id=&#34;整数二分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#整数二分&#34;&gt;#&lt;/a&gt; 整数二分&lt;/h5&gt;
+&lt;p&gt;二分也是采用&lt;strong&gt;分治&lt;/strong&gt;的方法，不断将一个&lt;strong&gt;有序&lt;/strong&gt;数组分成两半，然后判断满足条件的数 (&lt;strong&gt;要查找的数&lt;/strong&gt;) 是在左边还是右边&lt;/p&gt;
+&lt;p&gt;二分存在&lt;strong&gt;边界问题&lt;/strong&gt;，所以记忆一个模板可以&lt;strong&gt;有效避免边界问题&lt;/strong&gt;。&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-C++&#34; data-language=&#34;C++&#34;&gt;&lt;code class=&#34;language-C++&#34;&gt;//当l = r 的时候停止，此时无论是取l 或者 取 r 输出都可以
+// 模板1
+void find(int q[],int l,int r)
+{
+    while(l &amp;lt; r)
+    {
+       	int mid = l + r &amp;gt;&amp;gt;1;
+        if(check(mid)) r = mid;  //check(mid)表示是否满足条件
+        else l = mid + 1;
+    }
+}
+
+//模板2
+void find(int q[],int l,int r)
+{
+    while(l &amp;lt; r)
+    {
+       	int mid = l + r + 1 &amp;gt;&amp;gt; 1
+        if(check(mid)) l = mid;  //check(mid)表示中心点是否满足条件
+        else r = mid - 1;
+    }
+}
+
+//通过check函数来判断使用哪个二分
+//注意对mid的使用 是导致边界问题的原因&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;部分问题，查找一个数的值，但数组中有&lt;strong&gt;多个一样的值都满足条件&lt;/strong&gt;，如果确定搜到的答案 是所有满足条件的答案里面&lt;strong&gt;最左边的还是最右边的&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这个时候需要根据模板 模拟一下，&lt;strong&gt; 当条件满足的时候&lt;/strong&gt;，二分是在往左边查找，还是往右边查找.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;往右边查找 最后得到的就是最右边的值&lt;/li&gt;
+&lt;li&gt;往左边不断查找，最后得到的就是最左边的值&lt;/li&gt;
+&lt;li&gt;我们可以通过改变 check () 判断函数和模板的切换 来人为控制往左边查找和往右边查找的过程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;边界&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;选择模板为了避免边界问题，灵活记忆&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果满足条件的时候，需要 &lt;code&gt;l = mid&lt;/code&gt; , 这个时候求 mid 就是 + 1&lt;/li&gt;
+&lt;li&gt;如果满足条件的时候，需要 &lt;code&gt;r = mid&lt;/code&gt; , 这个时候求 mid 就不需要 + 1, 就是普通的 (l + r) / 2;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;小数二分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#小数二分&#34;&gt;#&lt;/a&gt; 小数二分&lt;/h5&gt;
+&lt;p&gt;因为小数二分&lt;strong&gt;不存在这个边界问题&lt;/strong&gt;，就非常简单&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;void find(int q[],int l,int r)
+{
+    while(l &amp;lt; r)
+    {
+       	int mid = l + r &amp;gt;&amp;gt;1;
+        if(check(mid)) r = mid;  //check(mid)表示是否满足条件
+        else l = mid;
+    }
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;高精度&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#高精度&#34;&gt;#&lt;/a&gt; 高精度&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;C++&lt;strong&gt; 中对&lt;/strong&gt;大数存储不支持&lt;/strong&gt;，所以需要用&lt;strong&gt;数组来存储&lt;/strong&gt;大数，然后通过小时候学习的&lt;strong&gt;加法竖式等等&lt;/strong&gt;的原理对数组进行处理，从而达到大数计算的目的&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：因为&lt;strong&gt;进位&lt;/strong&gt;的问题，所以在&lt;strong&gt;加减乘三个运算&lt;/strong&gt;中反着输入数组，最后再将数组颠倒&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;因为存在&lt;strong&gt;借位&lt;/strong&gt;问题，减法的最后可能因为被借了一位被判断为 0，所以需要去除这个 0, 去除这个 0 的时候要考虑特例，这个 0 就是答案，所以还要判断是不是只有 1 个 0, 只有满足不止一位数，且最后一位是 0, 才去除这个 0&lt;/li&gt;
+&lt;li&gt;同样减法也可能存在&lt;strong&gt;前置 0&lt;/strong&gt;, 需要去除&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;高精度加法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#高精度加法&#34;&gt;#&lt;/a&gt; 高精度加法&lt;/h5&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//进位问题 输入的数组都是反向存的
+vector&amp;lt;int&amp;gt; add(vector&amp;lt;int&amp;gt; &amp;amp;a,vector&amp;lt;int&amp;gt; &amp;amp;b)
+{
+    vector&amp;lt;int&amp;gt; c;
+    for(int i = 0 ,t = 0; t ||i &amp;lt; a.size() || i &amp;lt;b.size();i++)
+    {
+        if(i &amp;lt;a.size()) t += a[i];
+        if(i &amp;lt; b.size()) t += b[i];
+        c.push_back(t % 10);
+        t /= 10;
+    }
+    reverse(c.begin(),c.end());
+    return c;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;高精度减法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#高精度减法&#34;&gt;#&lt;/a&gt; 高精度减法&lt;/h5&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//可以在外面先写个函数 保证输入减函数内部的时候一定是 a &amp;gt;= b的
+bool cmp(vector&amp;lt;int&amp;gt; &amp;amp;a,vector&amp;lt;int&amp;gt; &amp;amp;b) //a &amp;gt;= b 则返回true 否则返回false
+{
+    if(a.size()!= b.size()) return a.size() &amp;gt;b.size(); //长度不一样的时候,显然长度大的更大
+    else
+    {
+        for(int i = 0 ; i &amp;lt; a.size();i++)
+        {
+            if(a[i] != b[i]) return a[i] &amp;gt;= b[i]; //当某个位置出现不一样的时候,该位置大的更大
+        }
+    }
+    return true; //长度相同 每个位置也相同 说明两个大数相等返回true
+}
+//默认输入的时候a &amp;gt;= b;
+vector&amp;lt;int&amp;gt; sub(vector&amp;lt;int&amp;gt; &amp;amp;a,vector&amp;lt;int&amp;gt; &amp;amp;b)
+{
+    if(!cpm(a,b)) return sub(b,a); //如果a &amp;lt; b 就进行b - a的操作
+    vector&amp;lt;int&amp;gt; c;
+    for(int i = 0, t = 0;i &amp;lt; a.size();i++)
+    {
+        t += a[i];
+        if(i &amp;lt;b.size()) t = t - b[i];
+        c.push_back((t +10) % 10); //保证插入的是正数
+        if(t &amp;lt; 0) t = -1;
+        else t = 0;
+    }
+    while(c.size() &amp;gt;1 &amp;amp;&amp;amp; c.back() == 0) c.pop_back(); //删除前置0,如果最后一个为0 并且不只有1个0(正确答案)，就将最后一位山区
+    reverse(c.begin(),c.end(0));
+    return c;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;高精度乘法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#高精度乘法&#34;&gt;#&lt;/a&gt; 高精度乘法&lt;/h5&gt;
+&lt;p&gt;依据乘法&lt;strong&gt;竖式&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//高精度乘法一般是一个大数和一个小数相乘,不会出现大数乘大数
+vector&amp;lt;int&amp;gt; mul(vector&amp;lt;int&amp;gt; &amp;amp;a,int b)
+{
+    vector&amp;lt;int&amp;gt; c;
+    for(int i = 0,t = 0 ; t || i &amp;lt;a.size();i++)
+    {
+        if(i&amp;lt; a.size())t += a[i] * b;
+        c.push_back(t % 10);
+        t /= 10;
+    }
+    reverse(c.begin(),c.end())
+    return c;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;高精度除法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#高精度除法&#34;&gt;#&lt;/a&gt; 高精度除法&lt;/h5&gt;
+&lt;p&gt;高精度除法，不存在&lt;strong&gt;借位和进位&lt;/strong&gt;的问题，所以按照原来的数组存储，但是最后需要&lt;strong&gt;翻转两次&lt;/strong&gt;来&lt;strong&gt;去掉前缀 0&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;//高精度除法,一般也为一个大数和一个小数相除
+vector&amp;lt;int&amp;gt; div(vector&amp;lt;int&amp;gt; a,int b,int &amp;amp;r) // r用来存储余数 默认为0
+{
+    vector&amp;lt;int&amp;gt; c;
+    for(int i = 0,r = 0; i&amp;lt; a.size();i++)
+    {
+        r = r * 10 + a[i];
+        c.push_back(r / b); //不够除的时候 自然传入的是0 所以也会有前缀0的问题
+        r = r % b; //取余数
+    }
+    reverse(c.begin(),c.end());
+    while(c.size() &amp;gt;1 &amp;amp;&amp;amp; c.back() == 0) a.pop_back();
+    reverse(c.begin(),c.end());
+    return c;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;前缀和与差分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前缀和与差分&#34;&gt;#&lt;/a&gt; 前缀和与差分&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;Sn = a1 + a2 + ... + an&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这里的数组 a1 到 an 就是差分数组&lt;/p&gt;
+&lt;p&gt;而 s1 到 sn 就是前缀和数组，他以 O (1) 的时间复杂度得到了差分数组的前 n 个数的和&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心&lt;/strong&gt;：进行&lt;strong&gt;区间部分数加减&lt;/strong&gt;的时候可以做到&lt;strong&gt; O (1)&lt;strong&gt; 的时间复杂度，最后一个需要遍历 n 个数，但前面所有加减操作是&lt;/strong&gt; O (1)&lt;/strong&gt;, 所以平均下来是 O (1)&lt;/p&gt;
+&lt;p&gt;同时&lt;strong&gt;前缀和数组&lt;/strong&gt;，可以 **O (1)** 获得前缀和 典型的预处理&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int S[N]
+int a[N]
+void add(int x,int y , int c)  //对S数组的第x个数 到第y个数 都加上一个数据c        //其实就是对差分数组的第x个数加上c  第y+1减去c
+{
+    a[x] += c;
+    a[y+1] -= c;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;那么如何得到一个数组的差分数组呢？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我们在对原数组进行读入的时候，对每一个数据都使用 add (x,x,c) 就可以得到差分数组的，然后再求下差分数组的前缀和数组就是原数组了&lt;/p&gt;
+&lt;h4 id=&#34;双指针算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#双指针算法&#34;&gt;#&lt;/a&gt; 双指针算法&lt;/h4&gt;
+&lt;p&gt;双指针算法本质就是利用两个指针移动判断条件，然后达到一个对 O (n^2) 的时间复杂度的遍历 进行一个优化  使用条件依题意&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/%E5%8F%8C%E6%8C%87%E9%92%88%E5%9B%BE%E7%A4%BA.png&#34; alt=&#34;双指针图示&#34;&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-C++&#34; data-language=&#34;C++&#34;&gt;&lt;code class=&#34;language-C++&#34;&gt;//板子
+for(int i = 0 ; i &amp;lt; n ;i++)
+{
+    while()     //
+    {
+        j++
+    }
+    j = i;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;位运算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#位运算&#34;&gt;#&lt;/a&gt; 位运算&lt;/h4&gt;
+&lt;p&gt;介绍位运算中常用的&lt;strong&gt;两个操作&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;求 x 的第 k 位数组:  &lt;code&gt;x &amp;gt;&amp;gt;k &amp;amp; 1&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;返回 x 的最后一位 1:  &lt;code&gt;lowbit(x) = x &amp;amp; -x&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;求二进制数中&lt;strong&gt;最后一个 1&lt;/strong&gt; 出现的位置（前两个操作复合而成）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int lowbit(int x)
+{
+    for(int i = 0 ; i &amp;lt; 32 ; i++)  //32为int(4 bytes 32 bits)的默认存储位数
+    {
+        if((x &amp;gt;&amp;gt; i) &amp;amp; 1)
+            return i;
+    }
+}
+//计算机中采用补码存储 补码存储将会使其所有位翻转 再末尾加1 这样就只有最后1位1 编程补码后不会变  其他的1 都会变成0&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/%E4%BD%8D%E8%BF%90%E7%AE%97.png&#34; alt=&#34;位运算&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;离散化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#离散化&#34;&gt;#&lt;/a&gt; 离散化&lt;/h4&gt;
+&lt;p&gt;适用于&lt;strong&gt;存储下标非常大&lt;/strong&gt; (导致数组无法放下), 而存储空间&lt;strong&gt;非常稀疏&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这时候就要应用映射，将原数组进行&lt;strong&gt;离散化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;离散化可以看成是特殊的&lt;strong&gt; Hash&lt;/strong&gt;, 都是利用了一个映射的关系&lt;/p&gt;
+&lt;p&gt;这里需要用到一个操作，排序 + 去重&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;sort(nums.begin(),nums.end());  //使用unique之前需要先排序,因为unique函数 是不断将当前数和后面一个数做对比,如果相同就把后面一个相同的数放到最后 所以需要先排序
+nums.erase(unique(nums.begin().nums.end()),nums.end())  //unique函数去重后 会将重复元素放在末尾 并且返回无重复数组的末尾 利用erase将末尾重复部分去除掉&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/%E7%A6%BB%E6%95%A3%E5%8C%96%E6%98%A0%E5%B0%84%E8%BF%87%E7%A8%8B.png&#34; alt=&#34;离散化映射过程&#34;&gt;&lt;/p&gt;
+&lt;p&gt;因为数组下标过大，数组不支持这么大的下标，所以要先将下标存储在一个数组 a 中，然后将操作 {a,b}（s [a] 加上 b）存储在一个数组中，并且对下标数组进行去重 (不能有多重映射)&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int find(int x)  //二分查找 用于查找数组下标所对应的映射在另外一个数组中的位置
+{
+    int l = 0, r = num.size() -1;
+    while(l &amp;lt; r)
+    {
+        int mid = l + r &amp;gt;&amp;gt; 1;
+        if(num[mid] &amp;gt;= x)
+            r = mid;
+            else
+            l = mid + 1;
+    }
+    return r + 1;
+}
+vector&amp;lt;int&amp;gt; num; //下标数组
+vector&amp;lt;pair&amp;lt;int,int&amp;gt;&amp;gt; add;//存储操作数组 
+int main()
+{
+    //读入数组s[x] += c
+     {
+       	int x,c;
+        cin &amp;gt;&amp;gt; x &amp;gt;&amp;gt; c;
+        add.push_back({x,c}); //操作存入
+        num.push_back(x);  //下标存入
+    }
+        //对num数组去重排序
+    sort(num.begin(),num.end());
+    num.erase(unique(num.begin(),num.end()),num.end());
+    //将数据离散化
+    for(auto s : add)
+    {
+        int x = find(s.first);
+        b[x] += s.second;  
+    }
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;数据结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据结构&#34;&gt;#&lt;/a&gt; 数据结构&lt;/h3&gt;
+&lt;h3 id=&#34;数学&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数学&#34;&gt;#&lt;/a&gt; 数学&lt;/h3&gt;
+&lt;h4 id=&#34;质数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#质数&#34;&gt;#&lt;/a&gt; 质数&lt;/h4&gt;
+&lt;h5 id=&#34;判断质因数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#判断质因数&#34;&gt;#&lt;/a&gt; 判断质因数&lt;/h5&gt;
+&lt;p&gt;如果一个数除了表示成 1 和他自身的乘积外 还能表示成另外两个数的乘积  这个数就不是质因数&lt;/p&gt;
+&lt;p&gt;反之一个数如果只能表示成 1 和他自身的乘积，那么这个数是质因数&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;bool is_prime(int x)
+{
+	for(int i = 2 ; i &amp;lt;= x /i ;i++) //做了优化  将O(n)时间复杂度降到O(sqrt(n))  这里x/i不写成sqrt(x) sqrt()函数运行较慢 这样每次比较的时候,都会调用sqrt()函数 会大大提高时间
+    {
+        if(x % i == 0) return false
+    }
+    return true;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h6 id=&#34;优化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优化&#34;&gt;#&lt;/a&gt; 优化&lt;/h6&gt;
+&lt;p&gt;一个数 表示成两个数的乘积 显然这两个数是&lt;strong&gt;一大一小&lt;/strong&gt;的&lt;/p&gt;
+&lt;p&gt;如果 x 可以表示成 a *  b 的话  假设 a &amp;lt; b 那么显然 &lt;strong&gt;a &amp;lt; x / a&lt;/strong&gt; 即  &lt;strong&gt;a &amp;lt; sqrt(x)&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&#34;分解质因数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分解质因数&#34;&gt;#&lt;/a&gt; 分解质因数&lt;/h5&gt;
+&lt;p&gt;例如 12 = 2 * 2 * 3 一个合数可以被分解成若干个质数的乘积&lt;/p&gt;
+&lt;p&gt;分解质因数就是找出一个合数 他所可以分解成的所有质因数&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;void get_primes(int x)
+{
+    for(int i = 2; i &amp;lt;= x/ i;i++ )
+    {
+        if(x % i == 0)
+        {
+            int s = 0; 
+            while(x % i == 0) //将一个质数 判断到底
+            {
+                x = x / i;
+                s++;
+            }
+            cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; s;
+        }
+    }
+    if(x &amp;gt; x / i) cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt;endl; //优化 数据单独处理
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h6 id=&#34;优化-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优化-2&#34;&gt;#&lt;/a&gt; 优化&lt;/h6&gt;
+&lt;p&gt;分解质因数中 最多只存在一个质数大于&lt;strong&gt; sqrt (x)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以将最后一个数 脱离出来&lt;strong&gt;单独处理&lt;/strong&gt; 可以将时间复杂度 进行一个降低&lt;/p&gt;
+&lt;p&gt;前半部分采用遍历的方式 最后一个数据单独处理&lt;/p&gt;
+&lt;h5 id=&#34;筛质数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#筛质数&#34;&gt;#&lt;/a&gt; 筛质数&lt;/h5&gt;
+&lt;p&gt;给出一个数 x 把小于等于他的&lt;strong&gt;质数&lt;/strong&gt;全部筛出来&lt;/p&gt;
+&lt;h6 id=&#34;埃式筛法onloglogn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#埃式筛法onloglogn&#34;&gt;#&lt;/a&gt; 埃式筛法 O (nloglogn)&lt;/h6&gt;
+&lt;p&gt;从左往右遍历，找到一个质数的同时，就把 &amp;lt;= n 范围内 他的所有倍数打上标签 (这个数不是质数)  遍历过程中没有打上标签的就是质数&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int primes[N]; // 存储所有质数
+bool st[N]; //这个数是否被筛过了
+int get_primes(int n)
+{
+    int cnt = 0 ;
+    for(int i = 2 ; i &amp;lt;= n;i++)
+    {
+        if(st[i]) continue; //被筛过了 就跳过
+        prime[cnt++] = i;
+        for(int j = i + i; j &amp;lt;= n; j += i)   //这里似乎 j 可以直接从i * i 开始 没理解
+        {
+            st[j] = true;
+        }
+    }
+    return cnt;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h6 id=&#34;欧式筛法线性筛法-on&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#欧式筛法线性筛法-on&#34;&gt;#&lt;/a&gt; 欧式筛法 (线性筛法) O (n)&lt;/h6&gt;
+&lt;p&gt;时间复杂度是线性的&lt;/p&gt;
+&lt;p&gt;埃式筛法 筛查过程中存在大量的重复筛的问题 比如 2  * 2 = 4 已经被筛过了 但是在到 4 的同时还会被再筛查一遍&lt;/p&gt;
+&lt;p&gt;所以欧式筛法采用的一个优化的方法 就是筛一个数的时候 只通过最小质因数来筛，这样每个数都只会被筛一遍&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;bool st[N];
+int primes[N];
+int get_primes(int n)
+{
+    int cnt = 0;
+    for(int i = 2 ; i &amp;lt;= n;i++)
+    {
+        if(!st[i]) prime[cnt++] = i;
+        for(int j = 0 ; j &amp;lt; cnt &amp;amp;&amp;amp; primes[j] &amp;lt;= n \ i;j++)
+        {
+            st[i * primes[j]] = true;
+            if(i % primes[j] == 0) break; //优化所在 如果i是primes[j]的倍数 显然后面 primes[j+1]就不会是最小的质因数了 就break
+        }
+    }
+    return cnt;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;约数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#约数&#34;&gt;#&lt;/a&gt; 约数&lt;/h4&gt;
+&lt;h5 id=&#34;试除法求约数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#试除法求约数&#34;&gt;#&lt;/a&gt; 试除法求约数&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;与前面判断质因数相同&lt;/strong&gt;&lt;/p&gt;
+&lt;h5 id=&#34;约数个数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#约数个数&#34;&gt;#&lt;/a&gt; 约数个数&lt;/h5&gt;
+&lt;p&gt;对于一个大于 1 正整数 n 可以&lt;a href=&#34;https://baike.baidu.com/item/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0?fromModule=lemma_inlink&#34;&gt;分解质因数&lt;/a&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/javaafef3bf76b93359a0067ea80e57bca0e.svg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;则 n 的&lt;a href=&#34;https://baike.baidu.com/item/%E6%AD%A3%E7%BA%A6%E6%95%B0/882466?fromModule=lemma_inlink&#34;&gt;正约数&lt;/a&gt;的个数就是&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/java21c38a03ef417a187c0a202b37ce59c4.svg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中 a1、a2、a3…ak 是 p1、p2、p3，…pk 的指数。首先同上，n 可以&lt;a href=&#34;https://baike.baidu.com/item/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/2253749?fromModule=lemma_inlink&#34;&gt;分解质因数&lt;/a&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://bkimg.cdn.bcebos.com/formula/7acc0c37dfea06c873d081dba44b2164.svg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/java%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E.png&#34; alt=&#34;约数个数定理证明&#34;&gt;&lt;/p&gt;
+&lt;p&gt;所以进行程序书写的时候，可以先用&lt;strong&gt;质数中的分解质因数&lt;/strong&gt;的方法，找到所有的质数和他们的指数，然后进行计算&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;unordered_map&amp;lt;int,int&amp;gt;prime;
+int getnum(int x)
+{
+    for(int i = 0 ; i &amp;lt;= n/i;i++) //筛质数
+    {
+        while(x % i == 0)
+        {
+            x /= i;
+            prime[i]++; //存储指数
+        }
+    }   
+    if(x &amp;gt;1) prime[x]++; //现在已经将所有的质数和他们的指数筛出来了
+    int res = 1;
+    for(auto p:prime)
+    {
+        res *= p.second +1;
+    }
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;约数之和&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#约数之和&#34;&gt;#&lt;/a&gt; 约数之和&lt;/h5&gt;
+&lt;p&gt;同样利用公式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/java%E7%BA%A6%E6%95%B0%E5%92%8C%E5%AE%9A%E7%90%86.png&#34; alt=&#34;约数和定理&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;证明&lt;/strong&gt;：进行乘法分配律将括号打开，得到的就是所有因数的和&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;unordered_map&amp;lt;int,int&amp;gt;prime;
+int getallnum(int x)
+{
+    for(int i = 0 ; i &amp;lt;= n/i;i++) //筛质数
+    {
+        while(x % i == 0)
+        {
+            x /= i;
+            prime[i]++; //存储指数
+        }
+    }
+    int res = 1;
+    for(auto p : prime)
+    {
+        int ans = 0;
+        int x = p.first;
+        int y = p.second;
+        while(y--)  ans = ans * p + 1;
+        res *= ans;
+    }
+    return res;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;最大公约数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最大公约数&#34;&gt;#&lt;/a&gt; 最大公约数&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;(a,b) 的最大公约数等于（b,a % b）的最大公约数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/java%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E5%8E%9F%E7%90%86%E8%AF%81%E6%98%8E.png&#34; alt=&#34;辗转相除原理证明&#34;&gt;&lt;/p&gt;
+&lt;p&gt;通过这个式子可以利用递归，不断减小，直到 a% b 等于 0, 此时最大公约数就找到了&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int gck(int a,int b)
+{
+  	return b?gck(b,a%b):a;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;欧拉函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#欧拉函数&#34;&gt;#&lt;/a&gt; 欧拉函数&lt;/h4&gt;
+&lt;p&gt;求 1∼N 中与 N 互质的数的个数被称为欧拉函数，记为 ϕ(N)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/java%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0.png&#34; alt=&#34;欧拉函数&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中 p1 ~ pk 是 N 的所有质因子&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;int getola(int x)
+{
+    int res =x;
+    for(int i = 2 ; i &amp;lt;= x\i;i++)
+    {
+        if(x % i == 0)
+        {
+            res = (long long )res *(i -1)/ i;
+            while(x % i == 0) x /= i;
+        }
+    }
+    if(x &amp;gt;1) res = (long long)res *(x - 1)/x;
+    return res;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;欧拉定理小费马定理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#欧拉定理小费马定理&#34;&gt;#&lt;/a&gt; 欧拉定理 + 小费马定理&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E5%B0%8F%E8%B4%B9%E9%A9%AC%E5%AE%9A%E7%90%86.png&#34; alt=&#34;欧拉定理小费马定理&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;筛发求欧拉函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#筛发求欧拉函数&#34;&gt;#&lt;/a&gt; 筛发求欧拉函数&lt;/h5&gt;
+&lt;p&gt;求出所有小于 N 的数的欧拉值&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;bool st[N];
+int cnt,primes[N],ola[N];
+long long getallola(int n)
+{
+    ola[1] = 1;
+    for(int i = 2; i &amp;lt;= n;i++)
+    {
+        if(!st[i]) 
+        {
+        	primes[cnt++] = i;
+            ola[i] = i -1; //显然一个数如果是质数 他的欧拉值 比他小的所有数的和
+        }
+        for(int j = 0; primes[j] &amp;lt;= n/i;j++)
+        {
+            st[i * primes[j]] = true;
+            if(i % primes[j] == 0)
+            {
+                ola[i * primes[j]] = primes[j] * ola[i];
+                break;
+            }
+            else ola[i * primes[j]] = ola[i] * (primes[j] - 1);
+        }
+    }
+    long long res = 0;
+       for(int i = 1 ; i &amp;lt;= n ; i++)
+        res += (long long)ola[i];
+    return res;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/javaPNN~XFP6Q74$8QXO4YY%5B9%60J.png&#34; alt=&#34;从欧筛中延伸&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;快速幂&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#快速幂&#34;&gt;#&lt;/a&gt; 快速幂&lt;/h4&gt;
+&lt;p&gt;时间复杂度从 O (n) 降低到 O (logn);&lt;/p&gt;
+&lt;p&gt;将质数不断切分成平方形式，切分&lt;strong&gt; logn&lt;/strong&gt; 次&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-cpp&#34; data-language=&#34;cpp&#34;&gt;&lt;code class=&#34;language-cpp&#34;&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;qmi&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; a&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; k &lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; p&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;//求a^^k % p的结果&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; res  &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;k&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;k &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; res &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; res &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; a &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt; p&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        k &lt;span class=&#34;token operator&#34;&gt;&amp;gt;&amp;gt;=&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+        a &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;long&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;a &lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt; a &lt;span class=&#34;token operator&#34;&gt;%&lt;/span&gt; p&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;token punctuation&#34;&gt;}&lt;/span&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;扩展欧几里得算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#扩展欧几里得算法&#34;&gt;#&lt;/a&gt; 扩展欧几里得算法&lt;/h4&gt;
+&lt;p&gt;存在 x 和 y 使得 ax + by = gcd (a,b)&lt;/p&gt;
+&lt;p&gt;扩展欧几里得算法求出 x 和 y&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;// 通过引用获取x和y的值
+int exgcd(int a,int b,int &amp;amp;x,int &amp;amp;y)
+{
+    if(!b)
+    {
+        x =1 ;
+        y = 0;
+        return a;
+    }
+    int x1,y1,d;
+    d = exgcd(b,a%b,x1,y1);
+    x = y1;
+    y = x1 - a/b * y1;
+    return d;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95.png&#34; alt=&#34;扩展欧几里得算法&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;中国剩余定理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#中国剩余定理&#34;&gt;#&lt;/a&gt; 中国剩余定理&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86.png&#34; alt=&#34;中国剩余定理&#34;&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;typedef long long ll;
+ll a[],m[]; //a[] 为余数数组, m[]为模数数组
+//扩展欧几里得算法
+ll exgcd(ll a ,ll b, ll &amp;amp;x, ll &amp;amp;y)
+{
+    if(!b)
+    {
+        x =1 ;
+        y = 0 ;
+        return a;
+    }
+    int x1,y1,d;
+    d = exgcd(b,a%b,x1,y1);
+    x = y1;
+    y = x1 - a/b * y1;
+    return d;
+}
+//通过扩展欧几里得算法求逆元
+ll inverse(ll Mi,ll mi)
+{
+    int x,y;
+    exgcd(Mi,mi,x,y)
+        return (x % p + p) % p //保证逆元是正数
+}
+ll CRT(ll a[],m[],int n) //余数数组, 模数数组, 数组大小n
+{
+    ll p =0;
+    for(int i = 0 ; i &amp;lt; n ;i++)
+        p += m[i];                    //求和M
+   	for(int i = 0 ; i &amp;lt; n ; i++)
+    {
+        x += (a[i]*(p/m[i])* inverse(p/m[i],m[i])) % p;   // ai * Mi * Mi ^ -1 
+    }
+    return x % p;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;扩展中国剩余定理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#扩展中国剩余定理&#34;&gt;#&lt;/a&gt; 扩展中国剩余定理&lt;/h5&gt;
+&lt;p&gt;中国剩余定理要求所有的模数是互质的，扩展中国剩余定理则没有任何限制&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s1mimg.oss-cn-chengdu.aliyuncs.com/img/%E6%89%A9%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86.png&#34; alt=&#34;扩展中国剩余定理&#34;&gt;&lt;/p&gt;
+&lt;pre class=&#34;line-numbers language-c++&#34; data-language=&#34;c++&#34;&gt;&lt;code class=&#34;language-c++&#34;&gt;// https://www.acwing.com/problem/content/206/
+#include &amp;lt;iostream&amp;gt;
+
+using namespace std;
+
+typedef long long ll;
+
+bool has_answer = true;
+
+ll exgcd(ll a, ll b , ll &amp;amp;x,ll &amp;amp;y)
+{
+    if(!b)
+    {
+        x =1 ;
+        y = 0 ;
+        return a;
+    }
+    ll x1,y1,d;
+    d = exgcd(b,a%b,x1,y1);
+    x = y1;
+    y = x1 - a/b * y1;
+    return d;
+}
+int main()
+{
+    cin.tie(0);
+    ios::sync_with_stdio(false);
+    int n;
+    cin &amp;gt;&amp;gt; n;
+    ll a1,m1;
+    cin &amp;gt;&amp;gt; a1 &amp;gt;&amp;gt; m1;
+    ll x;
+    for(int i = 0 ; i &amp;lt; n -1 ; i++)
+    {
+        ll a2,m2;
+        cin &amp;gt;&amp;gt; a2 &amp;gt;&amp;gt; m2;
+        ll k1,k2;
+        ll d = exgcd(a1,a2,k1,k2);
+        if((m2 - m1) %d != 0 )
+        {
+            has_answer = false;
+            break;
+        }
+        k1 *=(m2 -m1) /d;
+        k1 = (k1 % (a2/d) + (a2/d)) % (a2/d);
+        m1 = (k1 * a1) + m1;
+        a1 = (a1 * a2) / d;
+    }
+    if(has_answer)
+    {
+              x =  (m1 % a1 + a1) % a1;
+                      cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; endl;
+    }
+    else    
+        cout &amp;lt;&amp;lt; -1 &amp;lt;&amp;lt; endl;
+    return 0;
+}&lt;span aria-hidden=&#34;true&#34; class=&#34;line-numbers-rows&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="算法啊" />
+        <updated>2022-10-08T16:00:00.000Z</updated>
+    </entry>
+</feed>
